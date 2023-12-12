@@ -48,7 +48,10 @@
     <title>아이디/비밀번호 찾기</title>
 </head>
 <body>
-    <header class="header"></header>
+<%-- 헤더 --%>
+<header class="header">
+    <jsp:include page="/WEB-INF/views/main/header.jsp"/>
+</header>
     
     <div id="finding_box">
         <img id="finding_img" src="${contextPath}/resource/images/icon/finding.png" alt="">
@@ -57,8 +60,10 @@
         <a id="finding_go_login" href="${contextPath}/user/login.do" style="color: white;">확인</a>
     </div>
 
-    <!-- 푸터 -->
-    <footer id="footer"></footer>
+<!-- 푸터 -->
+<footer id="footer">
+    <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+</footer>
 
     <!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>

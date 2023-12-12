@@ -1,0 +1,239 @@
+@charset "utf-8";
+
+/* ****** 공통 ****** */
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
+        /* url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'), */
+        url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
+    font-display: swap;
+} 
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
+        /* url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'), */
+        url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
+    font-display: swap;
+} 
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
+        /* url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'), */
+        url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-1Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* components */
+main{display: block; margin: 0 auto; padding: 100px 20px 0; width: 1320px;}
+.pageTitle{padding: 60px 0; font-size: 32px; text-align: center;}
+#modal{display: none;}
+.textGreen{color:  #4FA72F;}
+.inputError{color: #FF0303;}
+
+/* input checkBox, radio */
+input[type="checkbox"].chkBox+label:before,input[type="radio"].chkRadio+label:before{display: inline-block; content: ''; width: 24px; height: 24px; margin-right: 8px; background-color: #ececec; border-radius: 4px; box-sizing: border-box; vertical-align: middle;}
+input[type="checkbox"].chkBox:checked+label:before{background-color: #8acc39; font-family: "Material Symbols Outlined"; content: "check"; color: #ffffff; font-size: 20px; line-height: 24px; text-align: center;}
+input[type="radio"].chkRadio+label:before{border-radius: 300px; vertical-align: sub;}
+input[type="radio"].chkRadio:checked+label:before{background-color: #ffffff; border: 8px solid #8acc39;}
+
+/* 비밀번호 숨기기,보이기 */
+.inputField{position: relative;}
+.inputField label{display: block; width: 0; height: 0; text-indent: -999px; overflow: hidden;}
+.inputField .pwdToggle{position: absolute; right: 16px; top: 10px; cursor: pointer;}
+.inputBox .inputError{display: block; font-size: 12px; text-align: left;}
+
+/* button */
+.btnGroup{display: flex;}
+.btnSm{flex: 0 0 120px; padding: 12px 1px 8px 5px; border-radius: 4px;}
+.btnBd{border: 1px solid #4FA72F; background-color: #fff; color: #4FA72F;}
+.btnBd:hover{border-color: #248125; color: #248125 ;}
+.btnBdGray{border: 1px solid #c1c1c1; background-color: #fff; color: #999;}
+.btnBdGray:hover{border-color: #999; color: #727272;}
+.btnBg{background-color: #4FA72F; color: #fff;}
+.btnBg:hover{background-color: #248125;}
+.btnBgGray{background-color: #f0f0f0; color: #727272;}
+.btnBgGray:hover{background-color: #e9e9e9;}
+.btnGroup button{flex: 0 0 120px; padding: 12px 0 8px; border-radius: 4px;}
+.btnGroup button:first-child{margin-right: 8px;}
+.btnGroup.lg button{flex-basis: 160px; padding: 14px 0; border-radius: 4px;}
+
+/* 탭 스타일 */
+.tabGroup{display: flex; margin-bottom: -1px;}
+.tabGroup .tab{width: 140px; padding: 16px 0; text-align: center; border: 1px solid #e9e9e9; border-bottom: 0; border-radius: 4px 4px 0 0; color: #c1c1c1; cursor: pointer;}
+.tabGroup .tab:hover{border-color: #999; color: #999;}
+.tabGroup .tab.active{border-color: #4FA72F; background-color: #fff; color: #4FA72F;}
+
+.tabCont{display: none;}
+.tabCont.show{display: block;}
+
+/* 페이징 */
+.paging{clear: both;}
+.paging ul{margin: 60px 0; width: 100%; text-align: center;}
+.paging li{display: inline-block; margin: 5px 6px; vertical-align: middle;}
+.paging li.active a{border-radius: 50%; background-color: #8acc39; color: #ffffff; font-weight: 500;}
+.paging li a{width: 30px; height: 30px; font-size: 14px; line-height: 34px;}
+.arrow a{color: #ddd; font-size: 18px;}
+.arrow button{background: transparent;}
+.arrow button span{vertical-align: middle;}
+
+/* header */
+header { position: fixed; top: 0; left: 0; width: 100%; padding: 10px 0; background-color: #fff; border-bottom: 1px solid #eee; z-index: 999;}
+.headerContainer { display: flex; justify-content: space-between; width: 1280px; margin: auto; }
+.logo{flex-basis: 160px;}
+.logo img{ width: 70px; }
+.menu{ display: flex; gap: 90px; align-items: center;}
+.menu .menu_list{width: 80px; text-align: center;}
+.menu a { font-size: 20px; }
+.right_menu { display: flex;  align-items: center; gap: 20px; right: 10%; font-size: 14px; }
+.right_menu1 { display: flex; display: none; align-items: center; gap: 20px; right: 10%; font-size: 14px; }
+.iconBox:hover .material-symbols-outlined{position: relative;}
+.iconBox:hover .material-symbols-outlined::after{padding: 20px; content: ''; position: absolute; left: -8px; top: -8px; background-color: #c1c1c1; border-radius: 50%; opacity: 0.2;}
+
+/* 서브메뉴 추가 */
+.sub-menu{position: relative; height: 50px; line-height: 50px;}
+.sub-menu>a{text-align: center;}
+.sub-menu_wrap{width: 150px; height: 0; overflow: hidden; position: absolute;top: 44px;left: -36px;background-color: #fff; box-shadow: rgba(50, 50, 93, 0.15) 0px 6px 26px -2px, rgba(0, 0, 0, 0.3) 0px 3px 0px -3px; transition: all 0.3s ease-in-out;border-radius: 4px;}
+.sub-menu_content{text-align: center; /* height: 50px;  */}
+.sub-menu_content a{font-size: 14px; line-height: 42px;}
+.sub-menu_content:first-child a{margin-top: 16px;}
+.sub-menu_content:last-child a{margin-bottom: 16px;}
+.sub-menu_content a:hover{color: #4FA72F;}
+.sub-menu:hover .sub-menu_wrap{height: 116px;}
+
+
+/* footer */
+#footer{ border-top: 1px solid #eee; position: relative; min-width: 1280px; margin: 120px auto 0; padding: 50px 0 ;font-size: 14px;}
+.contain {width: 1280px; margin: 0 auto;}
+.footerLogo { float: left; width: 100px; height: 100px; margin-right: 48px;}
+.fmenu { display: inline-block; border-radius: 5px; margin-bottom: 10px;}
+.fmenu li { display: inline-block;}
+.fmenu li a { display: inline-block; padding: 0 0 6px 20px; color: #727272;}
+.fmenu li:first-child a{padding-left: 0;}
+.fmenu li a::after { content: "|"; padding-left: 20px; }
+.fmenu li:last-child a::after { content: ""; }
+address{color: #999; font-size: 13px; font-weight: 300; font-family: 'S-CoreDream';}
+address > span {padding: 4px 0; margin-right: 10px; display: inline-block;}
+.copyright{margin-top: 12px; padding-left: 130px; color: #727272; font-size: 12px; font-weight: 300;}
+.sns {float: right;}
+.sns li {float: left;}
+.sns img {width: 40px; padding-left: 15px;}
+
+/* 사이드바 */
+.aside{position: fixed; right: 0; top: 200px; width: 130px; border: 1px solid #e9e9e9; border-radius: 12px; background-color: #fff; z-index: 999; }
+.zim{padding: 12px 8px 6px; border-bottom: 1px solid #e9e9e9; text-align: center;}
+.zim .clearfix{display: inline-block;}
+.zim span{float: left; font-size: 20px;}
+.zim p{float: left; padding-left: 4px; padding-top: 5px; font-size: 14px;}
+.zim .material-symbols-outlined{padding-top: 1px;}
+.zim .material-icons{color: #8acc39;}
+.cur_recipe{padding: 22px 0 16px; color: #999; text-align: center; font-size: 14px;}
+.aside_imgBox{display: block; margin-top: 16px;}
+.aside_imgBox img{display: block; margin: 6px auto; width: 84px; height: 84px; border-radius: 4px; object-fit: cover;}
+.top{padding: 4px 0; text-align: center; border-top: 1px solid #e9e9e9; border-radius: 0 0 12px 12px; background-color: #000;}
+.top span{font-size: 26px; color: #ccc; background-color: #000; scroll-behavior: smooth;}
+
+
+/* 좋아요, 댓글 개수 표시 */
+.accList{display: flex; color: #999; font-size: 11px;}
+.accList .accItem{display: flex; align-items: center; color: #c1c1c1;}
+.accList .accItem:first-child{margin-right: 8px;}
+.accList .icon{display: inline-block; margin-right: 4px; color: #c1c1c1; font-size: 18px;}
+
+/* 리스트 스타일 - 이미지 오른쪽 */
+.imgLists{margin-bottom: 60px; font-family: 'S-CoreDream';}
+.imgLists .listItem{display: flex; justify-content: space-between; padding: 24px 32px; border-bottom: 1px solid #e9e9e9; cursor: pointer;}
+.listItem .contBox .postDate{color: #999; font-size: 12px; font-weight: 300;}
+.listItem .contBox h6{width: 100%; margin-top: 16px; margin-bottom: 6px; font-size: 18px; line-height: 28px; font-weight: 600;}
+.listItem .contBox{width: 80%;}
+
+/* 리스트 이미지(공통) - scale */
+.imgwrap .imgBox{border-radius: 4px; overflow: hidden;}
+.imgBox img{width: 100%; height: 100%; object-fit: cover;}
+.imgwrap:hover img{transform: scale(1.1); transition-duration: 0.5s;}
+
+/* 가로 리스트 이미지 scale */
+.imgwrap .imgBox.align{flex: 0 0 100px; height: 114px;}
+
+/* 세로 리스트 이미지 scale */
+.imgwrap .imgBox.vertical{height: 240px;}
+
+/* *** 모달 *** */
+#modal{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.15); z-index: 999;}
+#modal .modalBox{display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 340px; padding: 40px 32px 32px; background-color: #fff; border-radius: 6px; font-family: 'S-CoreDream'; text-align: center;}
+#modal .modalCont h6{margin-bottom: 16px; font-size: 18px;}
+#modal .modalCont p{margin-bottom: 32px; color: #999; font-size: 15px; font-weight: 400;}
+#modal .btnGroup{justify-content: center;}
+
+/* 카테고리 */
+.category{width: 100%; padding: 20px 0; margin-bottom: 150px; border: 2px solid #e9e9e9; border-radius: 6px; /* background-color: #e9e9e9; */}
+.categoryName li{float: left; padding-left: 60px;}
+.categoryName p{font-size: 12px; margin-top: 5px; text-align: center;}
+.categoryName img{width: 50px; height: 50px; overflow: hidden; opacity: 0.3;}
+.categoryBox:hover img,.categoryBox.active img {opacity: 1;}

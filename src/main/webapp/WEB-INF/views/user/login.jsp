@@ -43,7 +43,10 @@
     <title>로그인</title>
 </head>
 <body>
-
+<%-- 헤더 --%>
+<header class="header">
+    <jsp:include page="/WEB-INF/views/main/header.jsp"/>
+</header>
     <main>
         <section id="login_section">
             <h1 class="pageTitle">로그인</h1>
@@ -91,7 +94,10 @@
             <button id="login_fail_out" type="button" onclick="login_fail_get_out()">확인</button>
         </div>
     </div>
-    
+<!-- 푸터 -->
+<footer id="footer">
+    <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+</footer>
     <!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="${contextPath}/resource/js/common.js"></script>

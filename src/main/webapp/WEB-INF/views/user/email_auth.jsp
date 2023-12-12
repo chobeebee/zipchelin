@@ -48,6 +48,10 @@
     <title>Document</title>
 </head>
 <body>
+<%-- 헤더 --%>
+<header class="header">
+    <jsp:include page="/WEB-INF/views/main/header.jsp"/>
+</header>
     <div id="auth_box">
         <img id="auth_img" src="${contextPath}/resource/images/icon/finding.png" alt="">
         <p id="auth_msg_request">이메일로 도착한 인증번호를 입력하세요</p>
@@ -57,6 +61,10 @@
             <button id="auth_go_login" onclick="email_auth_check()" type="button">확인</button>
         </form>
     </div>
+<!-- 푸터 -->
+<footer id="footer">
+    <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+</footer>
 </body>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="${contextPath}/resource/js/user.js"></script>

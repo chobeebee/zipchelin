@@ -1,14 +1,13 @@
-package com.zipchelin.domain.user;
+package com.zipchelin.domain;
 
 import com.zipchelin.model.dto.UserResponseDto;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Getter
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class User {
 
@@ -19,17 +18,6 @@ public class User {
     private String userPhone;
     private LocalDateTime joinDate;
     private String userImg;
-
-    @Builder
-    public User(String userId, String userPwd, String userName, String userEmail, String userPhone, LocalDateTime joinDate, String userImg) {
-        this.userId = userId;
-        this.userPwd = userPwd;
-        this.userName = userName;
-        this.userEmail = userEmail;
-        this.userPhone = userPhone;
-        this.joinDate = joinDate;
-        this.userImg = userImg;
-    }
 
     public UserResponseDto toDto() {
         return UserResponseDto.builder()

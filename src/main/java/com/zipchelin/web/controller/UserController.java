@@ -6,6 +6,7 @@ import com.zipchelin.model.dto.user.UserRequestDto;
 import com.zipchelin.model.dto.user.UserResponseDto;
 import com.zipchelin.model.service.UserService;
 import com.zipchelin.web.ConstField;
+import com.zipchelin.web.exception.DuplicateException;
 import com.zipchelin.web.resolver.Login;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +31,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/login")
-    public String viewLogin(@Login UserResponseDto loginUser) {
+    public String viewLogin(@ModelAttribute("params") UserLoginDto params, @Login UserResponseDto loginUser) {
         if (loginUser != null) {
             return "redirect:/";
         }
@@ -38,19 +39,20 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String userLogin(@ModelAttribute("params") UserLoginDto params, HttpServletRequest request, Model model) {
+    public String userLogin(@Validated @ModelAttribute("params") UserLoginDto params, BindingResult bindingResult, HttpServletRequest request) {
 
-        UserResponseDto loginUser = userService.login(params);
+        // NullPointer 에러가 발생하면 캐치해서 글로벌 검증 메시지로 반환
+        try {
+            UserResponseDto loginUser = userService.login(params);
 
-        if (loginUser == null) {
-            MessageDto message = new MessageDto("아이디 또는 비밀번호 오류입니다.", "/user/login");
-            model.addAttribute("message", message);
-            return "alert";
+            HttpSession session = request.getSession();
+            session.setAttribute(ConstField.LOGIN_USER, loginUser);
+            session.setMaxInactiveInterval(60 * 30);    // 30분
+
+        } catch (NullPointerException e) {
+            bindingResult.reject("loginError", e.getMessage());
+            return "user/login";
         }
-
-        HttpSession session = request.getSession();
-        session.setAttribute(ConstField.LOGIN_USER, loginUser);
-        session.setMaxInactiveInterval(60 * 30);    // 30분
 
         return "redirect:/";
     }
@@ -76,11 +78,17 @@ public class UserController {
     public String signUp(@Validated @ModelAttribute("params") UserRequestDto params, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            log.info("에러 발생 = {}", bindingResult);
             return "user/sign_up";
         }
 
-        String userName = userService.saveUser(params);
+        // Duplicate 에러가 발생하면 캐치해서 글로벌 검증 메시지로 반환
+        try {
+            String userName = userService.saveUser(params);
+        } catch (DuplicateException e) {
+            bindingResult.reject("duplicate", e.getMessage());
+            return "user/sign_up";
+        }
+
         return "redirect:/user/login";
     }
 

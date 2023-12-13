@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="../../css/list.css">
 
     <!-- plugin CSS -->
-    <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css/swiper-bundle.css">
 
     <!--[if lt IE 9]>
     <script type="text/javascript" src="/assets/front/js/html5shiv.js"></script>

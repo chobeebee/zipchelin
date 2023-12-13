@@ -1,16 +1,15 @@
 package com.zipchelin.repository.mybatis.mappers;
 
 import com.zipchelin.domain.User;
-import com.zipchelin.model.dto.UserRequestDto;
+import com.zipchelin.model.dto.user.UserRequestDto;
 import com.zipchelin.model.service.UserService;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-
-import org.assertj.core.api.Assertions;
 
 @SpringBootTest
 class UserMapperTest {

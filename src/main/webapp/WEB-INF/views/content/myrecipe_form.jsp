@@ -38,7 +38,7 @@
     <link rel="stylesheet" type="text/css" href="/front/css/common.css">
 
     <!-- plugin CSS -->
-    <link rel="stylesheet" href="/front/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/front/css/swiper-bundle.css">
 
 	<!-- 게시판 에디터 -->
 	<script type="text/javascript" src="../resources/static/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>

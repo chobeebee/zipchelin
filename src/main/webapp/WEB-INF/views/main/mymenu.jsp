@@ -15,24 +15,24 @@
 	<div class="myBox_profile">
 	    <img src="${contextPath}/resource/images/icon/profile.jpg" class="myProfile_img" alt="profile">
 	    <h3 class="userId_text">USER_ID</h3>
-	    <button class="myPage_edit_btn" onclick="location.href='${contextPath}/mypage/pwdConfirm.do'">정보수정</button>
+	    <button class="myPage_edit_btn" onclick="location.href='${contextPath}/mypage/pwdConfirm'">정보수정</button>
 	</div><!--마이페이지 레프트박스 (프로필이미지, 아이디, 정보수정버튼) 끝-->
 	
 	<!--마이페이지 레프트박스 (찜, 내글, 내댓글 갯수 & 바로가기)-->
 	<div class="myBox_count">
 	    <div class="myBox_countBox myBox_heart">
 	        <span id="myBox_icon" class="material-icons">favorite</span>
-	        <p>찜 <a href="${contextPath}/mypage/myheart.do">10</a></p>
+	        <p>찜 <a href="${contextPath}/mypage/myheart">10</a></p>
 	    </div>
 	
 	    <div class="myBox_countBox myBox_post">
 	        <span id="myBox_icon" class="material-symbols-outlined">stylus</span>
-	        <p>내 글 <a href="${contextPath}/mypage/mypost.do">10</a></p>
+	        <p>내 글 <a href="${contextPath}/mypage/mypost">10</a></p>
 	    </div>
 	
 	    <div class="myBox_countBox myBox_comment">
 	        <span id="myBox_icon" class="material-symbols-outlined">chat</span>
-	        <p>내 댓글 <a href="${contextPath}/mypage/myreply.do">10</a></p>
+	        <p>내 댓글 <a href="${contextPath}/mypage/myreply">10</a></p>
 	    </div>
 	</div><!--마이페이지 레프트박스 (찜, 내글, 내댓글 갯수 & 바로가기) 끝-->
 		

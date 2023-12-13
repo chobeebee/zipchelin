@@ -1,4 +1,4 @@
-package com.zipchelin.model.dto;
+package com.zipchelin.model.dto.user;
 
 import com.zipchelin.domain.User;
 import lombok.AllArgsConstructor;

@@ -193,10 +193,10 @@
     	<jsp:include page="/WEB-INF/views/main/footer.jsp"/>
     </footer> 
     
-    <!--모달 창-->
+    <!--모달 창
     <div>
-    	<jsp:include page="/WEB-INF/views/main/content/modal.jsp"/>
-    </div>
+    	<jsp:include page="/WEB-INF/views/content/modal.jsp"/>
+    </div>-->
 	
 	<!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>

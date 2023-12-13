@@ -28,6 +28,11 @@
 
 <!-- google icon CDN -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- basic CSS -->
 <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/reset.css">
@@ -191,6 +196,6 @@
     <!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="${contextPath}/resource/js/common.js"></script>
-    <script src="${contextPath}/resource/js/guide.js"></script>   
+    <script src="${contextPath}/resource/js/search.js"></script>     
 </body>
 </html>

@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.*;
 
+import org.assertj.core.api.Assertions;
+
 @SpringBootTest
 class UserMapperTest {
 
@@ -29,7 +31,7 @@ class UserMapperTest {
         userMapper.save(user);
         User findUser = userMapper.findById("test123").orElseThrow(() -> new NullPointerException("찾는 유저가 없습니다."));
 
-        assertThat(findUser.getUserName()).isEqualTo("테스트");
+        Assertions.assertThat(findUser.getUserName()).isEqualTo("테스트");
     }
 
     @Test

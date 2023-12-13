@@ -5,28 +5,21 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
-import java.time.LocalDateTime;
-
 @Getter
 @Builder
 @AllArgsConstructor
-public class UserResponseDto {
+public class UserModifyDto {
 
-    private String userId;
-    private String userName;
+    private String userPwd;
     private String userEmail;
     private String userPhone;
-    private LocalDateTime joinDate;
     private String userImg;
 
     public User toEntity() {
         return User.builder()
-                .userId(userId)
-                .userName(userName)
+                .userPwd(userPwd)
                 .userEmail(userEmail)
                 .userPhone(userPhone)
-                .userPhone(userPhone)
-                .joinDate(joinDate)
                 .userImg(userImg)
                 .build();
     }

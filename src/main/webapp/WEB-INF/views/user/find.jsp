@@ -49,7 +49,10 @@
 <title>아이디/비밀번호 찾기</title>
 </head>
 <body id="find_body">
-    <header class="header"></header>
+<%-- 헤더 --%>
+<header class="header">
+    <jsp:include page="/WEB-INF/views/main/header.jsp"/>
+</header>
     <main id="find_section">
         <h3 id="find_target" class="pageTitle">아이디찾기</h3>
         <ul class="tabGroup">
@@ -93,9 +96,11 @@
             </div>
         </div>
     </main>
-    
-    <!-- 푸터 -->
-    <footer id="footer"></footer>
+
+<!-- 푸터 -->
+<footer id="footer">
+    <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+</footer>
     
     <!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>

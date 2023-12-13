@@ -14,6 +14,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
         String requestURI = request.getRequestURI();
+        System.out.println("requestURI = " + requestURI);
         HttpSession session = request.getSession(false);
 
         if (session == null || session.getAttribute(ConstField.LOGIN_USER) == null) {

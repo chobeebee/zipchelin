@@ -4,12 +4,12 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <div class="headerContainer">
-    <a class="logo" href="${contextPath}/index">
+    <a class="logo" href="${contextPath}/">
         <img src="${contextPath}/resource/images/logo/logo.png" />
     </a>
     <div class="menu">
-        <a class="menu_list" href="${contextPath}/content/recipe">레시피</a>
-        <a class="menu_list" href="${contextPath}/guide/guide-list">가이드</a>
+        <a class="menu_list" href="${contextPath}/recipe/list.do">레시피</a>
+        <a class="menu_list" href="${contextPath}/guide/guide.do">가이드</a>
         <div class="sub-menu menu_list">
             <a href="#">커뮤니티</a>
             <div class="sub-menu_wrap">
@@ -21,13 +21,22 @@
                 </div>
             </div>
         </div>
-        <a class="menu_list" href="${contextPath}/notice">공지사항</a>
+        <a class="menu_list" href="${contextPath}/notice.do">공지사항</a>
     </div>
     <div class="right_menu">
         <a class="iconBox" href="/front/html/search/searching_list.html">
             <span class="material-symbols-outlined">search</span>
         </a>
-        <a href="${contextPath}/user/login">로그인</a>
-        <a href="${contextPath}/user/sign-up">회원가입</a>
+        <%-- 비로그인 사용자 --%>
+        <c:if test="${sessionScope.loginUser == null}">
+            <a href="${contextPath}/user/login">로그인</a>
+            <a href="${contextPath}/user/sign-up">회원가입</a>
+        </c:if>
+
+        <%-- 로그인 사용자 --%>
+        <c:if test="${sessionScope.loginUser != null}">
+            <a href="${contextPath}/user/logout" onclick="loginHref()">로그아웃</a>
+            <a href="#">아무거나</a>
+        </c:if>
     </div>
 </div>

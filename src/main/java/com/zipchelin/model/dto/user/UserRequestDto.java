@@ -1,10 +1,11 @@
-package com.zipchelin.model.dto;
+package com.zipchelin.model.dto.user;
 
 import com.zipchelin.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.util.StringUtils;
 
 import javax.validation.constraints.Email;
@@ -33,7 +34,7 @@ public class UserRequestDto {
     private String userPhone;
     private String userImg;
 
-    public void encodingPassword(BCryptPasswordEncoder passwordEncoder) {
+    public void encodingPassword(PasswordEncoder passwordEncoder) {
         if (!StringUtils.hasLength(userPwd)) {
             return;
         }

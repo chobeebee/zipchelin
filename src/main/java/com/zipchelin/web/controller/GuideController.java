@@ -13,10 +13,10 @@ public class GuideController {
 	
 	@GetMapping("/guide-list")
     public String guide() {
-		return "content/guide_list";
+		return "content/guide/guide_list";
 	}
 	@GetMapping("/guide-detail")
 	public String viewGuide() {
-		return "content/guide_detail";
+		return "content/guide/guide_detail";
 	}
 }

@@ -4,16 +4,17 @@ import com.zipchelin.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.util.StringUtils;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 @Getter
 @Builder
 @AllArgsConstructor
-public class UserSaveDto {
+public class UserRequestDto {
 
     @NotBlank
     private String userId;
@@ -31,6 +32,13 @@ public class UserSaveDto {
     @NotBlank
     private String userPhone;
     private String userImg;
+
+    public void encodingPassword(BCryptPasswordEncoder passwordEncoder) {
+        if (!StringUtils.hasLength(userPwd)) {
+            return;
+        }
+        userPwd = passwordEncoder.encode(userPwd);
+    }
 
     public User toEntity() {
         return User.builder()

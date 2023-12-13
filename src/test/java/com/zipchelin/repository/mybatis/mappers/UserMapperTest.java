@@ -1,32 +1,34 @@
 package com.zipchelin.repository.mybatis.mappers;
 
 import com.zipchelin.domain.User;
-import com.zipchelin.model.dto.UserModifyDto;
-import com.zipchelin.model.dto.UserSaveDto;
+import com.zipchelin.model.dto.UserRequestDto;
+import com.zipchelin.model.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @SpringBootTest
 class UserMapperTest {
 
     @Autowired
     UserMapper userMapper;
+    @Autowired
+    UserService userService;
 
     @Test
-    void save() {
-        UserSaveDto userSave = UserSaveDto.builder()
+    void encodingSave() {
+        UserRequestDto userSave = UserRequestDto.builder()
                 .userId("test123")
                 .userPwd("test")
                 .userEmail("test@test.com")
                 .userName("테스트")
                 .userPhone("01012345678")
                 .build();
-        User user = userSave.toEntity();
 
-        userMapper.save(user);
+        userService.saveUser(userSave);
         User findUser = userMapper.findById("test123").orElseThrow(() -> new NullPointerException("찾는 유저가 없습니다."));
 
         assertThat(findUser.getUserName()).isEqualTo("테스트");
@@ -34,7 +36,8 @@ class UserMapperTest {
 
     @Test
     void update() {
-        UserModifyDto userModify = UserModifyDto.builder()
+        UserRequestDto userModify = UserRequestDto.builder()
+                .userId("test123")
                 .userPwd("test")
                 .userEmail("modify@modify.com")
                 .userPhone("01012345678")

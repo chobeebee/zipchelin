@@ -1,6 +1,6 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.model.dto.UserSaveDto;
+import com.zipchelin.model.dto.UserRequestDto;
 import com.zipchelin.model.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,12 +26,12 @@ public class UserController {
     }
 
     @GetMapping("/sign-up")
-    public String viewSignUp(@ModelAttribute("params") UserSaveDto params) {
+    public String viewSignUp(@ModelAttribute("params") UserRequestDto params) {
         return "user/sign_up";
     }
 
     @PostMapping("/sign-up")
-    public String signUp(@Validated @ModelAttribute("params") UserSaveDto params, BindingResult bindingResult) {
+    public String signUp(@Validated @ModelAttribute("params") UserRequestDto params, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             log.info("에러 발생 = {}", bindingResult);

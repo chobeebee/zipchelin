@@ -37,6 +37,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-body">
                             <div class="d-flex justify-content-end mb-2">
+                            	<a href="${contextPath}/admin/addnotice" class="btn btn-secondary mr-2" aria-current="page">등록</a>
                                 <a href="#" class="btn btn-secondary mr-2" aria-current="page">취소</a>
                                 <a href="#" class="btn btn-primary">삭제</a>
                             </div>

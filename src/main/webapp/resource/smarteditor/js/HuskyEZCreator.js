@@ -131,4 +131,5 @@ nhn.husky.EZCreator = new (function(){
 		
 		if(nhn.husky.EZCreator.elBlocker) nhn.husky.EZCreator.elBlocker.style.display = "none";
 	}
+	
 })();

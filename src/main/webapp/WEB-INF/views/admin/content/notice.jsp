@@ -61,7 +61,7 @@
                                             </td>
                                             <td>1</td>
                                             <td>
-                                                <a href="../html/notice_view.html">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
+                                                <a href="${contextPath}/admin/editnotice">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
                                             </td>
                                             <td>2023.01.01</td>
                                         </tr>
@@ -71,7 +71,7 @@
                                             </td>
                                             <td>2</td>
                                             <td>
-                                                <a href="../html/notice_view.html">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
+                                                <a href="${contextPath}/admin/editnotice">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
                                             </td>
                                             <td>2023.01.01</td>
                                         </tr>
@@ -81,7 +81,7 @@
                                             </td>
                                             <td>3</td>
                                             <td>
-                                                <a href="../html/notice_view.html">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
+                                                <a href="${contextPath}/admin/editnotice">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
                                             </td>
                                             <td>2023.01.01</td>
                                         </tr>
@@ -91,7 +91,7 @@
                                             </td>
                                             <td>4</td>
                                             <td>
-                                                <a href="../html/notice_view.html">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
+                                                <a href="${contextPath}/admin/editnotice">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
                                             </td>
                                             <td>2023.01.01</td>
                                         </tr>
@@ -101,7 +101,7 @@
                                             </td>
                                             <td>5</td>
                                             <td>
-                                                <a href="../html/notice_view.html">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
+                                                <a href="${contextPath}/admin/editnotice">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
                                             </td>
                                             <td>2023.01.01</td>
                                         </tr>
@@ -111,7 +111,7 @@
                                             </td>
                                             <td>6</td>
                                             <td>
-                                                <a href="../html/notice_view.html">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
+                                                <a href="${contextPath}/admin/editnotice">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
                                             </td>
                                             <td>2023.01.01</td>
                                         </tr>
@@ -148,7 +148,7 @@
 
     <!-- 로그아웃 창 -->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <jsp:include page="WEB-INF/views/admin/layout/logout.jsp" />
+        <jsp:include page="/WEB-INF/views/admin/layout/logout.jsp" />
     </div>
 
     <!-- js -->

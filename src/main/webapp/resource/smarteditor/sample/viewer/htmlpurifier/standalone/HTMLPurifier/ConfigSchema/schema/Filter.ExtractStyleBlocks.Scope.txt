@@ -11,14 +11,14 @@ ALIASES: Filter.ExtractStyleBlocksScope, FilterParam.ExtractStyleBlocksScope
   prevent them from fiddling with other elements, use this directive.
   It accepts any valid CSS selector, and will prepend this to any
   CSS declaration extracted from the document. For example, if this
-  directive is set to <code>#user-content</code> and a user uses the
+  directive is set to <code>#member-content</code> and a member uses the
   selector <code>a:hover</code>, the final selector will be
-  <code>#user-content a:hover</code>.
+  <code>#member-content a:hover</code>.
 </p>
 <p>
   The comma shorthand may be used; consider the above example, with
-  <code>#user-content, #user-content2</code>, the final selector will
-  be <code>#user-content a:hover, #user-content2 a:hover</code>.
+  <code>#member-content, #member-content2</code>, the final selector will
+  be <code>#member-content a:hover, #member-content2 a:hover</code>.
 </p>
 <p>
   <strong>Warning:</strong> It is possible for users to bypass this measure

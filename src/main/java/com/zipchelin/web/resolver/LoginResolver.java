@@ -1,6 +1,6 @@
 package com.zipchelin.web.resolver;
 
-import com.zipchelin.model.dto.user.UserResponseDto;
+import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.web.ConstField;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
@@ -17,7 +17,7 @@ public class LoginResolver implements HandlerMethodArgumentResolver {
     public boolean supportsParameter(MethodParameter parameter) {
 
         boolean hasLoginAnnotation = parameter.hasParameterAnnotation(Login.class);
-        boolean hasUserResponseType = UserResponseDto.class.isAssignableFrom(parameter.getParameterType());
+        boolean hasUserResponseType = MemberResponseDto.class.isAssignableFrom(parameter.getParameterType());
 
         return hasLoginAnnotation && hasUserResponseType;
     }
@@ -31,6 +31,6 @@ public class LoginResolver implements HandlerMethodArgumentResolver {
             return null;
         }
 
-        return session.getAttribute(ConstField.LOGIN_USER);
+        return session.getAttribute(ConstField.LOGIN_MEMBER);
     }
 }

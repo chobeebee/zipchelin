@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/mypage/*")
 public class MypageController {
 	
-	@GetMapping
+	@GetMapping("/home")
     public String myPage() {
 		return "mypage/mypage";
 	}

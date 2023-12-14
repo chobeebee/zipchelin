@@ -16,7 +16,7 @@
     <!-- 메뉴 -->
     <li class="nav-item active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#colMember" aria-expanded="true" aria-controls="colMember">
-            <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <i class="fa fa-member-circle" aria-hidden="true"></i>
             <span>회원관리</span>
         </a>
         <div id="colMember" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">

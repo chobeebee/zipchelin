@@ -33,13 +33,13 @@
         </a>
         <%-- 비로그인 사용자 --%>
         <c:if test="${sessionScope.loginUser == null}">
-            <a href="${contextPath}/user/login">로그인</a>
-            <a href="${contextPath}/user/sign-up">회원가입</a>
+            <a href="${contextPath}/member/login">로그인</a>
+            <a href="${contextPath}/member/sign-up">회원가입</a>
         </c:if>
 
         <%-- 로그인 사용자 --%>
         <c:if test="${sessionScope.loginUser != null}">
-            <a href="${contextPath}/user/logout" onclick="loginHref()">로그아웃</a>
+            <a href="${contextPath}/member/logout" onclick="loginHref()">로그아웃</a>
             <a href="#">아무거나</a>
         </c:if>
     </div>

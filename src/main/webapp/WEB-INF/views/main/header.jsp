@@ -4,7 +4,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <div class="headerContainer">
-    <a class="logo" href="${contextPath}/index.do">
+    <a class="logo" href="/">
         <img src="${contextPath}/resource/images/logo/logo.png" />
     </a>
     <div class="menu">
@@ -17,7 +17,7 @@
                     <a href="${contextPath}/myrecipe.do">나만의레시피</a>
                 </div>
                 <div class="sub-menu_content">
-                    <a href="${contextPath}/qna.do">요리상담소</a>
+                    <a href="${contextPath}/qna/">요리상담소</a>
                 </div>
             </div>
         </div>

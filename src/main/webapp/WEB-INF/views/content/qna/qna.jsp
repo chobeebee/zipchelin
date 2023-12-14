@@ -29,16 +29,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     
     <!-- basic CSS -->
-    <link rel="stylesheet" type="text/css" href="/front/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/front/css/base.css">
-    <link rel="stylesheet" type="text/css" href="/front/css/common.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
 
     <!-- page CSS -->
-    <!-- <link rel="stylesheet" href="../../css/index.css"> -->
-    <link rel="stylesheet" href="../../css/list.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/index.css">
 
     <!-- plugin CSS -->
-    <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css">
 
     <!--[if lt IE 9]>
     <script type="text/javascript" src="/assets/front/js/html5shiv.js"></script>
@@ -54,13 +53,15 @@
 
     <!-- myrecipelist CSS -->
     <!-- <link rel="stylesheet" type="text/css" href="/front/css/community.css"> -->
-    <link rel="stylesheet" type="text/css" href="/front/css/qna_temp.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/qna_temp.css">
 
 <title>요리 상담소 리스트</title>
 </head>
 <body>
-    <!-- 헤더 -->
-    <header class="header"></header>
+    <!--헤더 -->
+    <header class="header">
+    	<jsp:include page="/WEB-INF/views/main/header.jsp"/>
+    </header>
     
     <!-- 메인 -->
     <main>
@@ -71,7 +72,7 @@
                     <option value="#" selected>최신순</option>
                     <option value="#">오래된순</option>
                 </select>
-                <button onclick="location.href='qna_form.html'" class="btnBg btnSm" class="btn_write">질문하기</button>
+                <button onclick="location.href='${contextPath}/qna/qna_form'" class="btnBg btnSm" class="btn_write">질문하기</button>
             </div>
             
         <div class="qna">
@@ -85,7 +86,7 @@
                     <p class="tableItem">작성일</p>
                 </li>
                 <li>
-                    <a href="/front/html/community/qna_post.html" class="textbox tableWd">
+                    <a href="${contextPath}/qna/qna_post" class="textbox tableWd">
                         <div class="num tableItem">12</div>
                         <div class="text-title tableItem title">
                             <span class="question">Q. </span>
@@ -272,7 +273,9 @@
     </main>
 
     <!-- 푸터 -->
-    <footer id="footer"></footer>
+    <footer id="footer">
+    	<jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+    </footer> 
 
     <!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>

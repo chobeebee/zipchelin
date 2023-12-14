@@ -27,18 +27,18 @@
 
 
     <!-- myrecipelist CSS -->
-    <link rel="stylesheet" type="text/css" href="/front/css/community.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/community.css">
 
     <!-- google icon CDN -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     
     <!-- basic CSS -->
-    <link rel="stylesheet" type="text/css" href="/front/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/front/css/base.css">
-    <link rel="stylesheet" type="text/css" href="/front/css/common.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
 
     <!-- plugin CSS -->
-    <link rel="stylesheet" href="/front/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.min.css">
 
     <!--[if lt IE 9]>
     <script type="text/javascript" src="/assets/front/js/html5shiv.js"></script>
@@ -56,8 +56,10 @@
 <title>요리 상담소 작성폼</title>
 </head>
 <body>
-    <!-- 헤더 -->
-    <header class="header"></header>
+    <!--헤더 -->
+    <header class="header">
+    	<jsp:include page="/WEB-INF/views/main/header.jsp"/>
+    </header>
     
     <!-- 메인 -->
     <main>
@@ -83,7 +85,9 @@
     </main>
 
     <!-- 푸터 -->
-    <footer id="footer"></footer>
+    <footer id="footer">
+    	<jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+    </footer> 
 
     <!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>

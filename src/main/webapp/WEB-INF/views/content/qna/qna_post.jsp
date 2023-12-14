@@ -30,12 +30,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
     <!-- basic CSS -->
-    <link rel="stylesheet" type="text/css" href="/front/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/front/css/base.css">
-    <link rel="stylesheet" type="text/css" href="/front/css/common.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
 
     <!-- plugin CSS -->
-    <link rel="stylesheet" href="/front/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.min.css">
 
     <!--[if lt IE 9]>
     <script type="text/javascript" src="/assets/front/js/html5shiv.js"></script>
@@ -50,13 +50,15 @@
     <![endif]-->
 
     <!-- myrecipelist CSS -->
-    <link rel="stylesheet" type="text/css" href="/front/css/community.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/community.css">
 
 <title>요리 상담소</title>
 </head>
 <body>
-    <!-- 헤더 -->
-    <header class="header"></header>
+    <!--헤더 -->
+    <header class="header">
+    	<jsp:include page="/WEB-INF/views/main/header.jsp"/>
+    </header>
     
     <!-- 메인 -->
     <main>
@@ -67,7 +69,7 @@
                         <h1 class="post-title"><span class="title_q">Q. </span>잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?</h1>
                         <div class="post-info">
                             <div class="comment-profile">
-                                <img class="comment-img" src="/front/images/icon/profile.jpg" alt="">
+                                <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                             </div>
                             <strong class="post-id">해징어</strong>
                             <span class="post-date">2023.10.26 10:02</span>
@@ -83,7 +85,7 @@
                     </div>
                     <div class="post-content">
                         <p class="content">잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?<br>내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다</p><br>
-                        <img src="/front/images/food/sample.jpg" alt="">
+                        <img src="${contextPath}/resource/images/food/sample.jpg" alt="">
                         <p class="content">내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다</p><br>
                     </div>
                         <a href="/front/html/community/qna.html">
@@ -106,7 +108,7 @@
             <div class="commentWrap">
                 <ul class="comment">
                     <li class="commentbox bestcomment">
-                            <img class="comment-img" src="/front/images/icon/profile.jpg" alt="">
+                            <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                         <div>
                             <div class="comment-contentbox">
                                 <strong class="comment-id">해징어</strong>
@@ -146,7 +148,7 @@
                 <ul class="comment">
                     <li class="commentbox">
                         <span class="material-symbols-outlined comment_re">subdirectory_arrow_right</span>
-                        <img class="comment-img" src="/front/images/icon/profile.jpg" alt="">
+                        <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                         <div>
                             <div class="comment-contentbox">
                                 <strong class="comment-id">해징어</strong>
@@ -186,7 +188,7 @@
                 </ul>
                 <ul class="comment">
                     <li class="commentbox">
-                            <img class="comment-img" src="/front/images/icon/profile.jpg" alt="">
+                            <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                         <div>
                             <div class="comment-contentbox">
                                 <strong class="comment-id">해징어</strong>
@@ -225,7 +227,7 @@
                 </ul>
                 <ul class="comment">
                     <li class="commentbox">
-                            <img class="comment-img" src="/front/images/icon/profile.jpg" alt="">
+                            <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                         <div>
                             <div class="comment-contentbox">
                                 <strong class="comment-id">해징어</strong>
@@ -264,7 +266,7 @@
                 </ul>
                 <ul class="comment">
                     <li class="commentbox">
-                            <img class="comment-img" src="/front/images/icon/profile.jpg" alt="">
+                            <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                         <div>
                             <div class="comment-contentbox">
                                 <strong class="comment-id">해징어</strong>
@@ -317,7 +319,9 @@
         </section>
     </main>
     <!-- 푸터 -->
-    <footer id="footer"></footer>
+    <footer id="footer">
+    	<jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+    </footer> 
 
     <div id="modal">
         <div class="modalBox">

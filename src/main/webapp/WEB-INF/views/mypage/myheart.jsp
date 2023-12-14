@@ -74,6 +74,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <!--myheart_main-->
         <div class="myHeart_main myPage_main">
+            <h3 class="pageTitle">찜한 레시피</h3>
             
             <!--찜페이지-탭-->
             <div class="componentWrap myPage_componentWrap">
@@ -97,8 +98,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -111,8 +112,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -125,8 +126,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -139,8 +140,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -153,8 +154,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -167,8 +168,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -181,8 +182,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -195,8 +196,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -209,8 +210,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -223,8 +224,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -237,8 +238,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -251,8 +252,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -265,8 +266,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -279,8 +280,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -293,8 +294,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -307,8 +308,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요. 여기는 제목을 적어주세요.</h3>
                                     </div>
                                 </a>
                             </li>
@@ -343,8 +344,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
                                 </div>
                                 </a>
                             </li>
@@ -357,8 +358,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
                                 </div>
                                 </a>
                             </li>
@@ -371,8 +372,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
                                 </div>
                                 </a>
                             </li>
@@ -385,8 +386,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
                                 </div>
                                 </a>
                             </li>
@@ -399,8 +400,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
                                 </div>
                                 </a>
                             </li>
@@ -413,8 +414,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
                                 </div>
                                 </a>
                             </li>
@@ -427,8 +428,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
                                 </div>
                                 </a>
                             </li>
@@ -441,8 +442,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
                                 </div>
                                 </a>
                             </li>
@@ -455,8 +456,106 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
+                                </div>
+                                </a>
+                            </li>
+                            <li class="heart_list_contents">
+                                <!--가이드 레시피 사진-->
+                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
+                                <a class="heart_list_link" href="#">
+                                <div>
+                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                </div>
+                                <!--가이드 레시피 제목, 부제목-->
+                                <div class="heart_list_text">
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
+                                </div>
+                                </a>
+                            </li>
+                            <li class="heart_list_contents">
+                                <!--가이드 레시피 사진-->
+                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
+                                <a class="heart_list_link" href="#">
+                                <div>
+                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                </div>
+                                <!--가이드 레시피 제목, 부제목-->
+                                <div class="heart_list_text">
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
+                                </div>
+                                </a>
+                            </li>
+                            <li class="heart_list_contents">
+                                <!--가이드 레시피 사진-->
+                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
+                                <a class="heart_list_link" href="#">
+                                <div>
+                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                </div>
+                                <!--가이드 레시피 제목, 부제목-->
+                                <div class="heart_list_text">
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
+                                </div>
+                                </a>
+                            </li>
+                            <li class="heart_list_contents">
+                                <!--가이드 레시피 사진-->
+                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
+                                <a class="heart_list_link" href="#">
+                                <div>
+                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                </div>
+                                <!--가이드 레시피 제목, 부제목-->
+                                <div class="heart_list_text">
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
+                                </div>
+                                </a>
+                            </li>
+                            <li class="heart_list_contents">
+                                <!--가이드 레시피 사진-->
+                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
+                                <a class="heart_list_link" href="#">
+                                <div>
+                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                </div>
+                                <!--가이드 레시피 제목, 부제목-->
+                                <div class="heart_list_text">
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
+                                </div>
+                                </a>
+                            </li>
+                            <li class="heart_list_contents">
+                                <!--가이드 레시피 사진-->
+                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
+                                <a class="heart_list_link" href="#">
+                                <div>
+                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                </div>
+                                <!--가이드 레시피 제목, 부제목-->
+                                <div class="heart_list_text">
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
+                                </div>
+                                </a>
+                            </li>
+                            <li class="heart_list_contents">
+                                <!--가이드 레시피 사진-->
+                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
+                                <a class="heart_list_link" href="#">
+                                <div>
+                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                </div>
+                                <!--가이드 레시피 제목, 부제목-->
+                                <div class="heart_list_text">
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
                                 </div>
                                 </a>
                             </li>
@@ -483,35 +582,10 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     </main>
 
-    <!--footer-->
-    <footer class="edit_footer">
-        <div class="contain">
-            <div id="footerMenu">
-                <a href="/front/index.html" class="footerLogo">
-                    <img src="/front/images/logo/logo.png" alt="zipchelin">
-                </a>
-                    <ul class="fmenu">
-                        <li><a href="#">회사소개</a></li>
-                        <li><a href="#">개인정보보호정책</a></li>
-                        <li><a href="#">이용약관</a></li>
-                        <li><a href="#">공지사항</a></li>
-                    </ul>
-                    <ul class="sns">
-                        <li><a href="#"><img src="/front/images/icon/facebook.png" alt="facebook"></a></li>
-                        <li><a href="#"><img src="/front/images/icon/instagram.png" alt="instagram"></a></li>
-                        <li><a href="#"><img src="/front/images/icon/youtube.png" alt="youtube"></a></li>
-                    </ul>  
-            </div>
-                <address>
-                    <span>회사명 : 주식회사 집슐랭 (서울시 종로구 종로78 (종로2가, 미려빌딩 3,5,6층))</span><br>
-                    <span> 전화 : 02-1111-1111</span>
-                    <span> 팩스 : 02-2222-2222 </span>
-                    <span> E-MAIL : zipcheiln@zipc.co.kr</span>
-                </address>
-                <p class="copyright">Copyright &copy; 집슐랭, All Rights Reserved.</p>  
-            </div>
-        </div>
-    </footer>
+    <!-- 푸터 -->
+    <footer id="footer">
+    	<jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+    </footer> 
 
     <!-- js -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>

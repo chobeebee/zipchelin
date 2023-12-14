@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/notice")
 public class NoticeController {
 	
-	@GetMapping("")
+	@GetMapping
 	public String notice() {
 		return "content/notice";
 	}

@@ -1,19 +1,18 @@
-package com.zipchelin.domain;
+package com.zipchelin.model.dto.user;
 
 import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
 @Builder
 @AllArgsConstructor
-public class Notice {
+public class NoticeRequestDto {
 	private String noticeNum;
 	private String noticeTitle;
 	private String noticeCont;
-	private LocalDateTime noticeDate;
+	
 	
 }

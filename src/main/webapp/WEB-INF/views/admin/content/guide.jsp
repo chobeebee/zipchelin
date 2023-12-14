@@ -22,8 +22,8 @@
     <link href="${contextPath}/resource/admin/css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="${contextPath}/resource/admin/css/admin.css">
 </head>
-<body id="page-top">-
-    <div id="wrapper">-
+<body id="page-top">
+    <div id="wrapper">
         <div id="sidebar">
     		<jsp:include page="/WEB-INF/views/admin/layout/sidebar.jsp" />
     	</div>
@@ -305,7 +305,7 @@
 
     <!-- 로그아웃 창 -->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <jsp:include page="WEB-INF/views/admin/layout/logout.jsp" />
+        <jsp:include page="/WEB-INF/views/admin/layout/logout.jsp" />
     </div>
 
     <!-- js -->

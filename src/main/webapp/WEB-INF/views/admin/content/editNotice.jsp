@@ -52,7 +52,7 @@
                                 
                                 <div class="d-flex justify-content-end mb-2">
                                     <a href="#" class="cancle_check btn btn-secondary col-2 mr-2" aria-current="page">수정</a>
-                                    <a href="#" class="btn btn-primary col-2">삭제</a>
+                                    <a href="#" class="btn btn-primary col-2">취소</a>
                                 </div>
                             </form>
                         </div>  
@@ -67,7 +67,7 @@
 
     <!-- 로그아웃 창 -->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <jsp:include page="WEB-INF/views/admin/layout/logout.jsp" />
+        <jsp:include page="/WEB-INF/views/admin/layout/logout.jsp" />
     </div>
     
     <!-- js -->

@@ -1,8 +1,9 @@
 package com.zipchelin.repository.mybatis.mappers;
 
 import com.zipchelin.domain.User;
-import com.zipchelin.model.dto.UserRequestDto;
+import com.zipchelin.model.dto.user.UserRequestDto;
 import com.zipchelin.model.service.UserService;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -31,7 +32,7 @@ class UserMapperTest {
         userService.saveUser(userSave);
         User findUser = userMapper.findById("test123").orElseThrow(() -> new NullPointerException("찾는 유저가 없습니다."));
 
-        assertThat(findUser.getUserName()).isEqualTo("테스트");
+        Assertions.assertThat(findUser.getUserName()).isEqualTo("테스트");
     }
 
     @Test

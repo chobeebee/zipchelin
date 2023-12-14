@@ -1,6 +1,6 @@
 package com.zipchelin.domain;
 
-import com.zipchelin.model.dto.UserResponseDto;
+import com.zipchelin.model.dto.user.UserResponseDto;
 import lombok.*;
 
 import java.time.LocalDateTime;

@@ -11,28 +11,28 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/mypage/*")
 public class MypageController {
 	
-	@GetMapping("/")
-    public String mypage() {
+	@GetMapping
+    public String myPage() {
 		return "mypage/mypage";
 	}
 
 	@GetMapping("/myedit")
-	public String myedit() {
+	public String myEdit() {
 		return "mypage/myedit";
 	}
 
 	@GetMapping("/myheart")
-	public String myheart() {
+	public String myHeart() {
 		return "mypage/myheart";
 	}
 
 	@GetMapping("/mypost")
-	public String mypost() {
+	public String myPost() {
 		return "mypage/mypost";
 	}
 
 	@GetMapping("/myreply")
-	public String myreply() {
+	public String myReply() {
 		return "mypage/myreply";
 	}
 

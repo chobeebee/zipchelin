@@ -39,7 +39,7 @@
 <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/mypage.css">
     
 <!-- plugin CSS -->
-<link rel="stylesheet" href="/front/css/swiper-bundle.min.css">
+<link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.min.css">
 
 <!-- fontawesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
@@ -67,34 +67,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <!--myPage_leftBox-->
         <div class="mypage myPage_leftBox">
-            <!--마이페이지 레프트박스 (프로필이미지, 아이디, 정보수정버튼)-->
-            <div class="myBox_profile">
-                <img src="${contextPath}/resource/images/icon/profile.jpg" class="myProfile_img" alt="profile">
-                <h3 class="userId_text">USER_ID</h3>
-                <button class="myPage_edit_btn" onclick="location.href='mypage_edit.html'">정보수정</button>
-            </div><!--마이페이지 레프트박스 (프로필이미지, 아이디, 정보수정버튼) 끝-->
-
-            <!--마이페이지 레프트박스 (찜, 내글, 내댓글 갯수 & 바로가기)-->
-            <div class="myBox_count">
-                
-                <div class="myBox_countBox myBox_heart">
-                    <span id="myBox_icon" class="material-icons">favorite</span>
-                    <p>찜 <a href="/front/html/mypage/myheart.html">10</a></p>
-                </div>
-
-                <div class="myBox_countBox myBox_post">
-                    <!-- <span id="myBox_icon" class="material-symbols-outlined">density_small</span> -->
-                    <span id="myBox_icon" class="material-symbols-outlined">stylus</span>
-                    <p>내 글 <a href="/front/html/mypage/mypost.html">10</a></p>
-                </div>
-
-                <div class="myBox_countBox myBox_comment">
-                    <!-- <span id="myBox_icon" class="material-symbols-outlined">stylus</span> -->
-                    <span id="myBox_icon" class="material-symbols-outlined">chat</span>
-                    <p>내 댓글 <a href="/front/html/mypage/myreply.html">10</a></p>
-                </div>
-
-            </div><!--마이페이지 레프트박스 (찜, 내글, 내댓글 갯수 & 바로가기) 끝-->
+        	<jsp:include page="/WEB-INF/views/main/mymenu.jsp"/>
         </div>
 
         <!--myPage_Main-->
@@ -109,9 +82,10 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                         <span id="myPage_heart_icon" class="material-icons">favorite</span>
                         <p>찜</p>
                     </div>
-                    <div class="myHeart_btn">
-                        <button class="myPage_more_btn" onclick="location.href='myheart.html'">더보기</button>
+                    <div class="more_btn_box">
+                        <button class="myPage_more_btn" onclick="location.href='${contextPath}/mypage/myheart'">더보기</button>
                     </div>
+                    
                 </div>
 
                 <!--찜 리스트 전체-->
@@ -120,59 +94,60 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                             <li>
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="myPage_heart_img_link imgwrap" href="/front/html/recipe/recipe_detail.html">
-                            <!--찜 레시피 사진-->
+                            	<!--찜 레시피 사진-->
                                 <div class="imgBox vertical">
-                                        <img class="myPage_img" id="mypage_imgs" src="images/미라소세지.png" alt="미라소세지">
+                                        <img class="myPage_img" id="mypage_imgs" src="${contextPath}/resource/images/food/미라소세지.png" alt="미라소세지">
                                 </div>
                                 <!--찜 레시피 제목, 부제목-->
                                 <div class="myPage_text">
-                                        <p class="myPage_heart_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="myPage_heart_title">여기는 제목을 적어주세요.</h3>
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
                                 </div>
                                 </a>
                             </li>
                             <li>
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="myPage_heart_img_link imgwrap" href="/front/html/recipe/recipe_detail.html">
-                            <!--찜 레시피 사진-->
+                            	<!--찜 레시피 사진-->
                                 <div class="imgBox vertical">
-                                        <img class="myPage_img" id="mypage_imgs" src="images/미라소세지.png" alt="미라소세지">
+                                        <img class="myPage_img" id="mypage_imgs" src="${contextPath}/resource/images/food/미라소세지.png" alt="미라소세지">
                                 </div>
                                 <!--찜 레시피 제목, 부제목-->
                                 <div class="myPage_text">
-                                        <p class="myPage_heart_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="myPage_heart_title">여기는 제목을 적어주세요.</h3>
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
                                 </div>
                                 </a>
                             </li>
                             <li>
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="myPage_heart_img_link imgwrap" href="/front/html/recipe/recipe_detail.html">
-                               <!--찜 레시피 사진-->
-                                   <div class="imgBox vertical">
-                                           <img class="myPage_img" id="mypage_imgs" src="images/미라소세지.png" alt="미라소세지">
-                                   </div>
-                                   <!--찜 레시피 제목, 부제목-->
-                                   <div class="myPage_text">
-                                           <p class="myPage_heart_subtitle">여기는 부제목을 적어주세요.</p>
-                                           <h3 class="myPage_heart_title">여기는 제목을 적어주세요.</h3>
-                                   </div>
+                            	<!--찜 레시피 사진-->
+                                <div class="imgBox vertical">
+                                        <img class="myPage_img" id="mypage_imgs" src="${contextPath}/resource/images/food/미라소세지.png" alt="미라소세지">
+                                </div>
+                                <!--찜 레시피 제목, 부제목-->
+                                <div class="myPage_text">
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
+                                </div>
                                 </a>
-                           </li>
-                           <li>
-                            <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
-                            <a class="myPage_heart_img_link imgwrap" href="/front/html/recipe/recipe_detail.html">
-                           <!--찜 레시피 사진-->
-                               <div class="imgBox vertical">
-                                       <img class="myPage_img" id="mypage_imgs" src="images/미라소세지.png" alt="미라소세지">
-                               </div>
-                               <!--찜 레시피 제목, 부제목-->
-                               <div class="myPage_text">
-                                       <p class="myPage_heart_subtitle">여기는 부제목을 적어주세요.</p>
-                                       <h3 class="myPage_heart_title">여기는 제목을 적어주세요.</h3>
-                               </div>
-                            </a>
-                       </li>
+                            </li>
+                            <li>
+                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
+                                <a class="myPage_heart_img_link imgwrap" href="/front/html/recipe/recipe_detail.html">
+                            	<!--찜 레시피 사진-->
+                                <div class="imgBox vertical">
+                                        <img class="myPage_img" id="mypage_imgs" src="${contextPath}/resource/images/food/미라소세지.png" alt="미라소세지">
+                                </div>
+                                <!--찜 레시피 제목, 부제목-->
+                                <div class="myPage_text">
+                                        <p class="mypage_list_subtitle">여기는 부제목을 적어주세요. 여기는 부제목을 적어주세요.</p>
+                                        <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
+                                </div>
+                                </a>
+                            </li>
+                            
                         
                     </ul>
                 </div><!--찜 리스트 전체 끝-->
@@ -188,8 +163,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                         <span id="myBox_icon" class="material-symbols-outlined">stylus</span>
                         <p>내 글</p>
                     </div>
-                    <div class="myHeart_btn">
-                        <button class="myPage_more_btn" onclick="location.href='/front/html/mypage/mypost.html'">더보기</button>
+                    <div class="more_btn_box">
+                        <button class="myPage_more_btn btnBgGray" onclick="location.href='${contextPath}/mypage/mypost'">더보기</button>
                     </div>
                 </div>
 
@@ -200,50 +175,50 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="myPage_post_img_link imgwrap" href="/front/html/community/myrecipe_post.html">
                                     <div class="imgBox vertical">
-                                            <img class="myPage_img" id="mypage_imgs" src="images/단호박스콘.png" alt="단호박스콘">
+                                            <img class="myPage_img" id="mypage_imgs" src="${contextPath}/resource/images/food/단호박스콘.png" alt="단호박스콘">
                                     </div>
                                     <div class="myPage_text">
-                                            <p class="myPage_post_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="myPage_post_title">여기는 제목을 적어주세요.</h3> 
-                                    </div>
+                                           <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                           <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
+                                   </div>
                                 </a>
                             </li>
                             <li>
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="myPage_post_img_link imgwrap" href="/front/html/community/myrecipe_post.html">
                                     <div class="imgBox vertical">
-                                            <img class="myPage_img" id="mypage_imgs" src="images/단호박스콘.png" alt="단호박스콘">
+                                            <img class="myPage_img" id="mypage_imgs" src="${contextPath}/resource/images/food/단호박스콘.png" alt="단호박스콘">
                                     </div>
                                     <div class="myPage_text">
-                                            <p class="myPage_post_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="myPage_post_title">여기는 제목을 적어주세요.</h3> 
-                                    </div>
+                                           <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                           <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
+                                   </div>
                                 </a>
                             </li>
                             <li>
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="myPage_post_img_link imgwrap" href="/front/html/community/myrecipe_post.html">
                                     <div class="imgBox vertical">
-                                            <img class="myPage_img" id="mypage_imgs" src="images/단호박스콘.png" alt="단호박스콘">
+                                            <img class="myPage_img" id="mypage_imgs" src="${contextPath}/resource/images/food/단호박스콘.png" alt="단호박스콘">
                                     </div>
                                     <div class="myPage_text">
-                                            <p class="myPage_post_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="myPage_post_title">여기는 제목을 적어주세요.</h3> 
-                                    </div>
+                                           <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                           <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
+                                   </div>
                                 </a>
                             </li>
                             <li>
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="myPage_post_img_link imgwrap" href="/front/html/community/myrecipe_post.html">
                                     <div class="imgBox vertical">
-                                            <img class="myPage_img" id="mypage_imgs" src="images/단호박스콘.png" alt="단호박스콘">
+                                            <img class="myPage_img" id="mypage_imgs" src="${contextPath}/resource/images/food/단호박스콘.png" alt="단호박스콘">
                                     </div>
                                     <div class="myPage_text">
-                                            <p class="myPage_post_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="myPage_post_title">여기는 제목을 적어주세요.</h3> 
-                                    </div>
+                                           <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
+                                           <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
+                                   </div>
                                 </a>
-                            </li>
+                            </li>     
                     </ul>
                 </div><!--내글 리스트 전체 끝-->
 
@@ -258,8 +233,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                         <span id="myBox_icon" class="material-symbols-outlined">chat</span>
                         <p>내 댓글</p>
                     </div>
-                    <div class="myComment_btn">
-                        <button class="myPage_more_btn" onclick="location.href='/front/html/mypage/myreply.html'">더보기</button>
+                    <div class="more_btn_box">
+                        <button class="myPage_more_btn btnBgGray" onclick="location.href='${contextPath}/mypage/myreply'">더보기</button>
                     </div>
                 </div>
 
@@ -282,7 +257,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                         </ul>
                                 </div>
                                 <div class="imgBox align">
-                                    <img src="/front/images/food/gan.jpg" alt="">
+                                    <img src="${contextPath}/resource/images/food/gan.jpg" alt="">
                                 </div>
                             </a>
                         </li>
@@ -302,7 +277,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                         </ul>
                                 </div>
                                 <div class="imgBox align">
-                                    <img src="/front/images/food/gan.jpg" alt="">
+                                    <img src="${contextPath}/resource/images/food/gan.jpg" alt="">
                                 </div>
                             </a>
                         </li>
@@ -322,7 +297,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                                         </ul>
                                 </div>
                                 <div class="imgBox align">
-                                    <img src="/front/images/food/gan.jpg" alt="">
+                                    <img src="${contextPath}/resource/images/food/gan.jpg" alt="">
                                 </div>
                             </a>
                         </li>

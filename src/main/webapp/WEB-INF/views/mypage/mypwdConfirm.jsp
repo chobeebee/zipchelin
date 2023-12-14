@@ -39,7 +39,7 @@
 <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/mypage.css">
 
 <!-- plugin CSS -->
-<link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.min.css">
+<link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css">
 <title>집슐랭</title>
 </head>
 <body>	

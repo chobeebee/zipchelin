@@ -32,7 +32,7 @@ public class UserMapperMybatis implements UserRepository {
 
     @Override
     public Optional<User> findById(String userId) {
-        return Optional.empty();
+        return userMapper.findById(userId);
     }
 
     @Override

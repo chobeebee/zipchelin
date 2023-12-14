@@ -64,7 +64,7 @@
                                                 <input class="form-check" type="checkbox">
                                             </td>
                                             <td>1</td>
-                                            <td><a href="html/member_view.html">hanbiz</a></td>
+                                            <td><a href="${contextPath}/admin/editmem">hanbiz</a></td>
                                             <td>mollayo!@</td>
                                             <td>이한비</td>
                                             <td>hanbiz@daum.net</td>
@@ -76,7 +76,7 @@
                                                 <input class="form-check" type="checkbox">
                                             </td>
                                             <td>2</td>
-                                            <td><a href="html/member_view.html">winhak</a></td>
+                                            <td><a href="${contextPath}/admin/editmem">winhak</a></td>
                                             <td>wonhee00#</td>
                                             <td>이승학</td>
                                             <td>winhak@daum.net</td>
@@ -88,7 +88,7 @@
                                                 <input class="form-check" type="checkbox">
                                             </td>
                                             <td>3</td>
-                                            <td><a href="html/member_view.html">lovelyouj</a></td>
+                                            <td><a href="${contextPath}/admin/editmem">lovelyouj</a></td>
                                             <td>wonhee00#</td>
                                             <td>장유정</td>
                                             <td>lovelyouj@gmail.com</td>
@@ -100,7 +100,7 @@
                                                 <input class="form-check" type="checkbox">
                                             </td>
                                             <td>4</td>
-                                            <td><a href="html/member_view.html">heehee1</a></td>
+                                            <td><a href="${contextPath}/admin/editmem">heehee1</a></td>
                                             <td>wonhee00#</td>
                                             <td>변희원</td>
                                             <td>heehee1@naver.com</td>
@@ -112,7 +112,7 @@
                                                 <input class="form-check" type="checkbox">
                                             </td>
                                             <td>5</td>
-                                            <td><a href="html/member_view.html">badahae</a></td>
+                                            <td><a href="${contextPath}/admin/editmem">badahae</a></td>
                                             <td>bada111!@</td>
                                             <td>정해지</td>
                                             <td>badahae@gmail.com</td>
@@ -124,7 +124,7 @@
                                                 <input class="form-check" type="checkbox">
                                             </td>
                                             <td>6</td>
-                                            <td><a href="html/member_view.html">subinc</a></td>
+                                            <td><a href="${contextPath}/admin/editmem">subinc</a></td>
                                             <td>subinida</td>
                                             <td>조수빈</td>
                                             <td>subinzzang@daum.net</td>
@@ -136,7 +136,7 @@
                                                 <input class="form-check" type="checkbox">
                                             </td>
                                             <td>7</td>
-                                            <td><a href="html/member_view.html">minseoda</a></td>
+                                            <td><a href="${contextPath}/admin/editmem">minseoda</a></td>
                                             <td>min1234!@</td>
                                             <td>장민서</td>
                                             <td>minseoda@naver.com</td>
@@ -145,6 +145,21 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <nav aria-label="Page navigation">
+                                      <ul class="pagination justify-content-center">
+                                          <li class="page-item">
+                                              <a class="page-link" href="#" aria-label="Previous">
+                                                  <span aria-hidden="true">&laquo;</span>
+                                              </a>
+                                          </li>
+                                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                          <li class="page-item">
+                                              <a class="page-link" href="#" aria-label="Next">
+                                                  <span aria-hidden="true">&raquo;</span>
+                                              </a>
+                                          </li>
+                                      </ul>
+                                </nav>
                             </div>
                         </div>  
                     </div>
@@ -158,7 +173,7 @@
 
     <!-- 로그아웃 창 -->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <jsp:include page="WEB-INF/views/admin/layout/logout.jsp" />
+        <jsp:include page="/WEB-INF/views/admin/layout/logout.jsp" />
     </div>
     
     <!-- js -->

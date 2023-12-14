@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
-	isELIgnored="false"%>
+        isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <%
@@ -33,67 +33,43 @@
             		<jsp:include page="/WEB-INF/views/admin/layout/topnav.jsp" />
             	</nav>
                 <div class="container-fluid">
-                    <h1 class="h3 mb-4 text-gray-800">회원정보</h1>
+                    <h1 class="h3 mb-4 text-gray-800">레시피 수정</h1>
                     <div class="card shadow mb-4 col-lg-8 col-md-12">
                         <div class="card-body">
                             <form method="post" action="">
                                 <div class="form-group row">
-                                    <label for="memId" class="col-sm-2 col-form-label">아이디</label>
+                                    <label for="memId" class="col-sm-2 col-form-label">제목</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="memId" name="id">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="memPwd" class="col-sm-2 col-form-label">비밀번호</label>
+                                    <label for="memPwd" class="col-sm-2 col-form-label">내용</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="memPwd" name="pwd">
+                                        <textarea rows="20" class="form-control" id="memPwd" name="neyoung" ></textarea>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="memName" class="col-sm-2 col-form-label">이름</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="memName" name="name">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="memEmail" class="col-sm-2 col-form-label">Email</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="memEmail" name="email">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">핸드폰번호</label>
-                                    <div class="col">
-                                        <input type="text" class="form-control" placeholder="010" value="010" name="phone">
-                                    </div>
-                                    <div class="col">
-                                        <input type="text" class="form-control" value="1234" name="phone">
-                                    </div>
-                                    <div class="col">
-                                        <input type="text" class="form-control" value="1234" name="phone">
-                                    </div>
-                                </div>
+                                
                                 <div class="d-flex justify-content-end mb-2">
                                     <a href="#" class="cancle_check btn btn-secondary col-2 mr-2" aria-current="page">수정</a>
-                                    <a href="#" class="btn btn-primary col-2">삭제</a>
+                                    <a href="#" class="btn btn-primary col-2">취소</a>
                                 </div>
                             </form>
                         </div>  
                     </div>
                 </div>
             </div>
-            <!-- 푸터 -->
-            <footer id="footer">
+           <footer id="footer">
             	<jsp:include page="/WEB-INF/views/admin/layout/footer.jsp" />
             </footer>
-		</div>
+        </div>
     </div>
 
     <!-- 로그아웃 창 -->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <jsp:include page="/WEB-INF/views/admin/layout/logout.jsp" />
     </div>
-
+    
     <!-- js -->
     <script src="${contextPath}/resource/admin/vendor/jquery/jquery.min.js"></script>
     <script src="${contextPath}/resource/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

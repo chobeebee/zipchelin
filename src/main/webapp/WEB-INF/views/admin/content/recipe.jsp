@@ -80,7 +80,7 @@
                                                 <input class="form-check" type="checkbox" value="">
                                             </td>
                                             <td>1</td>
-                                            <td>제육볶음</td>
+                                            <td><a href="${contextPath}/admin/editrecipe"">제육볶음</a></td>
                                             <td>jangmin</td>
                                             <td>2023.01.01</td>
                                         </tr>
@@ -154,7 +154,7 @@
 
     <!-- 로그아웃 창 -->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <jsp:include page="WEB-INF/views/admin/layout/logout.jsp" />
+        <jsp:include page="/WEB-INF/views/admin/layout/logout.jsp" />
     </div>
 
     <!-- js -->

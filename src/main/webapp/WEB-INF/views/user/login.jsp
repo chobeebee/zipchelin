@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"
     isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <%
 	request.setCharacterEncoding("utf-8");
@@ -49,17 +51,20 @@
     <main>
         <section id="login_section">
             <h1 class="pageTitle">로그인</h1>
-            <form id="login_form" method="post">
+            <form:form modelAttribute="params" id="login_form" method="post">
+                <spring:hasBindErrors name="loginError">
+                    <c:out value="${errors.globalError.defaultMessage}" />
+                </spring:hasBindErrors>
                 <div class="login_input_left login_input_div">
                     <label for="login_id">아이디</label>
-                    <input type="text" id="login_id" name="userId" placeholder="아이디">
-                    <p class="login_warning" id="login_id_warning">아이디가 입력되지 않았습니다.</p>
+                    <form:input path="userId" id="login_id"  placeholder="아이디" />
+                    <form:errors element="p" path="userId" class="login_warning" />
                 </div>
                 <div class="inputField login_input_left login_input_div">
                     <label for="login_password">비밀번호</label>
-                    <input type="password" name="userPwd" id="login_password" placeholder="비밀번호">
+                    <form:password path="userPwd" id="login_password" placeholder="비밀번호" />
                     <span class="pwdToggle material-symbols-outlined">visibility_off</span>
-                    <p class="login_warning" id="login_pwd_warning">비밀번호가 입력되지 않았습니다.</p>
+                    <form:errors element="p" path="userPwd" class="login_warning" />
                 </div>
                 <div class="login_acc">
                     <div class="login_input_div">
@@ -74,7 +79,7 @@
 <%--                    <button class="login_login btnBg" type="button" onclick="login_form_submit()">로그인</button>--%>
                     <button class="login_login btnBg" type="submit">로그인</button>
                 </div>
-            </form>
+            </form:form>
             <div class="login_sns">
                 <h2>소셜 로그인</h2>
                 <div>

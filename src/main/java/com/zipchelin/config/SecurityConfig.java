@@ -39,19 +39,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
+        http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/member/**").permitAll()
+                .anyRequest().permitAll()
+//                .antMatchers("/", "/member/**").permitAll()
 //                .antMatchers("/mypage/**").hasRole("USER")
 //                .antMatchers("/admin/**").hasRole("ADMIN")
 //                .anyRequest().authenticated()
         .and()
                 .formLogin()
                 .loginPage("/member/login")
+                .usernameParameter("memberId")
+                .passwordParameter("memberPwd")
+                .loginProcessingUrl("/member/loginProc")
                 .defaultSuccessUrl("/")
-                .loginProcessingUrl("/member/login-proc")
                 .permitAll()
-                ;
+        ;
     }
 
     @Bean

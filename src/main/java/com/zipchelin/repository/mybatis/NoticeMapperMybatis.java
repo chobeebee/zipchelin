@@ -3,7 +3,11 @@ package com.zipchelin.repository.mybatis;
 import com.zipchelin.domain.Notice;
 import com.zipchelin.repository.NoticeRepository;
 import com.zipchelin.repository.mybatis.mappers.NoticeMapper;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 
+@Repository
+@RequiredArgsConstructor
 public class NoticeMapperMybatis implements NoticeRepository{
 	
 	private final NoticeMapper noticeMapper;

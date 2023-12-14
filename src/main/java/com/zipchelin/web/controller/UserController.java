@@ -1,6 +1,5 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.model.dto.UserLoginDto;
 import com.zipchelin.model.dto.UserRequestDto;
 import com.zipchelin.model.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +22,6 @@ public class UserController {
 
     @GetMapping("/login")
     public String viewLogin() {
-    	
         return "user/login";
     }
 

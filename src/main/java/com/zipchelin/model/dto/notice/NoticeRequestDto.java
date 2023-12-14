@@ -1,4 +1,4 @@
-package com.zipchelin.model.dto.user;
+package com.zipchelin.model.dto.notice;
 
 import java.time.LocalDateTime;
 

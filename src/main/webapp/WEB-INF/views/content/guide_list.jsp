@@ -28,6 +28,11 @@
 
 <!-- google icon CDN -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- basic CSS -->
 <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/reset.css">
@@ -38,7 +43,7 @@
 <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/guide.css">
 
 <!-- plugin CSS -->
-<link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.min.css">
+<link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css">
 <title>집슐랭</title>
 </head>
 <body>
@@ -83,11 +88,11 @@
                 <ul class="list_ul">
                     <li class="list_li">
                         <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href=".\guide_detail.html">
+                        <a class="recipe_link" href="${contextPath}/guide/guide-detail">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource\images\food\gan.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg" alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -99,11 +104,11 @@
                     </li>
                     <li class="list_li">
                         <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href=".\guide_detail.html">
+                        <a class="recipe_link" href="${contextPath}/guide/guide-detail">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource\images\food\sample2.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg" alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -115,11 +120,11 @@
                     </li>
                     <li class="list_li">
                         <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href=".\guide_detail.html">
+                        <a class="recipe_link" href="${contextPath}/guide/guide-detail">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource\images\food\soshige.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg" alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -131,11 +136,11 @@
                     </li>
                     <li class="list_li">
                         <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href=".\guide_detail.html">
+                        <a class="recipe_link" href="${contextPath}/guide/guide-detail">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource\images\food\sam.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sam.jpg" alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -148,11 +153,11 @@
                     <!--4개-->
                     <li class="list_li">
                         <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href=".\guide_detail.html">
+                        <a class="recipe_link" href="${contextPath}/guide/guide-detail">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource\images\food\gan.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg" alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -164,11 +169,11 @@
                     </li>
                     <li class="list_li">
                         <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href=".\guide_detail.html">
+                        <a class="recipe_link" href="${contextPath}/guide/guide-detail">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource\images\food\sample2.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg" alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -180,11 +185,11 @@
                     </li>
                     <li class="list_li">
                         <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href=".\guide_detail.html">
+                        <a class="recipe_link" href="${contextPath}/guide/guide-detail">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource\images\food\soshige.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg" alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -196,11 +201,11 @@
                     </li>
                     <li class="list_li">
                         <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href=".\guide_detail.html">
+                        <a class="recipe_link" href="${contextPath}/guide/guide-detail">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource\images\food\sam.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sam.jpg" alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -213,11 +218,11 @@
                     <!--4개-->
                     <li class="list_li">
                         <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href=".\guide_detail.html">
+                        <a class="recipe_link" href="${contextPath}/guide/guide-detail">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource\images\food\gan.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg" alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -229,11 +234,11 @@
                     </li>
                     <li class="list_li">
                         <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href=".\guide_detail.html">
+                        <a class="recipe_link" href="${contextPath}/guide/guide-detail">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource\images\food\sample2.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg" alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -245,11 +250,11 @@
                     </li>
                     <li class="list_li">
                         <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href=".\guide_detail.html">
+                        <a class="recipe_link" href="${contextPath}/guide/guide-detail">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource\images\food\soshige.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg" alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -261,11 +266,11 @@
                     </li>
                     <li class="list_li">
                         <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href=".\guide_detail.html">
+                        <a class="recipe_link" href="${contextPath}/guide/guide-detail">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource\images\food\sam.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sam.jpg" alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -305,6 +310,6 @@
     <!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="${contextPath}/resource/js/common.js"></script>
-    <script src="${contextPath}/resource/js/guide.js"></script>  
+    <script src="${contextPath}/resource/js/search.js"></script>  
 </body>
 </html>

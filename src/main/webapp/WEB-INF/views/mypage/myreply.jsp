@@ -80,7 +80,7 @@
                                     <h6>모래뿐일 것이다 이상의 꽃이 없으면 쓸쓸한 인간에 남는 것은 영락과 부패 뿐이다 낙원?? 꽃이 없으면 쓸쓸한 인간에 남는 것은 영락과 부패 뿐이다 낙원</h6>
                                     <div class="replyPage">
                                         <strong class="community_menu">요리 상담소</strong><p class="linkTitle">모래뿐일 것이다 이상의 꽃 모래뿐일 것이다 이상의 꽃 모래뿐일 것이다 이상의 꽃 모래뿐일 것이다 이상의 꽃</p><span class="material-symbols-outlined">chevron_right</span>
-                                        <strong class="community_menu">나만의 레시피</strong><p class="linkTitle">모래뿐일 것이다 이상의 꽃</p><span class="material-symbols-outlined">chevron_right</span>
+                                        <!-- <strong class="community_menu">나만의 레시피</strong><p class="linkTitle">모래뿐일 것이다 이상의 꽃</p><span class="material-symbols-outlined">chevron_right</span> -->
                                     </div>
                                 </a>
                             </div>
@@ -110,10 +110,10 @@
     	<jsp:include page="/WEB-INF/views/main/footer.jsp"/>
     </footer> 
     
-    <!--모달 창-->
+    <!--모달 창
     <div>
-    	<jsp:include page="/WEB-INF/views/main/content/modal.jsp"/>
-    </div>
+    	<jsp:include page="/WEB-INF/views/content/modal.jsp"/>
+    </div>-->
 	
 	<!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>

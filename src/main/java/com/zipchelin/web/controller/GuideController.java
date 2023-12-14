@@ -11,11 +11,11 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/guide/*")
 public class GuideController {
 	
-	@GetMapping("/guide-list")
+	@GetMapping("/list")
     public String guide() {
 		return "content/guide/guide_list";
 	}
-	@GetMapping("/guide-detail")
+	@GetMapping("/detail")
 	public String viewGuide() {
 		return "content/guide/guide_detail";
 	}

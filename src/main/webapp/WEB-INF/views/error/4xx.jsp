@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: user
+  User: member
   Date: 2023-12-13
   Time: 오후 10:30
   To change this template use File | Settings | File Templates.

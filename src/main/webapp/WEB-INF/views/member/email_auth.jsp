@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
 
     <!-- page CSS -->
-    <link rel="stylesheet" href="${contextPath}/resource/css/user.css">
+    <link rel="stylesheet" href="${contextPath}/resource/css/member.css">
 
     <!-- plugin CSS -->
     <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css">
@@ -45,28 +45,27 @@
     <!--[if lte IE 8]>
     <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
     <![endif]-->
-    <title>아이디/비밀번호 찾기</title>
+    <title>Document</title>
 </head>
 <body>
 <%-- 헤더 --%>
 <header class="header">
     <jsp:include page="/WEB-INF/views/main/header.jsp"/>
 </header>
-    
-    <div id="finding_box">
-        <img id="finding_img" src="${contextPath}/resource/images/icon/finding.png" alt="">
-        <p class="finding_msg" id="finding_msg_request">요청하신 아이디찾기 결과 입니다.</p>
-        <p class="finding_msg">아이디는 <span id="finding_found_id">(user_id or pwd)</span> 입니다.</p>
-        <a id="finding_go_login" href="${contextPath}/user/login.do" style="color: white;">확인</a>
+    <div id="auth_box">
+        <img id="auth_img" src="${contextPath}/resource/images/icon/finding.png" alt="">
+        <p id="auth_msg_request">이메일로 도착한 인증번호를 입력하세요</p>
+        <form id="auth_form" action="${contextPath}/member/finding.do">
+            <input id="auth_input" name="auth_number" type="text" placeholder="인증번호는 대소문자를 구분합니다.">
+            <p class="auth_warning">인증번호를 입력해주세요</p>
+            <button id="auth_go_login" onclick="email_auth_check()" type="button">확인</button>
+        </form>
     </div>
-
 <!-- 푸터 -->
 <footer id="footer">
     <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
 </footer>
-
-    <!-- js -->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="${contextPath}/resource/js/common.js"></script>
 </body>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="${contextPath}/resource/js/member.js"></script>
 </html>

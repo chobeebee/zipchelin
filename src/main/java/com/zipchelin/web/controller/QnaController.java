@@ -12,17 +12,17 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/qna/*")
 public class QnaController {
 	
-	@GetMapping("")
+	@GetMapping
     public String viewQna() {
         return "content/qna/qna";
     }
 	
-	@GetMapping("/qna_post")
+	@GetMapping("/post")
     public String postQna() {
         return "content/qna/qna_post";
     }
 	
-	@GetMapping("/qna_form")
+	@GetMapping("/form")
     public String formQna() {
         return "content/qna/qna_form";
     }

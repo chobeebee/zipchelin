@@ -13,10 +13,10 @@ import java.util.List;
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor())
-                .order(1)
-                .addPathPatterns("/mypage/**")
-                .excludePathPatterns("/mypage/register");
+//        registry.addInterceptor(new LoginInterceptor())
+//                .order(1);
+//                .addPathPatterns("/mypage/**")
+//                .excludePathPatterns("/mypage/register");
     }
 
     @Override

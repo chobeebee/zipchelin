@@ -10,7 +10,7 @@ import lombok.Getter;
 @Builder
 @AllArgsConstructor
 public class NoticeRequestDto {
-	private String noticeNum;
+	private int noticeNum;
 	private String noticeTitle;
 	private String noticeCont;
 	

@@ -46,7 +46,7 @@ let oEditors = [];
 	});
 	
 /* 버튼 클릭 이벤트 */
-function submitPost(){
+/*function submitPost(){
 ​​​​
 	​​​​oEditors.getById["editorTxt"].exec("UPDATE_CONTENTS_FIELD", []);
 	​​​​//content Text 가져오기
@@ -79,4 +79,4 @@ function submitPost(){
 			​​​​​​​​​​​​}
 		​​​​​​​​});
 	​​​​}
-}
+}*/

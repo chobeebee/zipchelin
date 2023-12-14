@@ -53,8 +53,8 @@
                                 </div>
                                 
                                 <div class="d-flex justify-content-end mb-2">
-                                    <input type="submit" class="cancle_check btn btn-secondary col-2 mr-2" aria-current="page">등록
-                                    <input type="reset" class="btn btn-primary col-2">취소
+                                    <input type="submit" value="등록" class="cancle_check btn btn-secondary mr-2" aria-current="page">
+                                    <input type="reset" value="취소" class="btn btn-primary">
                                 </div>
                             </form>
                         </div>  

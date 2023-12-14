@@ -3,11 +3,6 @@
 
 <mapper namespace="com.zipchelin.repository.mybatis.mappers.UserMapper">
 
-    <sql id="userResponse">
-        select USER_ID, USER_NAME, USER_EMAIL, USER_PHONE, JOIN_DATE, USER_IMG
-        from USER_TBL
-    </sql>
-
     <!-- 멤버 저장 -->
     <insert id="save" parameterType="com.zipchelin.domain.User">
         insert into USER_TBL (
@@ -16,14 +11,12 @@
         values (
         #{userId}, #{userPwd}, #{userName}, #{userEmail}, #{userPhone}
         )
-        <selectKey keyProperty="userName" resultType="string" order="AFTER">
-            select USER_NAME from USER_TBL where USER_ID = #{userId}
-        </selectKey>
     </insert>
 
     <!-- 멤버 조회 -->
     <select id="findById" resultType="com.zipchelin.domain.User" parameterType="string">
-        <include refid="userResponse" />
+        select USER_ID, USER_PWD, USER_NAME, USER_EMAIL, USER_PHONE, JOIN_DATE, USER_IMG
+        from USER_TBL
         where USER_ID = #{userId}
     </select>
 

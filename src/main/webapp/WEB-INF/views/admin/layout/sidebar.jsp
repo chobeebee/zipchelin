@@ -22,7 +22,7 @@
         <div id="colMember" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item active" href="${contextPath}/admin/admin">회원목록</a>
-                <a class="collapse-item active2" href="${contextPath}/admin/delMem">탈퇴회원목록</a>
+                <a class="collapse-item active2" href="${contextPath}/admin/delmem">탈퇴회원목록</a>
             </div>
         </div>
     </li>

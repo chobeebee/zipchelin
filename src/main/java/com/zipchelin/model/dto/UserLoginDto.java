@@ -4,7 +4,6 @@ import com.zipchelin.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
 @Builder
@@ -20,6 +19,4 @@ public class UserLoginDto {
                 .userPwd(userPwd)
                 .build();
     }
-   
-    
 }

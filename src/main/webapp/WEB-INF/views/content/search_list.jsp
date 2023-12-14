@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" isELIgnored="false"%>
+	pageEncoding="UTF-8" 
+	isELIgnored="false"
+	%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <%
@@ -33,16 +35,16 @@ request.setCharacterEncoding("utf-8");
 	rel="stylesheet">
 
 <!-- basic CSS -->
-<link rel="stylesheet" type="text/css" href="../../css/reset.css">
-<link rel="stylesheet" type="text/css" href="../../css/base.css">
-<link rel="stylesheet" type="text/css" href="../../css/common.css">
+<link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/reset.css">
+<link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/base.css">
+<link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
 
 <!-- page CSS -->
-<link rel="stylesheet" href="../../css/guide.css">
-<link rel="stylesheet" href="../../css/search.css">
+<link rel="stylesheet" href="${contextPath}/resource/css/guide.css">
+<link rel="stylesheet" href="${contextPath}/resource/css/search.css">
 
 <!-- plugin CSS -->
-<link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+<link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.min.css">
 
 <!-- fontawesome -->
 <link rel="stylesheet"
@@ -107,11 +109,11 @@ request.setCharacterEncoding("utf-8");
 				<div class="list_container">
 					<ul class="list_ul">
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\recipe\recipe_detail.html">
+							class="recipe_link" href="../recipe/recipe_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\sul.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/sul.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -122,11 +124,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\recipe\recipe_detail.html">
+							class="recipe_link" href="../recipe/recipe_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\sample2.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -137,11 +139,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\recipe\recipe_detail.html">
+							class="recipe_link" href="../recipe/recipe_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\soshige.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -152,11 +154,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\recipe\recipe_detail.html">
+							class="recipe_link" href="../recipe/recipe_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\gan.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -168,11 +170,11 @@ request.setCharacterEncoding("utf-8");
 						</a></li>
 						<!--4개-->
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\recipe\recipe_detail.html">
+							class="recipe_link" href="../recipe/recipe_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\sul.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/sul.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -183,11 +185,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\recipe\recipe_detail.html">
+							class="recipe_link" href="../recipe/recipe_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\sample2.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -198,11 +200,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\recipe\recipe_detail.html">
+							class="recipe_link" href="../recipe/recipe_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\soshige.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -213,11 +215,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\recipe\recipe_detail.html">
+							class="recipe_link" href="../recipe/recipe_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\gan.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -229,11 +231,11 @@ request.setCharacterEncoding("utf-8");
 						</a></li>
 						<!--4개-->
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\recipe\recipe_detail.html">
+							class="recipe_link" href="../recipe/recipe_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\sul.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/sul.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -244,11 +246,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\recipe\recipe_detail.html">
+							class="recipe_link" href="../recipe/recipe_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\sample2.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -259,11 +261,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\recipe\recipe_detail.html">
+							class="recipe_link" href="../recipe/recipe_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\soshige.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -274,11 +276,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\recipe\recipe_detail.html">
+							class="recipe_link" href="../recipe/recipe_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\gan.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -316,11 +318,11 @@ request.setCharacterEncoding("utf-8");
 				<div class="list_container">
 					<ul class="list_ul">
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\guide\guide_detail.html">
+							class="recipe_link" href="../guide/guide_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\gan.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -331,11 +333,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\guide\guide_detail.html">
+							class="recipe_link" href="../guide/guide_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\sample2.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -346,11 +348,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\guide\guide_detail.html">
+							class="recipe_link" href="../guide/guide_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\soshige.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -361,11 +363,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\guide\guide_detail.html">
+							class="recipe_link" href="../guide/guide_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\sam.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/sam.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -377,11 +379,11 @@ request.setCharacterEncoding("utf-8");
 						</a></li>
 						<!--4개-->
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\guide\guide_detail.html">
+							class="recipe_link" href="../guide/guide_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\gan.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -392,11 +394,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\guide\guide_detail.html">
+							class="recipe_link" href="../guide/guide_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\sample2.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -407,11 +409,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\guide\guide_detail.html">
+							class="recipe_link" href="../guide/guide_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\soshige.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -422,11 +424,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\guide\guide_detail.html">
+							class="recipe_link" href="../guide/guide_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\sam.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/sam.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -438,11 +440,11 @@ request.setCharacterEncoding("utf-8");
 						</a></li>
 						<!--4개-->
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\guide\guide_detail.html">
+							class="recipe_link" href="../guide/guide_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\gan.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -453,11 +455,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\guide\guide_detail.html">
+							class="recipe_link" href="../guide/guide_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\sample2.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -468,11 +470,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\guide\guide_detail.html">
+							class="recipe_link" href="../guide/guide_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\soshige.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg"
 												alt="#">
 										</div>
 									</div>
@@ -483,11 +485,11 @@ request.setCharacterEncoding("utf-8");
 								</div>
 						</a></li>
 						<li class="list_li"><i class="fa-regular fa-heart"></i> <a
-							class="recipe_link" href="..\guide\guide_detail.html">
+							class="recipe_link" href="../guide/guide_detail.html">
 								<div class="pic_box">
 									<div class="imgwrap">
 										<div class="imgBox">
-											<img class="recipe_pic" src="..\..\images\food\sam.jpg"
+											<img class="recipe_pic" src="${contextPath}/resource/images/food/sam.jpg"
 												alt="#">
 										</div>
 									</div>

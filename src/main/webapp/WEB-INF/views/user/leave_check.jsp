@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/user.css">
 
     <!-- plugin CSS -->
-    <link rel="stylesheet" href="${contextPath}/front/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="${contextPath}/front/css/swiper-bundle.css">
 
     <title>집슐랭</title>
 </head>

@@ -18,7 +18,7 @@
     </appender>
 
     <!-- logger : log의 출력 level을 설정, 첫번째 logger name은 src>main>java 디렉토리의 패키지 경로 -->
-    <logger name="going" level="DEBUG" appender-ref="console-infolog"/>
+    <logger name="com.zipchelin" level="DEBUG" appender-ref="console-infolog"/>
     <logger name="jdbc.sqlonly" level="INFO" appender-ref="console-infolog"/>
 
     <!-- sql 쿼리문을 표 형식으로 콘솔에 출력 -->

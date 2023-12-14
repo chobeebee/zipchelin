@@ -42,7 +42,7 @@
     <link rel="stylesheet" type="text/css" href="/front/css/mypage.css">
 
     <!-- plugin CSS -->
-    <link rel="stylesheet" href="/front/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/front/css/swiper-bundle.css">
 
     <!--[if IE 9]>
     <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">

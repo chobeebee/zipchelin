@@ -4,7 +4,11 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <div class="headerContainer">
+
     <a class="logo" href="/">
+
+    <a class="logo" href="${contextPath}/">
+
         <img src="${contextPath}/resource/images/logo/logo.png" />
     </a>
     <div class="menu">
@@ -27,7 +31,16 @@
         <a class="iconBox" href="/front/html/search/searching_list.html">
             <span class="material-symbols-outlined">search</span>
         </a>
-        <a href="${contextPath}/user/login.do">로그인</a>
-        <a href="${contextPath}/user/sign_up.do">회원가입</a>
+        <%-- 비로그인 사용자 --%>
+        <c:if test="${sessionScope.loginUser == null}">
+            <a href="${contextPath}/user/login">로그인</a>
+            <a href="${contextPath}/user/sign-up">회원가입</a>
+        </c:if>
+
+        <%-- 로그인 사용자 --%>
+        <c:if test="${sessionScope.loginUser != null}">
+            <a href="${contextPath}/user/logout" onclick="loginHref()">로그아웃</a>
+            <a href="#">아무거나</a>
+        </c:if>
     </div>
 </div>

@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"
     isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <%
 	request.setCharacterEncoding("utf-8");
@@ -29,7 +31,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     
     <!-- basic CSS -->
- 
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/reset.css">
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/base.css">
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
@@ -38,7 +39,7 @@
     <link rel="stylesheet" type="text/css"  href="${contextPath}/resource/css/user.css">
     
     <!-- plugin CSS -->
-    <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css">
 
     <title>로그인</title>
 </head>
@@ -50,17 +51,20 @@
     <main>
         <section id="login_section">
             <h1 class="pageTitle">로그인</h1>
-            <form id="login_form" action="#">
+            <form:form modelAttribute="params" id="login_form" method="post">
+                <spring:hasBindErrors name="loginError">
+                    <c:out value="${errors.globalError.defaultMessage}" />
+                </spring:hasBindErrors>
                 <div class="login_input_left login_input_div">
                     <label for="login_id">아이디</label>
-                    <input type="text" id="login_id" name="id" placeholder="아이디">
-                    <p class="login_warning" id="login_id_warning">아이디가 입력되지 않았습니다.</p>
+                    <form:input path="userId" id="login_id"  placeholder="아이디" />
+                    <form:errors element="p" path="userId" class="login_warning" />
                 </div>
                 <div class="inputField login_input_left login_input_div">
                     <label for="login_password">비밀번호</label>
-                    <input type="password" name="login_password" id="login_password" placeholder="비밀번호">
+                    <form:password path="userPwd" id="login_password" placeholder="비밀번호" />
                     <span class="pwdToggle material-symbols-outlined">visibility_off</span>
-                    <p class="login_warning" id="login_pwd_warning">비밀번호가 입력되지 않았습니다.</p>
+                    <form:errors element="p" path="userPwd" class="login_warning" />
                 </div>
                 <div class="login_acc">
                     <div class="login_input_div">
@@ -72,9 +76,10 @@
                     </div>
                 </div>
                 <div>
-                    <button class="login_login btnBg" type="button" onclick="login_form_submit()">로그인</button>
+<%--                    <button class="login_login btnBg" type="button" onclick="login_form_submit()">로그인</button>--%>
+                    <button class="login_login btnBg" type="submit">로그인</button>
                 </div>
-            </form>
+            </form:form>
             <div class="login_sns">
                 <h2>소셜 로그인</h2>
                 <div>
@@ -85,22 +90,51 @@
             </div>
         </section>
     </main>
-    
+
     <!-- 푸터 -->
-    
-    <div id="login_fail">
-        <div id="login_fail_box">
-            <p id="login_fail_msg">해당하는 아이디가 없거나 비밀번호가 틀렸습니다.</p>
-            <button id="login_fail_out" type="button" onclick="login_fail_get_out()">확인</button>
-        </div>
-    </div>
-<!-- 푸터 -->
-<footer id="footer">
-    <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
-</footer>
+    <footer id="footer">
+        <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+    </footer>
+
     <!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="${contextPath}/resource/js/common.js"></script>
     <script src="${contextPath}/resource/js/user.js"></script>
+<%--<div id="login_fail">--%>
+<%--    <div id="login_fail_box">--%>
+<%--        <p id="login_fail_msg">해당하는 아이디가 없거나 비밀번호가 틀렸습니다.</p>--%>
+<%--        <button id="login_fail_out" type="button" onClick="login_fail_get_out()">확인</button>--%>
+<%--    </div>--%>
+<%--</div>--%>
+<%--    <script>--%>
+<%--        function submitCheck() {--%>
+<%--            let userId  = $('#login_id' ).val() ;--%>
+<%--            let userPwd = $('#login_password').val() ;--%>
+
+<%--            const params = {--%>
+<%--                userId: userId,--%>
+<%--                userPwd: userPwd--%>
+<%--            }--%>
+
+<%--            $.ajax({--%>
+<%--                url: '/user/login',--%>
+<%--                type : "POST",--%>
+<%--                contentType: 'application/json; charset=utf-8',--%>
+<%--                dataType: 'json',--%>
+<%--                data: JSON.stringify(params),--%>
+<%--                async: false,--%>
+
+<%--                success: function(response) {--%>
+<%--                    if(JSON.stringify(response) === 'loginError') {--%>
+<%--                        alert('아이디 또는 비밀번호 오류입니다.');--%>
+<%--                    }--%>
+<%--                    location.href = '/';--%>
+<%--                },--%>
+<%--                error: function (request, error) {--%>
+<%--                    console.log(error);--%>
+<%--                }--%>
+<%--            });--%>
+<%--        }--%>
+<%--    </script>--%>
 </body>
 </html>

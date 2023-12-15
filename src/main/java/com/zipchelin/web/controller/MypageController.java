@@ -1,5 +1,7 @@
 package com.zipchelin.web.controller;
 
+import java.time.LocalDateTime;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartRequest;
 
 import com.zipchelin.model.dto.member.MemberRequestDto;
+import com.zipchelin.model.dto.member.MemberResponseDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -26,7 +29,16 @@ public class MypageController {
 	}
 
 	@GetMapping("/myedit")
-	public String myEdit() {
+	public String myEdit(HttpServletRequest request) {
+		//추후 수정(유저 정보를 받아 dto에 삽입)
+		String memberId=null;
+	    String memberName=null;
+	    String memberEmail=null;
+	    String memberPhone=null;
+	    LocalDateTime joinDate=null;
+	    String memberImg=null;
+		MemberResponseDto dto=new MemberResponseDto(memberId,memberName,memberEmail,memberPhone,joinDate,memberImg);
+		request.setAttribute("member", dto);
 		return "mypage/myedit";
 	}
 
@@ -64,8 +76,6 @@ public class MypageController {
 		}
 		return next;
 	}
-	
-	//기존 정보 출력
 	
 	//정보 수정
 	@PostMapping("/edit")

@@ -19,4 +19,5 @@ public class RecipeController {
 	public String viewRecipe() {
 		return "content/recipe/recipe_detail";
 	}
+
 }

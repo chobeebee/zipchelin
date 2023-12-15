@@ -19,7 +19,7 @@ public class NoticeMapperMybatis implements NoticeRepository{
 	}
 
 	@Override
-	public void selectNotice(Notice notice) {
+	public int selectNotice(Notice notice) {
 			
 	}
 

@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
 
     <!-- page CSS -->
-    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/user.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/member.css">
 
     <!-- plugin CSS -->
     <link rel="stylesheet" href="${contextPath}/front/css/swiper-bundle.css">
@@ -106,8 +106,8 @@
                 </ul>
             </section>
             <div class="btnGroup lg">
-                <button type="button" class="btnBd" onclick="location.href='${contextPath}/user/index.do'">취소</button>
-                <button type="button" class="btnBg" onclick="location.href='${contextPath}/user/leave_done.do'">탈퇴</button>
+                <button type="button" class="btnBd" onclick="location.href='${contextPath}/member/index.do'">취소</button>
+                <button type="button" class="btnBg" onclick="location.href='${contextPath}/member/leave_done.do'">탈퇴</button>
             </div>
         </div>
     </main>

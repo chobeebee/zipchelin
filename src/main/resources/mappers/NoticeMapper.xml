@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zipchelin.repository.mybatis.mappers.NoticeMapper">
+
+    <!-- 멤버 저장 -->
+    <insert id="save" parameterType="com.zipchelin.domain.Member">
+        insert into member_TBL (
+        member_ID, member_PWD, member_NAME, member_EMAIL, member_PHONE
+        )
+        values (
+        #{memberId}, #{memberPwd}, #{memberName}, #{memberEmail}, #{memberPhone}
+        )
+    </insert>
+
+    <!-- 멤버 조회 -->
+    <select id="findById" resultType="com.zipchelin.domain.Member" parameterType="string">
+        select member_ID, member_PWD, member_NAME, member_EMAIL, member_PHONE, JOIN_DATE, member_IMG, MEMBER_ROLE
+        from member_TBL
+        where member_ID = #{memberId}
+    </select>
+
+    <!-- 멤버 수정 -->
+    <update id="update" parameterType="com.zipchelin.domain.Member">
+        update member_TBL
+        set member_pwd   = #{memberPwd},
+            member_email = #{memberEmail},
+            member_phone = #{memberPhone},
+            member_img   = #{memberImg}
+        where member_ID = #{memberId}
+    </update>
+
+    <!-- 멤버 삭제 -->
+    <delete id="deleteById" parameterType="String">
+        delete
+        from member_TBL
+        where member_ID = #{memberId}
+    </delete>
+
+    <!-- 중복 체크 -->
+    <select id="countById" parameterType="string" resultType="int">
+
+    </select>
+</mapper>

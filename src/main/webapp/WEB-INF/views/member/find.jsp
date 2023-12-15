@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
 
     <!-- page CSS -->
-	<link rel="stylesheet" type="text/css"  href="${contextPath}/resource/css/user.css">
+	<link rel="stylesheet" type="text/css"  href="${contextPath}/resource/css/member.css">
 	
     <!-- plugin CSS -->
     <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css">
@@ -105,6 +105,6 @@
     <!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="${contextPath}/resource/js/common.js"></script>
-    <script src="${contextPath}/resource/js/user.js"></script>
+    <script src="${contextPath}/resource/js/member.js"></script>
 </body>
 </html>

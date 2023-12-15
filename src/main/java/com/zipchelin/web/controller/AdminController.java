@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin/*")
 public class AdminController {
 	
-	@GetMapping("/admin")
+	@GetMapping
     public String admin() {
 		return "admin/admin";
 	}
@@ -28,6 +28,11 @@ public class AdminController {
 	@GetMapping("/notice")
     public String notice() {
 		return "admin/content/notice";
+	}
+	
+	@GetMapping("/addnotice")
+    public String addNotice() {
+		return "admin/content/addNotice";
 	}
 	
 	@GetMapping("/editnotice")

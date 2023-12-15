@@ -95,7 +95,7 @@
 
             <div class="comment-section">
                 <div class="commentwrite-box disabled">
-                    <a href="/front/html/user/login.html" class="login-link">로그인</a> 후 댓글을 남겨보세요.
+                    <a href="/front/html/member/login.html" class="login-link">로그인</a> 후 댓글을 남겨보세요.
                 </div>
             </div>
             <!-- 로그인 후 댓글입력창 보이기

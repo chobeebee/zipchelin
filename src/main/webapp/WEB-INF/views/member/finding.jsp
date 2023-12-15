@@ -34,40 +34,39 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
 
     <!-- page CSS -->
-    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/user.css">
+    <link rel="stylesheet" href="${contextPath}/resource/css/member.css">
 
     <!-- plugin CSS -->
-    <link rel="stylesheet" href="${contextPath}/front/css/swiper-bundle.css">
+    <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css">
 
-    <title>집슐랭</title>
+    <!--[if IE 9]>
+    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
+    <![endif]-->
+    <title>아이디/비밀번호 찾기</title>
 </head>
 <body>
-    <!--헤더 -->
-    <header class="header">
-    	<jsp:include page="/WEB-INF/views/main/header.jsp"/>
-    </header>
+<%-- 헤더 --%>
+<header class="header">
+    <jsp:include page="/WEB-INF/views/main/header.jsp"/>
+</header>
     
-    <main class="w1080">
-        <h3 class="pageTitle">회원탈퇴</h3>
-        <div class="leaveDoneWrap">
-            <div class="leaveSec">
-                <h6>집슐랭 회원 탈퇴가 완료되었습니다.</h6>
-                <p>그동안 집슐랭을 이용해주셔서 감사합니다.<br>더 나은 서비스를 제공할 수 있도록 노력하겠습니다.</p>
-            </div>
-            <div class="btnGroup lg">
-                <button type="button" class="btnBg" onclick="location.href='${contextPath}/user/index.do'">확인</button>
-            </div>
-        </div>
-    </main>
-    
-    <!-- 푸터 -->
-    <footer id="footer">
-    	<jsp:include page="/WEB-INF/views/main/footer.jsp"/>
-    </footer> 
-    
+    <div id="finding_box">
+        <img id="finding_img" src="${contextPath}/resource/images/icon/finding.png" alt="">
+        <p class="finding_msg" id="finding_msg_request">요청하신 아이디찾기 결과 입니다.</p>
+        <p class="finding_msg">아이디는 <span id="finding_found_id">(user_id or pwd)</span> 입니다.</p>
+        <a id="finding_go_login" href="${contextPath}/member/login.do" style="color: white;">확인</a>
+    </div>
+
+<!-- 푸터 -->
+<footer id="footer">
+    <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+</footer>
+
     <!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="${contextPath}/resource/js/common.js"></script>
-    <script src="${contextPath}/resource/js/notice.js"></script>
 </body>
 </html>

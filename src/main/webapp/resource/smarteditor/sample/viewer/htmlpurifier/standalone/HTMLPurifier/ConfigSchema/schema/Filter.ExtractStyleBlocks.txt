@@ -58,7 +58,7 @@ EXTERNAL: CSSTidy
 </html>
 ]]></pre>
 <p>
-  <strong>Warning:</strong> It is possible for a user to mount an
+  <strong>Warning:</strong> It is possible for a member to mount an
   imagecrash attack using this CSS. Counter-measures are difficult;
   it is not simply enough to limit the range of CSS lengths (using
   relative lengths with many nesting levels allows for large values

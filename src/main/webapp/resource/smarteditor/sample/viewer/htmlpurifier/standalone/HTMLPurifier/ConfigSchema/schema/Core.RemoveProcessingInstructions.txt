@@ -6,6 +6,6 @@ DEFAULT: false
 Instead of escaping processing instructions in the form <code>&lt;? ...
 ?&gt;</code>, remove it out-right.  This may be useful if the HTML
 you are validating contains XML processing instruction gunk, however,
-it can also be user-unfriendly for people attempting to post PHP
+it can also be member-unfriendly for people attempting to post PHP
 snippets.
 --# vim: et sw=4 sts=4

@@ -51,20 +51,17 @@
     <main>
         <section id="login_section">
             <h1 class="pageTitle">로그인</h1>
-            <form:form modelAttribute="params" id="login_form" method="post">
-                <spring:hasBindErrors name="loginError">
-                    <c:out value="${errors.globalError.defaultMessage}" />
-                </spring:hasBindErrors>
+            <form id="login_form" method="post" action="${contextPath}/member/loginProc">
                 <div class="login_input_left login_input_div">
                     <label for="login_id">아이디</label>
-                    <form:input path="userId" id="login_id"  placeholder="아이디" />
-                    <form:errors element="p" path="userId" class="login_warning" />
+                    <input name="memberId" id="login_id" placeholder="아이디" />
+<%--                    <form:errors element="p" path="memberId" class="login_warning" />--%>
                 </div>
                 <div class="inputField login_input_left login_input_div">
                     <label for="login_password">비밀번호</label>
-                    <form:password path="userPwd" id="login_password" placeholder="비밀번호" />
+                    <input type="password" name="memberPwd" id="login_password" placeholder="비밀번호" />
                     <span class="pwdToggle material-symbols-outlined">visibility_off</span>
-                    <form:errors element="p" path="userPwd" class="login_warning" />
+<%--                    <form:errors element="p" path="memberPwd" class="login_warning" />--%>
                 </div>
                 <div class="login_acc">
                     <div class="login_input_div">
@@ -72,14 +69,14 @@
                         <label for="login_id_save" class="small">아이디 저장</label>
                     </div>
                     <div class="login_input_div">
-                        <a href="${contextPath}/test/user/find" class="login_find">아이디/비밀번호 찾기</a>
+                        <a href="${contextPath}/test/member/find" class="login_find">아이디/비밀번호 찾기</a>
                     </div>
                 </div>
                 <div>
 <%--                    <button class="login_login btnBg" type="button" onclick="login_form_submit()">로그인</button>--%>
                     <button class="login_login btnBg" type="submit">로그인</button>
                 </div>
-            </form:form>
+            </form>
             <div class="login_sns">
                 <h2>소셜 로그인</h2>
                 <div>
@@ -108,16 +105,16 @@
 <%--</div>--%>
 <%--    <script>--%>
 <%--        function submitCheck() {--%>
-<%--            let userId  = $('#login_id' ).val() ;--%>
-<%--            let userPwd = $('#login_password').val() ;--%>
+<%--            let memberId  = $('#login_id' ).val() ;--%>
+<%--            let memberPwd = $('#login_password').val() ;--%>
 
 <%--            const params = {--%>
-<%--                userId: userId,--%>
-<%--                userPwd: userPwd--%>
+<%--                memberId: memberId,--%>
+<%--                memberPwd: memberPwd--%>
 <%--            }--%>
 
 <%--            $.ajax({--%>
-<%--                url: '/user/login',--%>
+<%--                url: '/member/login',--%>
 <%--                type : "POST",--%>
 <%--                contentType: 'application/json; charset=utf-8',--%>
 <%--                dataType: 'json',--%>

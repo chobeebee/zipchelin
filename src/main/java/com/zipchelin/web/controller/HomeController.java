@@ -14,8 +14,4 @@ public class HomeController {
 		return "index";
 	}
 
-	@GetMapping("/search")
-	public String search() {
-		return "content/search/search_list";
-	}
 }

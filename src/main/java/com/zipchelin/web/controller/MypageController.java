@@ -70,13 +70,18 @@ public class MypageController {
 	@PostMapping("/pwdCheck")
 	public String pwdCheck(@RequestParam("pwdCheck") String pwd, HttpServletRequest request) {
 		String next=null;
-		//추후 수정(유저정보 위치불명)
-		String userPwd=(String) request.getSession().getAttribute("user_pwd");
-		if(userPwd==pwd) {
+		String id=(String)request.getSession().getAttribute("user_id");
+		
+		//추후 수정(유저 아이디와 비밀번호를 가져가 일치를 확인)
+		String confirm="true";
+		
+		if(confirm=="true") {
 			next="mypage/myedit";
-		}else if(userPwd!=pwd) {
+			
+		}else if(confirm!="true") {
 			//추후 수정(비밀번호 불일치 에러구현)
 			next="mypage/mypwdConfirm";
+			
 		}
 		return next;
 	}

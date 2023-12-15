@@ -25,11 +25,6 @@
     <link rel="shortcut icon" type="text/css" href="">
     <link rel="icon"  type="text/css" href="">
 
-
-    <!-- myrecipelist CSS -->
-
-    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/community.css">
-
     <!-- google icon CDN -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     
@@ -52,7 +47,9 @@
     <!--[if lte IE 8]>
     <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
     <![endif]-->
-
+    
+    <!-- myrecipelist CSS -->
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/community.css">
 
 <title>요리 상담소 작성폼</title>
 </head>
@@ -145,11 +142,11 @@
         </section>
     </main>
 
-    <!-- 푸터 -->
+    <!— 푸터 —>
     <footer id="footer"></footer>
 >>>>>>> branch 'main' of https://github.com/na1011/zipchelin.git
 
-    <!-- js -->
+    <!— js —>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="${contextPath}/resource/js/common.js"></script>
     <script src="${contextPath}/resource/js/community.js"></script>

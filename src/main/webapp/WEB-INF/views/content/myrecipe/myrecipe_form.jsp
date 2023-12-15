@@ -25,23 +25,19 @@
     <link rel="shortcut icon" type="text/css" href="">
     <link rel="icon"  type="text/css" href="">
 
-
-    <!-- myrecipelist CSS -->
-    <link rel="stylesheet" type="text/css" href="/front/css/community.css">
-
     <!-- google icon CDN -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     
     <!-- basic CSS -->
-    <link rel="stylesheet" type="text/css" href="/front/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/front/css/base.css">
-    <link rel="stylesheet" type="text/css" href="/front/css/common.css">
-
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
+    
     <!-- plugin CSS -->
     <link rel="stylesheet" href="/front/css/swiper-bundle.css">
 
 	<!-- 게시판 에디터 -->
-	<script type="text/javascript" src="../resources/static/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
+	<script type="text/javascript" src="${contextPath}/resource/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
 	
     <!--[if lt IE 9]>
     <script type="text/javascript" src="/assets/front/js/html5shiv.js"></script>
@@ -54,30 +50,36 @@
     <!--[if lte IE 8]>
     <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
     <![endif]-->
-
+    
+    <!-- page CSS -->
+    <link rel="stylesheet" type="text/css" href="${contextPath}/css/community.css">
 
 <title>나만의 레시피 작성폼</title>
 </head>
 <body>
     <!-- 헤더 -->
-    <header class="header"></header>
+    <header class="header">
+		<jsp:include page="/WEB-INF/views/main/header.jsp"/>
+	</header>
+
     
     <!-- 메인 -->
     <main>
         <section class="form-list">
             <h1 class="best-title">나만의 레시피</h1>
-            <div>
+           		<div>
                 <div class="information informationBox">
                     <h2 class="form-title">제목</h2>
                     <p><input class="formBox" id="formBox" placeholder="제목을 입력해주세요"></p>
                 </div>
                 <div class="information">
-                    <h2 class="form-title">내용</h1>
-                    <textarea name="form-content" class="form-content" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
+                    <h2 class="form-title">내용</h2>
+                    <textarea name="form-content" id="form-content" class="form-content" cols="10" rows="20" placeholder="내용을 입력해주세요"></textarea>
                 </div>
             </div>
             
             <div class="btnGroup lg form" >
+            	<input type="submit" value="전송" onclick="submitPost();">
                 <button onclick="location.href='myrecipe.html'" class="btnBgGray form" class="btn_cancel">취소</button>
                 <button onclick="location.href='myrecipe.html'" class="btnBg" class="btn_upload">올리기</button>
             </div>
@@ -86,9 +88,11 @@
     </main>
 
     <!-- 푸터 -->
-    <footer id="footer"></footer>
+    <footer id="footer">
+		<jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+	</footer>
 
-    <!-- js -->
+    <!— js —>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="${contextPath}/resource/js/common.js"></script>
     <script src="${contextPath}/resource/js/community.js"></script>

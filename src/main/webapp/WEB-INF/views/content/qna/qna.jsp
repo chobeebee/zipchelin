@@ -34,9 +34,6 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/base.css">
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
 
-    <!-- page CSS -->
-    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/index.css">
-
     <!-- plugin CSS -->
     <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css">
 
@@ -53,8 +50,8 @@
     <![endif]-->
 
     <!-- myrecipelist CSS -->
-    <!-- <link rel="stylesheet" type="text/css" href="/front/css/community.css"> -->
-    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/qna_temp.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/community.css">
+    <!-- <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/qna_temp.css"> -->
 
 <title>요리 상담소 리스트</title>
 </head>
@@ -520,11 +517,10 @@
         </section>
     </main>
 
-    <!-- 푸터 -->
+    <!— 푸터 —>
     <footer id="footer"></footer>
->>>>>>> branch 'main' of https://github.com/na1011/zipchelin.git
 
-    <!-- js -->
+    <!— js —>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="${contextPath}/resource/js/common.js"></script>
     <script src="${contextPath}/resource/js/community.js"></script>

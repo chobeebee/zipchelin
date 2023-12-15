@@ -52,7 +52,7 @@
     <![endif]-->
     
     <!-- page CSS -->
-    <link rel="stylesheet" type="text/css" href="${contextPath}/css/community.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/community.css">
 
 <title>나만의 레시피 작성폼</title>
 </head>

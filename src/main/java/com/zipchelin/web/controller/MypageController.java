@@ -1,6 +1,7 @@
 package com.zipchelin.web.controller;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -48,7 +49,10 @@ public class MypageController {
 	}
 
 	@GetMapping("/mypost")
-	public String myPost() {
+	public String myPost(HttpServletRequest request) {
+		//추후 수정(쓴 글 리스트를 받아 바인딩)
+		List list=null;
+		request.setAttribute("postList", list);
 		return "mypage/mypost";
 	}
 
@@ -66,7 +70,7 @@ public class MypageController {
 	@PostMapping("/pwdCheck")
 	public String pwdCheck(@RequestParam("pwdCheck") String pwd, HttpServletRequest request) {
 		String next=null;
-		//cn후 수정(유저정보 위치불명)
+		//추후 수정(유저정보 위치불명)
 		String userPwd=(String) request.getSession().getAttribute("user_pwd");
 		if(userPwd==pwd) {
 			next="mypage/myedit";

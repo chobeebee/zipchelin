@@ -118,7 +118,7 @@
 
             <h3>개인정보 수정</h3>
 
-            <form id="edit_form" action="" method="">
+            <form id="edit_form" action="" method="post">
 
                 <!--프로필사진 수정-->
                 <div class="profile_section">
@@ -134,7 +134,7 @@
                     <div class="edit_form_item">
                         <label for="id" class="edit_label">아이디</label>
                         <div class="edit_info_input">
-                            <input type="text" id="id" class="edit_input edit_input2" name="id" placeholder="USER_ID" disabled>
+                            <input type="text" id="id" class="edit_input edit_input2" name="id" placeholder="USER_ID" readonly>
                         </div>
                     </div>
                 </div>
@@ -154,7 +154,7 @@
                 <div class="edit_form_item">
                     <label for="pwd" class="edit_label">새 비밀번호 확인</label>
                     <div class="inputField edit_info_input">
-                        <input type="password" id="check_pwd" class="edit_input edit_input2" name="pwd" placeholder="특수문자/영문자/숫자 포함 8~15자">
+                        <input type="password" id="check_pwd" class="edit_input edit_input2" name="pwdCheck" placeholder="특수문자/영문자/숫자 포함 8~15자">
                         <span class="edit_pwdToggle pwdToggle material-symbols-outlined">visibility_off</span>
                             <p class="edit_warning" id="edit_warning_pwd_check">비밀번호가 일치하지 않습니다.</p>
                     </div>

@@ -10,7 +10,7 @@ public interface NoticeRepository {
 
 	List<Notice> selectAll();
 	
-	void selectNotice(Notice notice);
+	int selectNotice(Notice notice);
 
     void delNotice(int noticeNum);
 

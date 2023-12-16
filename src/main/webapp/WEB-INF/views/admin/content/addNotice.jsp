@@ -36,7 +36,7 @@
                     <h1 class="h3 mb-4 text-gray-800">공지사항 등록</h1>
                     <div class="card shadow mb-4 col-lg-8 col-md-12">
                         <div class="card-body">
-                            <form method="post" action="">
+                            <form method="post" action="notice">
                                 <div class="form-group row">
                                     <label for="noticeTitle" class="col-sm-2 col-form-label">제목</label>
                                     <div class="col-sm-10">
@@ -46,7 +46,7 @@
                                 <div class="form-group row">
                                     <label for="noticeContent" class="col-sm-2 col-form-label">내용</label>
                                     <div class="col-sm-10">
-                                        <textarea rows="20" cols="10" class="form-control" id="editorTxt" name="editorTxt">
+                                        <textarea rows="20" cols="10" class="form-control" id="noticeCont" name="noticeCont">
                                         	
                                         </textarea>
                                     </div>

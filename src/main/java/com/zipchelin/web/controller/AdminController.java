@@ -2,8 +2,14 @@ package com.zipchelin.web.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.zipchelin.model.dto.notice.NoticeRequestDto;
 
 @Controller
 @RequiredArgsConstructor
@@ -31,8 +37,15 @@ public class AdminController {
 	}
 	
 	@GetMapping("/addnotice")
-    public String addNotice() {
+    public String viewAddNotice(@ModelAttribute("params") NoticeRequestDto params) {
+		
 		return "admin/content/addNotice";
+	}
+	
+	@PostMapping("/addnotice")
+    public String addNotice() {
+		
+		return "admin/content/notice";
 	}
 	
 	@GetMapping("/editnotice")

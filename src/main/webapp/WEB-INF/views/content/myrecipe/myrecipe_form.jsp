@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <%
-	request.setCharacterEncoding("utf-8");
+   request.setCharacterEncoding("utf-8");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -32,42 +32,26 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/reset.css">
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/base.css">
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
-    
-    <!-- plugin CSS -->
-    <link rel="stylesheet" href="/front/css/swiper-bundle.css">
 
-	<!-- 게시판 에디터 -->
-	<script type="text/javascript" src="${contextPath}/resource/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
-	
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="/assets/front/js/html5shiv.js"></script>
-    <script type="text/javascript" src="/assets/front/js/respond.min.js"></script>
-    <script type="text/javascript" src="/assets/front/js/IE9.js"></script>
-    <![endif]-->
-    <!--[if IE 9]>
-    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
-    <![endif]-->
-    <!--[if lte IE 8]>
-    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
-    <![endif]-->
+   <!-- 게시판 에디터 -->
+   <script type="text/javascript" src="${contextPath}/resource/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
     
     <!-- page CSS -->
-    <link rel="stylesheet" type="text/css" href="${contextPath}/css/community.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/community.css">
 
 <title>나만의 레시피 작성폼</title>
 </head>
 <body>
     <!-- 헤더 -->
     <header class="header">
-		<jsp:include page="/WEB-INF/views/main/header.jsp"/>
-	</header>
+      <jsp:include page="/WEB-INF/views/main/header.jsp"/>
+   </header>
 
-    
     <!-- 메인 -->
     <main>
         <section class="form-list">
             <h1 class="best-title">나만의 레시피</h1>
-           		<div>
+                 <div>
                 <div class="information informationBox">
                     <h2 class="form-title">제목</h2>
                     <p><input class="formBox" id="formBox" placeholder="제목을 입력해주세요"></p>
@@ -79,7 +63,7 @@
             </div>
             
             <div class="btnGroup lg form" >
-            	<input type="submit" value="전송" onclick="submitPost();">
+               <input type="submit" value="전송" onclick="submitPost();">
                 <button onclick="location.href='myrecipe.html'" class="btnBgGray form" class="btn_cancel">취소</button>
                 <button onclick="location.href='myrecipe.html'" class="btnBg" class="btn_upload">올리기</button>
             </div>
@@ -89,10 +73,10 @@
 
     <!-- 푸터 -->
     <footer id="footer">
-		<jsp:include page="/WEB-INF/views/main/footer.jsp"/>
-	</footer>
+      <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+   </footer>
 
-    <!— js —>
+    <!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="${contextPath}/resource/js/common.js"></script>
     <script src="${contextPath}/resource/js/community.js"></script>

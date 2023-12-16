@@ -3,21 +3,17 @@
 
 <mapper namespace="com.zipchelin.repository.mybatis.mappers.NoticeMapper">
 
-    <!-- 멤버 저장
-    <insert id="save" parameterType="com.zipchelin.domain.Member">
-        insert into member_TBL (
-        member_ID, member_PWD, member_NAME, member_EMAIL, member_PHONE
-        )
-        values (
-        #{memberId}, #{memberPwd}, #{memberName}, #{memberEmail}, #{memberPhone}
-        )
-    </insert> -->
+     <!-- 공지사항 추가 -->
+    <insert id="addNotice" parameterType="com.zipchelin.domain.Notice">
+    	<selectKey keyProperty="noticeNum" resultType="int" order="BEFORE" >select max(notice_NUM) +1 from notice_TBL</selectKey>
+        insert into notice_TBL (notice_NUM, notice_TITLE, notice_CONT)
+        values (#{noticeNum}, #{noticeTitle}, #{noticeCont})
+    </insert>
 
     <!-- 공지사항 조회 -->
-    <select id="selectNotice" resultType="com.zipchelin.domain.Notice" parameterType="int">
+    <select id="selectAll" resultType="com.zipchelin.domain.Notice" parameterType="int">
         select notice_NUM, notice_TITLE, notice_CONT, notice_DATE
-        from notice_TBL
-        where notice_Num = #{noticeNum}
+        from notice_TBL order by notice_num asc
     </select>
 
     <!-- 멤버 수정 

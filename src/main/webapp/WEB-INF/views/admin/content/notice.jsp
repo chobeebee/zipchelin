@@ -60,62 +60,13 @@
                                             <td class="align-middle">
                                                 <input class="form-check" type="checkbox" value="">
                                             </td>
-                                            <td>1</td>
+                                            <td>번호</td>
                                             <td>
-                                                <a href="${contextPath}/admin/editnotice">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
+                                                <a href="${contextPath}/admin/editnotice">내용</a>
                                             </td>
-                                            <td>2023.01.01</td>
+                                            <td>등록일자</td>
                                         </tr>
-                                        <tr>
-                                            <td class="align-middle">
-                                                <input class="form-check" type="checkbox" value="">
-                                            </td>
-                                            <td>2</td>
-                                            <td>
-                                                <a href="${contextPath}/admin/editnotice">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
-                                            </td>
-                                            <td>2023.01.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="align-middle">
-                                                <input class="form-check" type="checkbox" value="">
-                                            </td>
-                                            <td>3</td>
-                                            <td>
-                                                <a href="${contextPath}/admin/editnotice">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
-                                            </td>
-                                            <td>2023.01.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="align-middle">
-                                                <input class="form-check" type="checkbox" value="">
-                                            </td>
-                                            <td>4</td>
-                                            <td>
-                                                <a href="${contextPath}/admin/editnotice">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
-                                            </td>
-                                            <td>2023.01.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="align-middle">
-                                                <input class="form-check" type="checkbox" value="">
-                                            </td>
-                                            <td>5</td>
-                                            <td>
-                                                <a href="${contextPath}/admin/editnotice">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
-                                            </td>
-                                            <td>2023.01.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="align-middle">
-                                                <input class="form-check" type="checkbox" value="">
-                                            </td>
-                                            <td>6</td>
-                                            <td>
-                                                <a href="${contextPath}/admin/editnotice">사람은 크고 작고 간에 이상이 있음으로써 용감하고 굳세게 살 수 있는 것이다</a>
-                                            </td>
-                                            <td>2023.01.01</td>
-                                        </tr>
+                                        
                                     </tbody>
                                 </table>
                                 <nav aria-label="Page navigation">

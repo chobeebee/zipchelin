@@ -1,9 +1,7 @@
 package com.zipchelin.model.dto.notice;
 
 import javax.validation.constraints.NotBlank;
-
 import com.zipchelin.domain.Notice;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

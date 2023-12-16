@@ -20,7 +20,8 @@ public class NoticeMapperMybatis implements NoticeRepository{
 
 	@Override
 	public int selectNotice(Notice notice) {
-			
+		noticeMapper.selectNotice(notice);
+		return notice.getNoticeNum();
 	}
 
 	@Override

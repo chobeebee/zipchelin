@@ -11,7 +11,7 @@ public interface NoticeMapper {
 	
 	void addNotice(Notice notice);
 
-    int selectNotice(Notice notice);
+    void selectNotice(Notice notice);
 
     void delNotice(int noticeNum);
 

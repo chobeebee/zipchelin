@@ -18,7 +18,4 @@ public class MyrecipeService {
 		return params.getMyreNum();
 	}
 	
-	public String addMyrecipe(MyrecipeRequestDto params) {
-		return MyrecipeRepository.addMyrecipe(params.toEntity());
-	}
 }

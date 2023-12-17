@@ -36,7 +36,7 @@
                     <h1 class="h3 mb-4 text-gray-800">공지사항 등록</h1>
                     <div class="card shadow mb-4 col-lg-8 col-md-12">
                         <div class="card-body">
-                            <form method="post" action="notice">
+                            <form action="addnotice" method="post" >
                                 <div class="form-group row">
                                     <label for="noticeTitle" class="col-sm-2 col-form-label">제목</label>
                                     <div class="col-sm-10">
@@ -46,15 +46,13 @@
                                 <div class="form-group row">
                                     <label for="noticeContent" class="col-sm-2 col-form-label">내용</label>
                                     <div class="col-sm-10">
-                                        <textarea rows="20" cols="10" class="form-control" id="noticeCont" name="noticeCont">
-                                        	
-                                        </textarea>
+                                        <textarea rows="20" cols="10" class="form-control" id="noticeCont" name="noticeCont"></textarea>
                                     </div>
                                 </div>
                                 
                                 <div class="d-flex justify-content-end mb-2">
-                                    <input type="submit" value="등록" class="cancle_check btn btn-secondary mr-2" aria-current="page">
-                                    <input type="reset" value="취소" class="btn btn-primary">
+                                    <button type="submit" class="cancle_check btn btn-secondary mr-2">등록</button>
+                                    <button type="reset" class="btn btn-primary" onClick="location.href='${contextPath}/admin/notice'">취소</button>
                                 </div>
                             </form>
                         </div>  

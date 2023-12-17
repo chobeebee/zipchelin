@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.zipchelin.domain.Paging;
+import com.zipchelin.model.dto.common.PagingDto;
 import com.zipchelin.model.service.NoticeService;
 
 import lombok.RequiredArgsConstructor;

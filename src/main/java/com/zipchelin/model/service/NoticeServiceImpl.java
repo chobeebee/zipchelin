@@ -3,7 +3,6 @@ package com.zipchelin.model.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.zipchelin.domain.Notice;
 import com.zipchelin.model.dto.notice.NoticeRequestDto;

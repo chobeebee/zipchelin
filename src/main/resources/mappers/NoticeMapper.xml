@@ -13,7 +13,7 @@
     <!-- 공지사항 조회 -->
     <select id="selectAll" resultType="com.zipchelin.domain.Notice">
         select notice_NUM, notice_TITLE, notice_CONT, notice_DATE
-        from notice_TBL order by notice_num asc
+        from notice_TBL order by notice_num desc
     </select>
 
     <!-- 멤버 수정 

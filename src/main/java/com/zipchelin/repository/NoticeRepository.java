@@ -14,5 +14,7 @@ public interface NoticeRepository {
 
     void updateNotice(Notice notice);
 
+	void delNotice(int noticeNum);
+
 	
 }

@@ -9,9 +9,8 @@ import com.zipchelin.repository.MyrecipeRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service
-@RequiredArgsConstructor
 public class MyrecipeService {
-	private final MyrecipeRepository myrecipeRepository;
+	//private final MyrecipeRepository myrecipeRepository;
 	
 	@Transactional
 	public int selectMyrecipe(MyrecipeRequestDto params) {

@@ -1,7 +1,6 @@
 package com.zipchelin.model.dto.notice;
 
 import java.sql.Date;
-import java.time.LocalDateTime;
 
 import com.zipchelin.domain.Notice;
 

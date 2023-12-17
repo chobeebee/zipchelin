@@ -2,6 +2,7 @@ package com.zipchelin.repository.mybatis.mappers;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

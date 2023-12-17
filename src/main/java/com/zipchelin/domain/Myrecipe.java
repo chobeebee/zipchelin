@@ -2,8 +2,8 @@ package com.zipchelin.domain;
 
 import java.time.LocalDateTime;
 
-import com.zipchelin.model.dto.myrecipe.MyreRequestDto;
-import com.zipchelin.model.dto.myrecipe.MyreResponseDto;
+import com.zipchelin.model.dto.myrecipe.MyrecipeRequestDto;
+import com.zipchelin.model.dto.myrecipe.MyrecipeResponseDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

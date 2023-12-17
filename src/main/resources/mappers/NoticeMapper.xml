@@ -5,36 +5,27 @@
 
      <!-- 공지사항 추가 -->
     <insert id="addNotice" parameterType="com.zipchelin.domain.Notice">
-    	<selectKey keyProperty="noticeNum" resultType="int" order="BEFORE" >select max(notice_NUM) +1 from notice_TBL</selectKey>
-        insert into notice_TBL (notice_NUM, notice_TITLE, notice_CONT)
-        values (#{noticeNum}, #{noticeTitle}, #{noticeCont})
+        insert into notice_TBL (notice_NUM, notice_TITLE, notice_CONT, notice_DATE)
+        values (notice_seq.nextval, #{noticeTitle}, #{noticeCont}, sysdate)
     </insert>
 
     <!-- 공지사항 조회 -->
     <select id="selectAll" resultType="com.zipchelin.domain.Notice">
         select notice_NUM, notice_TITLE, notice_CONT, notice_DATE
-        from notice_TBL order by notice_num asc
+        from notice_TBL order by notice_num desc
     </select>
 
-    <!-- 멤버 수정 
-    <update id="update" parameterType="com.zipchelin.domain.Member">
-        update member_TBL
-        set member_pwd   = #{memberPwd},
-            member_email = #{memberEmail},
-            member_phone = #{memberPhone},
-            member_img   = #{memberImg}
-        where member_ID = #{memberId}
-    </update>-->
+    <!-- 공지사항 수정 --> 
+    <update id="updateNotice" parameterType="com.zipchelin.domain.Notice">
+        update notice_TBL set notice_TITLE = #{noticeTitle}, notice_CONT = #{noticeCont}
+        where notice_NUM = #{noticeNum}
+    </update>
 
-    <!-- 멤버 삭제 
+   <!-- 공지사항 삭제 -->
     <delete id="deleteById" parameterType="String">
         delete
         from member_TBL
         where member_ID = #{memberId}
-    </delete>-->
+    </delete>
 
-    <!-- 중복 체크 
-    <select id="countById" parameterType="string" resultType="int">
-
-    </select>-->
 </mapper>

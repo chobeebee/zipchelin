@@ -3,10 +3,8 @@ package com.zipchelin.model.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.zipchelin.domain.Notice;
-import com.zipchelin.model.dto.notice.NoticeRequestDto;
 import com.zipchelin.repository.NoticeRepository;
 import com.zipchelin.repository.mybatis.mappers.NoticeMapper;
 
@@ -22,8 +20,21 @@ public class NoticeServiceImpl implements NoticeService{
 	public List<Notice> selectAll(){
 		return noticeRepository.selectAll();
 	}
-	
-	public String addNotice(NoticeRequestDto params) {
-		return noticeRepository.addNotice(params.toEntity());
+
+	@Override
+	public void addNotice(Notice notice) {
+		noticeMapper.addNotice(notice);		
+	}
+
+	@Override
+	public void updateNotice(Notice notice) {
+		noticeMapper.updateNotice(notice);
+		
+	}
+
+	@Override
+	public void delNotice(Integer noticeNum) {
+		noticeMapper.delNotice(0);
+		
 	}
 }

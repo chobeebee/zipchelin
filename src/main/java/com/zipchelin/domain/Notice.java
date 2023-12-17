@@ -15,7 +15,7 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 public class Notice {
-	private int noticeNum;
+	private Integer noticeNum;
     private String noticeTitle;
     private String noticeCont;
     private Date noticeDate;

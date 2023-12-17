@@ -11,7 +11,7 @@
     </insert>
 
     <!-- 공지사항 조회 -->
-    <select id="selectAll" resultType="com.zipchelin.domain.Notice" parameterType="int">
+    <select id="selectAll" resultType="com.zipchelin.domain.Notice">
         select notice_NUM, notice_TITLE, notice_CONT, notice_DATE
         from notice_TBL order by notice_num asc
     </select>

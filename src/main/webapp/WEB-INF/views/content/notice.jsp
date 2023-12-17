@@ -3,6 +3,7 @@
     isELIgnored="false"
     %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <%
@@ -59,14 +60,14 @@
 	        		<c:forEach var="notice" items="${noticeList}" varStatus="noticeNum">
 	        			<li class="noticeItem">
 			                <div class="titleBox">
-			                    <span class="num">${notice_num}</span>
-			                    <h6 class="title">${notice_title}</h6>
-			                    <span class="date">${notice_date}</span>
+			                    <span class="num">${notice.noticeNum}</span>
+			                    <h6 class="title">${notice.noticeTitle}</h6>
+			                    <span class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${notice.noticeDate}" /></span>
 			                    <span class="icon material-symbols-outlined">keyboard_arrow_down</span>
 			                </div>
 			                <div class="contentBox">
 				                <p>
-				                    ${notice.notice_cont}
+				                    ${notice.noticeCont}
 				                </p>
 			                </div>
 			            </li>
@@ -75,7 +76,7 @@
 	        </c:choose>
         </ul>
 
-        <div class="paging">        
+        <!-- <div class="paging">        
             <ul>
 	        	<c:if test="${totNotices != 0}">
 	        		<c:choose>
@@ -123,7 +124,7 @@
 		            </c:choose>
 	            </c:if>
 			</ul>
-        </div>
+        </div> -->
     </main>
 
     <!-- 푸터 -->

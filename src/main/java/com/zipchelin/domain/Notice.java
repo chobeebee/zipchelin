@@ -1,6 +1,6 @@
 package com.zipchelin.domain;
 
-import java.time.LocalDateTime;
+import java.sql.Date;
 
 import com.zipchelin.model.dto.notice.NoticeRequestDto;
 import com.zipchelin.model.dto.notice.NoticeResponseDto;
@@ -18,7 +18,7 @@ public class Notice {
 	private int noticeNum;
     private String noticeTitle;
     private String noticeCont;
-    private LocalDateTime noticeDate;
+    private Date noticeDate;
     
     public NoticeResponseDto toDto() {
         return NoticeResponseDto.builder()

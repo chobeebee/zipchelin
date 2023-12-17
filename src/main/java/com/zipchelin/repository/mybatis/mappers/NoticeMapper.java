@@ -9,7 +9,7 @@ import com.zipchelin.domain.Notice;
 @Mapper
 public interface NoticeMapper {
 	
-	List<Notice> selectAll();
+	public List<Notice> selectAll();
 	
 	void addNotice(Notice notice);
     void selectNotice(Notice notice);

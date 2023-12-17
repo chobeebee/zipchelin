@@ -20,12 +20,12 @@ public class NoticeMapperMybatis implements NoticeRepository{
 		noticeMapper.addNotice(notice);
 		return notice.getNoticeTitle();
 	}
-
+	
 	@Override
-	public int selectNotice(Notice notice) {
-		noticeMapper.selectNotice(notice);
-		return notice.getNoticeNum();
+	public List<Notice> selectAll() {
+		return noticeMapper.selectAll();
 	}
+
 
 	@Override
 	public void delNotice(int noticeNum) {
@@ -38,13 +38,5 @@ public class NoticeMapperMybatis implements NoticeRepository{
 		// TODO Auto-generated method stub
 		
 	}
-
-
-	@Override
-	public List<Notice> selectAll() {
-		return null;
-	}
-	
-	
 	
 }

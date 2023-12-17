@@ -12,16 +12,8 @@ import com.zipchelin.repository.NoticeRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service
-@RequiredArgsConstructor
-public class NoticeService {
-	private final NoticeRepository noticeRepository;
+public interface NoticeService {
+
+	public List<Notice> selectAll();
 	
-	@Transactional
-	public int selectNotice(NoticeRequestDto params) {
-		return params.getNoticeNum();
-	}
-	
-	public String addNotice(NoticeRequestDto params) {
-		return noticeRepository.addNotice(params.toEntity());
-	}
 }

@@ -1,5 +1,5 @@
 package com.zipchelin.repository;
 
-public class RecipeListRepository {
+public class RecipeRepository {
 
 }

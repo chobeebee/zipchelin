@@ -7,9 +7,12 @@ import org.apache.ibatis.annotations.Mapper;
 import com.zipchelin.domain.Recipe;
 
 @Mapper
-public interface RecipeListMapper {
+public interface RecipeMapper {
+
+	//리스트 전체목록 보기 구현
+	List<Recipe> selectAllList();
+
+	List<Recipe> selectEachCategory(int cateNum);
 
 
-	//리스트 목록
-	List<Recipe> selectAllList()
 }

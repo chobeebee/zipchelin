@@ -10,7 +10,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <title>Error - 500</title>
+    <title>Error - 40X</title>
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/error.css">
 </head>
 <body>
@@ -19,8 +19,8 @@
         <div class="d-table-cell">
             <div class="container">
                 <div class="error-content">
-                    <h1>500</h1>
-                    <h2>잘못된 접근입니다.</h2>
+                    <h1>40X</h1>
+                    <h2>접근 권한이 없습니다.</h2>
                     <c:choose>
                         <c:when test="${error != null}">
                             <p>${error}</p>

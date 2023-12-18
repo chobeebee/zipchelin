@@ -13,6 +13,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -20,6 +22,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final UserDetailsService userDetailsService;
+    private final AuthenticationSuccessHandler successHandler;
+    private final AuthenticationFailureHandler failureHandler;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -41,6 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
+                .antMatchers("/mypage/**").hasRole("USER")
                 .anyRequest().permitAll()
 //                .antMatchers("/", "/member/**").permitAll()
 //                .antMatchers("/mypage/**").hasRole("USER")
@@ -52,7 +57,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("memberId")
                 .passwordParameter("memberPwd")
                 .loginProcessingUrl("/member/loginProc")
-                .defaultSuccessUrl("/")
+                .successHandler(successHandler)
+                .failureHandler(failureHandler)
                 .permitAll()
         ;
     }
@@ -61,4 +67,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
 }

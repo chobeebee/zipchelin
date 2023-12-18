@@ -12,12 +12,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,10 +29,16 @@ public class MemberController {
     private final MemberService memberService;
 
     @GetMapping("/login")
-    public String viewLogin(@ModelAttribute("params") MemberLoginDto params, @Login MemberResponseDto loginMember) {
+    public String viewLogin(@ModelAttribute("params") MemberLoginDto params,
+                            @Login MemberResponseDto loginMember,
+                            @RequestParam(required = false) String error,
+                            Model model) {
+
         if (loginMember != null) {
             return "redirect:/";
         }
+        model.addAttribute("error", error);
+
         return "member/login";
     }
 
@@ -96,22 +100,22 @@ public class MemberController {
     }
 
     @GetMapping("/find")
-    public String viewfind() {
+    public String viewFind() {
         return "member/find";
     }
 
     @GetMapping("/finding")
-    public String viewfinding() {
+    public String viewFinding() {
         return "member/finding";
     }
 
     @GetMapping("/leave-check")
-    public String viewleaveCheck() {
+    public String viewLeaveCheck() {
         return "member/leave_check";
     }
 
     @GetMapping("/leave-done")
-    public String viewleaveDong() {
+    public String viewLeaveDone() {
         return "member/leave_done";
     }
 

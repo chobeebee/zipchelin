@@ -1,35 +1,36 @@
 package com.zipchelin.config;
 
-import com.zipchelin.config.provider.CustomAuthenticationProvider;
+import com.zipchelin.config.oauth.PrincipalOAuth2Service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final UserDetailsService userDetailsService;
+    private final AuthenticationSuccessHandler successHandler;
+    private final AuthenticationFailureHandler failureHandler;
+    private final PrincipalOAuth2Service oAuth2Service;
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(authenticationProvider());
-    }
-
-    @Bean
-    public AuthenticationProvider authenticationProvider() {
-        return new CustomAuthenticationProvider(userDetailsService, passwordEncoder());
-    }
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.authenticationProvider(authenticationProvider());
+//    }
+//
+//    @Bean
+//    public AuthenticationProvider authenticationProvider() {
+//        return new CustomAuthenticationProvider(userDetailsService, passwordEncoder());
+//    }
 
     @Override
     public void configure(WebSecurity web) throws Exception {
@@ -41,9 +42,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
+                .antMatchers("/mypage123/**").hasRole("USER")
+                .antMatchers("/admin123/**").hasRole("ADMIN")
                 .anyRequest().permitAll()
 //                .antMatchers("/", "/member/**").permitAll()
-//                .antMatchers("/mypage/**").hasRole("USER")
 //                .antMatchers("/admin/**").hasRole("ADMIN")
 //                .anyRequest().authenticated()
         .and()
@@ -52,8 +54,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("memberId")
                 .passwordParameter("memberPwd")
                 .loginProcessingUrl("/member/loginProc")
-                .defaultSuccessUrl("/")
+                .successHandler(successHandler)
+                .failureHandler(failureHandler)
                 .permitAll()
+        .and()
+                .oauth2Login()
+                .loginPage("/member/login")
+                .userInfoEndpoint()
+                .userService(oAuth2Service)
         ;
     }
 
@@ -61,4 +69,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
 }

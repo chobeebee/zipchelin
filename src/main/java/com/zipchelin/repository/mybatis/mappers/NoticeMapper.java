@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.zipchelin.domain.Notice;
-import com.zipchelin.domain.Paging;
 
 @Mapper
 public interface NoticeMapper {

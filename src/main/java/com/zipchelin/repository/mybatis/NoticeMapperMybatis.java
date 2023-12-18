@@ -38,5 +38,11 @@ public class NoticeMapperMybatis implements NoticeRepository{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void delNotice(Integer noticeNum) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

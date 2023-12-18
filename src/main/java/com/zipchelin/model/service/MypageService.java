@@ -1,13 +1,17 @@
 package com.zipchelin.model.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
 
+import com.zipchelin.config.auth.CustomUserDetails;
 import com.zipchelin.domain.Member;
 import com.zipchelin.model.dto.member.MemberResponseDto;
+import com.zipchelin.model.dto.myrecipe.MyrecipeResponseDto;
 import com.zipchelin.repository.MypageRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -30,4 +34,16 @@ public class MypageService {
 		checkMap.put("pwd", pwd);
 		return mypageRepository.checkPwd(checkMap);
 	}
+	
+	/*public Map<String, Integer> selectCount(String id){
+		return mypageRepository.selectCount(id);
+	}/*
+	
+	/*public List<MyrecipeResponseDto> selectMyreById(){
+		
+	}*/
+	
+	/*public List<QnaResponseDto> selectQnaById(){
+		
+	}*/
 }

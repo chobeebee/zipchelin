@@ -16,7 +16,7 @@
     <meta name="author" content="">
 
     <title>집슐랭 관리자</title>
-
+	
     <link href="${contextPath}/resource/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="${contextPath}/resource/admin/css/sb-admin-2.min.css" rel="stylesheet">
@@ -36,23 +36,23 @@
                     <h1 class="h3 mb-4 text-gray-800">공지사항 수정</h1>
                     <div class="card shadow mb-4 col-lg-8 col-md-12">
                         <div class="card-body">
-                            <form method="post" action="">
+                            <form method="post" action="updatenotice" class="noticeList">
+
                                 <div class="form-group row">
-                                    <label for="memId" class="col-sm-2 col-form-label">제목</label>
+                                    <label for="noticeTitle" class="col-sm-2 col-form-label">제목</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="memId" name="id">
+                                        <input type="text" class="form-control" id="noticeTitle" name="noticeTitle">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="memPwd" class="col-sm-2 col-form-label">내용</label>
+                                    <label for="noticeCont" class="col-sm-2 col-form-label">내용</label>
                                     <div class="col-sm-10">
-                                        <textarea rows="20" class="form-control" id="memPwd" name="neyoung" ></textarea>
+                                        <textarea rows="20" class="form-control" id="noticeCont" name="noticeCont"></textarea>
                                     </div>
                                 </div>
-                                
                                 <div class="d-flex justify-content-end mb-2">
-                                    <a href="#" class="cancle_check btn btn-secondary col-2 mr-2" aria-current="page">수정</a>
-                                    <a href="#" class="btn btn-primary col-2">취소</a>
+                                    <button type="submit" class="cancle_check btn btn-secondary mr-2">수정</button>
+                                    <button type="reset" class="btn btn-primary" onClick="location.href='${contextPath}/admin/notice'">취소</button>
                                 </div>
                             </form>
                         </div>  

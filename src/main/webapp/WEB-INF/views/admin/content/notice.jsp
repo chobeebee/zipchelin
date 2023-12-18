@@ -38,11 +38,10 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-end mb-2">
                             	<a href="${contextPath}/admin/addnotice" class="btn btn-secondary mr-2" aria-current="page">등록</a>
-                                <a href="#" class="btn btn-secondary mr-2" aria-current="page">취소</a>
                                 <a href="#" class="btn btn-primary">삭제</a>
                             </div>
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered noticeList" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr class="bg-gray-100">
                                             <th class="white-space-nowrap  align-middle">
@@ -56,17 +55,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="align-middle">
-                                                <input class="form-check" type="checkbox" value="">
-                                            </td>
-                                            <td>번호</td>
-                                            <td>
-                                                <a href="${contextPath}/admin/editnotice">내용</a>
-                                            </td>
-                                            <td>등록일자</td>
-                                        </tr>
-                                        
+                                    	<c:forEach var="notice" items="${noticeList}" varStatus="noticeNum">                            
+                                    		<tr class="noticeItem">
+	                                            <td class="align-middle">
+	                                                <input class="form-check" type="checkbox" value="">
+	                                            </td>
+	                                            <td class="num">${notice.noticeNum}</td>
+	                                            <td class="title">
+	                                                <a href="${contextPath}/admin/updatenotice">${notice.noticeTitle}</a>
+	                                            </td>
+	                                            <td class="date">${notice.noticeDate}</td>
+                                        	</tr>
+                                    	</c:forEach>   
+                                                             
                                     </tbody>
                                 </table>
                                 <nav aria-label="Page navigation">
@@ -77,8 +78,6 @@
                                             </a>
                                         </li>
                                         <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
                                         <li class="page-item">
                                             <a class="page-link" href="#" aria-label="Next">
                                                 <span aria-hidden="true">&raquo;</span>

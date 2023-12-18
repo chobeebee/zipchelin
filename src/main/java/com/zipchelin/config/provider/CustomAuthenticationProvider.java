@@ -1,6 +1,6 @@
 package com.zipchelin.config.provider;
 
-import com.zipchelin.model.dto.member.MemberContext;
+import com.zipchelin.config.auth.CustomUserDetails;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -9,6 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.transaction.annotation.Transactional;
 
 @RequiredArgsConstructor
 public class CustomAuthenticationProvider implements AuthenticationProvider {
@@ -17,19 +18,20 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     private final PasswordEncoder passwordEncoder;
 
     @Override
+    @Transactional
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 
         String userId = authentication.getName();                     // 사용자가 입력한 아이디
         String memberPwd = (String) authentication.getCredentials();  // 사용자가 입력한 패스워드
 
-        MemberContext memberContext = (MemberContext) userDetailsService.loadUserByUsername(userId);
+        CustomUserDetails userDetails = (CustomUserDetails) userDetailsService.loadUserByUsername(userId);
 
-        if (!passwordEncoder.matches(memberPwd, memberContext.getMember().getMemberPwd())) {
+        if (!passwordEncoder.matches(memberPwd, userDetails.getMember().getMemberPwd())) {
             throw new BadCredentialsException("잘못된 비밀번호입니다.");
         }
 
         UsernamePasswordAuthenticationToken authenticationTokentoken =
-                new UsernamePasswordAuthenticationToken(memberContext.getMember(), null, memberContext.getAuthorities());
+                new UsernamePasswordAuthenticationToken(userDetails.getMember(), null, userDetails.getAuthorities());
 
         return authenticationTokentoken;
     }

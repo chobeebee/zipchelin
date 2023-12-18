@@ -33,8 +33,14 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
-	public void delNotice(Integer noticeNum) {
-		noticeMapper.delNotice(0);
-		
+	public void delNotice(String noticeNum) {
+		noticeMapper.delNotice(noticeNum);
 	}
+
+	@Override
+	public Notice getPage(Integer noticeNum) {
+		return noticeMapper.getPage(noticeNum);
+	}
+
+	
 }

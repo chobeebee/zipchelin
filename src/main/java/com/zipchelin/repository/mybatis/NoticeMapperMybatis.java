@@ -26,13 +26,6 @@ public class NoticeMapperMybatis implements NoticeRepository{
 		return noticeMapper.selectAll();
 	}
 
-
-	@Override
-	public void delNotice(int noticeNum) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	@Override
 	public void updateNotice(Notice notice) {
 		// TODO Auto-generated method stub
@@ -40,9 +33,15 @@ public class NoticeMapperMybatis implements NoticeRepository{
 	}
 
 	@Override
-	public void delNotice(Integer noticeNum) {
+	public void delNotice(String noticeNum) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public Notice getPage(Integer noticeNum) {
+		return noticeMapper.getPage(noticeNum);
+	}
+
 	
 }

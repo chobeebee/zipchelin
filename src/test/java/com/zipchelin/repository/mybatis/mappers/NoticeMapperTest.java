@@ -2,17 +2,13 @@ package com.zipchelin.repository.mybatis.mappers;
 
 import java.util.List;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import com.zipchelin.domain.Notice;
-import com.zipchelin.model.dto.notice.NoticeRequestDto;
 import com.zipchelin.model.service.NoticeService;
-import com.zipchelin.model.service.NoticeServiceImpl;
-import com.zipchelin.model.dto.notice.NoticeResponseDto;
 
 @SpringBootTest
 public class NoticeMapperTest {
@@ -44,4 +40,5 @@ public class NoticeMapperTest {
 		List<Notice> list = noticeMapper.selectAll();
 		System.out.println(list);
 	}
+
 }

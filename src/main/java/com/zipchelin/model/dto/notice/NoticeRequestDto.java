@@ -11,7 +11,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class NoticeRequestDto {
 	@NotBlank
-	private int noticeNum;
+	private Integer noticeNum;
 	
 	@NotBlank
 	private String noticeTitle;

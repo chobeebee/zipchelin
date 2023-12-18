@@ -23,21 +23,17 @@ public class PrincipalOAuth2Service extends DefaultOAuth2UserService {
         String provider = userRequest.getClientRegistration().getClientId();    // google
         String providerId = oAuth2User.getAttribute("sub");               // sub키 숫자
 
-        String memberId = provider + "_" + providerId;
+        String memberId = "google_" + providerId;
         String memberPwd = "구글비번";
-        String memberName = oAuth2User.getAttribute("name");
-        String memberEmail = oAuth2User.getAttribute("email");
-        String memberPhone = "01012345678";
-        String memberRole = "ROLE_USER";
 
         Member member = memberRepository.findById(memberId).orElse(null);
         if (member == null) {
             member = Member.builder()
                     .memberId(memberId)
-                    .memberPwd(memberPwd)
-                    .memberName(memberName)
-                    .memberEmail(memberEmail)
-                    .memberPhone(memberPhone)
+                    .memberPwd("구글비번")
+                    .memberName(oAuth2User.getAttribute("name"))
+                    .memberEmail(oAuth2User.getAttribute("email"))
+                    .memberPhone("01012345678")
                     .provider(provider)
                     .providerId(providerId)
                     .build();

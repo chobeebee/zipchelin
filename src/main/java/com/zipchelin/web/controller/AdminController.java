@@ -65,7 +65,7 @@ public class AdminController {
 	@GetMapping("/updatenotice")
     public String viewUpdateNotice(Integer noticeNum, Model model) {
 		model.addAttribute("noticeInfo", noticeService.getPage(noticeNum));
-		return "admin/content/updatenotice";
+		return "admin/content/updateNotice";
 	}
 	
 	// 공지사항 수정 실행

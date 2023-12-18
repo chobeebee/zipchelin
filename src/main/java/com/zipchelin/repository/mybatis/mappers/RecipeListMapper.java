@@ -11,5 +11,5 @@ public interface RecipeListMapper {
 
 
 	//리스트 목록
-	List<Recipe> selectAllList()
+	List<Recipe> selectAllList();
 }

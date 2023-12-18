@@ -16,7 +16,7 @@ public interface NoticeMapper {
 	
 	public Notice getPage(Integer noticeNum);
 
-	public void delNotice(String noticeNum);
+	public void delNotice(Integer newArr);
     
 	public void updateNotice(Notice notice);
 

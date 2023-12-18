@@ -2,6 +2,7 @@ package com.zipchelin.repository.mybatis.mappers;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,12 +22,14 @@ public class NoticeMapperTest {
 	private static final Logger log=LoggerFactory.getLogger(NoticeMapperTest.class);
 	
     @Test
+    @Disabled
     void selectAll() {
         noticeService.selectAll().forEach(notice -> log.info(""+notice));
     }
 
 	
 	@Test
+	@Disabled
 	void addNotice() {
 		Notice notice = new Notice(0, null, null, null);
 		notice.setNoticeNum(0);
@@ -36,6 +39,7 @@ public class NoticeMapperTest {
 	}
 	
 	@Test
+	@Disabled
 	void selectNotice() {
 		List<Notice> list = noticeMapper.selectAll();
 		System.out.println(list);

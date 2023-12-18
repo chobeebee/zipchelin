@@ -10,7 +10,7 @@ public interface NoticeRepository {
 
 	List<Notice> selectAll();
 
-    void delNotice(String noticeNum);
+    void delNotice(Integer newArr);
 
     void updateNotice(Notice notice);
 

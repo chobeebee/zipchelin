@@ -16,5 +16,5 @@ public interface NoticeService {
 	
 	public void updateNotice(Notice notice);
 	
-	public void delNotice(String noticeNum);
+	public void delNotice(Integer newArr);
 }

@@ -204,7 +204,7 @@
 
                 <!--회원탈퇴-->
                 <div class="unregister">
-                    <a href="/front/html/member/leave_check.html" class="edit_leave">회원탈퇴</a>
+                    <a href="${contextPath}/member/leave_check" class="edit_leave">회원탈퇴</a>
                 </div>
 
             </form>

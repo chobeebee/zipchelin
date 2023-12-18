@@ -1,5 +1,5 @@
 package com.zipchelin.repository.mybatis;
 
-public class RecipeListMapperMybatis {
+public class RecipeMapperMybatis {
 
 }

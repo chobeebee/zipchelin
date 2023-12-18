@@ -84,7 +84,7 @@
                                                           alt="카카오 로그인"></a></div>
                 <div class="login_email"><a href="#"><img src="${contextPath}/resource/images/icon/naver_circle.png"
                                                           alt="네이버 로그인"></a></div>
-                <div class="login_email circle_bd"><a href="#"><img
+                <div class="login_email circle_bd"><a href="${contextPath}/oauth2/authorization/google"><img
                         src="${contextPath}/resource/images/icon/google_circle.png" alt="구글 로그인"> </a></div>
             </div>
         </div>

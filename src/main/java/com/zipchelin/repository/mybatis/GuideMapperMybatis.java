@@ -9,9 +9,9 @@ import com.zipchelin.repository.mybatis.mappers.GuideMapper;
 import lombok.RequiredArgsConstructor;
 
 @Repository
-@RequiredArgsConstructor
-public class GuideMapperMybatis implements GuideRepository{
-	private final GuideMapper guideMapper;
+//@RequiredArgsConstructor
+public class GuideMapperMybatis{
+	/*private final GuideMapper guideMapper;
 	
 	@Override
 	public void addGuide(Guide guide) {
@@ -34,5 +34,5 @@ public class GuideMapperMybatis implements GuideRepository{
 	public void delGuide(int guiNum) {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 }

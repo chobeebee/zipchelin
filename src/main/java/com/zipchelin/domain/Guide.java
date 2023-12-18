@@ -2,6 +2,17 @@ package com.zipchelin.domain;
 
 import java.sql.Date;
 
+import com.zipchelin.model.dto.guide.GuideRequestDto;
+import com.zipchelin.model.dto.guide.GuideResponseDto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Builder
+@AllArgsConstructor
 public class Guide {
 	private int guiNum;
 	private int cateNum;
@@ -10,4 +21,24 @@ public class Guide {
 	private String guiTitle;
 	private String guiSubt;
 	private String guiDesc;
+	private String guiThumb;
+	
+	public GuideResponseDto toDto() {
+		return GuideResponseDto.builder()
+				.guiTitle(guiTitle)
+				.guiSubt(guiSubt)
+				.guiThumb(guiThumb)
+				.build();
+	}
+	
+	public GuideRequestDto fromDto() {
+		return GuideRequestDto.builder()
+				.guiNum(guiNum)
+				.cateNum(cateNum)
+				.guiTitle(guiTitle)
+				.guiSubt(guiSubt)
+				.guiThumb(guiThumb)
+				.build();
+	}
+	
 }

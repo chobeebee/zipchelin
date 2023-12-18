@@ -9,6 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.transaction.annotation.Transactional;
 
 @RequiredArgsConstructor
 public class CustomAuthenticationProvider implements AuthenticationProvider {
@@ -17,6 +18,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     private final PasswordEncoder passwordEncoder;
 
     @Override
+    @Transactional
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 
         String userId = authentication.getName();                     // 사용자가 입력한 아이디

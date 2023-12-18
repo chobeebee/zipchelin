@@ -37,17 +37,28 @@
                     <div class="card shadow mb-4 col-lg-8 col-md-12">
                         <div class="card-body">
                             <form method="post" action="updatenotice" class="noticeList">
-
+                            	<div class="form-group row">
+                                    <label for="noticeNum" class="col-sm-2 col-form-label">번호</label>
+                                    <div class="col-sm-10">
+                                        <input readonly="readonly" class="form-control" id="noticeNum" name="noticeNum" value='<c:out value="${noticeInfo.noticeNum}"/>'>
+                                    </div>
+                                </div>
                                 <div class="form-group row">
                                     <label for="noticeTitle" class="col-sm-2 col-form-label">제목</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="noticeTitle" name="noticeTitle">
+                                        <input class="form-control" id="noticeTitle" name="noticeTitle" value='<c:out value="${noticeInfo.noticeTitle}"/>'>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="noticeCont" class="col-sm-2 col-form-label">내용</label>
                                     <div class="col-sm-10">
-                                        <textarea rows="20" class="form-control" id="noticeCont" name="noticeCont"></textarea>
+                                        <textarea rows="20" class="form-control" id="noticeCont" name="noticeCont"><c:out value="${noticeInfo.noticeCont}"/></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="noticeDate" class="col-sm-2 col-form-label">등록일자</label>
+                                    <div class="col-sm-10">
+                                        <input readonly="readonly" class="form-control" id="noticeDate" name="noticeDate" value="${noticeInfo.noticeDate}">
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end mb-2">

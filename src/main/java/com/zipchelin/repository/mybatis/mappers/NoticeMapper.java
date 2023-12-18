@@ -13,11 +13,11 @@ public interface NoticeMapper {
 	public List<Notice> selectAll();
 	
 	public void addNotice(Notice notice);
-    void selectNotice(Notice notice);
+	
+	public Notice getPage(Integer noticeNum);
 
-    void delNotice(int noticeNum);
-    void updateNotice(Notice notice);
+	public void delNotice(String noticeNum);
     
-    int count();
+	public void updateNotice(Notice notice);
 
 }

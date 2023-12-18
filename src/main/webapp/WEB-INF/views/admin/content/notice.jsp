@@ -38,7 +38,7 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-end mb-2">
                             	<a href="${contextPath}/admin/addnotice" class="btn btn-secondary mr-2" aria-current="page">등록</a>
-                                <a href="#" class="btn btn-primary">삭제</a>
+                                <input type="button" class="btn btn-primary" value="삭제" onclick="delNotice();">
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-bordered noticeList" id="dataTable" width="100%" cellspacing="0">
@@ -58,11 +58,11 @@
                                     	<c:forEach var="notice" items="${noticeList}" varStatus="noticeNum">                            
                                     		<tr class="noticeItem">
 	                                            <td class="align-middle">
-	                                                <input class="form-check" type="checkbox" value="">
+	                                                <input class="form-check" type="checkbox" value="${notice.noticeNum}">
 	                                            </td>
 	                                            <td class="num">${notice.noticeNum}</td>
 	                                            <td class="title">
-	                                                <a href="${contextPath}/admin/updatenotice">${notice.noticeTitle}</a>
+	                                                <a href="${contextPath}/admin/updatenotice?noticeNum=<c:out value='${notice.noticeNum}'/>">${notice.noticeTitle}</a>
 	                                            </td>
 	                                            <td class="date">${notice.noticeDate}</td>
                                         	</tr>
@@ -90,6 +90,9 @@
                     </div>
                 </div>
             </div>
+            <form id="moveForm" method="get">
+            </form>
+            
            <!-- 푸터 -->
             <footer id="footer">
             	<jsp:include page="/WEB-INF/views/admin/layout/footer.jsp" />

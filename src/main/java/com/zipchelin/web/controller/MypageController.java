@@ -29,17 +29,13 @@ public class MypageController {
 		return "mypage/mypwdConfirm";
 	}
 	
-	@PostMapping("/checkPwd")
+	@PostMapping("/myedit")
 	public String mypageEdit(@RequestParam("pwdCheck") String pwd) {
 		String next=null;
 		if(pwd.equals("1234")) {
 			next="mypage/myedit";
-			System.out.println(pwd);
-			System.out.println("true");
 		}else {
 			next="mypage/mypage";
-			System.out.println(pwd);
-			System.out.println("false");
 		}
 		return next;
 	}

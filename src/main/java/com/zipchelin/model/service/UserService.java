@@ -1,18 +1,19 @@
 package com.zipchelin.model.service;
 
+import java.util.Optional;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.zipchelin.domain.User;
 import com.zipchelin.model.dto.user.UserLoginDto;
 import com.zipchelin.model.dto.user.UserRequestDto;
 import com.zipchelin.model.dto.user.UserResponseDto;
 import com.zipchelin.repository.UserRepository;
-import com.zipchelin.web.exception.BadRequestException;
 import com.zipchelin.web.exception.DuplicateException;
-import lombok.RequiredArgsConstructor;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor

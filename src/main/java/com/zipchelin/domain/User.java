@@ -18,6 +18,8 @@ public class User {
     private String userPhone;
     private LocalDateTime joinDate;
     private String userImg;
+    
+    
 
     public UserResponseDto toDto() {
         return UserResponseDto.builder()
@@ -29,4 +31,5 @@ public class User {
                 .userImg(userImg)
                 .build();
     }
+
 }

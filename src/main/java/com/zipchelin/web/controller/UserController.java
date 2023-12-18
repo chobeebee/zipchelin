@@ -1,17 +1,9 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.model.dto.common.MessageDto;
-import com.zipchelin.model.dto.user.UserLoginDto;
-import com.zipchelin.model.dto.user.UserRequestDto;
-import com.zipchelin.model.dto.user.UserResponseDto;
-import com.zipchelin.model.service.UserService;
-import com.zipchelin.web.ConstField;
-import com.zipchelin.web.exception.DuplicateException;
-import com.zipchelin.web.resolver.Login;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +11,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import com.zipchelin.model.dto.user.UserLoginDto;
+import com.zipchelin.model.dto.user.UserRequestDto;
+import com.zipchelin.model.dto.user.UserResponseDto;
+import com.zipchelin.model.service.UserService;
+import com.zipchelin.web.ConstField;
+import com.zipchelin.web.exception.DuplicateException;
+import com.zipchelin.web.resolver.Login;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller

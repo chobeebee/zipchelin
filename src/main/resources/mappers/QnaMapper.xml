@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zipchelin.repository.mybatis.mappers.QnaMapper">
+	<!-- tb_post 테이블 전체 컬럼 -->
+    <sql id="qnaColumns">
+        select * from qna_tbl
+    </sql>
+
+
+    <!-- 게시글 저장 -->
+    <insert id="save" parameterType="com.zipchelin.domain.qna.QnaRequest" >
+        INSERT INTO qna_tbl VALUES (
+              qna_sq.nextval
+            , #{user_id}
+            , #{qna_title}
+            , #{qna_content}
+            , sysdate
+            , 0
+            , 0
+            , #{user_img}
+        )
+    </insert>
+
+
+    <!-- 게시글 상세정보 조회 -->
+    <select id="findById" parameterType="string" resultType="com.zipchelin.domain.qna.QnaResponse">
+            select * from qna_tbl
+        WHERE
+            user_id = #{user_id}
+    </select>
+
+
+    <!-- 게시글 수정 -->
+    <update id="update" parameterType="com.zipchelin.domain.qna.QnaRequest">
+        UPDATE qna_tbl
+        SET
+            qna_title = #{qna_title},
+            qna_content = #{qna_content},
+            user_img = #{user_img}
+        WHERE
+            user_id = #{user_id}
+    </update>
+
+
+    <!-- 게시글 삭제 -->
+    <delete id="deleteById" parameterType="string">
+        delete qna_tbl 
+        where 
+        	user_id = #{user_id}
+    </delete>
+
+
+    <!-- 게시글 리스트 조회 -->
+    <select id="findAll" resultType="com.zipchelin.domain.qna.QnaResponse">
+            <include refid="qnaColumns" />
+        ORDER BY
+            qna_num
+    </select>
+</mapper>

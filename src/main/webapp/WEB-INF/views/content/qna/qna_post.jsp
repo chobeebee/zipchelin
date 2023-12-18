@@ -67,29 +67,28 @@
             <article class="post-article">
                 <div>
                     <div class="post-top">
-                        <h1 class="post-title"><span class="title_q">Q. </span>잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?</h1>
+                        <h1 class="post-title"><span class="title_q">Q. </span>${qna.qna_title }</h1>
                         <div class="post-info">
                             <div class="comment-profile">
                                 <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                             </div>
-                            <strong class="post-id">해징어</strong>
-                            <span class="post-date">2023.10.26 10:02</span>
+                            <strong class="post-id">${qna.user_id }</strong>
+                            <span class="post-date">${qna.qna_date }</span>
                             <div class="comment_writeracc">
                                 <button class="comment_update">
                                     <span>수정</span>
                                 </button>
                                 <button class="comment_delete">
-                                    <span>삭제</span>
+                                    <a href="${contextPath}/qna/delete?id=${qna.user_id}">삭제</a>
                                 </button>
                             </div>
                         </div>
                     </div>
                     <div class="post-content">
-                        <p class="content">잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?<br>내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다</p><br>
-                        <img src="${contextPath}/resource/images/food/sample.jpg" alt="">
-                        <p class="content">내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다</p><br>
+                        <p class="content">${qna.qna_content }</p><br>
+                        <p>${qna.user_img }</p>
                     </div>
-                        <a href="/front/html/community/qna.html">
+                        <a href="${contextPath}/qna/qna">
                             <div class="btnGroup lg btn_list"><button class="btnBgGray btn_list">목록</button></div>
                         </a>
                 </div>

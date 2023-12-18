@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zipchelin.repository.mybatis.mappers.RecipeMapper">
+	<resultMap type="" id="">
+		
+	</resultMap>
+    <!-- RecipeList 레시피 목록 전체 조회 -->
+    <select id="selectAllList" resultType="com.zipchelin.domain.Recipe">
+        select rt.rec_title, rt.rec_subt, rpi.rec_img_file_name from recipe_tbl rt, recipe_page_img rpi
+		 where rt.rec_num = rpi.rec_num and rpi.rec_img_no = 0 order by rt.rec_num asc
+    </select> 
+    <!-- 하트 구현 어떻게 하지 힝(세션이용?), rpi.rec_img_no = 0 또는 1로 바꾸기 -->
+
+	<!-- RecipeList 레시피 목록 전체 조회 -->
+    <select id="selectEachCategory" parameterType="int" resultType="com.zipchelin.domain.Recipe">
+        select rt.rec_title, rt.subt, rpi.rec_img_name = rpi.rec_img_no 
+        from recipe_tbl rt, recipe_page_img rpi where rt.rec_num = rpi.rec_num and rt.cate_num = #{cateNum} order by rec_num asc
+    </select>
+
+
+
+    <!-- RecipeList 레시피 목록 조회 조회 -->
+    <select id="selectDetail" resultType="com.zipchelin.domain.Recipe" parameterType="hashmap">
+        select rt.rec_date, rt.rec_view, rt.rec_title, rt.rec_subt, rt.rec_desc, rt.rec_ingre_main, rt.rec_sub, rt.rec_tool,
+         rpd.rec_
+        from recipe_tbl rt, recipe_page_img rpi, recipe_page_desc rpd where rt.rec_num=rpi.rec_num=rpd.rec_num
+    </select>
+</mapper>

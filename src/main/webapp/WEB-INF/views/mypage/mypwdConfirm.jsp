@@ -55,7 +55,7 @@
         </div>
         
         <div class="pwdConfirmWrap">
-            <form action="${contextPath}/mypage/checkPwd" method="post" id="confirmForm">
+            <form action="${contextPath}/mypage/myedit" method="post" id="confirmForm">
                 <div class="confirmInfo">
                     <h6>비밀번호 확인</h6>
                     <p>개인 정보를 안전하게 보호하기 위하여</p>

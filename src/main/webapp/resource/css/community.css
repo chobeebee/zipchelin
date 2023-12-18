@@ -1,35 +1,42 @@
 @charset "UTF-8";
-main{display: block; margin: auto; padding: 100px 20px 60px; width: 1320px; line-height: 1.6; }
+main{display: block; margin: auto; padding: 100px 20px 60px; width: 1320px; }
 
 /* 공통 */
-.select-box{ border-color: #4FA72F; color: #000; flex-basis: 120px; padding: 12px; border-radius: 4px;
+.best-title { padding: 80px 0 40px 0; font-size: 32px; text-align: center; }
+.select-box{ border-color: #c1c1c1; color: #000; flex-basis: 120px; padding: 12px; border-radius: 4px;
     appearance: auto;
     -webkit-appearance: auto; /* 사파리, 크롬 하위버전용 */
     -moz-appearance: auto; /* 사파리, 크롬 하위버전용 */ }
 .select-box::-ms-expand{ display: none; }
 .acc-container{ display: flex; justify-content: space-between; padding-bottom: 30px; }
 
+.tableWd{display: flex; justify-content: space-between; padding: 34px 0;}
+.tableWd .tableItem{flex-basis: 110px; text-align: center;}
+.tableWd .tableItem.title{flex: 0 0 auto; width: 50%;}
+.tableWd .tableItem:last-child{flex-basis: 150px;}
+.tableTh{border-bottom: 1px solid #c1c1c1; font-family: 'GmarketSans';}
+
 /* 나만의 레시피(myrecipe) */
 .best-section{ margin: 0 100px; }
-.best-title { padding: 60px 0 40px 0; font-size: 32px; font-weight: 600; text-align: center; }
 .best-list { display: flex; padding-bottom: 40px; border-bottom: 1px solid #e9e9e9; justify-content: center; align-items: center; }
 .best{ margin: 20px 20px; }
-.postdate{ margin: 0 8px 0 0; }
-.accList{ display: flex; align-items: center; margin-top: 3px; }
-.accItem{ margin-right: 8px; color: #c1c1c1;}
-.post-section .material-symbols-outlined{ margin-right: 4px; font-size: 18px; }
-.best-section img { width: 240px; height: 240px; }
-.title{ font-size: 16px; margin: 8px 0 8px 0;}
+.best-section .postdate, .myrecipe_section .postdate{display: block; color: #999; font-size: 12px; font-weight: 300;}
+.best_cont{width: 230px; padding: 12px 0; font-family: 'S-CoreDream';}
+.best .accItem{ margin-right: 8px; color: #c1c1c1;}
+.best .material-symbols-outlined{ margin-right: 4px; }
+.best-section .title{width: 98%; padding: 12px 0; font-size: 16px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
 
-.myrecipe_section { margin: 0 100px 60px }
-.allwrite { display: flex; justify-content: space-around; flex-wrap: wrap; border-top: 2px solid #222222; }
-.myrecipe-container { float: left; width: calc(50%); padding-top: 12px; }
-.myrecipe-section { margin-right: 60px; }
-.post { justify-content: space-between; justify-content: center; display: flex; padding-bottom: 12px; /*행 간격*/ align-items: center; border-bottom: 1px solid #e9e9e9; }
+.myrecipe_section { margin: 0 100px 60px; font-family: 'S-CoreDream';}
+.myrecipe_section .allwrite { display: flex; justify-content: space-around; flex-wrap: wrap; border-top: 2px solid #222222; }
+.post-container { float: left; width: calc(50%); padding: 24px 24px 0;  border-bottom: 1px solid #e9e9e9;}
+.post-container .imgwrap{ justify-content: space-between; display: flex; padding-bottom: 24px; /*행 간격*/ align-items: center;/*  border-bottom: 1px solid #e9e9e9; */ }
+.post-section {width: 70%;}
+.post-section .title{width: 100%; margin: 16px 0 8px; font-size: 18px; line-height: 24px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
+.post-section p{width: 100%; margin-bottom: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 .post img { width: 130px; height: 130px; }
 
 /* 나만의 레시피 글(myrecipe_post) */
-.post-section { margin: 0 180px 60px; }
+/* .post-section { margin: 0 180px 60px; } */
 .post-top { border-bottom: 1px solid #999; }
 .post-title { padding: 60px 0 20px 0; font-size: 32px; text-align: center; line-height: 42px;}
 .post-info { display: flex; align-items: center; padding: 10px 0;}
@@ -83,16 +90,18 @@ main{display: block; margin: auto; padding: 100px 20px 60px; width: 1320px; line
 .qna-section{ margin: 0 100px 60px; }
 .qna-title { padding: 80px 0 40px 0; font-size: 32px; text-align: center; }
 
-.qna { border-top: 2px solid #222222; }
-.qnaList { display: flex; flex-direction: column; }
-.textbox { display: flex; flex-direction: row; align-items: center; justify-content: space-between; border-bottom: 1px solid #e9e9e9; }
-.num { text-align: center; padding: 34px 0; flex-basis: 6%;}
-.text-title { font-size: 18px;  text-align: left; flex-basis: 55%;}
+.qna { border-top: 2px solid #222222; font-family: 'S-CoreDream';}
+.qna .qnaList { display: flex; flex-direction: column; }
+.qna .textbox { display: flex; flex-direction: row; align-items: center; justify-content: space-between; border-bottom: 1px solid #e9e9e9; }
+.qna .text-title { font-size: 18px;  text-align: left;}
+.qna .text-title p{display: inline-block; max-width: 86%; font-weight: 500; vertical-align: middle; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+.qna .text-title span{vertical-align: middle;}
+.qna .text-title .iconFile{color: #999; font-size: 20px;}
 .qna-accItem .qna-id .qna-date { text-align: center; padding: 20px 0; flex-basis: 200px; }
-.qna-accItem { color: #c1c1c1; flex-basis: 10%;}
-.qna-date { flex-basis: 14%;}
-.question { color: #8acc39; }
-.textbox .icon .material-symbols-outlined { font-size: 18px; /*padding: 15px 5px 0 0;*/ }
+.qna-accItem { color: #c1c1c1;}
+.qna-date {color: #999; font-size: 12px; font-weight: 300;}
+.question {color: #8acc39; font-size: 22px; font-weight: 600;}
+.textbox .icon .material-symbols-outlined { font-size: 18px;}
 
 /* 요리 상담소 글(qna_post) */
 .title_q { color: #8acc39; }

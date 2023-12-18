@@ -18,6 +18,7 @@ public class MemberResponseDto {
     private String memberPhone;
     private LocalDateTime joinDate;
     private String memberImg;
+    private String memberRole;
 
     public Member toEntity() {
         return Member.builder()
@@ -28,6 +29,7 @@ public class MemberResponseDto {
                 .memberPhone(memberPhone)
                 .joinDate(joinDate)
                 .memberImg(memberImg)
+                .memberRole(memberRole)
                 .build();
     }
 }

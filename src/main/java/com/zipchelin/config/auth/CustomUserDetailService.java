@@ -1,22 +1,16 @@
-package com.zipchelin.model.service;
+package com.zipchelin.config.auth;
 
 import com.zipchelin.domain.Member;
-import com.zipchelin.model.dto.member.MemberContext;
 import com.zipchelin.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Service
 @RequiredArgsConstructor
-public class MemberDetailServiceImpl implements UserDetailsService {
+public class CustomUserDetailService implements UserDetailsService {
 
     private final MemberRepository memberRepository;
 
@@ -27,11 +21,11 @@ public class MemberDetailServiceImpl implements UserDetailsService {
                 () -> new UsernameNotFoundException("가입되지 않은 아이디입니다.")
         );
 
-        List<GrantedAuthority> roles = new ArrayList<>();
-        roles.add(new SimpleGrantedAuthority(member.getMemberRole()));
+//        List<GrantedAuthority> roles = new ArrayList<>();
+//        roles.add(new SimpleGrantedAuthority(member.getMemberRole()));
 
-        MemberContext memberContext = new MemberContext(member, roles);
+        CustomUserDetails userDetails = new CustomUserDetails(member);
 
-        return memberContext;
+        return userDetails;
     }
 }

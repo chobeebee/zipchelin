@@ -64,13 +64,13 @@
             <article class="post-article">
                 <div>
                     <div class="post-top">
-                        <h1 class="post-title">맛있는 음식을 봐라</h1>
+                        <h1 class="post-title">${myrecipe.myreTitle}</h1>
                         <div class="post-info">
                             <div class="comment-profile">
-                                <img class="comment-img" src="/front/images/icon/profile.jpg" alt="">
+                                <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                             </div>
-                            <strong class="post-id">해징어</strong>
-                            <span class="post-date">2023.10.26 10:02</span>
+                            <strong class="post-id">${member.memberId}</strong>
+                            <span class="post-date"><fmt:formatDate pattern="yyyy.MM.dd" value="${myrecipe.myreDate}" /></span>
                             <div class="comment_writeracc">
                                 <button class="comment_update">
                                     <span>수정</span>
@@ -107,7 +107,7 @@
             <div class="commentWrap">
                 <ul class="comment">
                     <li class="commentbox bestcomment">
-                            <img class="comment-img" src="/front/images/icon/profile.jpg" alt="">
+                            <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                         <div>
                             <div class="comment-contentbox">
                                 <strong class="comment-id">해징어</strong>
@@ -147,7 +147,7 @@
                 <ul class="comment">
                     <li class="commentbox">
                         <span class="material-symbols-outlined comment_re">subdirectory_arrow_right</span>
-                        <img class="comment-img" src="/front/images/icon/profile.jpg" alt="">
+                        <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                         <div>
                             <div class="comment-contentbox">
                                 <strong class="comment-id">해징어</strong>
@@ -187,7 +187,7 @@
                 </ul>
                 <ul class="comment">
                     <li class="commentbox">
-                            <img class="comment-img" src="/front/images/icon/profile.jpg" alt="">
+                            <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                         <div>
                             <div class="comment-contentbox">
                                 <strong class="comment-id">해징어</strong>
@@ -226,7 +226,7 @@
                 </ul>
                 <ul class="comment">
                     <li class="commentbox">
-                            <img class="comment-img" src="/front/images/icon/profile.jpg" alt="">
+                            <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                         <div>
                             <div class="comment-contentbox">
                                 <strong class="comment-id">해징어</strong>
@@ -265,7 +265,7 @@
                 </ul>
                 <ul class="comment">
                     <li class="commentbox">
-                            <img class="comment-img" src="/front/images/icon/profile.jpg" alt="">
+                            <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                         <div>
                             <div class="comment-contentbox">
                                 <strong class="comment-id">해징어</strong>

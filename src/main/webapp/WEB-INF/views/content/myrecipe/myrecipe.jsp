@@ -74,7 +74,7 @@
 			                <div class="best imgwrap">
 			                    <a href="/front/html/community/myrecipe_post.html">
 			                        <div class="imgBox vertical">
-			                            <img src="/front/images/food/gan.jpg" alt="">
+			                            <img src="${contextPath}/resource/images/food/gan.jpg" alt="">
 			                        </div>
 			                        <div class="best_cont">
 			                            <span class="postdate">${myrecipe_date}</span>
@@ -122,7 +122,7 @@
                                 </ul>
                         </div>
                         <div class="imgBox align">
-                            <img src="/front/images/food/gan.jpg" alt="">
+                            <img src="${contextPath}/resource/images/food/gan.jpg" alt="">
                         </div>
                     </a>
                 </li>

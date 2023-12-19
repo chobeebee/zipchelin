@@ -35,10 +35,10 @@ public class MypageController {
 	
 	@GetMapping("/mypage")
 	public String mypage(Model model,@AuthenticationPrincipal CustomUserDetails userDetails) {
-		/*String id=userDetails.getMember().getMemberId();
+		/*
+		String id=userDetails.getMember().getMemberId();
 		model.addAttribute("count", mypageService.selectCount(id));
-		model.addAttribute("myreList", mypageService.selectMyreById(id));
-		model.addAttribute("qnaList", mypageService.selectQnaById(id));
+		model.addAttribute("myPostList",mypageService.selectMyPostList2(id));
 		*/
 		return "mypage/mypage";
 	}

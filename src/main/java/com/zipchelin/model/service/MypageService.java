@@ -91,4 +91,12 @@ public class MypageService {
 		}
 		return postList;
 	}
+	
+	public List<MyPost> selectMyPostList2(String id){
+		List<MyPost> postList=selectMyPostList(id);
+		for(int i=4;i<postList.size();i++) {
+			postList.remove(i);
+		}
+		return postList;
+	}
 }

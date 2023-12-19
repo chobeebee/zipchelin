@@ -37,8 +37,8 @@ public class MypageController {
 	public String mypage(Model model,@AuthenticationPrincipal CustomUserDetails userDetails) {
 		/*String id=userDetails.getMember().getMemberId();
 		model.addAttribute("count", mypageService.selectCount(id));
-		model.addAttribute("myRecip", mypageService.selectMyreById(id));
-		model.addAttribute("myQna", mypageService.selectQnaById(id));
+		model.addAttribute("myreList", mypageService.selectMyreById(id));
+		model.addAttribute("qnaList", mypageService.selectQnaById(id));
 		*/
 		return "mypage/mypage";
 	}
@@ -67,7 +67,9 @@ public class MypageController {
 	}
 	
 	@GetMapping("/mypost")
-	public String mypost() {
+	public String mypost(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
+		//String id=userDetails.getMember().getMemberId();
+		//model.addAttribute("myPostList",mypageService.selectMyPostList(id));
 		return "mypage/mypost";
 	}
 	

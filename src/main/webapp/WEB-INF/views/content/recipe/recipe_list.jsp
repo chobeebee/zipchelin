@@ -135,7 +135,7 @@
                 <ul class="list_ul">
                     <li class="list_li">
                         <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href="./recipe_detail.html">
+                        <a class="recipe_link" href="./recipe_detail">
                             <div class="imgwrap">
                                 <div class="imgBox">
                                     <img class="recipe_pic" src="${contextPath}/resource\images\food\gan.jpg" alt="#">

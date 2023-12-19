@@ -16,14 +16,14 @@
             <a href="#">커뮤니티</a>
             <div class="sub-menu_wrap">
                 <div class="sub-menu_content">
-                    <a href="${contextPath}/myrecipe.do">나만의레시피</a>
+                    <a href="${contextPath}/myrecipe/">나만의레시피</a>
                 </div>
                 <div class="sub-menu_content">
                     <a href="${contextPath}/qna/">요리상담소</a>
                 </div>
             </div>
         </div>
-        <a class="menu_list" href="${contextPath}/notice.do">공지사항</a>
+        <a class="menu_list" href="${contextPath}/notice">공지사항</a>
     </div>
     <div class="right_menu">
         <a class="iconBox" href="/front/html/search/searching_list.html">

@@ -67,29 +67,28 @@
             <article class="post-article">
                 <div>
                     <div class="post-top">
-                        <h1 class="post-title"><span class="title_q">Q. </span>잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?</h1>
+                        <h1 class="post-title"><span class="title_q">Q. </span>${qna.qnaTitle }</h1>
                         <div class="post-info">
                             <div class="comment-profile">
                                 <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                             </div>
-                            <strong class="post-id">해징어</strong>
-                            <span class="post-date">2023.10.26 10:02</span>
+                            <strong class="post-id">${qna.userId }</strong>
+                            <span class="post-date">${qna.qnaDate }</span>
                             <div class="comment_writeracc">
                                 <button class="comment_update">
-                                    <span>수정</span>
+                                    <a href="${contextPath}/qna/update/${qna.qnaNum}">수정</a>
                                 </button>
                                 <button class="comment_delete">
-                                    <span>삭제</span>
+                                    <a href="${contextPath}/qna/delete/${qna.qnaNum}">삭제</a>
                                 </button>
                             </div>
                         </div>
                     </div>
                     <div class="post-content">
-                        <p class="content">잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?<br>내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다</p><br>
-                        <img src="${contextPath}/resource/images/food/sample.jpg" alt="">
-                        <p class="content">내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다</p><br>
+                        <p class="content">내용 : ${qna.qnaContent }</p><br>
+                        <p> 이미지 : ${qna.userImg }</p>
                     </div>
-                        <a href="/front/html/community/qna.html">
+                        <a href="${contextPath}/qna/qna">
                             <div class="btnGroup lg btn_list"><button class="btnBgGray btn_list">목록</button></div>
                         </a>
                 </div>
@@ -112,7 +111,7 @@
                             <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                         <div>
                             <div class="comment-contentbox">
-                                <strong class="comment-id">해징어</strong>
+                                <strong class="comment-id"><sec:authentication property="principal.member.memberName"/></strong>
                                 <p class="comment-content">진짜 맛있어 보이는 음식이네요! 금손 인정! 대박 도라방스 부럽다!대박 도라방스 부럽다!대박 도라방스 부럽다!대박 도라방스 부럽다!대박 도라방스 부럽다!대박 도라방스 부럽다!대박 도라방스 부럽다!</p>
                             </div>
                             <div class="comment-info">

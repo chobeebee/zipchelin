@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.zipchelin.domain.Notice;
+import com.zipchelin.model.page.Criteria;
 
 @Mapper
 public interface NoticeMapper {
@@ -19,5 +20,8 @@ public interface NoticeMapper {
 	public void delNotice(Integer newArr);
     
 	public void updateNotice(Notice notice);
+	
+	public List<Notice> getListPaging(Criteria cri);
 
+	public int getTotal();
 }

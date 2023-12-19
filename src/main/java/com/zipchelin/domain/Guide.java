@@ -21,7 +21,15 @@ public class Guide {
 	private String guiTitle;
 	private String guiSubt;
 	private String guiDesc;
-	private String guiThumb;
+	private String guiThumb; //임시
+	
+	private int guiImgId;
+	private String guiImgFileName;
+	private int guiImgNo;
+	
+	private int guiTextId;
+	private String guiText;
+	private int guiTextNo;
 	
 	public GuideResponseDto toDto() {
 		return GuideResponseDto.builder()

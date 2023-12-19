@@ -1,6 +1,7 @@
 package com.zipchelin.repository.mybatis;
 
 import com.zipchelin.domain.Notice;
+import com.zipchelin.model.page.Criteria;
 import com.zipchelin.repository.NoticeRepository;
 import com.zipchelin.repository.mybatis.mappers.NoticeMapper;
 import lombok.RequiredArgsConstructor;
@@ -28,19 +29,29 @@ public class NoticeMapperMybatis implements NoticeRepository{
 
 	@Override
 	public void updateNotice(Notice notice) {
-		// TODO Auto-generated method stub
+		noticeMapper.updateNotice(notice);
 		
 	}
 
 	@Override
 	public void delNotice(Integer newArr) {
-		// TODO Auto-generated method stub
+		noticeMapper.delNotice(newArr);
 		
 	}
 
 	@Override
 	public Notice getPage(Integer noticeNum) {
 		return noticeMapper.getPage(noticeNum);
+	}
+
+	@Override
+	public List<Notice> getListPaging(Criteria cri) {
+		return noticeMapper.getListPaging(cri);
+	}
+
+	@Override
+	public int getTotal() {
+		return noticeMapper.getTotal();
 	}
 
 	

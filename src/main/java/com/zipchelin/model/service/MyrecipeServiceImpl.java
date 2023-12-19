@@ -8,8 +8,8 @@ import com.zipchelin.repository.MyrecipeRepository;
 @Service
 public class MyrecipeServiceImpl {
 
-	@Autowired
-	MyrecipeRepository myrecipeRepository;
+	/*@Autowired
+	MyrecipeRepository myrecipeRepository;*/
 	
 	
 }

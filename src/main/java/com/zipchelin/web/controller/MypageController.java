@@ -48,7 +48,7 @@ public class MypageController {
 		return "mypage/mypwdConfirm";
 	}
 	
-	@PostMapping("/myedit")
+	@GetMapping("/myedit")
 	public String mypageEdit(@AuthenticationPrincipal CustomUserDetails userDetails,@RequestParam("pwdCheck") String pwd, Model model) {
 		/*String next=null;
 		

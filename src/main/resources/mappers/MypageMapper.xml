@@ -9,10 +9,10 @@
 	</select>
 	
 	<!-- 멤버 조회 -->
-    <select id="selectById" resultType="com.zipchelin.domain.Member" parameterType="string">
+    <select id="selectMemberById" resultType="com.zipchelin.domain.Member" parameterType="string">
         select member_ID, member_PWD, member_NAME, member_EMAIL, member_PHONE, JOIN_DATE, member_IMG, MEMBER_ROLE
         from member_TBL
-        where member_ID = #{memberId}
+        where member_ID = #{id}
     </select>
 
     <!-- 멤버 수정 -->
@@ -26,22 +26,22 @@
     </update>
     
     <!-- 내 글,내 댓글, 찜 수 체크-->
-    <select id="countMyGuiPick" parameterType="String">
+    <select id="countMyGuiPick" parameterType="String" resultType="int">
     	select count(*) from gui_pick where user_id=#{id}
 	</select>
-	<select id="countMyRecPick" parameterType="String">
+	<select id="countMyRecPick" parameterType="String" resultType="int">
 		select count(*) from rec_pick where user_id=#{id}
 	</select>
-	<select id="countMyQna" parameterType="String">
+	<select id="countMyQna" parameterType="String" resultType="int">
 		select count(*) from qna_tbl where user_id=#{id}
 	</select>
-	<select id="countMyMyre" parameterType="String">
+	<select id="countMyMyre" parameterType="String" resultType="int">
 		select count(*) from myrecipe_tbl where user_id=#{id}
 	</select>
-	<select id="countMyMyreReply" parameterType="String">
+	<select id="countMyMyreReply" parameterType="String" resultType="int">
 		select count(*) from myrecipe_reply_tbl where re_id=#{id}
 	</select>
-	<select id="countMyQnaReply" parameterType="String">
+	<select id="countMyQnaReply" parameterType="String" resultType="int">
 		select count(*) from qna_reply_tbl where re_id=#{id}
 	</select>
 </mapper>

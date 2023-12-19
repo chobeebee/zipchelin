@@ -77,11 +77,12 @@ public class AdminController {
 	
 	// 공지사항 삭제
 	@PostMapping("/delnotice")
-    public String delNotice(Integer noticeNum, HttpServletRequest request) {
+    public String delNotice(String noticeNum, HttpServletRequest request) {
 		String [] ajaxMsg = request.getParameterValues("valueArr");
-		int size = ajaxMsg.length;
-		for(int i=0; i<size; i++) {
-			noticeService.delNotice(ajaxMsg[i]);
+		Integer[] newArr = new Integer[ajaxMsg.length];
+		for(int i=0; i<ajaxMsg.length; i++) {
+			newArr[i] = Integer.parseInt(ajaxMsg[i]); 
+			noticeService.delNotice(newArr[i]);
 		}
 		return "redirect:/admin/notice";
 	}

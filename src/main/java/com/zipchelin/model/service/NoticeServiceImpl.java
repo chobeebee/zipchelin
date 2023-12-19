@@ -33,8 +33,8 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
-	public void delNotice(String noticeNum) {
-		noticeMapper.delNotice(noticeNum);
+	public void delNotice(Integer newArr) {
+		noticeMapper.delNotice(newArr);
 	}
 
 	@Override

@@ -33,7 +33,7 @@ public class NoticeMapperMybatis implements NoticeRepository{
 	}
 
 	@Override
-	public void delNotice(String noticeNum) {
+	public void delNotice(Integer newArr) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -40,11 +40,15 @@ $(function(){
 		smartEditor() 
 	})
 	
-submitPost = function() {
+	submitPost = function() {
 	oEditors.getById["form-content"].exec("UPDATE_CONTENTS_FIELD", []);
 	let content = document.getElementById("form-content").value;
 	console.log(content);
 }
+
+	function test(){
+		alert("js연결완료");
+	}
 	
 	
 

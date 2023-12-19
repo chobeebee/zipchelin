@@ -5,8 +5,9 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.zipchelin.domain.qna.QnaRequest;
-import com.zipchelin.domain.qna.QnaResponse;
+import com.zipchelin.model.dto.qna.QnaDto;
+import com.zipchelin.model.dto.qna.QnaRequest;
+import com.zipchelin.model.dto.qna.QnaResponse;
 import com.zipchelin.repository.mybatis.mappers.QnaMapper;
 
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,7 @@ public class QnaService {
 		return params.getUserId();
 	}
 	
-	public QnaResponse findQnaById(final String id) {
+	public QnaResponse findQnaById(final Long id) {
 		return qnaMapper.findById(id);
 	}
 	
@@ -33,12 +34,14 @@ public class QnaService {
 		return params.getUserId();
 	}
 	
-	public String deleteQna(final String id) {
+	public Long deleteQna(final Long id) {
 		qnaMapper.deleteById(id);
 		return id;
 	}
 	
-	public List<QnaResponse> findAllQna() {
-		return qnaMapper.findAll();
+	public List<QnaResponse> findAllQna(final QnaDto params) {
+		return qnaMapper.findAll(params);
 	}
+	
+	
 }

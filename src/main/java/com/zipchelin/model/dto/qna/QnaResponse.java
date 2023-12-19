@@ -1,4 +1,4 @@
-package com.zipchelin.domain.qna;
+package com.zipchelin.model.dto.qna;
 
 import java.time.LocalDate;
 

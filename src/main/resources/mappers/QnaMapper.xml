@@ -8,52 +8,70 @@
 
 
     <!-- 게시글 저장 -->
-    <insert id="save" parameterType="com.zipchelin.domain.qna.QnaRequest" >
+    <insert id="save" parameterType="com.zipchelin.model.dto.qna.QnaRequest" >
         INSERT INTO qna_tbl VALUES (
               qna_sq.nextval
-            , #{user_id}
-            , #{qna_title}
-            , #{qna_content}
+            , #{userId}
+            , #{qnaTitle}
+            , #{qnaContent}
             , sysdate
             , 0
             , 0
-            , #{user_img}
+            , #{userImg}
         )
     </insert>
 
 
     <!-- 게시글 상세정보 조회 -->
-    <select id="findById" parameterType="string" resultType="com.zipchelin.domain.qna.QnaResponse">
+    <select id="findById" parameterType="Long" resultType="com.zipchelin.model.dto.qna.QnaResponse">
             select * from qna_tbl
         WHERE
-            user_id = #{user_id}
+            qna_num = #{qnaNum}
     </select>
 
 
     <!-- 게시글 수정 -->
-    <update id="update" parameterType="com.zipchelin.domain.qna.QnaRequest">
+    <update id="update" parameterType="com.zipchelin.model.dto.qna.QnaRequest">
         UPDATE qna_tbl
         SET
-            qna_title = #{qna_title},
-            qna_content = #{qna_content},
-            user_img = #{user_img}
+            qna_title = #{qnaTitle},
+            qna_content = #{qnaContent},
+            user_img = #{userImg}
         WHERE
-            user_id = #{user_id}
+            qna_num = #{qnaNum}
     </update>
 
 
     <!-- 게시글 삭제 -->
-    <delete id="deleteById" parameterType="string">
+    <delete id="deleteById" parameterType="Long">
         delete qna_tbl 
         where 
-        	user_id = #{user_id}
+        	qna_num = #{qnaNum}
     </delete>
 
 
     <!-- 게시글 리스트 조회 -->
-    <select id="findAll" resultType="com.zipchelin.domain.qna.QnaResponse">
-            <include refid="qnaColumns" />
-        ORDER BY
-            qna_num
+    <select id="findAll" parameterType="com.zipchelin.model.dto.qna.QnaDto" resultType="com.zipchelin.model.dto.qna.QnaResponse">
+           select 
+           * from(select a.*, rownum as rnum from(select * from qna_tbl order by qna_num desc) a)
+           <![CDATA[
+				where rnum >= 0
+				and rnum <= 10
+				]]>
+          <!-- 
+           <![CDATA[
+				where rnum >= #{paging.startIndex}
+				and rnum <= #{paging.endIndex}
+				]]>
+				 -->
+				 
+    </select>
+    
+    <!-- 게시글 수 카운팅 -->
+    <select id="count" parameterType="com.zipchelin.model.dto.qna.QnaDto" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            qna_tbl
     </select>
 </mapper>

@@ -76,17 +76,17 @@
                             <span class="post-date">${qna.qnaDate }</span>
                             <div class="comment_writeracc">
                                 <button class="comment_update">
-                                    <span>수정</span>
+                                    <a href="${contextPath}/qna/update/${qna.qnaNum}">수정</a>
                                 </button>
                                 <button class="comment_delete">
-                                    <a href="${contextPath}/qna/delete?id=${qna.userId}">삭제</a>
+                                    <a href="${contextPath}/qna/delete/${qna.qnaNum}">삭제</a>
                                 </button>
                             </div>
                         </div>
                     </div>
                     <div class="post-content">
-                        <p class="content">${qna.qnaContent }</p><br>
-                        <p>${qna.userImg }</p>
+                        <p class="content">내용 : ${qna.qnaContent }</p><br>
+                        <p> 이미지 : ${qna.userImg }</p>
                     </div>
                         <a href="${contextPath}/qna/qna">
                             <div class="btnGroup lg btn_list"><button class="btnBgGray btn_list">목록</button></div>
@@ -111,7 +111,7 @@
                             <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                         <div>
                             <div class="comment-contentbox">
-                                <strong class="comment-id">해징어</strong>
+                                <strong class="comment-id"><sec:authentication property="principal.member.memberName"/></strong>
                                 <p class="comment-content">진짜 맛있어 보이는 음식이네요! 금손 인정! 대박 도라방스 부럽다!대박 도라방스 부럽다!대박 도라방스 부럽다!대박 도라방스 부럽다!대박 도라방스 부럽다!대박 도라방스 부럽다!대박 도라방스 부럽다!</p>
                             </div>
                             <div class="comment-info">

@@ -13,4 +13,16 @@ public interface MypageMapper {
 	public String checkPwd(Map<String, String> map);
 	
 	public void updateMember(Member member);
+	
+	public int countMyGuiPick(String id);
+
+	public int countMyRecPick(String id);
+
+	public int countMyQna(String id);
+
+	public int countMyMyre(String id);
+
+	public int countMyMyreReply(String id);
+
+	public int countMyQnaReply(String id);
 }

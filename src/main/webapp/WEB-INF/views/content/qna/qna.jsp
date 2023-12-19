@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
 
     <!-- plugin CSS -->
-    <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css">
+    <!-- <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css"> -->
 
     <!--[if lt IE 9]>
     <script type="text/javascript" src="/assets/front/js/html5shiv.js"></script>
@@ -50,7 +50,7 @@
 
     <!-- myrecipelist CSS -->
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/community.css">
-    <!-- <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/qna_temp.css"> -->
+    
 
 <title>요리 상담소 리스트</title>
 </head>
@@ -69,7 +69,7 @@
                     <option value="#" selected>최신순</option>
                     <option value="#">오래된순</option>
                 </select>
-                <button onclick="location.href='${contextPath}/qna/qna_form'" class="btnBg btnSm" class="btn_write">질문하기</button>
+                <button onclick="location.href='${contextPath}/qna/form'" class="btnBg btnSm" class="btn_write">질문하기</button>
             </div>
             
         <div class="qna">
@@ -84,11 +84,11 @@
                 </li>
                 <c:forEach var="qna" items="${qna }">
 	               <li>
-	                   <a href="${contextPath}/qna/qna_post?id=${qna.userId}" class="textbox tableWd">
+	                   <a href="${contextPath}/qna/post/${qna.qnaNum}" class="textbox tableWd">
 	                       <div class="num tableItem">${qna.qnaNum }</div>
 	                       <div class="text-title tableItem title">
 	                           <span class="question">Q. </span>
-	                           <p>${qna.qna_content }</p>
+	                           <p>${qna.qnaTitle }</p>
 	                           <span class="iconFile material-symbols-outlined">${qna.userImg }</span>
 	                       </div>
 	                       <div class="tableItem">${qna.qnaUp }</div>
@@ -121,7 +121,7 @@
     	<jsp:include page="/WEB-INF/views/main/footer.jsp"/>
     </footer> 
 
-   
+    <!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="${contextPath}/resource/js/common.js"></script>
     <script src="${contextPath}/resource/js/community.js"></script>

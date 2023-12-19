@@ -30,4 +30,20 @@ public class MypageMapperMybatis implements MypageRepository{
 	public void updateMember(Member member) {
 		mypageMapper.updateMember(member);
 	}
+
+	
+	@Override
+	public Map<String, Integer> selectCount(String id) {
+		//찜
+		mypageMapper.countMyGuiPick(id);
+		mypageMapper.countMyRecPick(id);
+		//내 글
+		mypageMapper.countMyQna(id);
+		mypageMapper.countMyMyre(id);
+		//내 댓글
+		mypageMapper.countMyMyreReply(id);
+		mypageMapper.countMyQnaReply(id);
+		
+		return null;
+	}
 }

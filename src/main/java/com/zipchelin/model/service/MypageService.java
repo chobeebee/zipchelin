@@ -84,7 +84,9 @@ public class MypageService {
 				if(postList.get(i).getPostDate().isBefore(postList.get(j).getPostDate())) {
 					MyPost iPost=postList.get(i);
 					MyPost jPost=postList.get(j);
+					postList.remove(i);
 					postList.add(i, jPost);
+					postList.remove(j);
 					postList.add(j, iPost);
 				}
 			}

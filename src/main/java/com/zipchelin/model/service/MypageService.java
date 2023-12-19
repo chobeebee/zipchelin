@@ -1,15 +1,5 @@
 package com.zipchelin.model.service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.stereotype.Service;
-
-import com.zipchelin.config.auth.CustomUserDetails;
 import com.zipchelin.domain.Member;
 import com.zipchelin.domain.Myrecipe;
 import com.zipchelin.domain.Qna;
@@ -18,8 +8,14 @@ import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.model.dto.myrecipe.MyrecipeResponseDto;
 import com.zipchelin.model.dto.qna.QnaResponseDto;
 import com.zipchelin.repository.MypageRepository;
-
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor

@@ -44,8 +44,9 @@
                             <div class="card border-top-0 mb-4">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-end mb-2">
-                                        <a href="#" class="btn btn-secondary mr-2" aria-current="page">취소</a>
-                                        <a href="#" class="btn btn-primary">삭제</a>
+                                    	<a href="#" class="btn btn-outline-dark mr-2">취소</a>
+                                        <a href="#" class="btn btn-secondary mr-2" aria-current="page">삭제</a>
+                                        <a href="#" class="btn btn-primary">등록</a>
                                     </div>
                                     <div class="table-responsive">
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -68,37 +69,7 @@
                                                     </td>
                                                     <td>1</td>
                                                     <td>
-                                                        <a href="#">방울토마토 한 번에 예쁘게 써는 법</a>
-                                                    </td>
-                                                    <td>2023.01.01</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle">
-                                                        <input class="form-check" type="checkbox" value="">
-                                                    </td>
-                                                    <td>2</td>
-                                                    <td>
-                                                        <a href="#">오징어 손질법</a>
-                                                    </td>
-                                                    <td>2023.01.01</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle">
-                                                        <input class="form-check" type="checkbox" value="">
-                                                    </td>
-                                                    <td>3</td>
-                                                    <td>
-                                                        <a href="#">삶은 달걀 쉽게 까는 법</a>
-                                                    </td>
-                                                    <td>2023.01.01</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle">
-                                                        <input class="form-check" type="checkbox" value="">
-                                                    </td>
-                                                    <td>4</td>
-                                                    <td>
-                                                        <a href="#">아보카도 써는법</a>
+                                                        <a href="/admin/guide/form">방울토마토 한 번에 예쁘게 써는 법</a>
                                                     </td>
                                                     <td>2023.01.01</td>
                                                 </tr>

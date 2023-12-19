@@ -133,6 +133,13 @@
                 </div>
             </div>
             <div class="form_item">
+                <label for="" class="sign_left_label">인증번호</label>
+                <div class="sign_input_box">
+                    <input type="text" id="" class="sign_info_input2" placeholder="인증번호">
+                    <button type="button" onclick="" class="sign_input_button btnBd">확인</button>
+                </div>
+            </div>
+            <div class="form_item">
                 <div>
                     <input type="checkbox" id="sign_agree" class="chkBox">
                     <label for="sign_agree"><a href="#" class="sign_agreement">이용약관</a>을 읽고 동의하였습니다.</label>

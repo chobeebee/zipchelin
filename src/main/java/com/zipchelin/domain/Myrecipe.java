@@ -2,6 +2,7 @@ package com.zipchelin.domain;
 
 import java.time.LocalDateTime;
 
+import com.zipchelin.model.dto.MyPost;
 import com.zipchelin.model.dto.myrecipe.MyrecipeRequestDto;
 import com.zipchelin.model.dto.myrecipe.MyrecipeResponseDto;
 
@@ -38,6 +39,16 @@ public class Myrecipe {
 				.myreNum(myreNum)
 				.myreTitle(myreTitle)
 				.myreCont(myreCont)
+				.build();
+	}
+	
+	public MyPost toMyPost() {
+		return MyPost
+				.builder()
+				.myrecipe(this)
+				.myreOrQna("myre")
+				.postDate(myreDate)
+				.qna(null)
 				.build();
 	}
 	

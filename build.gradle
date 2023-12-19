@@ -31,6 +31,9 @@ dependencies {
     implementation 'org.springframework.security:spring-security-taglibs:5.7.11'
     implementation 'org.springframework.security:spring-security-oauth2-client:5.7.11'
 
+    // 인증번호 저장용 인메모리 DB
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
     // DB
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'

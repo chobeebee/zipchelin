@@ -3,6 +3,7 @@
          isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <%
     request.setCharacterEncoding("utf-8");
@@ -69,10 +70,12 @@
                     <button type="button" onclick="" class="sign_input_button btnBd">중복확인</button>
                 </div>
                 <div id="sign_id_warning_box">
-                    <form:errors path="memberId" cssStyle="color: red"/>
-                    <p class="sign_warning" id="sign_warning_id">아이디는 필수 입력사항입니다.</p>
-                    <p class="sign_warning" id="sign_warning_id_rule">아이디는 숫자/영문자 포함 6~12자 여야 합니다.</p>
-                    <p class="sign_warning" id="sign_warning_id_dup">중복되는 아이디 입니다.</p>
+                    <form:errors path="memberId" element="p" class="sign_warning"/>
+                    <spring:hasBindErrors name="params">
+                        <c:if test="${errors.hasGlobalErrors()}">
+                            <p class="sign_warning">중복된 아이디입니다.</p>
+                        </c:if>
+                    </spring:hasBindErrors>
                 </div>
             </div>
             <div class="form_item">
@@ -80,16 +83,15 @@
                 <div class="inputField sign_info_input">
                     <form:input type="password" path="memberPwd" id="sign_pwd" class=""
                                 placeholder="특수문자/영문자/숫자 포함 8~15자"/>
-                    <form:errors path="memberPwd" cssStyle="color: red"/>
-                    <span class="pwdToggle material-symbols-outlined">visibility_off</span>
-                    <p class="sign_warning" id="sign_warning_pwd">비밀번호는 필수 입력사항입니다</p>
-                    <p class="sign_warning" id="sign_warning_pwd_rule">비밀번호는 특수문자/영문자/숫자 포함 8~15자 여야 합니다</p>
+                    <form:errors path="memberPwd" element="p" class="sign_warning"/>
                 </div>
                 <div class="inputField sign_info_input">
-                    <input type="password" name="pwd" id="sign_pwd2" class="" placeholder="비밀번호 확인">
-                    <span class="pwdToggle material-symbols-outlined">visibility_off</span>
-                    <p class="sign_warning" id="sign_warning_pwd2">비밀번호가 먼저 입력되어야 합니다.</p>
-                    <p class="sign_warning" id="sign_warning_pwd2_rule">비밀번호가 일치하지 않습니다.</p>
+                    <form:input type="password" path="pwdConfirm" id="sign_pwd2" class="" placeholder="비밀번호 확인" />
+                    <spring:hasBindErrors name="params">
+                        <c:if test="${errors.hasGlobalErrors()}">
+                            <p class="sign_warning">비밀번호와 일치하지 않습니다.</p>
+                        </c:if>
+                    </spring:hasBindErrors>
                 </div>
             </div>
             <div class="form_item">
@@ -97,51 +99,28 @@
                 <div class="sign_input_box">
                     <form:input type="text" path="memberName" id="sign_name" class="sign_info_input" placeholder="이름"/>
                 </div>
-                <form:errors path="memberName" cssStyle="color: red"/>
-                <p class="sign_warning" id="sign_warning_name">이름은 필수입력사항 입니다.</p>
-            </div>
-            <div class="form_item form_email">
-                <label for="sign_email_1" class="sign_left_label">이메일</label>
-                <div class="sign_input_box">
-                    <form:input type="text" path="memberEmail" id="sign_email_1" class="sign_email_input"
-                                placeholder="이메일"/>
-                        <%--                        <span>@</span>--%>
-                        <%--                        <input type="text" id="sign_email_2" class="sign_email_input" value="gmail.com" disabled>--%>
-                        <%--                        <select id="sign_email_input_choose">--%>
-                        <%--                            <option selected>gmail.com</option>--%>
-                        <%--                            <option>naver.com</option>--%>
-                        <%--                            <option>kakao.com</option>--%>
-                        <%--                            <option>직접입력</option>--%>
-                        <%--                        </select>--%>
-                        <%--                        <input type="hidden" id="sign_email" name="email">--%>
-                </div>
-                <form:errors path="memberEmail" cssStyle="color: red"/>
-                <p class="sign_warning" id="sign_warning_email">이메일은 필수입력사항 입니다.</p>
+                <form:errors path="memberName" element="p" class="sign_warning"/>
             </div>
             <div class="form_item">
-                <label for="sign_tel" class="sign_left_label">전화번호</label>
+                <label for="sign_tel" class="sign_left_label">이메일</label>
                 <div>
                     <div class="sign_input_box">
-                        <form:input type="text" path="memberPhone" id="sign_tel" class="sign_info_input2"
-                                    placeholder="전화번호(-)제외"/>
+                        <form:input type="email" path="memberEmail" id="sign_tel" class="sign_info_input2"
+                                    placeholder="이메일"/>
                         <button type="button" onclick="" class="sign_input_button btnBd">본인인증</button>
                     </div>
-                    <form:errors path="memberPhone" cssStyle="color: red"/>
-                    <p class="sign_warning" id="sign_warning_tel">전화번호는 필수입력사항입니다.</p>
-                    <p class="sign_warning" id="sign_warning_tel_rule">전화번호가 잘못되었습니다.</p>
-                    <p class="sign_warning" id="sign_warning_tel_minus">전화번호에 (-)가 포함되어선 안됩니다.</p>
+                    <form:errors path="memberEmail" element="p" class="sign_warning"/>
                 </div>
             </div>
             <div class="form_item">
                 <div>
-                    <input type="checkbox" id="sign_agree" class="chkBox">
-                    <label for="sign_agree"><a href="#" class="sign_agreement">이용약관</a>을 읽고 동의하였습니다.</label>
+                    <form:checkbox path="terms" class="chkBox" label="이용약관을 읽고 동의하였습니다."/>
+<%--                    <form:label path="terms"><a href="#" class="sign_agreement">이용약관</a>을 읽고 동의하였습니다.</form:label>--%>
                 </div>
-                <p class="sign_warning" id="sign_warning_agree">약관동의는 필수 입니다.</p>
+                <form:errors path="terms" element="p" class="sign_warning"/>
             </div>
 
             <div>
-                    <%--                <button onclick="sign_form_submit()" id="sign_submit_button" class="btnBg">회원가입</button>--%>
                 <button type="submit" id="sign_submit_button" class="btnBg">회원가입</button>
             </div>
         </form:form>
@@ -155,7 +134,9 @@
 
 <!-- js -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+
+</script>
 <script src="${contextPath}/resource/js/common.js"></script>
-<%--    <script src="${contextPath}/resource/js/member.js"></script>--%>
 </body>
 </html>

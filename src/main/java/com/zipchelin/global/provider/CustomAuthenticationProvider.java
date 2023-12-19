@@ -1,6 +1,6 @@
-package com.zipchelin.config.provider;
+package com.zipchelin.global.provider;
 
-import com.zipchelin.config.auth.CustomUserDetails;
+import com.zipchelin.global.auth.CustomUserDetails;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;

@@ -1,6 +1,7 @@
 package com.zipchelin.model.dto.qna;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 import com.zipchelin.domain.Qna;
 
@@ -16,7 +17,7 @@ public class QnaResponseDto {
 	private String userId;
 	private String qnaTitle;
 	private String qnaContent;
-	private Date qnaDate;
+	private LocalDateTime qnaDate;
 	private int qnaUp;
 	
 	public Qna toEntity() {

@@ -1,6 +1,7 @@
 package com.zipchelin.repository;
 
 import com.zipchelin.domain.Member;
+import com.zipchelin.model.dto.member.EmailDto;
 
 import java.util.Optional;
 
@@ -15,4 +16,10 @@ public interface MemberRepository {
     Optional<Member> findById(String memberId);
 
     int countById(String memberId);
+
+    void emailAuth(EmailDto params);
+
+    Optional<EmailDto> findAuth(String code);
+
+    void deleteAuth(String code);
 }

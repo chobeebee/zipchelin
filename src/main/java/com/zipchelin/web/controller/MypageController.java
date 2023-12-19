@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.zipchelin.config.auth.CustomUserDetails;
+import com.zipchelin.global.auth.CustomUserDetails;
 import com.zipchelin.model.service.MypageService;
 
 import lombok.RequiredArgsConstructor;
@@ -35,10 +35,10 @@ public class MypageController {
 	
 	@GetMapping("/mypage")
 	public String mypage(Model model,@AuthenticationPrincipal CustomUserDetails userDetails) {
-		/*String id=userDetails.getMember().getMemberId();
+		/*
+		String id=userDetails.getMember().getMemberId();
 		model.addAttribute("count", mypageService.selectCount(id));
-		model.addAttribute("myRecip", mypageService.selectMyreById(id));
-		model.addAttribute("myQna", mypageService.selectQnaById(id));
+		model.addAttribute("myPostList",mypageService.selectMyPostList2(id));
 		*/
 		return "mypage/mypage";
 	}
@@ -67,7 +67,9 @@ public class MypageController {
 	}
 	
 	@GetMapping("/mypost")
-	public String mypost() {
+	public String mypost(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
+		//String id=userDetails.getMember().getMemberId();
+		//model.addAttribute("myPostList",mypageService.selectMyPostList(id));
 		return "mypage/mypost";
 	}
 	

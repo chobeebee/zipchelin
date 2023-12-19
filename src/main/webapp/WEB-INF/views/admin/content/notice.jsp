@@ -46,11 +46,7 @@
                                 <table class="table table-bordered noticeList" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr class="bg-gray-100">
-                                            <th class="white-space-nowrap  align-middle">
-                                                <div>
-                                                    <input type="checkbox" id="select-all" name="allCheck">
-                                                </div>
-                                            </th>
+                                            <th class="white-space-nowrap align-middle"><input type="checkbox"classs="allCheck"></th>
                                             <th>번호</th>
                                             <th>제목</th>
                                             <th>등록일자</th>
@@ -60,7 +56,7 @@
                                     	<c:forEach var="notice" items="${noticeList}" varStatus="noticeNum">                            
                                     		<tr class="noticeItem">
 	                                            <td class="align-middle">
-	                                                <input class="form-check" name="RowCheck" type="checkbox" value="${notice.noticeNum}">
+	                                                <input type="checkbox" class="check" value="${notice.noticeNum}">
 	                                            </td>
 	                                            <td class="num">${notice.noticeNum}</td>
 	                                            <td class="title">
@@ -72,21 +68,25 @@
                                                              
                                     </tbody>
                                 </table>
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination justify-content-center">
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Previous">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Next">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
+                                <div class="pageInfo_wrap">
+                                	<div class="pageInfo_area">
+	                                    <ul class="pageInfo" id="pageInfo">
+	                                    	<c:if test="${pageMaker.prev}">
+		                                        <li class="pageInfo_btn previous"><a href="${pageMaker.startPage-1}">Previous</a></li>
+	                                        </c:if>
+	                                        <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+							                    <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
+							                </c:forEach>
+	                                        <c:if test="${pageMaker.next}">
+							                    <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
+							                </c:if> 
+	                                    </ul>
+                                    </div>
+                                </div>                 
+                                <form action="get" id="moveForm">
+                                	<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+                                	<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+                                </form>
                             </div>
                         </div>  
                     </div>

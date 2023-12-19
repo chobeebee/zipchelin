@@ -1,7 +1,9 @@
 package com.zipchelin.domain;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
+import com.zipchelin.model.dto.MyPost;
 import com.zipchelin.model.dto.qna.QnaRequestDto;
 import com.zipchelin.model.dto.qna.QnaResponseDto;
 
@@ -19,7 +21,7 @@ public class Qna {
 	private String userId;
 	private String qnaTitle;
 	private String qnaContent;
-	private Date qnaDate;
+	private LocalDateTime qnaDate;
 	private int qnaUp;
 	
 	public QnaResponseDto toDto() {
@@ -38,6 +40,16 @@ public class Qna {
 				.userId(userId)
 				.qnaTitle(qnaTitle)
 				.qnaContent(qnaContent)
+				.build();
+	}
+	
+	public MyPost toMyPost() {
+		return MyPost
+				.builder()
+				.myrecipe(null)
+				.myreOrQna("qna")
+				.postDate(qnaDate)
+				.qna(this)
 				.build();
 	}
 }

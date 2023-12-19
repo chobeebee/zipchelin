@@ -2,6 +2,7 @@ package com.zipchelin.repository.mybatis.mappers;
 
 import com.zipchelin.domain.Member;
 import com.zipchelin.model.dto.member.MemberRequestDto;
+import com.zipchelin.model.dto.member.MemberSaveDto;
 import com.zipchelin.model.service.MemberService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -21,12 +22,11 @@ class MemberMapperTest {
 
     @Test
     void encodingSave() {
-        MemberRequestDto memberSave = MemberRequestDto.builder()
+        MemberSaveDto memberSave = MemberSaveDto.builder()
                 .memberId("test123")
                 .memberPwd("test")
                 .memberEmail("test@test.com")
                 .memberName("테스트")
-                .memberPhone("01012345678")
                 .build();
 
         memberService.saveMember(memberSave);
@@ -41,7 +41,6 @@ class MemberMapperTest {
                 .memberId("test123")
                 .memberPwd("test")
                 .memberEmail("modify@modify.com")
-                .memberPhone("01012345678")
                 .memberImg("")
                 .build();
         Member member = memberModify.toEntity();

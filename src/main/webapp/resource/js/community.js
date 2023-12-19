@@ -23,6 +23,30 @@ $(function(){
         }
     }
     
+/* 에디터 설정 */
+	let oEditors = []
+	
+	smartEditor = function() {
+		console.log("Naver SmartEditor")
+		nhn.husky.EZCreator.createInIFrame({
+			oAppRef: oEditors,
+			elPlaceHolder: "form-content",
+			sSkinURI: "/resource/smarteditor/SmartEditor2Skin.html",
+			fCreator: "createSEditor2"
+		})
+	}
+	
+	$(document).ready(function(){
+		smartEditor() 
+	})
+	
+submitPost = function() {
+	oEditors.getById["form-content"].exec("UPDATE_CONTENTS_FIELD", []);
+	let content = document.getElementById("form-content").value;
+	console.log(content);
+}
+	
+	
 
     
 

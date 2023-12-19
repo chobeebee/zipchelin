@@ -33,16 +33,16 @@
      <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
-    <!-- basic CSS -->
-    <link rel="stylesheet" type="text/css" href="/front/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/front/css/base.css">
-    <link rel="stylesheet" type="text/css" href="/front/css/common.css">
+	<!-- basic CSS -->
+	<link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/base.css">
+	<link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
 
-    <!-- page CSS -->
-    <link rel="stylesheet" type="text/css" href="/front/css/mypage.css">
-
-    <!-- plugin CSS -->
-    <link rel="stylesheet" href="/front/css/swiper-bundle.css">
+	<!-- page CSS -->
+	<link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/mypage.css">
+	
+	<!-- plugin CSS -->
+	<link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css">
 
     <!--[if IE 9]>
     <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
@@ -59,7 +59,7 @@
     <!--header-->
     <header class="header">
         <div class="headerContainer">
-            <img class="logo" src="/front/images/logo/logo.png" />
+            <img class="logo" src="front/images/logo/logo.png" />
             <div class="menu">
                 <a href="">레시피</a>
                 <a href="">가이드</a>
@@ -84,7 +84,7 @@
             
             <!--마이페이지 레프트박스 (프로필이미지, 아이디, 정보수정버튼)-->
             <div class="myBox_profile">
-                <img src="/front/images/icon/profile.jpg" class="myProfile_img" alt="profile">
+                <img src="${contextPath}/resource/images/icon/profile.jpg" class="myProfile_img" alt="profile">
                 <h3 class="userId_text">USER_ID</h3>
                 <button class="myPage_edit_btn" onclick="location.href='mypage_edit.html'">정보수정</button>
             </div><!--마이페이지 레프트박스 (프로필이미지, 아이디, 정보수정버튼) 끝-->
@@ -118,11 +118,11 @@
 
             <h3>개인정보 수정</h3>
 
-            <form id="edit_form" action="" method="">
+            <form id="edit_form" action="" method="post">
 
                 <!--프로필사진 수정-->
                 <div class="profile_section">
-                    <img src="/front/images/icon/profile.jpg" alt="profile_img" class="profile_img_edit" onclick="loaction.href='#'">
+                    <img src="${contextPath}/resource/images/icon/profile.jpg" alt="profile_img" class="profile_img_edit" onclick="loaction.href='#'">
                     <div class="profile_edit_btn">
                         <input type="button" value="사진선택" class="profile_select_btn" class="profile_editbtn1" onclick="loaction.href='#'">
                         <input type="button" value="기본이미지로변경" class="profile_change_btn" class="profile_editbtn2" onclick="loaction.href='#'">
@@ -134,7 +134,7 @@
                     <div class="edit_form_item">
                         <label for="id" class="edit_label">아이디</label>
                         <div class="edit_info_input">
-                            <input type="text" id="id" class="edit_input edit_input2" name="id" placeholder="USER_ID" disabled>
+                            <input type="text" id="id" class="edit_input edit_input2" name="id" placeholder="USER_ID" readonly>
                         </div>
                     </div>
                 </div>
@@ -154,7 +154,7 @@
                 <div class="edit_form_item">
                     <label for="pwd" class="edit_label">새 비밀번호 확인</label>
                     <div class="inputField edit_info_input">
-                        <input type="password" id="check_pwd" class="edit_input edit_input2" name="pwd" placeholder="특수문자/영문자/숫자 포함 8~15자">
+                        <input type="password" id="check_pwd" class="edit_input edit_input2" name="pwdCheck" placeholder="특수문자/영문자/숫자 포함 8~15자">
                         <span class="edit_pwdToggle pwdToggle material-symbols-outlined">visibility_off</span>
                             <p class="edit_warning" id="edit_warning_pwd_check">비밀번호가 일치하지 않습니다.</p>
                     </div>
@@ -204,7 +204,7 @@
 
                 <!--회원탈퇴-->
                 <div class="unregister">
-                    <a href="/front/html/user/leave_check.html" class="edit_leave">회원탈퇴</a>
+                    <a href="/front/html/member/leave_check.html" class="edit_leave">회원탈퇴</a>
                 </div>
 
             </form>
@@ -253,10 +253,9 @@
     </footer>
 
     <!-- js -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="/front/js/common.js"></script>
-    <script src="/front/js/mypage.js"></script>
+	<script src="${contextPath}/resource/js/common.js"></script>
+    <script src="${contextPath}/resource/js/mypage.js"></script>
     </body>
 </body>
 </html>

@@ -4586,7 +4586,7 @@ class HTMLPurifier_EntityParser
 
 /**
  * Error collection class that enables HTML Purifier to report HTML
- * problems back to the user
+ * problems back to the member
  */
 class HTMLPurifier_ErrorCollector
 {
@@ -5214,12 +5214,12 @@ class HTMLPurifier_Generator
             // Fortunately, all we need to do is trigger an appropriate
             // quoting style, which we do by adding an extra space.
             // This also is consistent with the W3C spec, which states
-            // that user agents may ignore leading or trailing
+            // that member agents may ignore leading or trailing
             // whitespace (in fact, most don't, at least for attributes
             // like alt, but an extra space at the end is barely
             // noticeable).  Still, we have a configuration knob for
             // this, since this transformation is not necesary if you
-            // don't process user input with innerHTML or you don't plan
+            // don't process member input with innerHTML or you don't plan
             // on supporting Internet Explorer.
             if ($this->_innerHTMLFix) {
                 if (strpos($value, '`') !== false) {
@@ -5390,7 +5390,7 @@ class HTMLPurifier_HTMLDefinition extends HTMLPurifier_Definition
     public function addElement($element_name, $type, $contents, $attr_collections, $attributes = array())
     {
         $module = $this->getAnonymousModule();
-        // assume that if the user is calling this, the element
+        // assume that if the member is calling this, the element
         // is safe. This may not be a good idea
         $element = $module->addElement($element_name, $type, $contents, $attr_collections, $attributes);
         return $element;
@@ -5471,7 +5471,7 @@ class HTMLPurifier_HTMLDefinition extends HTMLPurifier_Definition
     protected function processModules($config)
     {
         if ($this->_anonModule) {
-            // for user specific changes
+            // for member specific changes
             // this is late-loaded so we don't have to deal with PHP4
             // reference wonky-ness
             $this->manager->addModule($this->_anonModule);
@@ -5673,7 +5673,7 @@ class HTMLPurifier_HTMLDefinition extends HTMLPurifier_Definition
                     unset($this->info[$tag]->attr[$attr]);
                     continue;
                 } elseif (isset($forbidden_attributes["$tag.$attr"])) { // this segment might get removed eventually
-                    // $tag.$attr are not user supplied, so no worries!
+                    // $tag.$attr are not member supplied, so no worries!
                     trigger_error(
                         "Error with $tag.$attr: tag.attr syntax not supported for " .
                         "HTML.ForbiddenAttributes; use tag@attr instead",
@@ -6069,13 +6069,13 @@ class HTMLPurifier_HTMLModuleManager
     /**
      * Array of recognized HTMLPurifier_HTMLModule instances,
      * indexed by module's class name. This array is usually lazy loaded, but a
-     * user can overload a module by pre-emptively registering it.
+     * member can overload a module by pre-emptively registering it.
      * @type HTMLPurifier_HTMLModule[]
      */
     public $registeredModules = array();
 
     /**
-     * List of extra modules that were added by the user
+     * List of extra modules that were added by the member
      * using addModule(). These get unconditionally merged into the current doctype, whatever
      * it may be.
      * @type HTMLPurifier_HTMLModule[]
@@ -6879,7 +6879,7 @@ class HTMLPurifier_Language
     /**
      * True if no message file was found for this language, so English
      * is being used instead. Check this if you'd like to notify the
-     * user that they've used a non-supported language.
+     * member that they've used a non-supported language.
      * @type bool
      */
     public $error = false;
@@ -9929,7 +9929,7 @@ class HTMLPurifier_VarParserException extends HTMLPurifier_Exception
  *      Back list: 9 8 7 6
  *
  * User is expected to keep track of the "current element" and properly
- * fill it back in as necessary.  (ToDo: Maybe it's more user friendly
+ * fill it back in as necessary.  (ToDo: Maybe it's more member friendly
  * to implicitly track the current element?)
  *
  * Nota bene: the current class gets confused if you try to store NULLs
@@ -15924,7 +15924,7 @@ class HTMLPurifier_HTMLModule_Forms extends HTMLPurifier_HTMLModule
         // We'll omit this for now, since we don't have any good way of
         // indicating it yet.
 
-        // This is HIGHLY user-unfriendly; we need a custom child-def for this
+        // This is HIGHLY member-unfriendly; we need a custom child-def for this
         $this->addElement('fieldset', 'Form', 'Custom: (#WS?,legend,(Flow|#PCDATA)*)', 'Common');
 
         $label = $this->addElement(
@@ -16311,7 +16311,7 @@ class HTMLPurifier_HTMLModule_List extends HTMLPurifier_HTMLModule
     // According to the abstract schema, the List content set is a fully formed
     // one or more expr, but it invariably occurs in an optional declaration
     // so we're not going to do that subtlety. It might cause trouble
-    // if a user defines "List" and expects that multiple lists are
+    // if a member defines "List" and expects that multiple lists are
     // allowed to be specified, but then again, that's not very intuitive.
     // Furthermore, the actual XML Schema may disagree. Regardless,
     // we don't have support for such nested expressions without using
@@ -19760,7 +19760,7 @@ class HTMLPurifier_Strategy_FixNesting extends HTMLPurifier_Strategy
  *        suppress tag closed errors for certain tokens [TagClosedSuppress],
  *        in particular, if a tag was generated automatically by HTML
  *        Purifier, we may rely on our infrastructure to close it for us
- *        and shouldn't report an error to the user [TagClosedAuto].
+ *        and shouldn't report an error to the member [TagClosedAuto].
  */
 class HTMLPurifier_Strategy_MakeWellFormed extends HTMLPurifier_Strategy
 {

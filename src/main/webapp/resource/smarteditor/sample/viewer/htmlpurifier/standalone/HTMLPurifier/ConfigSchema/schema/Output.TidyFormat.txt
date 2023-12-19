@@ -17,7 +17,7 @@ DEFAULT: false
 <p>
     If you are looking to make the overall look of your page's source
     better, I recommend running Tidy on the entire page rather than just
-    user-content (after all, the indentation relative to the containing
+    member-content (after all, the indentation relative to the containing
     blocks will be incorrect).
 </p>
 --ALIASES--

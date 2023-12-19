@@ -55,7 +55,7 @@
         </div>
         
         <div class="pwdConfirmWrap">
-            <form action="" method="post" id="confirmForm">
+            <form action="${contextPath}/mypage/myedit" method="post" id="confirmForm">
                 <div class="confirmInfo">
                     <h6>비밀번호 확인</h6>
                     <p>개인 정보를 안전하게 보호하기 위하여</p>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="btnGroup lg">
                     <button type="button" class="btnBd" onclick="location.href='${contextPath}/common/index.do'">취소</button>
-                    <button type="button" class="btnBg" onclick="location.href='/front/html/mypage/mypage_edit.html'">확인</button>
+                    <button type="submit" class="btnBg">확인</button>
                 </div>
             </form>
         </div>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zipchelin.repository.mybatis.mappers.NoticeMapper">
+
+     <!-- 공지사항 추가 -->
+    <insert id="addNotice" parameterType="com.zipchelin.domain.Notice">
+        insert into notice_TBL (notice_NUM, notice_TITLE, notice_CONT, notice_DATE)
+        values (notice_seq.nextval, #{noticeTitle}, #{noticeCont}, sysdate)
+    </insert>
+
+    <!-- 공지사항 조회 -->
+    <select id="selectAll" resultType="com.zipchelin.domain.Notice">
+        select notice_NUM, notice_TITLE, notice_CONT, notice_DATE
+        from notice_TBL order by notice_num desc
+    </select>
+
+    <!-- 공지사항 수정 --> 
+    <update id="updateNotice" parameterType="com.zipchelin.domain.Notice">
+        update notice_TBL set notice_TITLE = #{noticeTitle}, notice_CONT = #{noticeCont}
+        where notice_NUM = #{noticeNum}
+    </update>
+
+   <!-- 공지사항 삭제 -->
+    <delete id="deleteById" parameterType="String">
+        delete
+        from member_TBL
+        where member_ID = #{memberId}
+    </delete>
+
+</mapper>

@@ -3,20 +3,9 @@
     isELIgnored="false"
     %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
-<c:set var="noticeList" value="${noticeMap.noticeList}" />
-<c:set var="totNotices" value="${noticeMap.totNotices}" />
-<c:set var="section" value="${noticeMap.section}"/>
-<c:set var="pageNum" value="${noticeMap.pageNum}"/>
-<c:set var="tot100" value="${totNotices mod 100}"/>
-<c:choose>
-	<c:when test="${section > totNotices/100}">
-		<c:set var="endValue" value="${(tot100/10)==0?tot100/10:tot100/10+1}" />
-	</c:when>
-	<c:otherwise>
-		<c:set var="endValue" value="10"/>
-	</c:otherwise>
-</c:choose>
+
 <%
 	request.setCharacterEncoding("utf-8");
 %>
@@ -71,14 +60,14 @@
 	        		<c:forEach var="notice" items="${noticeList}" varStatus="noticeNum">
 	        			<li class="noticeItem">
 			                <div class="titleBox">
-			                    <span class="num">${notice.notice_num}</span>
-			                    <h6 class="title">${notice.notice_title}</h6>
-			                    <span class="date">${notice.notice_date}</span>
+			                    <span class="num">${notice.noticeNum}</span>
+			                    <h6 class="title">${notice.noticeTitle}</h6>
+			                    <span class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${notice.noticeDate}" /></span>
 			                    <span class="icon material-symbols-outlined">keyboard_arrow_down</span>
 			                </div>
 			                <div class="contentBox">
 				                <p>
-				                    ${notice.notice_cont}
+				                    ${notice.noticeCont}
 				                </p>
 			                </div>
 			            </li>
@@ -87,7 +76,7 @@
 	        </c:choose>
         </ul>
 
-        <div class="paging">        
+        <!-- <div class="paging">        
             <ul>
 	        	<c:if test="${totNotices != 0}">
 	        		<c:choose>
@@ -135,7 +124,7 @@
 		            </c:choose>
 	            </c:if>
 			</ul>
-        </div>
+        </div> -->
     </main>
 
     <!-- 푸터 -->

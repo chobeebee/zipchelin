@@ -1,16 +1,28 @@
 package com.zipchelin.web.controller;
 
 import lombok.RequiredArgsConstructor;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.zipchelin.domain.Notice;
+import com.zipchelin.model.service.NoticeService;
 
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/admin/*")
 public class AdminController {
 	
-	@GetMapping("/admin")
+	@Autowired
+	private NoticeService noticeService;
+	
+	@GetMapping
     public String admin() {
 		return "admin/admin";
 	}
@@ -25,16 +37,42 @@ public class AdminController {
 		return "admin/content/editMem";
 	}
 	
+	// 공지사항 CURD
 	@GetMapping("/notice")
-    public String notice() {
+    public String notice(Model model) {
+		model.addAttribute("noticeList", noticeService.selectAll());
 		return "admin/content/notice";
 	}
 	
-	@GetMapping("/editnotice")
-    public String editNotice() {
-		return "admin/content/editNotice";
+	@GetMapping("/addnotice")
+    public String viewAddNotice() {
+		return "admin/content/addNotice";
 	}
 	
+	@PostMapping("/addnotice")
+    public String addNotice(Notice notice) {
+		noticeService.addNotice(notice);
+		return "redirect:/admin/notice";
+	}
+	
+	@GetMapping("/updatenotice")
+    public String viewUpdateNotice() {
+		return "admin/content/updateNotice";
+	}
+	
+	@PostMapping("/updatenotice")
+    public String updateNotice(Notice notice) {
+		noticeService.updateNotice(notice);
+		return "redirect:/admin/notice";
+	}
+	
+	@GetMapping("/delNotice")
+    public String delNotice() {
+		return "redirect:/admin/notice";
+	}
+	
+	
+	// 
 	@GetMapping("/guide")
     public String guide() {
 		return "admin/content/guide";

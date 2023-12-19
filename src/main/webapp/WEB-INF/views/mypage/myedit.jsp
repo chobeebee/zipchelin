@@ -59,7 +59,7 @@
     <!--header-->
     <header class="header">
         <div class="headerContainer">
-            <img class="logo" src="front/images/logo/logo.png" />
+            <img class="logo" src="${contextPaht}/resource/images/logo/logo.png" />
             <div class="menu">
                 <a href="">레시피</a>
                 <a href="">가이드</a>
@@ -204,7 +204,7 @@
 
                 <!--회원탈퇴-->
                 <div class="unregister">
-                    <a href="/front/html/member/leave_check.html" class="edit_leave">회원탈퇴</a>
+                    <a href="${contextPath}/member/leave_check" class="edit_leave">회원탈퇴</a>
                 </div>
 
             </form>

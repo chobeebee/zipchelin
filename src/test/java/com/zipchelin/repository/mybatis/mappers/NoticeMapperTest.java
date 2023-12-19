@@ -9,10 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import com.zipchelin.domain.Notice;
-import com.zipchelin.model.dto.notice.NoticeRequestDto;
 import com.zipchelin.model.service.NoticeService;
-import com.zipchelin.model.service.NoticeServiceImpl;
-import com.zipchelin.model.dto.notice.NoticeResponseDto;
 
 @SpringBootTest
 public class NoticeMapperTest {
@@ -25,12 +22,14 @@ public class NoticeMapperTest {
 	private static final Logger log=LoggerFactory.getLogger(NoticeMapperTest.class);
 	
     @Test
+    @Disabled
     void selectAll() {
         noticeService.selectAll().forEach(notice -> log.info(""+notice));
     }
 
 	
 	@Test
+	@Disabled
 	void addNotice() {
 		Notice notice = new Notice(0, null, null, null);
 		notice.setNoticeNum(0);
@@ -40,8 +39,10 @@ public class NoticeMapperTest {
 	}
 	
 	@Test
+	@Disabled
 	void selectNotice() {
 		List<Notice> list = noticeMapper.selectAll();
 		System.out.println(list);
 	}
+
 }

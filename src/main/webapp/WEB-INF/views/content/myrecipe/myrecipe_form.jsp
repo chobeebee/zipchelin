@@ -54,7 +54,7 @@
                  <div>
                 <div class="information informationBox">
                     <h2 class="form-title">제목</h2>
-                    <p><input class="formBox" id="formBox" placeholder="제목을 입력해주세요"></p>
+                    <p><input name="form-title" class="formBox" id="formBox" placeholder="제목을 입력해주세요"></p>
                 </div>
                 <div class="information">
                     <h2 class="form-title">내용</h2>
@@ -63,7 +63,7 @@
             </div>
             
             <div class="btnGroup lg form" >
-               <input type="submit" value="전송" onclick="submitPost();">
+                <input type="button" value="전송" onclick="submitPost();">
                 <button onclick="location.href='myrecipe.html'" class="btnBgGray form" class="btn_cancel">취소</button>
                 <button onclick="location.href='myrecipe.html'" class="btnBg" class="btn_upload">올리기</button>
             </div>

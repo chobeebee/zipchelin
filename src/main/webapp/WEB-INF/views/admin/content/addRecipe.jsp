@@ -16,7 +16,7 @@
     <meta name="author" content="">
 
     <title>집슐랭 관리자</title>
-	
+
     <link href="${contextPath}/resource/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="${contextPath}/resource/admin/css/sb-admin-2.min.css" rel="stylesheet">
@@ -33,37 +33,28 @@
             		<jsp:include page="/WEB-INF/views/admin/layout/topnav.jsp" />
             	</nav>
                 <div class="container-fluid">
-                    <h1 class="h3 mb-4 text-gray-800">공지사항 수정</h1>
+                    <h1 class="h3 mb-4 text-gray-800">공지사항 등록</h1>
                     <div class="card shadow mb-4 col-lg-8 col-md-12">
                         <div class="card-body">
-                            <form method="post" action="updatenotice" class="noticeList">
-                            	<div class="form-group row">
-                                    <label for="noticeNum" class="col-sm-2 col-form-label">번호</label>
-                                    <div class="col-sm-10">
-                                        <input readonly="readonly" class="form-control" id="noticeNum" name="noticeNum" value='<c:out value="${noticeInfo.noticeNum}"/>'>
-                                    </div>
-                                </div>
+                            <form method="post" action="notice">
                                 <div class="form-group row">
                                     <label for="noticeTitle" class="col-sm-2 col-form-label">제목</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" id="noticeTitle" name="noticeTitle" value='<c:out value="${noticeInfo.noticeTitle}"/>'>
+                                        <input type="text" class="form-control" id="noticeTitle" name="noticeTitle">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="noticeCont" class="col-sm-2 col-form-label">내용</label>
+                                    <label for="noticeContent" class="col-sm-2 col-form-label">내용</label>
                                     <div class="col-sm-10">
-                                        <textarea rows="20" class="form-control" id="noticeCont" name="noticeCont"><c:out value="${noticeInfo.noticeCont}"/></textarea>
+                                        <textarea rows="20" cols="10" class="form-control" id="noticeCont" name="noticeCont">
+                                        	
+                                        </textarea>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="noticeDate" class="col-sm-2 col-form-label">등록일자</label>
-                                    <div class="col-sm-10">
-                                        <input readonly="readonly" class="form-control" id="noticeDate" name="noticeDate" value="${noticeInfo.noticeDate}">
-                                    </div>
-                                </div>
+                                
                                 <div class="d-flex justify-content-end mb-2">
-                                    <button type="submit" class="cancle_check btn btn-secondary mr-2">수정</button>
-                                    <button type="reset" class="btn btn-primary" onClick="location.href='${contextPath}/admin/notice'">취소</button>
+                                    <input type="submit" value="등록" class="cancle_check btn btn-secondary mr-2" aria-current="page">
+                                    <input type="reset" value="취소" class="btn btn-primary">
                                 </div>
                             </form>
                         </div>  
@@ -88,5 +79,6 @@
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <script src="${contextPath}/resource/admin/js/sb-admin-2.min.js"></script>
     <script src="${contextPath}/resource/admin/js/common.js"></script>
+    <script src="${contextPath}/resource/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
 </body>
 </html>

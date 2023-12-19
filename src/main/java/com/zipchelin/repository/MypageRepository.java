@@ -11,4 +11,6 @@ public interface MypageRepository {
 	public String checkPwd(Map<String, String> map);
 	
 	public void updateMember(Member member);
+	
+	public Map<String, Integer> selectCount(String id);
 }

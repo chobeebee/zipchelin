@@ -10,11 +10,9 @@ public interface NoticeRepository {
 
 	List<Notice> selectAll();
 
-    void delNotice(Integer noticeNum);
+    void delNotice(Integer newArr);
 
     void updateNotice(Notice notice);
 
-	void delNotice(int noticeNum);
-
-	
+	public Notice getPage(Integer noticeNum);
 }

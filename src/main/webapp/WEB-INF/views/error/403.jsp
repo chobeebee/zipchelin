@@ -10,7 +10,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <title>Error - 40X</title>
+    <title>Error - 403</title>
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/error.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
         <div class="d-table-cell">
             <div class="container">
                 <div class="error-content">
-                    <h1>40X</h1>
+                    <h1>403</h1>
                     <h2>접근 권한이 없습니다.</h2>
                     <c:choose>
                         <c:when test="${error != null}">

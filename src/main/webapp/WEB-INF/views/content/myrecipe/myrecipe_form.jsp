@@ -51,23 +51,24 @@
     <main>
         <section class="form-list">
             <h1 class="best-title">나만의 레시피</h1>
-                 <div>
-                <div class="information informationBox">
-                    <h2 class="form-title">제목</h2>
-                    <p><input name="form-title" class="formBox" id="formBox" placeholder="제목을 입력해주세요"></p>
-                </div>
-                <div class="information">
-                    <h2 class="form-title">내용</h2>
-                    <textarea name="form-content" id="form-content" class="form-content" cols="10" rows="20" placeholder="내용을 입력해주세요"></textarea>
-                </div>
-            </div>
-            
-            <div class="btnGroup lg form" >
-                <input type="button" value="전송" onclick="submitPost();">
-                <button onclick="location.href='myrecipe.html'" class="btnBgGray form" class="btn_cancel">취소</button>
-                <button onclick="location.href='myrecipe.html'" class="btnBg" class="btn_upload">올리기</button>
-            </div>
-
+            <form>
+	            <div>
+	            	<div class="information informationBox">
+	                    <h2 class="form-title">제목</h2>
+	                    <p><input name="form-title" class="formBox" id="formBox" placeholder="제목을 입력해주세요"></p>
+	                </div>
+	                <div class="information">
+	                    <h2 class="form-title">내용</h2>
+	                    <textarea name="form-content" id="form-content" class="form-content" cols="10" rows="20" placeholder="내용을 입력해주세요"></textarea>
+	                </div>
+	            </div>
+	            
+	            <div class="btnGroup lg form" >
+	                <input type="button" value="전송" onclick="submitPost();">
+	                <button onclick="location.href='myrecipe.html'" class="btnBgGray form" class="btn_cancel">취소</button>
+	                <button onclick="location.href='myrecipe.html'" class="btnBg" class="btn_upload">올리기</button>
+	            </div>
+			</form>
         </section>
     </main>
 

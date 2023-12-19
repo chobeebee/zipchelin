@@ -8,7 +8,7 @@ import com.zipchelin.domain.Member;
 
 @Mapper
 public interface MypageMapper {
-	public Member selectById(String id);
+	public Member selectMemberById(String id);
 	
 	public String checkPwd(Map<String, String> map);
 	

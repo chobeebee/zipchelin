@@ -36,9 +36,10 @@ public class MypageController {
 	@GetMapping("/mypage")
 	public String mypage(Model model,@AuthenticationPrincipal CustomUserDetails userDetails) {
 		/*String id=userDetails.getMember().getMemberId();
+		model.addAttribute("count", mypageService.selectCount(id));
 		model.addAttribute("myRecip", mypageService.selectMyreById(id));
 		model.addAttribute("myQna", mypageService.selectQnaById(id));
-		model.addAttribute("count", mypageService.selectCount(id));*/
+		*/
 		return "mypage/mypage";
 	}
 	
@@ -47,19 +48,37 @@ public class MypageController {
 		return "mypage/mypwdConfirm";
 	}
 	
-	@PostMapping("/myedit")
-	public String mypageEdit(@RequestParam("pwdCheck") String pwd, Model model) {
-		String next=null;
-		//수정할 것
+	@GetMapping("/myedit")
+	public String mypageEdit(@AuthenticationPrincipal CustomUserDetails userDetails,@RequestParam("pwdCheck") String pwd, Model model) {
+		/*String next=null;
+		
 		//1. 입력된 비밀번호를 가지고 DAO로 가서 비밀번호 일치 여부 확인
-		//2. 세션에서 가져온 아이디로 유저를 검색해 유저정보를 jsp에 넘김
-		if(pwd.equals("1234")) {
+		String id=userDetails.getMember().getMemberId();
+		String result=mypageService.checkPwd(id, pwd);
+		if(result.equals("true")) {
 			next="mypage/myedit";
-			//mypageService.selectMemberById("id");
+			//2. 세션에서 가져온 아이디로 유저를 검색해 유저정보를 jsp에 넘김
+			model.addAttribute("member", mypageService.selectMemberById(id)) ;
 		}else {
 			next="mypage/mypage";
 		}
-		return next;
+		return next;*/
+		return "mypage/myedit";
+	}
+	
+	@GetMapping("/mypost")
+	public String mypost() {
+		return "mypage/mypost";
+	}
+	
+	@GetMapping("/myheart")
+	public String myheart() {
+		return "mypage/myheart";
+	}
+	
+	@GetMapping("/myreply")
+	public String myreply() {
+		return "mypage/myreply";
 	}
 
 }

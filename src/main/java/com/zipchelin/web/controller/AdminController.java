@@ -93,6 +93,11 @@ public class AdminController {
 		return "admin/content/guide";
 	}
 	
+	@GetMapping("/guide/form")
+    public String guideForm() {
+		return "admin/content/guideForm";
+	}
+	
 	@GetMapping("/recipe")
     public String recipe() {
 		return "admin/content/recipe";

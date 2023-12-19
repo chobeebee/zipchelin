@@ -24,7 +24,7 @@ public class MypageService {
 	private final MypageRepository mypageRepository;
 	
 	public MemberResponseDto selectMemberById(String id) {
-		Member member=mypageRepository.selectById(id);
+		Member member=mypageRepository.selectMemberById(id);
 		return member.toDto();
 	}
 	
@@ -35,9 +35,9 @@ public class MypageService {
 		return mypageRepository.checkPwd(checkMap);
 	}
 	
-	/*public Map<String, Integer> selectCount(String id){
+	public Map<String, Integer> selectCount(String id){
 		return mypageRepository.selectCount(id);
-	}/*
+	}
 	
 	/*public List<MyrecipeResponseDto> selectMyreById(){
 		

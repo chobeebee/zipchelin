@@ -98,8 +98,6 @@
         	<jsp:include page="/WEB-INF/views/main/mymenu.jsp"/>
         </div>
 
-        </div>
-
         <!--myheart_main-->
         <div class="myHeart_main myPage_main">
             
@@ -125,20 +123,6 @@
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
-                                            <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                            <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="heart_list_contents">
-                                <!--찜 레시피 사진-->
-                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
-                                <a class="heart_list_link imgwrap" href="#">
-                                    <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
-                                    </div>
-                                    <!--찜 레시피 제목, 부제목-->
-                                    <div class="heart_list_text">
                                             <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
                                             <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
                                     </div>
@@ -338,155 +322,6 @@
                                             <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
                                             <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
                                     </div>
-                                </a>
-                            </li>
-                            
-                        </ul>
-                        <div class="paging">
-                            <ul>
-                                <!--찜페이지-페이징-->
-                                <!--li에 .disabled가 있으면 화살표에 클릭방지 생김-->
-                                <li class="arrow prev disabled"><button disabled><span class="material-symbols-outlined">navigate_before</span></button></li>
-                                <li class="active"><a href="javascript:">1</a></li>
-                                <li><a href="javascript:">2</a></li>
-                                <li><a href="javascript:">3</a></li>
-                                <li><a href="javascript:">4</a></li>
-                                <li><a href="javascript:">5</a></li>
-                                <li class="arrow next"><button><span class="material-symbols-outlined">navigate_next</span></button></li>
-                            </ul>
-                        </div>
-                </div>
-                    </div>
-
-                
-                <div class="myHeart_giude tabCont">
-                    <!--가이드페이지-찜리스트-->
-                    <div class="heart_list">
-                        <ul class="heart_list_zone">
-                            <li class="heart_list_contents">
-                                <!--가이드 레시피 사진-->
-                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
-                                <a class="heart_list_link" href="#">
-                                <div>
-                                        <img class="heart_list_img" src="${contextPaht}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
-                                </div>
-                                <!--가이드 레시피 제목, 부제목-->
-                                <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
-                                </div>
-                                </a>
-                            </li>
-                            <li class="heart_list_contents">
-                                <!--가이드 레시피 사진-->
-                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
-                                <a class="heart_list_link" href="#">
-                                <div>
-                                        <img class="heart_list_img" src="${contextPaht}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
-                                </div>
-                                <!--가이드 레시피 제목, 부제목-->
-                                <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
-                                </div>
-                                </a>
-                            </li>
-                            <li class="heart_list_contents">
-                                <!--가이드 레시피 사진-->
-                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
-                                <a class="heart_list_link" href="#">
-                                <div>
-                                        <img class="heart_list_img" src="${contextPaht}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
-                                </div>
-                                <!--가이드 레시피 제목, 부제목-->
-                                <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
-                                </div>
-                                </a>
-                            </li>
-                            <li class="heart_list_contents">
-                                <!--가이드 레시피 사진-->
-                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
-                                <a class="heart_list_link" href="#">
-                                <div>
-                                        <img class="heart_list_img" src="${contextPaht}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
-                                </div>
-                                <!--가이드 레시피 제목, 부제목-->
-                                <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
-                                </div>
-                                </a>
-                            </li>
-                            <li class="heart_list_contents">
-                                <!--가이드 레시피 사진-->
-                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
-                                <a class="heart_list_link" href="#">
-                                <div>
-                                        <img class="heart_list_img" src="${contextPaht}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
-                                </div>
-                                <!--가이드 레시피 제목, 부제목-->
-                                <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
-                                </div>
-                                </a>
-                            </li>
-                            <li class="heart_list_contents">
-                                <!--가이드 레시피 사진-->
-                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
-                                <a class="heart_list_link" href="#">
-                                <div>
-                                        <img class="heart_list_img" src="${contextPaht}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
-                                </div>
-                                <!--가이드 레시피 제목, 부제목-->
-                                <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
-                                </div>
-                                </a>
-                            </li>
-                            <li class="heart_list_contents">
-                                <!--가이드 레시피 사진-->
-                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
-                                <a class="heart_list_link" href="#">
-                                <div>
-                                        <img class="heart_list_img" src="${contextPaht}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
-                                </div>
-                                <!--가이드 레시피 제목, 부제목-->
-                                <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
-                                </div>
-                                </a>
-                            </li>
-                            <li class="heart_list_contents">
-                                <!--가이드 레시피 사진-->
-                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
-                                <a class="heart_list_link" href="#">
-                                <div>
-                                        <img class="heart_list_img" src="${contextPaht}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
-                                </div>
-                                <!--가이드 레시피 제목, 부제목-->
-                                <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
-                                </div>
-                                </a>
-                            </li>
-                            <li class="heart_list_contents">
-                                <!--가이드 레시피 사진-->
-                                <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
-                                <a class="heart_list_link" href="#">
-                                <div>
-                                        <img class="heart_list_img" src="${contextPaht}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
-                                </div>
-                                <!--가이드 레시피 제목, 부제목-->
-                                <div class="heart_list_text">
-                                        <p class="heart_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                        <h3 class="heart_list_title">여기는 제목을 적어주세요.</h3>
-                                </div>
                                 </a>
                             </li>
                             <li class="heart_list_contents">

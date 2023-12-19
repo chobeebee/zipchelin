@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.zipchelin.domain.Notice;
+import com.zipchelin.model.page.Criteria;
 import com.zipchelin.repository.NoticeRepository;
-import com.zipchelin.repository.mybatis.mappers.NoticeMapper;
 
 import lombok.RequiredArgsConstructor;
 
@@ -14,7 +14,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class NoticeServiceImpl implements NoticeService{
 	private final NoticeRepository noticeRepository;
-	private final NoticeMapper noticeMapper;
 	
 	@Override
 	public List<Notice> selectAll(){
@@ -23,23 +22,33 @@ public class NoticeServiceImpl implements NoticeService{
 
 	@Override
 	public void addNotice(Notice notice) {
-		noticeMapper.addNotice(notice);		
+		noticeRepository.addNotice(notice);		
 	}
 
 	@Override
 	public void updateNotice(Notice notice) {
-		noticeMapper.updateNotice(notice);
+		noticeRepository.updateNotice(notice);
 		
 	}
 
 	@Override
 	public void delNotice(Integer newArr) {
-		noticeMapper.delNotice(newArr);
+		noticeRepository.delNotice(newArr);
 	}
 
 	@Override
 	public Notice getPage(Integer noticeNum) {
-		return noticeMapper.getPage(noticeNum);
+		return noticeRepository.getPage(noticeNum);
+	}
+
+	@Override
+	public List<Notice> getListPaging(Criteria cri) {
+		return noticeRepository.getListPaging(cri);
+	}
+
+	@Override
+	public int getTotal() {
+		return noticeRepository.getTotal();
 	}
 
 	

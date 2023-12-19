@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import com.zipchelin.domain.Recipe;
 
 @Mapper
-public interface RecipeListMapper {
+public interface RecipeMapper {
 
 
 	//리스트 목록

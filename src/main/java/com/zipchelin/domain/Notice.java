@@ -4,6 +4,7 @@ import java.sql.Date;
 
 import com.zipchelin.model.dto.notice.NoticeRequestDto;
 import com.zipchelin.model.dto.notice.NoticeResponseDto;
+import com.zipchelin.model.page.Criteria;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -9,10 +9,16 @@ import com.zipchelin.domain.Recipe;
 @Mapper
 public interface RecipeMapper {
 
-	void addRecipe(Recipe recipe);
-
 	//리스트 목록
 	List<Recipe> selectRecipeAll();
+
+	List<Recipe> selectEachCategory(int cateNum);
+
+	void addRecipe(Recipe recipe);
+
+	void addRecipeImg(Recipe recipe);
+
+	void addRecipeDesc(Recipe recipe);
 
 	void updateRecipe(Recipe recipe);
 

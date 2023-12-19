@@ -36,17 +36,19 @@
                     <h1 class="h3 mb-4 text-gray-800">공지사항 목록</h1>                    
                     <div class="card shadow mb-4">
                         <div class="card-body">
-                            <div class="d-flex justify-content-end mb-2">
-                            	<a href="${contextPath}/admin/addnotice" class="btn btn-secondary mr-2" aria-current="page">등록</a>
-                                <a href="#" class="btn btn-primary">삭제</a>
-                            </div>
+                        	<form action="notice" onsubmit="delNotice();">
+	                            <div class="d-flex justify-content-end mb-2">
+	                            	<a href="${contextPath}/admin/addnotice" class="btn btn-secondary mr-2" aria-current="page">등록</a>
+	                                <input type="submit" class="btn btn-primary" value="삭제">
+	                            </div>
+                            </form>
                             <div class="table-responsive">
                                 <table class="table table-bordered noticeList" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr class="bg-gray-100">
                                             <th class="white-space-nowrap  align-middle">
                                                 <div>
-                                                    <input type="checkbox" id="select-all">
+                                                    <input type="checkbox" id="select-all" name="allCheck">
                                                 </div>
                                             </th>
                                             <th>번호</th>
@@ -58,11 +60,11 @@
                                     	<c:forEach var="notice" items="${noticeList}" varStatus="noticeNum">                            
                                     		<tr class="noticeItem">
 	                                            <td class="align-middle">
-	                                                <input class="form-check" type="checkbox" value="">
+	                                                <input class="form-check" name="RowCheck" type="checkbox" value="${notice.noticeNum}">
 	                                            </td>
 	                                            <td class="num">${notice.noticeNum}</td>
 	                                            <td class="title">
-	                                                <a href="${contextPath}/admin/updatenotice">${notice.noticeTitle}</a>
+	                                                <a href="${contextPath}/admin/updatenotice?noticeNum=<c:out value='${notice.noticeNum}'/>">${notice.noticeTitle}</a>
 	                                            </td>
 	                                            <td class="date">${notice.noticeDate}</td>
                                         	</tr>
@@ -90,6 +92,9 @@
                     </div>
                 </div>
             </div>
+            <form id="moveForm" method="get">
+            </form>
+            
            <!-- 푸터 -->
             <footer id="footer">
             	<jsp:include page="/WEB-INF/views/admin/layout/footer.jsp" />
@@ -109,5 +114,6 @@
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <script src="${contextPath}/resource/admin/js/sb-admin-2.min.js"></script>
     <script src="${contextPath}/resource/admin/js/common.js"></script>
+    <script src="${contextPath}/resource/admin/js/notice.js"></script>
 </body>
 </html>

@@ -12,7 +12,9 @@ public interface NoticeService {
 	
 	public void addNotice(Notice notice);
 	
+	public Notice getPage(Integer noticeNum);
+	
 	public void updateNotice(Notice notice);
 	
-	public void delNotice(Integer noticeNum);
+	public void delNotice(Integer newArr);
 }

@@ -12,7 +12,7 @@ import lombok.Getter;
 @Builder
 @AllArgsConstructor
 public class NoticeResponseDto {
-	private int noticeNum;
+	private Integer noticeNum;
 	private String noticeTitle;
 	private String noticeCont;
 	private Date noticeDate;

@@ -263,7 +263,6 @@ position: relative;
     padding: 2px;
 } 
 .sign_warning{
-    display: none;
     color: red;
     width: 100%;
     margin: 8px 0;

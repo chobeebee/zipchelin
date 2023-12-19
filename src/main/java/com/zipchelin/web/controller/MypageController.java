@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.zipchelin.config.auth.CustomUserDetails;
+import com.zipchelin.global.auth.CustomUserDetails;
 import com.zipchelin.model.service.MypageService;
 
 import lombok.RequiredArgsConstructor;

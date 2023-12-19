@@ -1,4 +1,4 @@
-package com.zipchelin.config;
+package com.zipchelin.global;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;

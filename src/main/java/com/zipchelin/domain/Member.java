@@ -16,20 +16,22 @@ public class Member {
     private String memberPwd;
     private String memberName;
     private String memberEmail;
-    private String memberPhone;
     private LocalDateTime joinDate;
     private String memberImg;
     private String memberRole;
 
+    // OAuth2 로그인 정보
     private String provider;
     private String providerId;
+
+    // 약관 동의 여부
+    private Boolean terms;
 
     public MemberResponseDto toDto() {
         return MemberResponseDto.builder()
                 .memberId(memberId)
                 .memberName(memberName)
                 .memberEmail(memberEmail)
-                .memberPhone(memberPhone)
                 .joinDate(joinDate)
                 .memberImg(memberImg)
                 .memberRole(memberRole)

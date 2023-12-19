@@ -1,4 +1,4 @@
-package com.zipchelin.config.handler;
+package com.zipchelin.global.handler;
 
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;

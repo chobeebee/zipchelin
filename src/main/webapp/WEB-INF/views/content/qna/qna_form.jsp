@@ -69,11 +69,11 @@
                 <input name="user_id" value="1" type="hidden">
                 <input name="user_img" value="1" type="hidden">
                     <h2 class="form-title">제목</h2>
-                    <p><input class="formBox" name="qna_title" id="qna_title" placeholder="제목을 입력해주세요"></p>
+                    <p><input class="formBox" name="qnaTitle" id="qnaTitle" placeholder="제목을 입력해주세요"></p>
                 </div>
                 <div class="information">
                     <h2 class="form-title">내용</h1>
-                    <textarea name="qna_content" id="qna_content" class="form-content" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
+                    <textarea name="qna_content" id="qnaContent" class="form-content" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
                 </div>
             </div>
             
@@ -113,48 +113,13 @@
     <!--[if lte IE 8]>
     <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
     <![endif]-->
-<<<<<<< HEAD
-=======
 
 
-<title>요리 상담소 작성폼</title>
-</head>
-<body>
-    <!-- 헤더 -->
-    <header class="header"></header>
-    
-    <!-- 메인 -->
-    <main>
-        <section class="form-list">
-            <h1 class="best-title">요리 상담소</h1>
-            <div>
-                <div class="information informationBox">
-                    <h2 class="form-title">제목</h2>
-                    <p><input class="formBox" id="formBox" placeholder="제목을 입력해주세요"></p>
-                </div>
-                <div class="information">
-                    <h2 class="form-title">내용</h1>
-                    <textarea name="form-content" class="form-content" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
-                </div>
-            </div>
-            
-            <div class="btnGroup lg form" >
-                <button onclick="location.href='qna.html'" class="btnBgGray form" class="btn_cancel">취소</button>
-                <button onclick="location.href='qna.html'" class="btnBg" class="btn_upload">올리기</button>
-            </div>
 
-        </section>
-    </main>
-
-    <!— 푸터 —>
-    <footer id="footer"></footer>
->>>>>>> branch 'main' of https://github.com/na1011/zipchelin.git
-
-    <!— js —>
+    <!-- js --> 
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="${contextPath}/resource/js/common.js"></script>
     <script src="${contextPath}/resource/js/community.js"></script>
     
->>>>>>> branch 'main' of https://github.com/na1011/zipchelin.git
 </body>
 </html>

@@ -67,26 +67,26 @@
             <article class="post-article">
                 <div>
                     <div class="post-top">
-                        <h1 class="post-title"><span class="title_q">Q. </span>${qna.qna_title }</h1>
+                        <h1 class="post-title"><span class="title_q">Q. </span>${qna.qnaTitle }</h1>
                         <div class="post-info">
                             <div class="comment-profile">
                                 <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                             </div>
-                            <strong class="post-id">${qna.user_id }</strong>
-                            <span class="post-date">${qna.qna_date }</span>
+                            <strong class="post-id">${qna.userId }</strong>
+                            <span class="post-date">${qna.qnaDate }</span>
                             <div class="comment_writeracc">
                                 <button class="comment_update">
                                     <span>수정</span>
                                 </button>
                                 <button class="comment_delete">
-                                    <a href="${contextPath}/qna/delete?id=${qna.user_id}">삭제</a>
+                                    <a href="${contextPath}/qna/delete?id=${qna.userId}">삭제</a>
                                 </button>
                             </div>
                         </div>
                     </div>
                     <div class="post-content">
-                        <p class="content">${qna.qna_content }</p><br>
-                        <p>${qna.user_img }</p>
+                        <p class="content">${qna.qnaContent }</p><br>
+                        <p>${qna.userImg }</p>
                     </div>
                         <a href="${contextPath}/qna/qna">
                             <div class="btnGroup lg btn_list"><button class="btnBgGray btn_list">목록</button></div>

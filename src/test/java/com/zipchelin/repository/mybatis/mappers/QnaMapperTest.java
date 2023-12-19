@@ -19,16 +19,16 @@ public class QnaMapperTest {
 	@Autowired
 	QnaService qnaMapper;
 	
-	@Test
-	void save() {
-		QnaRequest params = new QnaRequest();
-		params.setUser_id("test");
-		params.setQna_title("1");
-		params.setQna_content("1");
-		params.setUser_img("1");
-		String id=qnaMapper.saveQna(params);
-		System.out.println("게시글 개수 : " + id);
-	}
+//	@Test
+//	void save() {
+//		QnaRequest params = new QnaRequest();
+//		params.setUser_id("test");
+//		params.setQna_title("1");
+//		params.setQna_content("1");
+//		params.setUser_img("1");
+//		String id=qnaMapper.saveQna(params);
+//		System.out.println("게시글 개수 : " + id);
+//	}
 	
 //	@Test
 //    void findById() {

@@ -20,7 +20,7 @@ public class QnaService {
 	@Transactional
 	public String saveQna(final QnaRequest params) {
 		qnaMapper.save(params);
-		return params.getUser_id();
+		return params.getUserId();
 	}
 	
 	public QnaResponse findQnaById(final String id) {
@@ -30,7 +30,7 @@ public class QnaService {
 	@Transactional
 	public String updateQna(final QnaRequest params) {
 		qnaMapper.update(params);
-		return params.getUser_id();
+		return params.getUserId();
 	}
 	
 	public String deleteQna(final String id) {

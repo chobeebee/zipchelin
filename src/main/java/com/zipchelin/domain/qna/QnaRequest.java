@@ -7,9 +7,9 @@ import lombok.Setter;
 @Setter
 public class QnaRequest {
 	
-	private Long qna_num;
-	private String user_id;
-	private String qna_title;
-	private String qna_content;
-	private String user_img;
+	private Long qnaNum;
+	private String userId;
+	private String qnaTitle;
+	private String qnaContent;
+	private String userImg;
 }

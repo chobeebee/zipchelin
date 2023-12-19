@@ -84,17 +84,17 @@
                 </li>
                 <c:forEach var="qna" items="${qna }">
 	               <li>
-	                   <a href="${contextPath}/qna/qna_post?id=${qna.user_id}" class="textbox tableWd">
-	                       <div class="num tableItem">${qna.qna_num }</div>
+	                   <a href="${contextPath}/qna/qna_post?id=${qna.userId}" class="textbox tableWd">
+	                       <div class="num tableItem">${qna.qnaNum }</div>
 	                       <div class="text-title tableItem title">
 	                           <span class="question">Q. </span>
 	                           <p>${qna.qna_content }</p>
-	                           <span class="iconFile material-symbols-outlined">${qna.user_img }</span>
+	                           <span class="iconFile material-symbols-outlined">${qna.userImg }</span>
 	                       </div>
-	                       <div class="tableItem">${qna.qna_up }</div>
-	                       <div class="tableItem">${qna.qna_re_count }</div>
-	                       <div class="qna-id tableItem">${qna.user_id }</div>
-	                       <div class="qna-date tableItem">${qna.qna_date }</div>
+	                       <div class="tableItem">${qna.qnaUp }</div>
+	                       <div class="tableItem">${qna.qnaReCount }</div>
+	                       <div class="qna-id tableItem">${qna.userId }</div>
+	                       <div class="qna-date tableItem">${qna.qnaDate }</div>
 	                   </a>
 	               </li>
                 </c:forEach>

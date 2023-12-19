@@ -1,20 +1,17 @@
-package com.zipchelin.domain;
+package com.zipchelin.model.dto.qna;
 
 import java.sql.Date;
 
-import com.zipchelin.model.dto.qna.QnaRequestDto;
-import com.zipchelin.model.dto.qna.QnaResponseDto;
+import com.zipchelin.domain.Qna;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
 @Builder
 @AllArgsConstructor
-public class Qna {
+public class QnaResponseDto {
 	private int qnaNum;
 	private String userId;
 	private String qnaTitle;
@@ -22,22 +19,14 @@ public class Qna {
 	private Date qnaDate;
 	private int qnaUp;
 	
-	public QnaResponseDto toDto() {
-		return QnaResponseDto.builder()
+	public Qna toEntity() {
+		return Qna.builder()
 				.qnaNum(qnaNum)
 				.userId(userId)
 				.qnaTitle(qnaTitle)
 				.qnaContent(qnaContent)
 				.qnaDate(qnaDate)
 				.qnaUp(qnaUp)
-				.build();
-	}
-	
-	public QnaRequestDto fromDto() {
-		return QnaRequestDto.builder()
-				.userId(userId)
-				.qnaTitle(qnaTitle)
-				.qnaContent(qnaContent)
 				.build();
 	}
 }

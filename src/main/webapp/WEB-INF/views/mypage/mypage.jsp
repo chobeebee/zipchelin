@@ -154,7 +154,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                         <p>내 글</p>
                     </div>
                     <div class="more_btn_box">
-                        <button class="myPage_more_btn btnBgGray" onclick="location.href='/mypage/mypost'">더보기</button>
+                        <button class="myPage_more_btn btnBgGray" onclick="location.href='${contextPath}/mypage/mypost'">더보기</button>
                     </div>
                 </div>
 

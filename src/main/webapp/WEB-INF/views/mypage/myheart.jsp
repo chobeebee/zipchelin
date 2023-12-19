@@ -34,15 +34,15 @@
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
     <!-- basic CSS -->
-    <link rel="stylesheet" type="text/css" href="/front/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/front/css/base.css">
-    <link rel="stylesheet" type="text/css" href="/front/css/common.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
 
     <!-- page CSS -->
-    <link rel="stylesheet" type="text/css" href="/front/css/mypage.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/mypage.css">
 
     <!-- plugin CSS -->
-    <link rel="stylesheet" href="/front/css/swiper-bundle.css">
+    <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css">
 
      <!-- fontawesome -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
@@ -65,7 +65,7 @@
         <!--header-->
     <header class="header">
         <div class="headerContainer">
-            <img class="logo" src="/front/images/logo/logo.png" />
+            <img class="logo" src="${contextPath}/resource/images/logo/logo.png" />
             <div class="menu">
                 <a href="">레시피</a>
                 <a href="">가이드</a>
@@ -90,9 +90,9 @@
             
             <!--마이페이지 레프트박스 (프로필이미지, 아이디, 정보수정버튼)-->
             <div class="myBox_profile">
-                <img src="/front/images/icon/profile.jpg" class="myProfile_img" alt="profile">
+                <img src="${contextPath}/resource/images/icon/profile.jpg" class="myProfile_img" alt="profile">
                 <h3 class="userId_text">USER_ID</h3>
-                <button class="myPage_edit_btn" onclick="location.href='mypage_edit.html'">정보수정</button>
+                <button class="myPage_edit_btn" onclick="location.href='/mypage/mypwdConfirm'">정보수정</button>
             </div><!--마이페이지 레프트박스 (프로필이미지, 아이디, 정보수정버튼) 끝-->
 
             <!--마이페이지 레프트박스 (찜, 내글, 내댓글 갯수 & 바로가기)-->
@@ -140,7 +140,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -154,7 +154,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -168,7 +168,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -182,7 +182,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -196,7 +196,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -210,7 +210,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -224,7 +224,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -238,7 +238,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -252,7 +252,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -266,7 +266,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -280,7 +280,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -294,7 +294,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -308,7 +308,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -322,7 +322,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -336,7 +336,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -350,7 +350,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link imgwrap" href="#">
                                     <div class="imgBox vertical" id="heart_imgBox">
-                                            <img class="heart_list_img" src="/front/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
+                                            <img class="heart_list_img" src="${contextPath}/resource/images/food/돼지고기짬뽕국.png" alt="돼지고기짬뽕국">
                                     </div>
                                     <!--찜 레시피 제목, 부제목-->
                                     <div class="heart_list_text">
@@ -386,7 +386,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link" href="#">
                                 <div>
-                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                        <img class="heart_list_img" src="${contextPath}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
@@ -400,7 +400,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link" href="#">
                                 <div>
-                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                        <img class="heart_list_img" src="${contextPath}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
@@ -414,7 +414,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link" href="#">
                                 <div>
-                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                        <img class="heart_list_img" src="${contextPath}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
@@ -428,7 +428,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link" href="#">
                                 <div>
-                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                        <img class="heart_list_img" src="${contextPath}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
@@ -442,7 +442,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link" href="#">
                                 <div>
-                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                        <img class="heart_list_img" src="${contextPath}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
@@ -456,7 +456,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link" href="#">
                                 <div>
-                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                        <img class="heart_list_img" src="${contextPath}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
@@ -470,7 +470,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link" href="#">
                                 <div>
-                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                        <img class="heart_list_img" src="${contextPath}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
@@ -484,7 +484,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link" href="#">
                                 <div>
-                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                        <img class="heart_list_img" src="${contextPath}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
@@ -498,7 +498,7 @@
                                 <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
                                 <a class="heart_list_link" href="#">
                                 <div>
-                                        <img class="heart_list_img" src="/front/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
+                                        <img class="heart_list_img" src="${contextPath}/resource/images/food/단호박스콘.png" alt="돼지고기짬뽕국">
                                 </div>
                                 <!--가이드 레시피 제목, 부제목-->
                                 <div class="heart_list_text">
@@ -534,8 +534,8 @@
     <footer class="edit_footer">
         <div class="contain">
             <div id="footerMenu">
-                <a href="/front/index.html" class="footerLogo">
-                    <img src="/front/images/logo/logo.png" alt="zipchelin">
+                <a href="${contextPath}/resource/index.html" class="footerLogo">
+                    <img src="${contextPath}/resource/images/logo/logo.png" alt="zipchelin">
                 </a>
                     <ul class="fmenu">
                         <li><a href="#">회사소개</a></li>
@@ -563,9 +563,9 @@
     <!-- js -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="/front/js/common.js"></script>
-    <script src="/front/js/mypage.js"></script>
-    <script src="/front/js/main.js"></script>
+    <script src="${contextPath}/resource/js/common.js"></script>
+    <script src="${contextPath}/resource/js/mypage.js"></script>
+    <script src="${contextPath}/resource/js/main.js"></script>
     </body>
 </body>
 </html>

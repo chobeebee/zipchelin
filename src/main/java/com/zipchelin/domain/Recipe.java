@@ -18,27 +18,27 @@ public class Recipe {
 	//recipe_tbl
 	private int recNum;
 	private int cateNum;
-	private Date recDate;
-	private int recTen;
 	private String recTitle;
 	private String recSubt;
+	private String recImg0;
+	private String recDesc0;
 	private String recIngreMain;
 	private String recIngreSub;
 	private String recTool;
+	private String recImg1;
+	private String recDesc1;
+	private String recImg2;
+	private String recDesc2;
+	private String recImg3;
+	private String recDesc3;
+
+	private Date recDate;
+	private int recView;
+
+	private int recTen;
 	//private (String/int) userId; //리스트에서 하트?
 
-	//recipe_page_img
-	private int recImgId;
-	private String recImgFileName;
-	private int RecImgNo;
-
-	//recipe_page_desc
-	private int recTextId;
-	private String recText;
-	private int recTextNo;
-
-
-
+	//
 	public RecipeListResponseDto toDto() {
 		return RecipeListResponseDto.builder()
 				.recNum(recNum)

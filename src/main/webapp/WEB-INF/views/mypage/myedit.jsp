@@ -1,3 +1,4 @@
+<%@page import="com.zipchelin.model.dto.member.MemberResponseDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     isELIgnored="false"
@@ -117,7 +118,7 @@
                     <div class="edit_form_item">
                         <label for="id" class="edit_label">아이디</label>
                         <div class="edit_info_input">
-                            <input type="text" id="id" class="edit_input edit_input2" name="id" placeholder="USER_ID" readonly>
+                            <input type="text" id="id" class="edit_input edit_input2" name="id" placeholder="USER_ID" value="${member.memberId}" readonly>
                         </div>
                     </div>
                 </div>
@@ -147,7 +148,7 @@
                 <div class="edit_form_item">
                     <label for="name" class="edit_label">이름</label>
                     <div class="edit_info_input">
-                        <input type="text" id="name_input" class="edit_input edit_input2" name="name" placeholder="이름">
+                        <input type="text" id="name_input" class="edit_input edit_input2" name="name" value="${member.memberName}" placeholder="이름">
                         <p class="edit_warning" id="edit_warning_pwd_check2">이름을 입력해주세요.</p>
                     </div>
                 </div>
@@ -156,9 +157,9 @@
                 <div class="form_item edit_form_email edit_form_item">
                     <label for="edit_email" class="edit_left_label edit_label">이메일</label>
                     <div class="edit_sign_input_box">
-                        <input type="text" id="edit_email_1" class="edit_email_input" placeholder="이메일">
+                        <input type="text" id="edit_email_1" class="edit_email_input" value="${preEmail}" placeholder="이메일">
                         <span class="edit_email_span">@</span>
-                        <input type="text" id="edit_email_2" class="edit_email_input edit_email_input2" value="gmail.com" disabled>
+                        <input type="text" id="edit_email_2" class="edit_email_input edit_email_input2" value="${subEmail}" disabled>
                         <select class="edit_email_select" id="edit_email_input_choose">
                             <option selected>gmail.com</option>
                             <option>naver.com</option>
@@ -176,7 +177,7 @@
                     <label for="edit_tel" class="edit_label">전화번호</label>
                     <div class="edit_num">
                         <div class="edit_input_box">
-                            <input type="text" id="edit_tel" class="edit_tel_info_input" name="tel" placeholder="전화번호(-)제외">
+                            <input type="text" id="edit_tel" class="edit_tel_info_input" name="tel" placeholder="전화번호(-)제외" value="${member.memberPhone}">
                             <button type="button" onclick="" class="edit_tel_input_button btnBd edit_confirm_btn">본인인증</button>
                         </div>
                             <p class="edit_warning" id="edit_warning_tel_none">전화번호를 작성해주세요.</p>

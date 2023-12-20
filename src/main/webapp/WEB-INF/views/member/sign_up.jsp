@@ -113,6 +113,13 @@
                 </div>
             </div>
             <div class="form_item">
+                <label for="" class="sign_left_label">인증번호</label>
+                <div class="sign_input_box">
+                    <input type="text" id="" class="sign_info_input2" placeholder="인증번호">
+                    <button type="button" onclick="" class="sign_input_button btnBd">확인</button>
+                </div>
+            </div>
+            <div class="form_item">
                 <div>
                     <form:checkbox path="terms" class="chkBox" label="이용약관을 읽고 동의하였습니다."/>
 <%--                    <form:label path="terms"><a href="#" class="sign_agreement">이용약관</a>을 읽고 동의하였습니다.</form:label>--%>

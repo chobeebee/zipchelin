@@ -52,8 +52,7 @@
     <![endif]-->
 
     <!-- myrecipelist CSS -->
-    <!-- <link rel="stylesheet" type="text/css" href="/front/css/community.css"> -->
-    <link rel="stylesheet" type="text/css" href="/front/css/qna_temp.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/community.css">
 
 <title>나만의 레시피</title>
 </head>

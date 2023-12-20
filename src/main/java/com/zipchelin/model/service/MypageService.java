@@ -92,9 +92,15 @@ public class MypageService {
 	
 	public List<MyPost> selectMyPostList2(String id){
 		List<MyPost> postList=selectMyPostList(id);
-		for(int i=4;i<postList.size();i++) {
-			postList.remove(i);
+		while(postList.get(4)!=null) {
+			postList.remove(4);
 		}
 		return postList;
 	}
+	
+//	public List<Myheart> selectHeartList(String id){
+//		mypageRepository.selectGuiHeart(id);
+//		
+//		mypageRepository.selectRecHeart(id);
+//	}
 }

@@ -6,9 +6,11 @@ import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
+import com.zipchelin.domain.Guide;
 import com.zipchelin.domain.Member;
 import com.zipchelin.domain.Myrecipe;
 import com.zipchelin.domain.Qna;
+import com.zipchelin.domain.Recipe;
 import com.zipchelin.repository.MypageRepository;
 import com.zipchelin.repository.mybatis.mappers.MypageMapper;
 
@@ -42,10 +44,12 @@ public class MypageMapperMybatis implements MypageRepository{
 		int pickCnt=0;
 		pickCnt+=mypageMapper.countMyGuiPick(id);
 		pickCnt+=mypageMapper.countMyRecPick(id);
+		System.out.println("pickCnt="+pickCnt);
 		//내 글
 		int postCnt=0;
 		postCnt+=mypageMapper.countMyQna(id);
 		postCnt+=mypageMapper.countMyMyre(id);
+		System.out.println("postCnt="+postCnt);
 		//내 댓글
 		int replyCnt=0;
 		replyCnt+=mypageMapper.countMyMyreReply(id);
@@ -68,4 +72,16 @@ public class MypageMapperMybatis implements MypageRepository{
 	public List<Myrecipe> selectMyreById(String id) {
 		return mypageMapper.selectMyreById(id);
 	}
+
+	@Override
+	public List<Guide> selectGuiHeart(String id) {
+		return mypageMapper.selectGuiHeart(id);
+	}
+
+	@Override
+	public List<Recipe> selectRecHeart(String id) {
+		return mypageMapper.selectRecHeart(id);
+	}
+	
+	
 }

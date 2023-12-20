@@ -16,29 +16,27 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 public class Myrecipe {
+	private String userId;
 	private int myreNum;
 	private String myreTitle;
-	private String myreCont;
+	private String myreContent;
 	private int myreUp;
-	private int myreReply;
 	private LocalDateTime myreDate;
 	
 	public MyrecipeResponseDto toDto() {
 		return MyrecipeResponseDto.builder()
 				.myreNum(myreNum)
 				.myreTitle(myreTitle)
-				.myreCont(myreCont)
 				.myreUp(myreUp)
-				.myreReply(myreReply)
 				.myreDate(myreDate)
 				.build();
 	}
 	
 	public MyrecipeRequestDto fromDto() {
 		return MyrecipeRequestDto.builder()
-				.myreNum(myreNum)
+				.userId(userId)
+				.myreContent(myreContent)
 				.myreTitle(myreTitle)
-				.myreCont(myreCont)
 				.build();
 	}
 	

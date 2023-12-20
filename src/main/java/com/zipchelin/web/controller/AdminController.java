@@ -108,9 +108,14 @@ public class AdminController {
 		return "admin/content/recipe";
 	}
 	
-	@GetMapping("/editrecipe")
+	@GetMapping("/recipe/form")
+	public String recipeForm() {
+		return "admin/content/recipeForm";
+	}
+	
+	@GetMapping("/recipe/modify")
     public String editRecipe() {
-		return "admin/content/editrecipe";
+		return "admin/content/recipeModify";
 	}
 	
 	@GetMapping("/community")

@@ -5,9 +5,11 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.zipchelin.domain.Guide;
 import com.zipchelin.domain.Member;
 import com.zipchelin.domain.Myrecipe;
 import com.zipchelin.domain.Qna;
+import com.zipchelin.domain.Recipe;
 
 @Mapper
 public interface MypageMapper {
@@ -32,4 +34,8 @@ public interface MypageMapper {
 	public List<Qna> selectQnaById(String id);
 	
 	public List<Myrecipe> selectMyreById(String id);
+	
+	public List<Guide> selectGuiHeart(String id);
+	
+	public List<Recipe> selectRecHeart(String id);
 }

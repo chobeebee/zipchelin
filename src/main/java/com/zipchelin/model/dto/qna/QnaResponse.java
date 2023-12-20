@@ -14,5 +14,4 @@ public class QnaResponse {
 	private LocalDate qnaDate;
 	private int qnaUp;
 	private int qnaReCount;
-	private String userImg;
 }

@@ -89,7 +89,7 @@
 	                       <div class="text-title tableItem title">
 	                           <span class="question">Q. </span>
 	                           <p>${qna.qnaTitle }</p>
-	                           <span class="iconFile material-symbols-outlined">${qna.userImg }</span>
+	                           <span class="iconFile material-symbols-outlined"></span>
 	                       </div>
 	                       <div class="tableItem">${qna.qnaUp }</div>
 	                       <div class="tableItem">${qna.qnaReCount }</div>

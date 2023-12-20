@@ -17,7 +17,6 @@
             , sysdate
             , 0
             , 0
-            , #{userImg}
         )
     </insert>
 
@@ -35,8 +34,7 @@
         UPDATE qna_tbl
         SET
             qna_title = #{qnaTitle},
-            qna_content = #{qnaContent},
-            user_img = #{userImg}
+            qna_content = #{qnaContent}
         WHERE
             qna_num = #{qnaNum}
     </update>

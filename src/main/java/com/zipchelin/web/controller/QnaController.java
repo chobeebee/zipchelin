@@ -1,6 +1,16 @@
 package com.zipchelin.web.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.UUID;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,10 +42,10 @@ public class QnaController {
         return "content/qna/qna";
     }
 	
-//	@GetMapping("/qna_post")
-//    public String postQna() {
-//        return "content/qna/qna_post";
-//    }
+	@PostMapping("/upload")
+    public String postQna() {
+        return "content/qna/upload";
+    }
 	
 	@GetMapping("/post/{num}")  // /qna/post/id값
     public String postQna(@PathVariable("num") Long id, Model model) {
@@ -80,4 +90,5 @@ public class QnaController {
 		System.out.println(params);
 		return "redirect:/qna/qna";
 	}
+	
 }

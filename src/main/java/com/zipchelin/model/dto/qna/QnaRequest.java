@@ -11,5 +11,4 @@ public class QnaRequest {
 	private String userId;
 	private String qnaTitle;
 	private String qnaContent;
-	private String userImg;
 }

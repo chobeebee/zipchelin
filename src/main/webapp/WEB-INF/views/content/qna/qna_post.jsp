@@ -85,8 +85,7 @@
                         </div>
                     </div>
                     <div class="post-content">
-                        <p class="content">내용 : ${qna.qnaContent }</p><br>
-                        <p> 이미지 : ${qna.userImg }</p>
+                        <p class="content">${qna.qnaContent }</p><br>
                     </div>
                         <a href="${contextPath}/qna/qna">
                             <div class="btnGroup lg btn_list"><button class="btnBgGray btn_list">목록</button></div>

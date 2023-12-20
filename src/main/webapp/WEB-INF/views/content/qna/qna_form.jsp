@@ -70,39 +70,19 @@
             <div>
                 <div class="information informationBox">
                 <input name="userId" value="86" type="hidden">
-                <input name="userImg" value="1" type="hidden">
                     <h2 class="form-title">제목</h2>
                     <p><input class="formBox" name="qnaTitle" id="qnaTitle" placeholder="제목을 입력해주세요"></p>
                 </div>
                 <div class="information">
                     <h2 class="form-title">내용</h1>
-                    <textarea name="qnaContent" id="qnaContent" class="form-content" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
+                    <textarea name="qnaContent" id="form-content" class="form-content" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
                 </div>
             </div>
-            
             <div class="btnGroup lg form" >
-                <button type="button"  class="btnBgGray form" class="btn_cancel"><a href="${contextPath}/qna/">취소</a></button>
-                <button type="submit" class="btnBg" class="btn_upload">올리기</button>
+                <button type="button"  class="btnBgGray form" class="btn_cancel" onclick="location.href=${contextPath}/qna/"> 취소</button>
+                <input type="submit" class="btnBg" class="btn_upload" onclick="submitPost();">
     	    </div>
 		</form>
-            <form>
-	            <div>
-	                <div class="information informationBox">
-	                    <h2 class="form-title">제목</h2>
-	                    <p><input name="qnaTitle" class="formBox" id="formBox" placeholder="제목을 입력해주세요"></p>
-	                </div>
-	                <div class="information">
-	                    <h2 class="form-title">내용</h2>
-	                    <textarea name="qnaContent" id="form-content" class="form-content" cols="10" rows="20" placeholder="내용을 입력해주세요"></textarea>
-	                </div>
-	            </div>
-	            
-	            <div class="btnGroup lg form" >
-	            	<input type="button" value="전송" onclick="submitPost();">
-	                <button onclick="location.href='qna.html'" class="btnBgGray form" class="btn_cancel">취소</button>
-	                <button onclick="location.href='qna.html'" class="btnBg" class="btn_upload">올리기</button>
-	            </div>
-			</form>
         </section>
     </main>
 

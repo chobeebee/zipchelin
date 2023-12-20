@@ -4,8 +4,8 @@
 <mapper namespace="com.zipchelin.repository.mybatis.mappers.MypageMapper">
 	
 	<!-- 비밀번호 체크 -->
-	<select id="checkPwd" parameterType="java.util.Map">
-		select decode(count(*),1,'true',0,'false') result from member_tbl where member_id=#{memberId} and member_pwd=#{memberPwd}
+	<select id="checkPwd" parameterType="java.util.Map" resultType="String">
+		select decode(count(*),1,'true',0,'false') result from member_tbl where member_id=#{id} and member_pwd=#{pwd}
 	</select>
 	
 	<!-- 멤버 조회 -->
@@ -43,5 +43,15 @@
 	</select>
 	<select id="countMyQnaReply" parameterType="String" resultType="int">
 		select count(*) from qna_reply_tbl where re_id=#{id}
+	</select>
+	
+	<!-- 내 Qna -->
+	<select id="selectQnaById" parameterType="String" resultType="com.zipchelin.domain.Qna">
+			select * from qna_tbl where user_id=#{id}
+	</select>
+		
+	<!-- 내 마이레시피 -->
+	<select id="selectMyreById" parameterType="String" resultType="com.zipchelin.domain.Myrecipe">
+			select * from myrecipe_tbl where user_id=#{id}
 	</select>
 </mapper>

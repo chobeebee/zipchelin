@@ -15,6 +15,7 @@ import lombok.Setter;
 @AllArgsConstructor //mvc 모델 필드 만들어주는 놈?
 public class Recipe {
 
+	//recipe_tbl
 	private int recNum;
 	private int cateNum;
 	private Date recDate;
@@ -25,6 +26,17 @@ public class Recipe {
 	private String recIngreSub;
 	private String recTool;
 	//private (String/int) userId; //리스트에서 하트?
+
+	//recipe_page_img
+	private int recImgId;
+	private String recImgFileName;
+	private int RecImgNo;
+
+	//recipe_page_desc
+	private int recTextId;
+	private String recText;
+	private int recTextNo;
+
 
 
 	public RecipeListResponseDto toDto() {

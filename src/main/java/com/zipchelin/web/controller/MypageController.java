@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.zipchelin.config.auth.CustomUserDetails;
+import com.zipchelin.global.auth.CustomUserDetails;
+import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.model.service.MypageService;
 
 import lombok.RequiredArgsConstructor;
@@ -35,11 +36,9 @@ public class MypageController {
 	
 	@GetMapping("/mypage")
 	public String mypage(Model model,@AuthenticationPrincipal CustomUserDetails userDetails) {
-		/*String id=userDetails.getMember().getMemberId();
+		String id=userDetails.getMember().getMemberId();
 		model.addAttribute("count", mypageService.selectCount(id));
-		model.addAttribute("myRecip", mypageService.selectMyreById(id));
-		model.addAttribute("myQna", mypageService.selectQnaById(id));
-		*/
+		//model.addAttribute("myPostList",mypageService.selectMyPostList2(id));
 		return "mypage/mypage";
 	}
 	
@@ -48,26 +47,42 @@ public class MypageController {
 		return "mypage/mypwdConfirm";
 	}
 	
-	@GetMapping("/myedit")
+	@PostMapping("/myedit")
 	public String mypageEdit(@AuthenticationPrincipal CustomUserDetails userDetails,@RequestParam("pwdCheck") String pwd, Model model) {
+		//DB의 비밀번호가 암호화 되어있어 비교 불가.
 		/*String next=null;
 		
 		//1. 입력된 비밀번호를 가지고 DAO로 가서 비밀번호 일치 여부 확인
 		String id=userDetails.getMember().getMemberId();
 		String result=mypageService.checkPwd(id, pwd);
+		System.out.println("result="+result);
+		
 		if(result.equals("true")) {
 			next="mypage/myedit";
 			//2. 세션에서 가져온 아이디로 유저를 검색해 유저정보를 jsp에 넘김
-			model.addAttribute("member", mypageService.selectMemberById(id)) ;
+			MemberResponseDto member=mypageService.selectMemberById(id);
+			model.addAttribute("member", member);
+			int i=member.getMemberEmail().indexOf("@");
+			model.addAttribute("preEmail", member.getMemberEmail().substring(0,i));
+			model.addAttribute("subEmail", member.getMemberEmail().substring(i+1,member.getMemberEmail().length()));
 		}else {
 			next="mypage/mypage";
 		}
-		return next;*/
+		return next;
+		*/
+		//테스트 이한비객체
+		MemberResponseDto hanbi=new MemberResponseDto("hanbi0411","이한비","hanbi5849@gmail.com",null,null,null,null);
+		model.addAttribute("member", hanbi);
+		int gol=hanbi.getMemberEmail().indexOf("@");
+		model.addAttribute("preEmail", hanbi.getMemberEmail().substring(0,gol));
+		model.addAttribute("subEmail", hanbi.getMemberEmail().substring(gol+1,hanbi.getMemberEmail().length()));
 		return "mypage/myedit";
 	}
 	
 	@GetMapping("/mypost")
-	public String mypost() {
+	public String mypost(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
+		//String id=userDetails.getMember().getMemberId();
+		//model.addAttribute("myPostList",mypageService.selectMyPostList(id));
 		return "mypage/mypost";
 	}
 	

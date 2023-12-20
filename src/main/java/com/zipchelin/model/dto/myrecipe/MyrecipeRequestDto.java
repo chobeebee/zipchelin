@@ -12,20 +12,21 @@ import lombok.Getter;
 @Builder
 @AllArgsConstructor
 public class MyrecipeRequestDto {
+	
 	@NotBlank
-	private int myreNum;
+	private String userId;
 	
 	@NotBlank
 	private String myreTitle;
 
 	@NotBlank
-	private String myreCont;
+	private String myreContent;
 	
 	public Myrecipe toEntity() {
 		return Myrecipe.builder()
-				.myreNum(myreNum)
+				.userId(userId)
 				.myreTitle(myreTitle)
-				.myreCont(myreCont)
+				.myreContent(myreContent)
 				.build();
 	}
 }

@@ -99,7 +99,7 @@
 
             <h3>개인정보 수정</h3>
 
-            <form id="edit_form" action="" method="post">
+            <form id="edit_form" action="/mypage/memberUpdate" method="post">
 
                  <!--프로필사진 수정-->
                 <div class="profile_section clearfix">
@@ -177,7 +177,7 @@
                     <label for="edit_tel" class="edit_label">전화번호</label>
                     <div class="edit_num">
                         <div class="edit_input_box">
-                            <input type="text" id="edit_tel" class="edit_tel_info_input" name="tel" placeholder="전화번호(-)제외" value="${member.memberPhone}">
+                            <input type="text" id="edit_tel" class="edit_tel_info_input" name="tel" placeholder="전화번호(-)제외" value="">
                             <button type="button" onclick="" class="edit_tel_input_button btnBd edit_confirm_btn">본인인증</button>
                         </div>
                             <p class="edit_warning" id="edit_warning_tel_none">전화번호를 작성해주세요.</p>
@@ -188,7 +188,7 @@
 
                 <!--회원탈퇴-->
                 <div class="unregister">
-                    <a href="/leave-check" class="edit_leave">회원탈퇴</a>
+                    <a href="/member/leave-check" class="edit_leave">회원탈퇴</a>
                 </div>
 
             </form>

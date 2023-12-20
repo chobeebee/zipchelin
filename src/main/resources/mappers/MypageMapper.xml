@@ -4,8 +4,8 @@
 <mapper namespace="com.zipchelin.repository.mybatis.mappers.MypageMapper">
 	
 	<!-- 비밀번호 체크 -->
-	<select id="checkPwd" parameterType="java.util.Map">
-		select decode(count(*),1,'true',0,'false') result from member_tbl where member_id=#{memberId} and member_pwd=#{memberPwd}
+	<select id="checkPwd" parameterType="java.util.Map" resultType="String">
+		select decode(count(*),1,'true',0,'false') result from member_tbl where member_id=#{id} and member_pwd=#{pwd}
 	</select>
 	
 	<!-- 멤버 조회 -->

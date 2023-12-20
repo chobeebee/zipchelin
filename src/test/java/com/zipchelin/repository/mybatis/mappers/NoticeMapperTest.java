@@ -27,7 +27,17 @@ public class NoticeMapperTest {
     void selectAll() {
         noticeService.selectAll().forEach(notice -> log.info("" + notice));
     }
-
+    
+    /*@Test
+    void addNotice() {
+       for(int i=0; i<99; i++) {
+          Notice notice = Notice.builder()
+                .noticeTitle("테스트"+i)
+                .noticeCont("xptmxm")
+                .build();
+                noticeService.addNotice(notice);
+       }
+    }*/
 
     @Test
     @Disabled
@@ -37,6 +47,7 @@ public class NoticeMapperTest {
     }
 
     @Test
+    @Disabled
     public void testGetListPaging() {
         Criteria cri = new Criteria();
         List list = noticeService.getListPaging(cri);

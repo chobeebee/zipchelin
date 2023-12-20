@@ -55,8 +55,9 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end mb-2">
-                                    <a href="#" class="btn btn-secondary mr-2" aria-current="page">취소</a>
-                                    <a href="#" class="btn btn-primary">삭제</a>
+                                    <a href="#" class="btn btn-outline-dark mr-2">취소</a>
+                                    <a href="#" class="btn btn-secondary mr-2">삭제</a>
+                                    <a href="recipe/form" class="btn btn-primary">등록</a>
                                 </div>
                             </div>             
                             <div class="table-responsive">
@@ -70,7 +71,6 @@
                                             </th>
                                             <th>번호</th>
                                             <th>제목</th>
-                                            <th>작성자</th>
                                             <th>작성일자</th>
                                         </tr>
                                     </thead>
@@ -79,45 +79,8 @@
                                             <td class="align-middle">
                                                 <input class="form-check" type="checkbox" value="">
                                             </td>
-                                            <td>1</td>
-                                            <td><a href="${contextPath}/admin/editrecipe"">제육볶음</a></td>
-                                            <td>jangmin</td>
-                                            <td>2023.01.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="align-middle">
-                                                <input class="form-check" type="checkbox" value="">
-                                            </td>
-                                            <td>2</td>
-                                            <td>제육볶음</td>
-                                            <td>jangmin</td>
-                                            <td>2023.01.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="align-middle">
-                                                <input class="form-check" type="checkbox" value="">
-                                            </td>
-                                            <td>3</td>
-                                            <td>제육볶음</td>
-                                            <td>jangmin</td>
-                                            <td>2023.01.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="align-middle">
-                                                <input class="form-check" type="checkbox" value="">
-                                            </td>
-                                            <td>4</td>
-                                            <td>제육볶음</td>
-                                            <td>jangmin</td>
-                                            <td>2023.01.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="align-middle">
-                                                <input class="form-check" type="checkbox" value="">
-                                            </td>
-                                            <td>5</td>
-                                            <td>제육볶음</td>
-                                            <td>jangmin</td>
+                                            <td>7</td>
+                                            <td><a href="recipe/modify">제육볶음</a></td>
                                             <td>2023.01.01</td>
                                         </tr>
                                         <tr>
@@ -126,16 +89,46 @@
                                             </td>
                                             <td>6</td>
                                             <td>제육볶음</td>
-                                            <td>jangmin</td>
                                             <td>2023.01.01</td>
                                         </tr>
                                         <tr>
                                             <td class="align-middle">
                                                 <input class="form-check" type="checkbox" value="">
                                             </td>
-                                            <td>7</td>
+                                            <td>5</td>
                                             <td>제육볶음</td>
-                                            <td>jangmin</td>
+                                            <td>2023.01.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-middle">
+                                                <input class="form-check" type="checkbox" value="">
+                                            </td>
+                                            <td>4</td>
+                                            <td>제육볶음</td>
+                                            <td>2023.01.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-middle">
+                                                <input class="form-check" type="checkbox" value="">
+                                            </td>
+                                            <td>3</td>
+                                            <td>제육볶음</td>
+                                            <td>2023.01.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-middle">
+                                                <input class="form-check" type="checkbox" value="">
+                                            </td>
+                                            <td>2</td>
+                                            <td>제육볶음</td>
+                                            <td>2023.01.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-middle">
+                                                <input class="form-check" type="checkbox" value="">
+                                            </td>
+                                            <td>1</td>
+                                            <td>제육볶음</td>
                                             <td>2023.01.01</td>
                                         </tr>
                                     </tbody>

@@ -69,7 +69,7 @@
                     <option value="#" selected>최신순</option>
                     <option value="#">오래된순</option>
                 </select>
-                <button onclick="location.href='${contextPath}/qna/qna_form'" class="btnBg btnSm" class="btn_write">질문하기</button>
+                <button onclick="location.href='${contextPath}/qna/form'" class="btnBg btnSm" class="btn_write">질문하기</button>
             </div>
             
         <div class="qna">
@@ -82,175 +82,22 @@
                     <p class="tableItem">작성자</p>
                     <p class="tableItem">작성일</p>
                 </li>
-               <li>
-                    <a href="/front/html/community/qna_post.html" class="textbox tableWd">
-                        <div class="num tableItem">12</div>
-                        <div class="text-title tableItem title">
-                            <span class="question">Q. </span>
-                            <p>잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?</p>
-                            <span class="iconFile material-symbols-outlined">imagesmode</span>
-                        </div>
-                        <div class="tableItem">268</div>
-                        <div class="tableItem">80</div>
-                        <div class="qna-id tableItem">jhj7801</div>
-                        <div class="qna-date tableItem">2023.10.18 10:02</div>
-                        
-                    </a>
-                </li>
-                <li>
-                    <a href="/front/html/community/qna_post.html" class="textbox tableWd">
-                        <div class="num tableItem">11</div>
-                        <div class="text-title tableItem title">
-                            <span class="question">Q. </span>
-                            <p>잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?</p>
-                            <span class="iconFile material-symbols-outlined">imagesmode</span>
-                        </div>
-                        <div class="tableItem">268</div>
-                        <div class="tableItem">80</div>
-                        <div class="qna-id tableItem">jhj7801</div>
-                        <div class="qna-date tableItem">2023.10.18 10:02</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/front/html/community/qna_post.html" class="textbox tableWd">
-                        <div class="num tableItem">10</div>
-                        <div class="text-title tableItem title">
-                            <span class="question">Q. </span>
-                            <p>잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?</p>
-                            <span class="iconFile material-symbols-outlined">imagesmode</span>
-                        </div>
-                        <div class="tableItem">268</div>
-                        <div class="tableItem">80</div>
-                        <div class="qna-id tableItem">jhj7801</div>
-                        <div class="qna-date tableItem">2023.10.18 10:02</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/front/html/community/qna_post.html" class="textbox tableWd">
-                        <div class="num tableItem">9</div>
-                        <div class="text-title tableItem title">
-                            <span class="question">Q.  </span>
-                            <p>잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?</p>
-                            <span class="iconFile material-symbols-outlined">imagesmode</span>
-                        </div>
-                        <div class="tableItem">268</div>
-                        <div class="tableItem">80</div>
-                        <div class="qna-id tableItem">jhj7801</div>
-                        <div class="qna-date tableItem">2023.10.18 10:02</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/front/html/community/qna_post.html" class="textbox tableWd">
-                        <div class="num tableItem">8</div>
-                        <div class="text-title tableItem title">
-                            <span class="question">Q. </span>
-                            <p>잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?</p>
-                            <span class="iconFile material-symbols-outlined">imagesmode</span>
-                        </div>
-                        <div class="tableItem">268</div>
-                        <div class="tableItem">80</div>
-                        <div class="qna-id tableItem">jhj7801</div>
-                        <div class="qna-date tableItem">2023.10.18 10:02</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/front/html/community/qna_post.html" class="textbox tableWd">
-                        <div class="num tableItem">7</div>
-                        <div class="text-title tableItem title">
-                            <span class="question">Q. </span>
-                            <p>잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?</p>
-                            <span class="iconFile material-symbols-outlined">imagesmode</span>
-                        </div>
-                        <div class="tableItem">268</div>
-                        <div class="tableItem">80</div>
-                        <div class="qna-id tableItem">jhj7801</div>
-                        <div class="qna-date tableItem">2023.10.18 10:02</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/front/html/community/qna_post.html" class="textbox tableWd">
-                        <div class="num tableItem">6</div>
-                        <div class="text-title tableItem title">
-                            <span class="question">Q. </span>
-                            <p>잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?</p>
-                            <span class="iconFile material-symbols-outlined">imagesmode</span>
-                        </div>
-                        <div class="tableItem">268</div>
-                        <div class="tableItem">80</div>
-                        <div class="qna-id tableItem">jhj7801</div>
-                        <div class="qna-date tableItem">2023.10.18 10:02</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/front/html/community/qna_post.html" class="textbox tableWd">
-                        <div class="num tableItem">5</div>
-                        <div class="text-title tableItem title">
-                            <span class="question">Q. </span>
-                            <p>잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?</p>
-                            <span class="iconFile material-symbols-outlined">imagesmode</span>
-                        </div>
-                        <div class="tableItem">268</div>
-                        <div class="tableItem">80</div>
-                        <div class="qna-id tableItem">jhj7801</div>
-                        <div class="qna-date tableItem">2023.10.18 10:02</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/front/html/community/qna_post.html" class="textbox tableWd">
-                        <div class="num tableItem">4</div>
-                        <div class="text-title tableItem title">
-                            <span class="question">Q. </span>
-                            <p>잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?</p>
-                            <span class="iconFile material-symbols-outlined">imagesmode</span>
-                        </div>
-                        <div class="tableItem">268</div>
-                        <div class="tableItem">80</div>
-                        <div class="qna-id tableItem">jhj7801</div>
-                        <div class="qna-date tableItem">2023.10.18 10:02</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/front/html/community/qna_post.html" class="textbox tableWd">
-                        <div class="num tableItem">3</div>
-                        <div class="text-title tableItem title">
-                            <span class="question">Q. </span>
-                            <p>잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?</p>
-                            <span class="iconFile material-symbols-outlined">imagesmode</span>
-                        </div>
-                        <div class="tableItem">268</div>
-                        <div class="tableItem">80</div>
-                        <div class="qna-id tableItem">jhj7801</div>
-                        <div class="qna-date tableItem">2023.10.18 10:02</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/front/html/community/qna_post.html" class="textbox tableWd">
-                        <div class="num tableItem">2</div>
-                        <div class="text-title tableItem title">
-                            <span class="question">Q. </span>
-                            <p>잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?</p>
-                            <span class="iconFile material-symbols-outlined">imagesmode</span>
-                        </div>
-                        <div class="tableItem">268</div>
-                        <div class="tableItem">80</div>
-                        <div class="qna-id tableItem">jhj7801</div>
-                        <div class="qna-date tableItem">2023.10.18 10:02</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/front/html/community/qna_post.html" class="textbox tableWd">
-                        <div class="num tableItem">1</div>
-                        <div class="text-title tableItem title">
-                            <span class="question">Q. </span>
-                            <p>잡채호떡에 청양고추간장 뿌려먹으면 맛이 있나요?</p>
-                            <span class="iconFile material-symbols-outlined">imagesmode</span>
-                        </div>
-                        <div class="tableItem">268</div>
-                        <div class="tableItem">80</div>
-                        <div class="qna-id tableItem">jhj7801</div>
-                        <div class="qna-date tableItem">2023.10.18 10:02</div>
-                    </a>
-                </li>
+                <c:forEach var="qna" items="${qna }">
+	               <li>
+	                   <a href="${contextPath}/qna/post/${qna.qnaNum}" class="textbox tableWd">
+	                       <div class="num tableItem">${qna.qnaNum }</div>
+	                       <div class="text-title tableItem title">
+	                           <span class="question">Q. </span>
+	                           <p>${qna.qnaTitle }</p>
+	                           <span class="iconFile material-symbols-outlined"></span>
+	                       </div>
+	                       <div class="tableItem">${qna.qnaUp }</div>
+	                       <div class="tableItem">${qna.qnaReCount }</div>
+	                       <div class="qna-id tableItem">${qna.userId }</div>
+	                       <div class="qna-date tableItem">${qna.qnaDate }</div>
+	                   </a>
+	               </li>
+                </c:forEach>
             </ul>
         </div>
 

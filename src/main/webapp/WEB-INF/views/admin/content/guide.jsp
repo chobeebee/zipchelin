@@ -45,7 +45,7 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-end mb-2">
                                     	<a href="#" class="btn btn-outline-dark mr-2">취소</a>
-                                        <a href="#" class="btn btn-secondary mr-2" aria-current="page">삭제</a>
+                                        <a href="#" class="btn btn-secondary mr-2">삭제</a>
                                         <a href="#" class="btn btn-primary">등록</a>
                                     </div>
                                     <div class="table-responsive">

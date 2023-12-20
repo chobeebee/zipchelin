@@ -32,6 +32,9 @@ public class MemberSaveDto {
     @Email(message = "이메일 형식이 올바르지 않습니다.")
     private String memberEmail;
 
+    @AssertTrue(message = "이메일 인증을 완료해주세요.")
+    private Boolean emailAuth;
+
     private String memberImg;
 
     @AssertTrue(message = "이용약관에 동의하셔야 합니다.")
@@ -42,6 +45,10 @@ public class MemberSaveDto {
             return;
         }
         memberPwd = passwordEncoder.encode(memberPwd);
+    }
+
+    public void setEmailAuth(boolean isEmailAuth) {
+        emailAuth = isEmailAuth;
     }
 
     public Member toEntity() {

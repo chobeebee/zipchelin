@@ -102,22 +102,25 @@
                 <form:errors path="memberName" element="p" class="sign_warning"/>
             </div>
             <div class="form_item">
-                <label for="sign_tel" class="sign_left_label">이메일</label>
+                <label for="sign_email" class="sign_left_label">이메일</label>
                 <div>
                     <div class="sign_input_box">
-                        <form:input type="email" path="memberEmail" id="sign_tel" class="sign_info_input2"
+                        <form:input type="email" path="memberEmail" id="sign_email" class="sign_info_input2"
                                     placeholder="이메일"/>
-                        <button type="button" onclick="" class="sign_input_button btnBd">본인인증</button>
+                        <button type="button" id="mailSendBtn" class="sign_input_button btnBd">본인인증</button>
                     </div>
                     <form:errors path="memberEmail" element="p" class="sign_warning"/>
                 </div>
             </div>
             <div class="form_item">
-                <label for="" class="sign_left_label">인증번호</label>
+                <label for="emailCode" class="sign_left_label">인증번호</label>
                 <div class="sign_input_box">
-                    <input type="text" id="" class="sign_info_input2" placeholder="인증번호">
-                    <button type="button" onclick="" class="sign_input_button btnBd">확인</button>
+                    <input type="text" id="emailCode" class="sign_info_input2" placeholder="인증번호">
+<%--                    <form:hidden path="emailAuth" id="isEamilAuthed" value="${isMailAuthed}"/>--%>
+                    <form:checkbox path="emailAuth" id="isEamilAuthed" />
+                    <button type="button" id="mailAuthBtn" class="sign_input_button btnBd">확인</button>
                 </div>
+                <form:errors path="emailAuth" element="p" class="sign_warning"/>
             </div>
             <div class="form_item">
                 <div>
@@ -142,7 +145,63 @@
 <!-- js -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
+    $('#mailSendBtn').on('click', function (e) {
+        e.preventDefault();
+        const params= {
+            email: $('#sign_email').val(),
+            code: ''
+        }
 
+        $.ajax({
+            url: '/member/sendMail',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(params),
+            dataType: 'text',
+            async: true,
+
+            success: function (response) {
+                console.log(response);
+                if (response === 'success') {
+                    alert('이메일이 전송되었습니다.');
+                } else {
+                    alert(response);
+                }
+            },
+            error: function (request, error) {
+                console.log(error);
+            }
+        })
+    });
+
+    $('#mailAuthBtn').on('click', function (e) {
+        const params = {
+            email: $('#sign_email').val(),
+            code: $('#emailCode').val()
+        };
+
+        $.ajax({
+            url: '/member/confirmMail',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(params),
+            dataType: 'json',
+            async: true,
+
+            success: function (response) {
+                console.log(response);
+                if (response) {
+                    alert('인증이 완료되었습니다. 해당 인증은 5분 간 유효합니다.');
+                    $('#isEamilAuthed').prop('checked', true);
+                } else {
+                    alert('잘못된 인증번호입니다. 다시 확인해주세요.');
+                }
+            },
+            error: function (request, error) {
+                console.log(error);
+            }
+        })
+    });
 </script>
 <script src="${contextPath}/resource/js/common.js"></script>
 </body>

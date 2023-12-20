@@ -10,10 +10,22 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <title>Error - 500</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- basic CSS -->
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
+
+    <!-- page CSS -->
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/error.css">
+
+    <title>Error - 500</title>
 </head>
 <body>
+<header class="header">
+    <jsp:include page="/WEB-INF/views/main/header.jsp"/>
+</header>
 <div class="error-area">
     <div class="d-table">
         <div class="d-table-cell">

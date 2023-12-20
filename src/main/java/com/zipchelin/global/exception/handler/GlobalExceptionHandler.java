@@ -1,11 +1,15 @@
-package com.zipchelin.web.exception;
+package com.zipchelin.global.exception.handler;
 
+import com.zipchelin.global.exception.BadRequestException;
+import com.zipchelin.global.exception.BusinessLogicException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+@Slf4j
 @ControllerAdvice
-public class ExceptionController {
+public class GlobalExceptionHandler {
 
     @ExceptionHandler(BadRequestException.class)
     String badRequestExceptionHandle(BadRequestException e, Model model) {

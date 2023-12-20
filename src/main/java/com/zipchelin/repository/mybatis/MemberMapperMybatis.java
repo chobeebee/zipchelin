@@ -1,7 +1,6 @@
 package com.zipchelin.repository.mybatis;
 
 import com.zipchelin.domain.Member;
-import com.zipchelin.model.dto.member.EmailDto;
 import com.zipchelin.repository.MemberRepository;
 import com.zipchelin.repository.mybatis.mappers.MemberMapper;
 import lombok.RequiredArgsConstructor;

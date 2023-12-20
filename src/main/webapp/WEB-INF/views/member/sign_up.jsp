@@ -86,7 +86,7 @@
                     <form:errors path="memberPwd" element="p" class="sign_warning"/>
                 </div>
                 <div class="inputField sign_info_input">
-                    <form:input type="password" path="pwdConfirm" id="sign_pwd2" class="" placeholder="비밀번호 확인" />
+                    <form:input type="password" path="pwdConfirm" id="sign_pwd2" class="" placeholder="비밀번호 확인"/>
                     <spring:hasBindErrors name="params">
                         <c:if test="${errors.hasGlobalErrors()}">
                             <p class="sign_warning">비밀번호와 일치하지 않습니다.</p>
@@ -116,8 +116,8 @@
                 <label for="emailCode" class="sign_left_label">인증번호</label>
                 <div class="sign_input_box">
                     <input type="text" id="emailCode" class="sign_info_input2" placeholder="인증번호">
-<%--                    <form:hidden path="emailAuth" id="isEamilAuthed" value="${isMailAuthed}"/>--%>
-                    <form:checkbox path="emailAuth" id="isEamilAuthed" />
+                        <%--                    <form:hidden path="emailAuth" id="isEamilAuthed" value="${isMailAuthed}"/>--%>
+                    <form:checkbox path="emailAuth" id="isEamilAuthed"/>
                     <button type="button" id="mailAuthBtn" class="sign_input_button btnBd">확인</button>
                 </div>
                 <form:errors path="emailAuth" element="p" class="sign_warning"/>
@@ -125,7 +125,7 @@
             <div class="form_item">
                 <div>
                     <form:checkbox path="terms" class="chkBox" label="이용약관을 읽고 동의하였습니다."/>
-<%--                    <form:label path="terms"><a href="#" class="sign_agreement">이용약관</a>을 읽고 동의하였습니다.</form:label>--%>
+                        <%--                    <form:label path="terms"><a href="#" class="sign_agreement">이용약관</a>을 읽고 동의하였습니다.</form:label>--%>
                 </div>
                 <form:errors path="terms" element="p" class="sign_warning"/>
             </div>
@@ -147,7 +147,7 @@
 <script>
     $('#mailSendBtn').on('click', function (e) {
         e.preventDefault();
-        const params= {
+        const params = {
             email: $('#sign_email').val(),
             code: ''
         }

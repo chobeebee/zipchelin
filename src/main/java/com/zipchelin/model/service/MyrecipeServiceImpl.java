@@ -7,6 +7,6 @@ public class MyrecipeServiceImpl {
 
 	/*@Autowired
 	MyrecipeRepository myrecipeRepository;*/
-	
-	
+
+
 }

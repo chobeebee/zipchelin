@@ -1,7 +1,6 @@
 package com.zipchelin.model.dto.qna;
 
 import com.zipchelin.model.dto.common.PagingDto;
-
 import lombok.Getter;
 import lombok.Setter;
 

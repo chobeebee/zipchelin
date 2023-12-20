@@ -80,14 +80,15 @@ public class MemberService {
                 "<h1>" + authCode + "</h1><h3> 입니다.</h3>" +
                 "<br><p>인증번호를 입력해주세요.</p>";
 
-        mailSend(toMail, title, content);;
+        mailSend(toMail, title, content);
+        ;
         publisher.publishEvent(new EmailApplicationEvent(this, email, authCode));
     }
 
     public String createCode() {
         Random r = new Random();
         StringBuilder randomNumber = new StringBuilder();
-        for(int i = 0; i < 6; i++) {
+        for (int i = 0; i < 6; i++) {
             randomNumber.append(Integer.toString(r.nextInt(10)));
         }
         return randomNumber.toString();

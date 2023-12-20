@@ -5,12 +5,8 @@
 
     <!-- 멤버 저장 -->
     <insert id="save" parameterType="com.zipchelin.domain.Member">
-        insert into member_TBL (
-        member_ID, member_PWD, member_NAME, member_EMAIL, provider, provider_id
-        )
-        values (
-        #{memberId}, #{memberPwd}, #{memberName}, #{memberEmail}, #{provider}, #{providerId}
-        )
+        insert into member_TBL (member_ID, member_PWD, member_NAME, member_EMAIL, provider, provider_id)
+        values (#{memberId}, #{memberPwd}, #{memberName}, #{memberEmail}, #{provider}, #{providerId})
     </insert>
 
     <!-- 멤버 조회 -->

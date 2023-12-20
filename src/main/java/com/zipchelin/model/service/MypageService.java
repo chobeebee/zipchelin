@@ -1,9 +1,12 @@
 package com.zipchelin.model.service;
 
+import com.zipchelin.domain.Guide;
 import com.zipchelin.domain.Member;
 import com.zipchelin.domain.Myrecipe;
 import com.zipchelin.domain.Qna;
+import com.zipchelin.domain.Recipe;
 import com.zipchelin.model.dto.MyPost;
+import com.zipchelin.model.dto.Myheart;
 import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.model.dto.myrecipe.MyrecipeResponseDto;
 import com.zipchelin.model.dto.qna.QnaResponseDto;
@@ -98,9 +101,32 @@ public class MypageService {
 		return postList;
 	}
 	
-//	public List<Myheart> selectHeartList(String id){
-//		mypageRepository.selectGuiHeart(id);
-//		
-//		mypageRepository.selectRecHeart(id);
-//	}
+	public List<Myheart> selectHeartList(String id){
+		List<Myheart> heartList = new ArrayList<Myheart>();
+		
+		List<Guide> guideList=mypageRepository.selectGuiHeart(id);
+		for(Guide gui:guideList) {
+			heartList.add(gui.toMyheart());
+		}
+		
+		List<Recipe> recipeList=mypageRepository.selectRecHeart(id);
+		for(Recipe rec:recipeList) {
+			heartList.add(rec.toMyheart());
+		}
+		
+		for(int i=0;i<heartList.size()-1;i++) {
+			for(int j=i+1;j<heartList.size();j++) {
+				//i번쨰에 있는 애가 j번째 보다 예전 것일때 true
+				if(heartList.get(i).getHeartDate().before(heartList.get(j).getHeartDate())) {
+					Myheart iheart=heartList.get(i);
+					Myheart jheart=heartList.get(j);
+					heartList.remove(i);
+					heartList.add(i,jheart);
+					heartList.remove(j);
+					heartList.add(j,iheart);
+				}
+			}
+		}
+		return heartList;
+	}
 }

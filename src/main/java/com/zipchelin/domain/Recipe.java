@@ -2,6 +2,7 @@ package com.zipchelin.domain;
 
 import java.sql.Date;
 
+import com.zipchelin.model.dto.Myheart;
 import com.zipchelin.model.dto.recipe.RecipeListResponseDto;
 
 import lombok.AllArgsConstructor;
@@ -45,6 +46,15 @@ public class Recipe {
 				.cateNum(cateNum)
 				.recTitle(recTitle)
 				.recSubt(recSubt)
+				.build();
+	}
+	
+	public Myheart toMyheart() {
+		return Myheart.builder()
+				.guiOrRec("rec")
+				.heartDate(recDate)
+				.recipe(this)
+				.guide(null)
 				.build();
 	}
 }

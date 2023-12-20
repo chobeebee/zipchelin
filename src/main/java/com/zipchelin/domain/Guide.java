@@ -2,6 +2,7 @@ package com.zipchelin.domain;
 
 import java.sql.Date;
 
+import com.zipchelin.model.dto.Myheart;
 import com.zipchelin.model.dto.guide.GuideRequestDto;
 import com.zipchelin.model.dto.guide.GuideResponseDto;
 
@@ -46,6 +47,15 @@ public class Guide {
 				.guiTitle(guiTitle)
 				.guiSubt(guiSubt)
 				.guiThumb(guiThumb)
+				.build();
+	}
+	
+	public Myheart toMyheart() {
+		return Myheart.builder()
+				.guiOrRec("gui")
+				.heartDate(guiDate)
+				.recipe(null)
+				.guide(this)
 				.build();
 	}
 	

@@ -51,9 +51,10 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="guiThumb" class="col-form-label">섬네일 이미지</label>
-                                    <div>
-                                    	<input type="file" class="btn btn-outline-secondary mb-2" id="guiThumb" name="guiThumb" value="이미지 올리기">
-                                    </div>
+                                    <div class="custom-file mb-2">
+											<input type="file" class="custom-file-input" id="guiThumb" aria-describedby="inputGroupFileAddon04">
+										    <label class="custom-file-label" for="guiThumb">이미지파일</label>
+										</div>
                                 </div>
                                 <div class="form-group">
                                     <label for="guiDesc" class="col-form-label">가이드 설명</label>
@@ -63,14 +64,18 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="guiImgFileName" class="col-form-label">단계별 내용</label>
-                                    <div>
-                                    	<div class="custom-file">
-											<input type="file" class="custom-file-input mb-2" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-										    <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                                    <div class="guiStep pt-3 pb-3 border-top">
+                                    	<div class="d-flex justify-content-between align-items-center mb-2">
+	                                    	<p class="mb-0">STEP 1</p>
+	                                    	<button type="button" class="btn btn-sm btn-outline-secondary" onclick="delGui(this);">X</button>
+                                    	</div>
+                                    	<div class="custom-file mb-2">
+											<input type="file" class="custom-file-input" id="guiImgFileName1" aria-describedby="inputGroupFileAddon04">
+										    <label class="custom-file-label" for="guiImgFileName1">이미지파일</label>
 										</div>
-                                    	<input type="file" class="btn btn-outline-secondary mb-2" id="guiImgFileName" name="guiImgFileName" value="이미지 올리기">
-                                        <textarea rows="5" class="form-control" id="guiText" name="guiText"></textarea>
+                                        <textarea rows="3" class="form-control" id="guiText" name="guiText"></textarea>
                                     </div>
+                                   	<button type="button" id="guiBtn" class="btn btn-outline-primary w-100" onclick="addGuiBtn()">단계 추가</button>
                                 </div>
                                 
                                 <div class="d-flex justify-content-end mb-2">

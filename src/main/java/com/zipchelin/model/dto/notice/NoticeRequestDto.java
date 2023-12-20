@@ -10,6 +10,7 @@ import lombok.Getter;
 @Builder
 @AllArgsConstructor
 public class NoticeRequestDto {
+	
 	@NotBlank
 	private Integer noticeNum;
 	

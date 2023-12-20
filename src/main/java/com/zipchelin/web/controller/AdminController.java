@@ -4,8 +4,6 @@ import lombok.RequiredArgsConstructor;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zipchelin.domain.Notice;
+import com.zipchelin.model.dto.notice.PageMakerDTO;
+import com.zipchelin.model.page.Criteria;
 import com.zipchelin.model.service.NoticeService;
 
 @Controller
@@ -43,10 +43,15 @@ public class AdminController {
 	// 공지사항 CRUD
 	// 공지사항 조회
 	@GetMapping("/notice")
-    public String notice(Model model) {
-		model.addAttribute("noticeList", noticeService.selectAll());
+    public String notice(Model model, Criteria cri) {
+		model.addAttribute("noticeList", noticeService.getListPaging(cri));
+		
+		int total = noticeService.getTotal();
+		PageMakerDTO pageMake = new PageMakerDTO(cri, total);
+		model.addAttribute("pageMaker", pageMake);
 		return "admin/content/notice";
 	}
+	
 	
 	// 공지사항 추가 페이지 이동
 	@GetMapping("/addnotice")
@@ -103,9 +108,14 @@ public class AdminController {
 		return "admin/content/recipe";
 	}
 	
-	@GetMapping("/editrecipe")
+	@GetMapping("/recipe/form")
+	public String recipeForm() {
+		return "admin/content/recipeForm";
+	}
+	
+	@GetMapping("/recipe/modify")
     public String editRecipe() {
-		return "admin/content/editrecipe";
+		return "admin/content/recipeModify";
 	}
 	
 	@GetMapping("/community")

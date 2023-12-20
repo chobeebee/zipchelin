@@ -75,56 +75,25 @@
 	        	</c:when>
 	        </c:choose>
         </ul>
-
-        <!-- <div class="paging">        
-            <ul>
-	        	<c:if test="${totNotices != 0}">
-	        		<c:choose>
-	        			<c:when test="${totNotices > 100}">
-	        				<c:forEach var="page" begin="1" end="${endValue}" step="1">
-	        					<c:if test="${section > 1 && page ==1}">
-					                <li class="arrow prev disabled">
-					                	<button onclick="${contextPath}/notice.do?section=${section-1}&pageNum=${(section-1)*10+1}}">
-					                		<span class="material-symbols-outlined">navigate_before</span>
-					                	</button>
-					                </li>
-	        					</c:if>
-	        					<c:choose>
-	        						<c:when test="${page == pageNum}">
-						                <li class="active"><a href="${contextPath}/notice.do?section=${section}&pageNum=${page}">${(section-1)*10+page}</a></li>
-	        						</c:when>
-	        						<c:otherwise>
-						                <li><a href="${contextPath}/notice.do?section=${section}&pageNum=${page}">${(section-1)*10+page}</a></li>
-	        						</c:otherwise>
-	        					</c:choose>
-	        					<c:if test="${page == 10}">
-					                <li>
-					                	<button onclick="${contextPath}/notice.do?section=${section+1}&pageNum=${section*10+1}">
-					                		<span class="material-symbols-outlined">navigate_next</span>
-					                	</button>
-					                </li>
-	        					</c:if>
-	        				</c:forEach>
-			            </c:when>
-			            <c:when test="${totNotices <= 100}">
-			            	<c:if test="${(totNotices mod 10) == 0}">
-			            		<c:set var="totNotices" value="${totNotices -1}"></c:set>
-			            	</c:if>
-			            	<c:forEach var="page" begin="1" end="${totNotices/10+1}" step="1">
-			            		<c:choose>
-			            			<c:when test="${page == pageNum}">
-			            				<li class="active"><a href="${contextPath}/notice.do?section=${section}&pageNum=${page}">${page}</a></li>
-			            			</c:when>
-			            			<c:otherwise>
-			            				<li><a href="${contextPath}/notice.do?section=${section}&pageNum=${page}">${page}</a></li>
-			            			</c:otherwise>
-			            		</c:choose>
-			            	</c:forEach>
-			            </c:when>
-		            </c:choose>
-	            </c:if>
-			</ul>
-        </div> -->
+		<div class="pageInfo_wrap paging">
+	       	<div class="pageInfo_area">
+	            <ul class="pageInfo" id="pageInfo">
+	            	<c:if test="${pageMaker.prev}">
+	                 	<li class="pageInfo_btn previous arrow prev disabled"><a href="${pageMaker.startPage-1}"><span class="material-symbols-outlined">navigate_before</span></a></li>
+	                </c:if>
+	                <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+	  					<li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
+					</c:forEach>
+	                <c:if test="${pageMaker.next}">
+	  					<li class="pageInfo_btn next arrow next"><a href="${pageMaker.endPage + 1 }"><span class="material-symbols-outlined">navigate_next</span></a></li>
+					</c:if> 
+	            </ul>
+	       </div>
+	    </div>                 
+		<form action="get" id="moveForm">
+			<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+			<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+		</form>
     </main>
 
     <!-- 푸터 -->

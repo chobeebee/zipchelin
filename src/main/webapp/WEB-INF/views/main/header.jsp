@@ -10,16 +10,16 @@
         <img src="${contextPath}/resource/images/logo/logo.png" />
     </a>
     <div class="menu">
-        <a class="menu_list" href="${contextPath}/recipe/list.do">레시피</a>
-        <a class="menu_list" href="${contextPath}/guide/guide.do">가이드</a>
+        <a class="menu_list" href="${contextPath}/recipe/list">레시피</a>
+        <a class="menu_list" href="${contextPath}/guide/list">가이드</a>
         <div class="sub-menu menu_list">
             <a href="#">커뮤니티</a>
             <div class="sub-menu_wrap">
                 <div class="sub-menu_content">
-                    <a href="${contextPath}/myrecipe/">나만의레시피</a>
+                    <a href="${contextPath}/community/myrecipe">나만의레시피</a>
                 </div>
                 <div class="sub-menu_content">
-                    <a href="${contextPath}/qna/">요리상담소</a>
+                    <a href="${contextPath}/community/qna">요리상담소</a>
                 </div>
             </div>
         </div>

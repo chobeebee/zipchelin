@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import com.zipchelin.domain.Notice;
+import com.zipchelin.model.page.Criteria;
 import com.zipchelin.model.service.NoticeService;
 
 @SpringBootTest
@@ -30,19 +31,16 @@ public class NoticeMapperTest {
 	
 	@Test
 	@Disabled
-	void addNotice() {
-		Notice notice = new Notice(0, null, null, null);
-		notice.setNoticeNum(0);
-		notice.setNoticeTitle("공지사항입니다.");
-		notice.setNoticeCont("본문입니다.");
-		noticeMapper.addNotice(notice);
-	}
-	
-	@Test
-	@Disabled
 	void selectNotice() {
 		List<Notice> list = noticeMapper.selectAll();
 		System.out.println(list);
+	}
+	
+	@Test
+	public void testGetListPaging() {
+		Criteria cri = new Criteria();
+		List list = noticeService.getListPaging(cri);
+		list.forEach(notice -> log.info(""+notice));
 	}
 
 }

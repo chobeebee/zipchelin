@@ -1,4 +1,4 @@
-package com.zipchelin.config.auth;
+package com.zipchelin.global.auth;
 
 import com.zipchelin.domain.Member;
 import com.zipchelin.repository.MemberRepository;

@@ -67,7 +67,7 @@
                                     <div class="guiStep pt-3 pb-3 border-top">
                                     	<div class="d-flex justify-content-between align-items-center mb-2">
 	                                    	<p class="mb-0">STEP 1</p>
-	                                    	<button class="btn btn-sm btn-outline-secondary" onclick="delGui(this)">X</button>
+	                                    	<button type="button" class="btn btn-sm btn-outline-secondary" onclick="delGui(this);">X</button>
                                     	</div>
                                     	<div class="custom-file mb-2">
 											<input type="file" class="custom-file-input" id="guiImgFileName1" aria-describedby="inputGroupFileAddon04">

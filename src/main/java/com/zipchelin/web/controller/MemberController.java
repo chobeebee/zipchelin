@@ -139,9 +139,4 @@ public class MemberController {
     public String viewLeaveDone() {
         return "member/leave_done";
     }
-
-    @GetMapping("/email-auth")
-    public String viewEmailAuth() {
-        return "member/email_auth";
-    }
 }

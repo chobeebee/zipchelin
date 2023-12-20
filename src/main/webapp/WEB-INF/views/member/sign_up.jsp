@@ -114,7 +114,7 @@
                 <label for="emailCode" class="sign_left_label">인증번호</label>
                 <div class="sign_input_box">
                     <input type="text" id="emailCode" class="sign_info_input2" placeholder="인증번호">
-                    <form:checkbox path="emailAuth" id="isEamilAuthed"/>
+                    <form:checkbox path="emailAuth" id="isEmailAuthed"/>
                     <button type="button" id="mailAuthBtn" class="sign_input_button btnBd">확인</button>
                 </div>
                 <form:errors path="emailAuth" element="p" class="valid_warning"/>
@@ -143,6 +143,13 @@
 <script>
     $('#mailSendBtn').on('click', function (e) {
         e.preventDefault();
+
+        $('#mailSendBtn').addClass('transition-effect').prop('disabled', true)
+            .css({
+                'background-color': '#4FA72F',
+                'color': '#fff',
+            }).html('전송 중...');
+
         const params = {
             email: $('#sign_email').val(),
             code: ''
@@ -159,8 +166,18 @@
             success: function (response) {
                 console.log(response);
                 if (response === 'success') {
+                    $('#mailSendBtn').removeClass('transition-effect').prop('disabled', false)
+                        .css({
+                            'background-color': '#fff',
+                            'color': '#4FA72F',
+                        }).html('전송완료');
                     alert('이메일이 전송되었습니다.');
                 } else {
+                    $('#mailSendBtn').removeClass('transition-effect').prop('disabled', false)
+                        .css({
+                            'background-color': '#fff',
+                            'color': '#4FA72F',
+                        }).html('전송실패');
                     alert(response);
                 }
             },
@@ -187,8 +204,8 @@
             success: function (response) {
                 console.log(response);
                 if (response) {
-                    alert('인증이 완료되었습니다. 해당 인증은 5분 간 유효합니다.');
-                    $('#isEamilAuthed').prop('checked', true);
+                    alert('인증이 완료되었습니다. <br>해당 인증은 5분 간 유효합니다.');
+                    $('#isEmailAuthed').prop('checked', true);
                 } else {
                     alert('잘못된 인증번호입니다. 다시 확인해주세요.');
                 }

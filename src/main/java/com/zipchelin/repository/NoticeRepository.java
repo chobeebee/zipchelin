@@ -3,6 +3,7 @@ package com.zipchelin.repository;
 import java.util.List;
 
 import com.zipchelin.domain.Notice;
+import com.zipchelin.model.page.Criteria;
 
 public interface NoticeRepository {
 	
@@ -15,4 +16,8 @@ public interface NoticeRepository {
     void updateNotice(Notice notice);
 
 	public Notice getPage(Integer noticeNum);
+
+	public List<Notice> getListPaging(Criteria cri);
+
+	public int getTotal();
 }

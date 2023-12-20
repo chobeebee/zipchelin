@@ -3,7 +3,7 @@
 
 <mapper namespace="com.zipchelin.repository.mybatis.mappers.RecipeMapper">
 
-    <!-- -->
+    <!-- 레시피 리스트 전체 조회 -->
     <select id="selectRecipeAll" resultType="com.zipchelin.domain.Recipe">
         select rt.rec_title, rt.rec_subt, rpi.rec_img_file_name from recipe_tbl rt, recipe_page_img rpi
 		 where rt.rec_num = rpi.rec_num and rpi.rec_img_no = 0 order by rt.rec_num asc
@@ -12,8 +12,31 @@
 
 	<!-- 레시피 카테고리별 조회 -->
     <select id="selectEachCategory" parameterType="int" resultType="com.zipchelin.domain.Recipe">
-        select rt.rec_title, rt.subt, rpi.rec_img_name = rpi.rec_img_no 
-        from recipe_tbl rt, recipe_page_img rpi where rt.rec_num = rpi.rec_num and rt.cate_num = #{cateNum} order by rec_num asc
+        select rt.rec_title, rt.rec_subt, rpi.rec_img_file_name from recipe_tbl rt, recipe_page_img rpi
+         where rt.rec_num = rpi.rec_num and rt.cate_num = #{cate_num} order by rt.rec_num asc
     </select>
+    
+    <!-- 레시피 카테고리별 조회  recnum을 max+1으로 못할 것 같은데 흠. 글 쓰기 단계에서 부터 max넘을 불러 올까? 
+    <select id="selectEachCategory" parameterType="int" resultType="com.zipchelin.domain.Recipe">
+        select rt.rec_title, rt.rec_subt, rpi.rec_img_file_name from recipe_tbl rt, recipe_page_img rpi
+         where rt.rec_num = rpi.rec_num and rt.cate_num = #{cate_num} order by rt.rec_num asc
+    </select>
+  	-->
+    <!-- 레시피 글쓰기 recnum 가져오기 -->
+    <select id="selectMaxNum" resultType="int">
+    	select max(recNum)+1 as recNum from recipe_tbl  
+    </select>
+    
+    
+    <insert id="addRecipe" parameterType="com.zipchelin.domain.Recipe">
+		insert into recipe_tbl(rec_num, cateNum, recTen, recTitle, recSubt, recIngreMain, recIngreSub, recTool)
+		  values(#{rec_num}, #{cateNum}, #{recTen}, #{recTitle}, #{recSubt}, #{recIngreMain}, #{recIngreSub}, #{recTool})
+    </insert>
+    <insert id="addRecipeImg">
+		 insert into recipe_page_img(recImgId, recNum, recImgFileName, RecImgNo) values(#{recImgId}, #{recNum}, #{recImgFileName}, #{RecImgNo})
+    </insert>
+	<insert id="addRecipeDesc">
+		 insert into recipe_page_desc(RecImgNo, recNum, recText, recTextNo) values(#{RecImgNo}, #{recNum}, #{recText}, #{recTextNo})		
+	</insert>
 
 </mapper>

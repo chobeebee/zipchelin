@@ -15,21 +15,20 @@ public class MemberResponseDto {
     private String memberId;
     private String memberName;
     private String memberEmail;
-    private String memberPhone;
     private LocalDateTime joinDate;
     private String memberImg;
     private String memberRole;
+    private String provider;
 
     public Member toEntity() {
         return Member.builder()
                 .memberId(memberId)
                 .memberName(memberName)
                 .memberEmail(memberEmail)
-                .memberPhone(memberPhone)
-                .memberPhone(memberPhone)
                 .joinDate(joinDate)
                 .memberImg(memberImg)
                 .memberRole(memberRole)
+                .provider(provider)
                 .build();
     }
 }

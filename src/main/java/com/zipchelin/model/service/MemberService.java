@@ -1,7 +1,7 @@
 package com.zipchelin.model.service;
 
 import com.zipchelin.domain.Member;
-import com.zipchelin.model.dto.member.EmailApplicationEvent;
+import com.zipchelin.model.EmailApplicationEvent;
 import com.zipchelin.model.dto.member.EmailDto;
 import com.zipchelin.model.dto.member.MemberSaveDto;
 import com.zipchelin.repository.MemberRepository;
@@ -54,7 +54,6 @@ public class MemberService {
         String code = params.getCode();
         String findCode = codeStore.get(email);
 
-        log.info("이메일과 코드가 일치하는지 확인!");
         log.info("받은 코드 = {}, 서버의 코드 = {}", code, findCode);
 
         if (code.equals(findCode)) {
@@ -108,6 +107,5 @@ public class MemberService {
         } catch (MessagingException | UnsupportedEncodingException e) {
             throw new BusinessLogicException(e);
         }
-        // redisUtil.setDataExpire(Integer.toString(authNumber), toMail, 60*5L);
     }
 }

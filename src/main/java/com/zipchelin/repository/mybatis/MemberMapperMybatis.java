@@ -40,19 +40,4 @@ public class MemberMapperMybatis implements MemberRepository {
     public int countById(String memberId) {
         return 0;
     }
-
-    @Override
-    public void emailAuth(EmailDto params) {
-        memberMapper.emailAuth(params);
-    }
-
-    @Override
-    public Optional<EmailDto> findAuth(String code) {
-        return memberMapper.findAuth(code);
-    }
-
-    @Override
-    public void deleteAuth(String code) {
-        memberMapper.deleteAuth(code);
-    }
 }

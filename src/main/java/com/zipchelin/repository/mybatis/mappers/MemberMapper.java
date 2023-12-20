@@ -1,7 +1,6 @@
 package com.zipchelin.repository.mybatis.mappers;
 
 import com.zipchelin.domain.Member;
-import com.zipchelin.model.dto.member.EmailDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.Optional;
@@ -18,10 +17,4 @@ public interface MemberMapper {
     Optional<Member> findById(String memberId);
 
     int countById(String memberId);
-
-    void emailAuth(EmailDto emailResponseDto);
-
-    Optional<EmailDto> findAuth(String code);
-
-    void deleteAuth(String code);
 }

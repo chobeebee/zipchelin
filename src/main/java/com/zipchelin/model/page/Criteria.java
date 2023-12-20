@@ -1,43 +1,41 @@
 package com.zipchelin.model.page;
 
 public class Criteria {
-	// 현제 페이지
-	private int pageNum;
-	
-	// 한페이지당 게시물 갯수
-	private int amount;
-	
-	public Criteria() {
-		this(1,8);
-	}
+    // 현제 페이지
+    private int pageNum;
 
-	public Criteria(int pageNum, int amount) {
-		this.pageNum = pageNum;
-		this.amount = amount;
-	}
+    // 한페이지당 게시물 갯수
+    private int amount;
 
-	public int getPageNum() {
-		return pageNum;
-	}
+    public Criteria() {
+        this(1, 8);
+    }
 
-	public void setPageNum(int pageNum) {
-		this.pageNum = pageNum;
-	}
+    public Criteria(int pageNum, int amount) {
+        this.pageNum = pageNum;
+        this.amount = amount;
+    }
 
-	public int getAmount() {
-		return amount;
-	}
+    public int getPageNum() {
+        return pageNum;
+    }
 
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
+    public void setPageNum(int pageNum) {
+        this.pageNum = pageNum;
+    }
 
-	@Override
-	public String toString() {
-		return "Criteria [pageNum=" + pageNum + ", amount=" + amount + "]";
-	}
+    public int getAmount() {
+        return amount;
+    }
 
-	
-	
-	
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return "Criteria [pageNum=" + pageNum + ", amount=" + amount + "]";
+    }
+
+
 }

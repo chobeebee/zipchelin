@@ -1,6 +1,5 @@
-package com.zipchelin.model.dto.common;
+package com.zipchelin.model.dto;
 
-import com.zipchelin.model.dto.qna.QnaDto;
 import lombok.Getter;
 
 @Getter
@@ -15,14 +14,14 @@ public class PagingDto {
     private boolean prevPage;    // 이전 페이지 존재 여부
     private boolean nextPage;    // 다음 페이지 존재 여부
 
-    public PagingDto(int totalData, QnaDto params) {
+    public PagingDto(int totalData, SearchDto params) {
         if (totalData > 0) {
             this.totalData = totalData;
             calculation(params);
         }
     }
 
-    private void calculation(QnaDto params) {
+    private void calculation(SearchDto params) {
 
         // 전체 페이지 수 계산
         totalPage = ((totalData - 1) / params.getDisplaySize()) + 1;

@@ -1,78 +1,391 @@
-#main { padding-top: 0px; padding: 0 100px 60px }
-.searchSection { display: flex; flex-flow: column; gap: 12px; justify-content: center; align-items: center; width: auto; padding: 0 100px; margin: 60px 0;}
-.searchBox { position: relative; width: 460px; border: 2px solid #8acc39 ; border-radius:40px;}
-.recomBox {height: 33px; overflow: hidden;}
-.recomList { float: left; margin: 1px 6px 1px 0px;}
-.recomBut {display: block; padding: 9px 9px 7px 9px; border-radius:40px; background-color: #f1f1e9;}
-.recomBut:hover {background-color: #c2e16b;}
-.searchText {width: 85%; padding: 16px; border: 0px; border-radius: 50%;}
-.searchButton { position: absolute;  width: 30px; height: 30px; top: 10px; right: 16px; border: 0px; font-size: 28px; cursor: pointer;}
+#main {
+    padding-top: 0px;
+    padding: 0 100px 60px
+}
 
-* {box-sizing: border-box} 
-.wrap {margin: auto; width: 954px; height: auto;}
-.mainTitle{ font-size: 2.5em; text-align: center; line-height: 280%;}
-.innerWrap1 {padding: 30px 0 0 30px;}
-.recipeList { position: relative; float: left; padding-right: 40px; padding-bottom: 45px; z-index: 0;}
-.heart-button{ position: absolute; background: url("heart_test.png") no-repeat ; background-size: cover; top: 20px; left: 148px; width: 35px; height: 35px;  border: 0px solid black; }
-.heart-button:hover {background-color: #8acc39;}
-.recipePic { width: 190px; height: 190px; border: 1px solid black; margin-bottom: 13px;  border-radius: 3px }
+.searchSection {
+    display: flex;
+    flex-flow: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 0 100px;
+    margin: 60px 0;
+}
+
+.searchBox {
+    position: relative;
+    width: 460px;
+    border: 2px solid #8acc39;
+    border-radius: 40px;
+}
+
+.recomBox {
+    height: 33px;
+    overflow: hidden;
+}
+
+.recomList {
+    float: left;
+    margin: 1px 6px 1px 0px;
+}
+
+.recomBut {
+    display: block;
+    padding: 9px 9px 7px 9px;
+    border-radius: 40px;
+    background-color: #f1f1e9;
+}
+
+.recomBut:hover {
+    background-color: #c2e16b;
+}
+
+.searchText {
+    width: 85%;
+    padding: 16px;
+    border: 0px;
+    border-radius: 50%;
+}
+
+.searchButton {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: 16px;
+    border: 0px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+* {
+    box-sizing: border-box
+}
+
+.wrap {
+    margin: auto;
+    width: 954px;
+    height: auto;
+}
+
+.mainTitle {
+    font-size: 2.5em;
+    text-align: center;
+    line-height: 280%;
+}
+
+.innerWrap1 {
+    padding: 30px 0 0 30px;
+}
+
+.recipeList {
+    position: relative;
+    float: left;
+    padding-right: 40px;
+    padding-bottom: 45px;
+    z-index: 0;
+}
+
+.heart-button {
+    position: absolute;
+    background: url("heart_test.png") no-repeat;
+    background-size: cover;
+    top: 20px;
+    left: 148px;
+    width: 35px;
+    height: 35px;
+    border: 0px solid black;
+}
+
+.heart-button:hover {
+    background-color: #8acc39;
+}
+
+.recipePic {
+    width: 190px;
+    height: 190px;
+    border: 1px solid black;
+    margin-bottom: 13px;
+    border-radius: 3px
+}
 
 /*탭 부분*/
-.tabContainer.on {display: block;}
-.tabContainer {display: none;}      
+.tabContainer.on {
+    display: block;
+}
+
+.tabContainer {
+    display: none;
+}
 
 /* 사이드바 */
-.aside { position: fixed; right: 100px; top: 200px; width: 150px; height: 395px; border: 1px solid #e9e9e9; border-radius: 20px; background-color: #fff; z-index: 999; }
-.aside { position: fixed; z-index: 999; right: 0; top: 200px; width: 150px; height: 395px; border: 1px solid #e9e9e9; border-radius: 20px; background-color: #fff; }
-.zim { padding: 10px 20px; border-bottom: 1px solid #e9e9e9; }
-.zim span { float: left; font-size: 22px; }
-.zim p { padding-left: 28px; padding-top: 4px; font-size: 16px;}
-.cur_recipe { margin-top: 15px; text-align: center; font-size: 16px;}
-.aside_imgBox { display: block; margin-top: 5px; }
-.aside_imgBox img { width: 90px; height: 90px; padding: 5px 0; }
-.top { padding-top: 5px; text-align: center; border-top: 1px solid #e9e9e9; border-radius: 0 0 20px 20px; background-color: #000; }
-.top span { font-size: 28px; color: #ccc; background-color: #000; scroll-behavior: smooth; }
-.material-icons{color: #8acc39;}
+.aside {
+    position: fixed;
+    right: 100px;
+    top: 200px;
+    width: 150px;
+    height: 395px;
+    border: 1px solid #e9e9e9;
+    border-radius: 20px;
+    background-color: #fff;
+    z-index: 999;
+}
+
+.aside {
+    position: fixed;
+    z-index: 999;
+    right: 0;
+    top: 200px;
+    width: 150px;
+    height: 395px;
+    border: 1px solid #e9e9e9;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.zim {
+    padding: 10px 20px;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.zim span {
+    float: left;
+    font-size: 22px;
+}
+
+.zim p {
+    padding-left: 28px;
+    padding-top: 4px;
+    font-size: 16px;
+}
+
+.cur_recipe {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.aside_imgBox {
+    display: block;
+    margin-top: 5px;
+}
+
+.aside_imgBox img {
+    width: 90px;
+    height: 90px;
+    padding: 5px 0;
+}
+
+.top {
+    padding-top: 5px;
+    text-align: center;
+    border-top: 1px solid #e9e9e9;
+    border-radius: 0 0 20px 20px;
+    background-color: #000;
+}
+
+.top span {
+    font-size: 28px;
+    color: #ccc;
+    background-color: #000;
+    scroll-behavior: smooth;
+}
+
+.material-icons {
+    color: #8acc39;
+}
 
 
 /* 나만의 레시피, 요리 상담소 수정 부분 */
-.tableTh { border-bottom: 1px solid #c1c1c1; font-family: 'GmarketSans'; }
-.tableWd { display: flex; justify-content: space-between; align-items: center; padding: 34px 0; }
-.tableWd .tableItem{flex-basis: 110px; text-align: center;}
-.tableWd p.tableItem.title{font-size: 14px;}
-.tableWd .tableItem.title{flex: 0 0 auto; width: 50%;}
-.tableWd .tableItem:last-child{flex-basis: 150px;}
-.tableTh{border-bottom: 1px solid #c1c1c1; font-family: 'GmarketSans';} 
-.schListMain .tableWd {padding:24px 0;}
+.tableTh {
+    border-bottom: 1px solid #c1c1c1;
+    font-family: 'GmarketSans';
+}
 
-.post-container .imgwrap{ justify-content: space-between; display: flex; padding-bottom: 24px; /*행 간격*/ align-items: center;}
+.tableWd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 34px 0;
+}
 
-.schListMain .myrecipe_section{margin: 0;}
-.schListMain .tabContainer{border-top: 1px solid #c1c1c1;}
-.schListMain .list_ul {gap: 16px;}
-.schListMain .list_container .list_li {width: calc(25% - 16px);}
+.tableWd .tableItem {
+    flex-basis: 110px;
+    text-align: center;
+}
+
+.tableWd p.tableItem.title {
+    font-size: 14px;
+}
+
+.tableWd .tableItem.title {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.tableWd .tableItem:last-child {
+    flex-basis: 150px;
+}
+
+.tableTh {
+    border-bottom: 1px solid #c1c1c1;
+    font-family: 'GmarketSans';
+}
+
+.schListMain .tableWd {
+    padding: 24px 0;
+}
+
+.post-container .imgwrap {
+    justify-content: space-between;
+    display: flex;
+    padding-bottom: 24px; /*행 간격*/
+    align-items: center;
+}
+
+.schListMain .myrecipe_section {
+    margin: 0;
+}
+
+.schListMain .tabContainer {
+    border-top: 1px solid #c1c1c1;
+}
+
+.schListMain .list_ul {
+    gap: 16px;
+}
+
+.schListMain .list_container .list_li {
+    width: calc(25% - 16px);
+}
 
 /* 리스트 스타일 */
-.myrecipe_section { margin: 0 100px 60px; font-family: 'S-CoreDream';}
-.myrecipe_section .allwrite { display: flex; justify-content: space-around; flex-wrap: wrap;}
-.post-container { float: left; width: calc(50%); padding: 24px 24px 0;  border-bottom: 1px solid #e9e9e9;}
-.post-container .imgwrap{ justify-content: space-between; display: flex; padding-bottom: 24px; /*행 간격*/ align-items: center;}
-.post-section {width: 70%;}
-.post-section .title{width: 100%; margin: 16px 0 8px; font-size: 18px; line-height: 24px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
-.post-section p{width: 100%; margin-bottom: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
-.myrecipe_section .postdate{display: block; color: #999; font-size: 12px; font-weight: 300;}
-.post img { width: 130px; height: 130px; }
+.myrecipe_section {
+    margin: 0 100px 60px;
+    font-family: 'S-CoreDream';
+}
+
+.myrecipe_section .allwrite {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.post-container {
+    float: left;
+    width: calc(50%);
+    padding: 24px 24px 0;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.post-container .imgwrap {
+    justify-content: space-between;
+    display: flex;
+    padding-bottom: 24px; /*행 간격*/
+    align-items: center;
+}
+
+.post-section {
+    width: 70%;
+}
+
+.post-section .title {
+    width: 100%;
+    margin: 16px 0 8px;
+    font-size: 18px;
+    line-height: 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-section p {
+    width: 100%;
+    margin-bottom: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.myrecipe_section .postdate {
+    display: block;
+    color: #999;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.post img {
+    width: 130px;
+    height: 130px;
+}
 
 /* QnA 스타일 */
-.qna {font-family: 'S-CoreDream';}
-.qna .qnaList { display: flex; flex-direction: column; }
-.qna .textbox { display: flex; flex-direction: row; align-items: center; justify-content: space-between; border-bottom: 1px solid #e9e9e9; }
-.qna .text-title { font-size: 18px;  text-align: left;}
-.qna .text-title p{display: inline-block; max-width: 86%; font-weight: 500; vertical-align: middle; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
-.qna .text-title span{vertical-align: middle;}
-.qna .text-title .iconFile{color: #999; font-size: 20px;}
-.qna-accItem .qna-id .qna-date { text-align: center; padding: 20px 0; flex-basis: 200px; }
-.qna-accItem { color: #c1c1c1;}
-.qna-date {color: #999; font-size: 12px; font-weight: 300;}
-.question {color: #8acc39; font-size: 22px; font-weight: 600;}
-.textbox .icon .material-symbols-outlined { font-size: 18px;}
+.qna {
+    font-family: 'S-CoreDream';
+}
+
+.qna .qnaList {
+    display: flex;
+    flex-direction: column;
+}
+
+.qna .textbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.qna .text-title {
+    font-size: 18px;
+    text-align: left;
+}
+
+.qna .text-title p {
+    display: inline-block;
+    max-width: 86%;
+    font-weight: 500;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.qna .text-title span {
+    vertical-align: middle;
+}
+
+.qna .text-title .iconFile {
+    color: #999;
+    font-size: 20px;
+}
+
+.qna-accItem .qna-id .qna-date {
+    text-align: center;
+    padding: 20px 0;
+    flex-basis: 200px;
+}
+
+.qna-accItem {
+    color: #c1c1c1;
+}
+
+.qna-date {
+    color: #999;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.question {
+    color: #8acc39;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.textbox .icon .material-symbols-outlined {
+    font-size: 18px;
+}

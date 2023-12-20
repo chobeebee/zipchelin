@@ -2,15 +2,9 @@ package com.zipchelin.repository.mybatis;
 
 import org.springframework.stereotype.Repository;
 
-import com.zipchelin.domain.Guide;
-import com.zipchelin.repository.GuideRepository;
-import com.zipchelin.repository.mybatis.mappers.GuideMapper;
-
-import lombok.RequiredArgsConstructor;
-
 @Repository
 //@RequiredArgsConstructor
-public class GuideMapperMybatis{
+public class GuideMapperMybatis {
 	/*private final GuideMapper guideMapper;
 	
 	@Override

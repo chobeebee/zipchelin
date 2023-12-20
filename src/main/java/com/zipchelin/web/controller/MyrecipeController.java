@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping("/myrecipe/*")
 public class MyrecipeController {
-	
-	@GetMapping("/")
+
+    @GetMapping("/")
     public String admin() {
-		return "content/recipe/recipe_list";
-	}
-	
-	@GetMapping("/recipe_detail")
+        return "content/recipe/recipe_list";
+    }
+
+    @GetMapping("/recipe_detail")
     public String delMem() {
-		return "content/recipe/recipe_detail";
-	}
-	
+        return "content/recipe/recipe_detail";
+    }
+
 }

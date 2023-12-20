@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <div class="contain">
     <div id="footerMenu" class="clearfix">
@@ -16,10 +16,11 @@
         </ul>
         <ul class="sns">
             <li><a href="https://www.facebook.com/"><img src="${contextPath}/resource/images/icon/facebook.png"
-                        alt="facebook"></a></li>
+                                                         alt="facebook"></a></li>
             <li><a href="https://www.instagram.com/"><img src="${contextPath}/resource/images/icon/instagram.png"
-                        alt="instagram"></a></li>
-            <li><a href="https://www.youtube.com/"><img src="${contextPath}/resource/images/icon/youtube.png" alt="youtube"></a>
+                                                          alt="instagram"></a></li>
+            <li><a href="https://www.youtube.com/"><img src="${contextPath}/resource/images/icon/youtube.png"
+                                                        alt="youtube"></a>
             </li>
         </ul>
         <address>

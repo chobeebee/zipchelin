@@ -1,7 +1,7 @@
 package com.zipchelin.global.oauth;
 
-import com.zipchelin.global.auth.CustomUserDetails;
 import com.zipchelin.domain.Member;
+import com.zipchelin.global.auth.CustomUserDetails;
 import com.zipchelin.repository.MemberRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

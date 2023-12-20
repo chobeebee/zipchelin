@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"
-    isELIgnored="false"%>
+         pageEncoding="UTF-8"
+         isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <%
-	request.setCharacterEncoding("utf-8");
+    request.setCharacterEncoding("utf-8");
 %>
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     <!-- 로고 -->
@@ -15,7 +15,8 @@
     <hr class="sidebar-divider">
     <!-- 메뉴 -->
     <li class="nav-item active">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#colMember" aria-expanded="true" aria-controls="colMember">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#colMember" aria-expanded="true"
+           aria-controls="colMember">
             <i class="fa fa-member-circle" aria-hidden="true"></i>
             <span>회원관리</span>
         </a>
@@ -40,7 +41,7 @@
             <span>가이드관리</span>
         </a>
     </li>
-    
+
     <li class="nav-item">
         <a class="nav-link" href="${contextPath}/admin/recipe">
             <i class="fas fa-fw fa-cutlery"></i>

@@ -1,24 +1,15 @@
 package com.zipchelin.repository.mybatis.mappers;
 
-import java.util.List;
-
-import org.junit.jupiter.api.Test;
+import com.zipchelin.model.service.QnaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.zipchelin.model.dto.qna.QnaRequest;
-import com.zipchelin.model.dto.qna.QnaResponse;
-import com.zipchelin.model.service.QnaService;
-
 @SpringBootTest
 public class QnaMapperTest {
-	
-	@Autowired
-	QnaService qnaMapper;
-	
+
+    @Autowired
+    QnaService qnaMapper;
+
 //	@Test
 //	void save() {
 //		QnaRequest params = new QnaRequest();
@@ -29,13 +20,13 @@ public class QnaMapperTest {
 //		String id=qnaMapper.saveQna(params);
 //		System.out.println("게시글 개수 : " + id);
 //	}
-	
+
 //	@Test
 //    void findById() {
 //		QnaResponse qna = qnaMapper.findById("test");
 //        System.out.println(qna.getUser_id());
 //	}
-	
+
 //	@Test
 //	void update() {
 //		QnaRequest params = new QnaRequest();
@@ -48,7 +39,7 @@ public class QnaMapperTest {
 //		QnaResponse qna = qnaMapper.findById("test");
 //		System.out.println(qna.getUser_id());
 //	}
-	
+
 //	@Test
 //	void delete() {
 //		System.out.println("삭제 이전의 전체 게시글 개수는 : " + qnaMapper.findAll().size() + "개입니다.");

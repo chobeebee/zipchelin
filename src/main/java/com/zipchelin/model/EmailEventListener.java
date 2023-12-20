@@ -1,4 +1,4 @@
-package com.zipchelin.model.dto.member;
+package com.zipchelin.model;
 
 import com.zipchelin.model.service.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -26,7 +26,7 @@ public class EmailEventListener {
                 timer.cancel();
                 log.info("3분 경과, 이메일 삭제 = {}", MemberService.codeStore);
             }
-        }, 3 * 60 * 1000);
+        }, 60 * 1000);
     }
 }
 

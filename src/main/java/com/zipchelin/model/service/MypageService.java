@@ -97,4 +97,10 @@ public class MypageService {
 		}
 		return postList;
 	}
+	
+//	public List<Myheart> selectHeartList(String id){
+//		mypageRepository.selectGuiHeart(id);
+//		
+//		mypageRepository.selectRecHeart(id);
+//	}
 }

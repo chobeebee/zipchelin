@@ -1,17 +1,20 @@
 package com.zipchelin.repository;
 
-import java.util.List;
-
 import com.zipchelin.domain.Recipe;
+
+import java.util.List;
 
 public interface RecipeRepository {
 
-	void addRecipe(Recipe recipe);
+    public List<Recipe> selectRecipeAll();
 
-	//리스트 목록
-	List<Recipe> selectRecipeAll();
+    public List<Recipe> selectEachCategory(int cateNum);
 
-	void updateRecipe(Recipe recipe);
+    public int selectMaxNum();
 
-	void delRecipe(int recNum);
+    public void addRecipe(Recipe recipe);
+
+    public void updateRecipe(Recipe recipe);
+
+    public void delRecipe(int recNum);
 }

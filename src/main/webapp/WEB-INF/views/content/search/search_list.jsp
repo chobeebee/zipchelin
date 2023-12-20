@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"
-	isELIgnored="false"%>
+         pageEncoding="UTF-8"
+         isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
-	request.setCharacterEncoding("utf-8");
+    request.setCharacterEncoding("utf-8");
 %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
@@ -23,12 +23,12 @@
 
     <!-- favicon-->
     <link rel="shortcut icon" type="text/css" href="">
-    <link rel="icon"  type="text/css" href="">
+    <link rel="icon" type="text/css" href="">
 
     <!-- google icon CDN -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
     <!-- basic CSS -->
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/reset.css">
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/base.css">
@@ -37,36 +37,38 @@
     <!-- page CSS -->
     <link rel="stylesheet" href="${contextPath}/resource/css/guide.css">
     <link rel="stylesheet" href="${contextPath}/resource/css/search.css">
-    
+
     <!-- plugin CSS -->
     <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.min.css">
 
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
-        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+          integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
     <!--[if IE 9]>
-        <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
-        <![endif]-->
+    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css"
+          rel="stylesheet">
+    <![endif]-->
     <!--[if lte IE 8]>
-    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
+    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css"
+          rel="stylesheet">
     <![endif]-->
     <title>검색 메인 페이지</title>
-  
+
 </head>
 <body>
-    <!--헤더 -->
-    <header class="header">
-    	<jsp:include page="/WEB-INF/views/main/header.jsp"/>
-    </header>
-    
-    <!-- 검색 창 --> 
-    <main>
-        <div class="searchSection">
-            <div class="searchBox">
-                <input class="searchText" type="text" title="검색어 입력 창" placeholder="검색어를 입력해주세요" maxlength="50">
-                <span class="searchButton material-symbols-outlined">search</span>
+<!--헤더 -->
+<header class="header">
+    <jsp:include page="/WEB-INF/views/main/header.jsp"/>
+</header>
+
+<!-- 검색 창 -->
+<main>
+    <div class="searchSection">
+        <div class="searchBox">
+            <input class="searchText" type="text" title="검색어 입력 창" placeholder="검색어를 입력해주세요" maxlength="50">
+            <span class="searchButton material-symbols-outlined">search</span>
         </div>
         <div class="recomBox">
             <ul class="clearfix">
@@ -87,8 +89,8 @@
                 </li>
             </ul>
         </div>
-    </div>   
-    <!--서칭 페이지 메인-->   
+    </div>
+    <!--서칭 페이지 메인-->
     <div id="main" class="schListMain">
         <!--탭 그룹-->
         <div>
@@ -100,17 +102,18 @@
             </ul>
         </div>
 
-        <!--레시피 서칭 결과--> 
+        <!--레시피 서칭 결과-->
         <div id="tab1" class="tabContainer on">
             <div class="list_container">
                 <ul class="list_ul">
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../recipe/recipe_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sul.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sul.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -121,12 +124,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../recipe/recipe_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -137,12 +141,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../recipe/recipe_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -153,12 +158,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../recipe/recipe_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -170,12 +176,13 @@
                     </li>
                     <!--4개-->
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../recipe/recipe_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sul.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sul.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -186,12 +193,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../recipe/recipe_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -202,12 +210,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../recipe/recipe_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -218,12 +227,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../recipe/recipe_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -235,12 +245,13 @@
                     </li>
                     <!--4개-->
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../recipe/recipe_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sul.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sul.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -251,12 +262,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../recipe/recipe_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -267,12 +279,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../recipe/recipe_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -283,12 +296,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../recipe/recipe_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -301,33 +315,38 @@
                     <!--4개-->
                 </ul>
             </div>
-            
-            
+
+
             <!--페이징 단락-->
             <div class="paging">
                 <ul class="clearfix">
                     <!--li에 .disabled가 있으면 화살표에 클릭방지 생김-->
-                    <li class="arrow prev disabled"><button disabled><span class="material-symbols-outlined">navigate_before</span></button></li>
+                    <li class="arrow prev disabled">
+                        <button disabled><span class="material-symbols-outlined">navigate_before</span></button>
+                    </li>
                     <li class="active"><a href="javascript:">1</a></li>
                     <li><a href="javascript:">2</a></li>
                     <li><a href="javascript:">3</a></li>
                     <li><a href="javascript:">4</a></li>
                     <li><a href="javascript:">5</a></li>
-                    <li class="arrow next"><button><span class="material-symbols-outlined">navigate_next</span></button></li>
+                    <li class="arrow next">
+                        <button><span class="material-symbols-outlined">navigate_next</span></button>
+                    </li>
                 </ul>
             </div>
-        </div>    
-        <!--가이드 서칭 결과-->   
+        </div>
+        <!--가이드 서칭 결과-->
         <div id="tab2" class="tabContainer">
             <div class="list_container">
                 <ul class="list_ul">
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../guide/guide_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -338,12 +357,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../guide/guide_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -354,12 +374,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../guide/guide_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -370,12 +391,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../guide/guide_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sam.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sam.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -387,12 +409,13 @@
                     </li>
                     <!--4개-->
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../guide/guide_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -403,12 +426,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../guide/guide_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -419,12 +443,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../guide/guide_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -435,12 +460,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../guide/guide_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sam.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sam.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -452,12 +478,13 @@
                     </li>
                     <!--4개-->
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../guide/guide_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/gan.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -468,12 +495,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../guide/guide_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sample2.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -484,12 +512,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../guide/guide_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/soshige.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -500,12 +529,13 @@
                         </a>
                     </li>
                     <li class="list_li">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i class="fa-regular fa-heart"></i>
                         <a class="recipe_link" href="../guide/guide_detail.html">
                             <div class="pic_box">
                                 <div class="imgwrap">
                                     <div class="imgBox">
-                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sam.jpg" alt="#">
+                                        <img class="recipe_pic" src="${contextPath}/resource/images/food/sam.jpg"
+                                             alt="#">
                                     </div>
                                 </div>
                                 <div class="textBox">
@@ -516,44 +546,48 @@
                         </a>
                     </li>
                     <!--4개-->
-                    
-                    
+
+
                 </ul>
             </div>
-            
-            
+
+
             <!--페이징 단락-->
             <div class="paging">
                 <ul class="clearfix">
                     <!--li에 .disabled가 있으면 화살표에 클릭방지 생김-->
-                    <li class="arrow prev disabled"><button disabled><span class="material-symbols-outlined">navigate_before</span></button></li>
+                    <li class="arrow prev disabled">
+                        <button disabled><span class="material-symbols-outlined">navigate_before</span></button>
+                    </li>
                     <li class="active"><a href="javascript:">1</a></li>
                     <li><a href="javascript:">2</a></li>
                     <li><a href="javascript:">3</a></li>
                     <li><a href="javascript:">4</a></li>
                     <li><a href="javascript:">5</a></li>
-                    <li class="arrow next"><button><span class="material-symbols-outlined">navigate_next</span></button></li>
+                    <li class="arrow next">
+                        <button><span class="material-symbols-outlined">navigate_next</span></button>
+                    </li>
                 </ul>
             </div>
-        </div>  
+        </div>
         <!--나만의 레시피-->
         <div id="tab3" class="tabContainer">
-            <section class="myrecipe_section">     
+            <section class="myrecipe_section">
                 <ul class="allwrite clearfix">
                     <li class="post-container">
                         <a href="/front/html/community/myrecipe_post.html" class="imgwrap">
                             <div class="post-section">
                                 <span class="postdate">2023.10.26 00:00</span>
-                                    <h6 class="title">맛있는 음식을 봐라 이것들아 이것이 음식이다 빠라라라라라라라람 어쩌구 저쩌구 이것저것</h6>
-                                    <p>내가 만든 요리 중에 제일 맛있는 요리입니다 자랑 좀 합시다...</p>
-                                    <ul class="accList">
-                                        <li class="accItem">
-                                            <span class="icon material-symbols-outlined">visibility</span>268
-                                        </li>
-                                        <li class="accItem">                        
-                                            <span class="icon material-symbols-outlined">comment</span>12
-                                        </li>
-                                    </ul>
+                                <h6 class="title">맛있는 음식을 봐라 이것들아 이것이 음식이다 빠라라라라라라라람 어쩌구 저쩌구 이것저것</h6>
+                                <p>내가 만든 요리 중에 제일 맛있는 요리입니다 자랑 좀 합시다...</p>
+                                <ul class="accList">
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">visibility</span>268
+                                    </li>
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">comment</span>12
+                                    </li>
+                                </ul>
                             </div>
                             <div class="imgBox align">
                                 <img src="/front/images/food/gan.jpg" alt="">
@@ -564,16 +598,16 @@
                         <a href="/front/html/community/myrecipe_post.html" class="imgwrap">
                             <div class="post-section">
                                 <span class="postdate">2023.10.26 00:00</span>
-                                    <h6 class="title">맛있는 음식을 봐라</h6>
-                                    <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
-                                    <ul class="accList">
-                                        <li class="accItem">
-                                            <span class="icon material-symbols-outlined">visibility</span>268
-                                        </li>
-                                        <li class="accItem">                        
-                                            <span class="icon material-symbols-outlined">comment</span>12
-                                        </li>
-                                    </ul>
+                                <h6 class="title">맛있는 음식을 봐라</h6>
+                                <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
+                                <ul class="accList">
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">visibility</span>268
+                                    </li>
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">comment</span>12
+                                    </li>
+                                </ul>
                             </div>
                             <div class="imgBox align">
                                 <img src="/front/images/food/gan.jpg" alt="">
@@ -584,16 +618,16 @@
                         <a href="/front/html/community/myrecipe_post.html" class="imgwrap">
                             <div class="post-section">
                                 <span class="postdate">2023.10.26 00:00</span>
-                                    <h6 class="title">맛있는 음식을 봐라</h6>
-                                    <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
-                                    <ul class="accList">
-                                        <li class="accItem">
-                                            <span class="icon material-symbols-outlined">visibility</span>268
-                                        </li>
-                                        <li class="accItem">                        
-                                            <span class="icon material-symbols-outlined">comment</span>12
-                                        </li>
-                                    </ul>
+                                <h6 class="title">맛있는 음식을 봐라</h6>
+                                <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
+                                <ul class="accList">
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">visibility</span>268
+                                    </li>
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">comment</span>12
+                                    </li>
+                                </ul>
                             </div>
                             <div class="imgBox align">
                                 <img src="/front/images/food/gan.jpg" alt="">
@@ -604,16 +638,16 @@
                         <a href="/front/html/community/myrecipe_post.html" class="imgwrap">
                             <div class="post-section">
                                 <span class="postdate">2023.10.26 00:00</span>
-                                    <h6 class="title">맛있는 음식을 봐라</h6>
-                                    <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
-                                    <ul class="accList">
-                                        <li class="accItem">
-                                            <span class="icon material-symbols-outlined">visibility</span>268
-                                        </li>
-                                        <li class="accItem">                        
-                                            <span class="icon material-symbols-outlined">comment</span>12
-                                        </li>
-                                    </ul>
+                                <h6 class="title">맛있는 음식을 봐라</h6>
+                                <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
+                                <ul class="accList">
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">visibility</span>268
+                                    </li>
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">comment</span>12
+                                    </li>
+                                </ul>
                             </div>
                             <div class="imgBox align">
                                 <img src="/front/images/food/gan.jpg" alt="">
@@ -624,16 +658,16 @@
                         <a href="/front/html/community/myrecipe_post.html" class="imgwrap">
                             <div class="post-section">
                                 <span class="postdate">2023.10.26 00:00</span>
-                                    <h6 class="title">맛있는 음식을 봐라</h6>
-                                    <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
-                                    <ul class="accList">
-                                        <li class="accItem">
-                                            <span class="icon material-symbols-outlined">visibility</span>268
-                                        </li>
-                                        <li class="accItem">                        
-                                            <span class="icon material-symbols-outlined">comment</span>12
-                                        </li>
-                                    </ul>
+                                <h6 class="title">맛있는 음식을 봐라</h6>
+                                <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
+                                <ul class="accList">
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">visibility</span>268
+                                    </li>
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">comment</span>12
+                                    </li>
+                                </ul>
                             </div>
                             <div class="imgBox align">
                                 <img src="/front/images/food/gan.jpg" alt="">
@@ -644,16 +678,16 @@
                         <a href="/front/html/community/myrecipe_post.html" class="imgwrap">
                             <div class="post-section">
                                 <span class="postdate">2023.10.26 00:00</span>
-                                    <h6 class="title">맛있는 음식을 봐라</h6>
-                                    <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
-                                    <ul class="accList">
-                                        <li class="accItem">
-                                            <span class="icon material-symbols-outlined">visibility</span>268
-                                        </li>
-                                        <li class="accItem">                        
-                                            <span class="icon material-symbols-outlined">comment</span>12
-                                        </li>
-                                    </ul>
+                                <h6 class="title">맛있는 음식을 봐라</h6>
+                                <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
+                                <ul class="accList">
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">visibility</span>268
+                                    </li>
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">comment</span>12
+                                    </li>
+                                </ul>
                             </div>
                             <div class="imgBox align">
                                 <img src="/front/images/food/gan.jpg" alt="">
@@ -664,16 +698,16 @@
                         <a href="/front/html/community/myrecipe_post.html" class="imgwrap">
                             <div class="post-section">
                                 <span class="postdate">2023.10.26 00:00</span>
-                                    <h6 class="title">맛있는 음식을 봐라</h6>
-                                    <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
-                                    <ul class="accList">
-                                        <li class="accItem">
-                                            <span class="icon material-symbols-outlined">visibility</span>268
-                                        </li>
-                                        <li class="accItem">                        
-                                            <span class="icon material-symbols-outlined">comment</span>12
-                                        </li>
-                                    </ul>
+                                <h6 class="title">맛있는 음식을 봐라</h6>
+                                <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
+                                <ul class="accList">
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">visibility</span>268
+                                    </li>
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">comment</span>12
+                                    </li>
+                                </ul>
                             </div>
                             <div class="imgBox align">
                                 <img src="/front/images/food/gan.jpg" alt="">
@@ -684,16 +718,16 @@
                         <a href="/front/html/community/myrecipe_post.html" class="imgwrap">
                             <div class="post-section">
                                 <span class="postdate">2023.10.26 00:00</span>
-                                    <h6 class="title">맛있는 음식을 봐라</h6>
-                                    <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
-                                    <ul class="accList">
-                                        <li class="accItem">
-                                            <span class="icon material-symbols-outlined">visibility</span>268
-                                        </li>
-                                        <li class="accItem">                        
-                                            <span class="icon material-symbols-outlined">comment</span>12
-                                        </li>
-                                    </ul>
+                                <h6 class="title">맛있는 음식을 봐라</h6>
+                                <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
+                                <ul class="accList">
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">visibility</span>268
+                                    </li>
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">comment</span>12
+                                    </li>
+                                </ul>
                             </div>
                             <div class="imgBox align">
                                 <img src="/front/images/food/gan.jpg" alt="">
@@ -704,16 +738,16 @@
                         <a href="/front/html/community/myrecipe_post.html" class="imgwrap">
                             <div class="post-section">
                                 <span class="postdate">2023.10.26 00:00</span>
-                                    <h6 class="title">맛있는 음식을 봐라</h6>
-                                    <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
-                                    <ul class="accList">
-                                        <li class="accItem">
-                                            <span class="icon material-symbols-outlined">visibility</span>268
-                                        </li>
-                                        <li class="accItem">                        
-                                            <span class="icon material-symbols-outlined">comment</span>12
-                                        </li>
-                                    </ul>
+                                <h6 class="title">맛있는 음식을 봐라</h6>
+                                <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
+                                <ul class="accList">
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">visibility</span>268
+                                    </li>
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">comment</span>12
+                                    </li>
+                                </ul>
                             </div>
                             <div class="imgBox align">
                                 <img src="/front/images/food/gan.jpg" alt="">
@@ -724,39 +758,43 @@
                         <a href="/front/html/community/myrecipe_post.html" class="imgwrap">
                             <div class="post-section">
                                 <span class="postdate">2023.10.26 00:00</span>
-                                    <h6 class="title">맛있는 음식을 봐라</h6>
-                                    <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
-                                    <ul class="accList">
-                                        <li class="accItem">
-                                            <span class="icon material-symbols-outlined">visibility</span>268
-                                        </li>
-                                        <li class="accItem">                        
-                                            <span class="icon material-symbols-outlined">comment</span>12
-                                        </li>
-                                    </ul>
+                                <h6 class="title">맛있는 음식을 봐라</h6>
+                                <p>내가 만든 요리 중에 제일 맛있는 요리입니다...</p>
+                                <ul class="accList">
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">visibility</span>268
+                                    </li>
+                                    <li class="accItem">
+                                        <span class="icon material-symbols-outlined">comment</span>12
+                                    </li>
+                                </ul>
                             </div>
                             <div class="imgBox align">
                                 <img src="/front/images/food/gan.jpg" alt="">
                             </div>
                         </a>
                     </li>
-                </ul>       
+                </ul>
             </section>
             <!--페이징 단락-->
             <div class="paging">
                 <ul class="clearfix">
                     <!--li에 .disabled가 있으면 화살표에 클릭방지 생김-->
-                    <li class="arrow prev disabled"><button disabled><span class="material-symbols-outlined">navigate_before</span></button></li>
+                    <li class="arrow prev disabled">
+                        <button disabled><span class="material-symbols-outlined">navigate_before</span></button>
+                    </li>
                     <li class="active"><a href="javascript:">1</a></li>
                     <li><a href="javascript:">2</a></li>
                     <li><a href="javascript:">3</a></li>
                     <li><a href="javascript:">4</a></li>
                     <li><a href="javascript:">5</a></li>
-                    <li class="arrow next"><button><span class="material-symbols-outlined">navigate_next</span></button></li>
+                    <li class="arrow next">
+                        <button><span class="material-symbols-outlined">navigate_next</span></button>
+                    </li>
                 </ul>
-            </div>      
+            </div>
         </div>
-    <!--요리 상담소-->
+        <!--요리 상담소-->
         <div id="tab4" class="tabContainer">
             <div class="qna">
                 <ul class="qnaList ">
@@ -780,7 +818,7 @@
                             <div class="tableItem">80</div>
                             <div class="qna-id tableItem">jhj7801</div>
                             <div class="qna-date tableItem">2023.10.18 10:02</div>
-                            
+
                         </a>
                     </li>
                     <li>
@@ -943,26 +981,30 @@
             <div class="paging">
                 <ul class="clearfix">
                     <!--li에 .disabled가 있으면 화살표에 클릭방지 생김-->
-                    <li class="arrow prev disabled"><button disabled><span class="material-symbols-outlined">navigate_before</span></button></li>
+                    <li class="arrow prev disabled">
+                        <button disabled><span class="material-symbols-outlined">navigate_before</span></button>
+                    </li>
                     <li class="active"><a href="javascript:">1</a></li>
                     <li><a href="javascript:">2</a></li>
                     <li><a href="javascript:">3</a></li>
                     <li><a href="javascript:">4</a></li>
                     <li><a href="javascript:">5</a></li>
-                    <li class="arrow next"><button><span class="material-symbols-outlined">navigate_next</span></button></li>
+                    <li class="arrow next">
+                        <button><span class="material-symbols-outlined">navigate_next</span></button>
+                    </li>
                 </ul>
-            </div> 
+            </div>
         </div>
-    </main>
-    
-    <!-- 푸터 -->
-    <footer id="footer">
-    	<jsp:include page="/WEB-INF/views/main/footer.jsp"/>
-    </footer>
-    
-    <!-- js -->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="/front/js/common.js"></script>
-    <script src="/front/js/search.js"></script>
+</main>
+
+<!-- 푸터 -->
+<footer id="footer">
+    <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+</footer>
+
+<!-- js -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/front/js/common.js"></script>
+<script src="/front/js/search.js"></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"
-    isELIgnored="false"%>
+         pageEncoding="UTF-8"
+         isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <%
-	request.setCharacterEncoding("utf-8");
+    request.setCharacterEncoding("utf-8");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -23,11 +23,11 @@
 
     <!-- favicon-->
     <link rel="shortcut icon" type="text/css" href="">
-    <link rel="icon"  type="text/css" href="">
+    <link rel="icon" type="text/css" href="">
 
     <!-- google icon CDN -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-    
+
     <!-- basic CSS -->
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/reset.css">
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/base.css">
@@ -40,10 +40,12 @@
     <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css">
 
     <!--[if IE 9]>
-    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
+    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css"
+          rel="stylesheet">
     <![endif]-->
     <!--[if lte IE 8]>
-    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
+    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css"
+          rel="stylesheet">
     <![endif]-->
     <title>아이디/비밀번호 찾기</title>
 </head>
@@ -52,21 +54,21 @@
 <header class="header">
     <jsp:include page="/WEB-INF/views/main/header.jsp"/>
 </header>
-    
-    <div id="finding_box">
-        <img id="finding_img" src="${contextPath}/resource/images/icon/finding.png" alt="">
-        <p class="finding_msg" id="finding_msg_request">요청하신 아이디찾기 결과 입니다.</p>
-        <p class="finding_msg">아이디는 <span id="finding_found_id">(user_id or pwd)</span> 입니다.</p>
-        <a id="finding_go_login" href="${contextPath}/member/login.do" style="color: white;">확인</a>
-    </div>
+
+<div id="finding_box">
+    <img id="finding_img" src="${contextPath}/resource/images/icon/finding.png" alt="">
+    <p class="finding_msg" id="finding_msg_request">요청하신 아이디찾기 결과 입니다.</p>
+    <p class="finding_msg">아이디는 <span id="finding_found_id">(user_id or pwd)</span> 입니다.</p>
+    <a id="finding_go_login" href="${contextPath}/member/login.do" style="color: white;">확인</a>
+</div>
 
 <!-- 푸터 -->
 <footer id="footer">
     <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
 </footer>
 
-    <!-- js -->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="${contextPath}/resource/js/common.js"></script>
+<!-- js -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="${contextPath}/resource/js/common.js"></script>
 </body>
 </html>

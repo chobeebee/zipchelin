@@ -3,34 +3,10 @@
 
 <mapper namespace="com.zipchelin.repository.mybatis.mappers.MemberMapper">
 
-    <!-- 인증키 저장 -->
-    <insert id="emailAuth" parameterType="com.zipchelin.model.dto.member.EmailDto">
-        INSERT INTO authentication_tbl (email, code, create_date, end_date)
-        values (#{email}, #{code}, #{createDate}, #{endDate})
-    </insert>
-
-    <!-- 인증키 찾기 -->
-    <select id="findAuth" parameterType="string" resultType="com.zipchelin.model.dto.member.EmailDto">
-        select email, code, is_verified
-        from authentication_tbl
-        where code = #{code}
-    </select>
-
-    <!-- 인증키 삭제 -->
-    <delete id="deleteAuth" parameterType="string">
-        delete
-        from authentication_tbl
-        where code = #{code}
-    </delete>
-
     <!-- 멤버 저장 -->
     <insert id="save" parameterType="com.zipchelin.domain.Member">
-        insert into member_TBL (
-        member_ID, member_PWD, member_NAME, member_EMAIL, provider, provider_id
-        )
-        values (
-        #{memberId}, #{memberPwd}, #{memberName}, #{memberEmail}, #{provider}, #{providerId}
-        )
+        insert into member_TBL (member_ID, member_PWD, member_NAME, member_EMAIL, provider, provider_id)
+        values (#{memberId}, #{memberPwd}, #{memberName}, #{memberEmail}, #{provider}, #{providerId})
     </insert>
 
     <!-- 멤버 조회 -->

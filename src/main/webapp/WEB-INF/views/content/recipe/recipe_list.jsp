@@ -133,178 +133,31 @@
             <!--레시피 리스트--> 
             <div class="list_container">
                 <ul class="list_ul">
-                    <li class="list_li">
-                        <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href="./recipe_detail.html">
-                            <div class="imgwrap">
-                                <div class="imgBox">
-                                    <img class="recipe_pic" src="${contextPath}/resource\images\food\gan.jpg" alt="#">
-                                </div>
-                            </div>
-                            <div class="textBox">
-                                <p class="sub_title">남이 해줄 때 제일 맛있는</p>
-                                <p class="title">비빔밥</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list_li">
-                        <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href="./recipe_detail.html">
-                            <div class="imgwrap">
-                                <div class="imgBox">
-                                    <img class="recipe_pic" src="${contextPath}/resource\images\food\sample2.jpg" alt="#">
-                                </div>
-                            </div>
-                            <div class="textBox">
-                                <p class="sub_title">늘 먹어도 맛있어요</p>
-                                <p class="title">햄버거</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list_li">
-                        <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href="./recipe_detail.html">
-                            <div class="imgwrap">
-                                <div class="imgBox">
-                                    <img class="recipe_pic" src="${contextPath}/resource\images\food\soshige.jpg" alt="#">
-                                </div>
-                            </div>
-                            <div class="textBox">
-                                <p class="sub_title">먹어도 아무 뒤탈 없는</p>
-                                <p class="title">아주 큰 로또 당첨</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list_li">
-                        <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href="./recipe_detail.html">
-                            <div class="imgwrap">
-                                <div class="imgBox">
-                                    <img class="recipe_pic" src="${contextPath}/resource\images\food\sam.jpg" alt="#">
-                                </div>
-                            </div>
-                            <div class="textBox">
-                                <p class="sub_title">생으로 먹어보세요!!</p>
-                                <p class="title">생생삼겹살</p>
-                            </div>
-                        </a>
-                    </li>
-                    <!--4개-->
-                    <li class="list_li">
-                        <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href="./recipe_detail.html">
-                            <div class="imgwrap">
-                                <div class="imgBox">
-                                    <img class="recipe_pic" src="${contextPath}/resource\images\food\gan.jpg" alt="#">
-                                </div>
-                            </div>
-                            <div class="textBox">
-                                <p class="sub_title">남이 해줄 때 제일 맛있는</p>
-                                <p class="title">비빔밥</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list_li">
-                        <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href="./recipe_detail.html">
-                            <div class="imgwrap">
-                                <div class="imgBox">
-                                    <img class="recipe_pic" src="${contextPath}/resource\images\food\sample2.jpg" alt="#">
-                                </div>
-                            </div>
-                            <div class="textBox">
-                                <p class="sub_title">늘 먹어도 맛있어요</p>
-                                <p class="title">햄버거</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list_li">
-                        <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href="./recipe_detail.html">
-                            <div class="imgwrap">
-                                <div class="imgBox">
-                                    <img class="recipe_pic" src="${contextPath}/resource\images\food\soshige.jpg" alt="#">
-                                </div>
-                            </div>
-                            <div class="textBox">
-                                <p class="sub_title">먹어도 아무 뒤탈 없는</p>
-                                <p class="title">아주 큰 로또 당첨</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list_li">
-                        <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href="./recipe_detail.html">
-                            <div class="imgwrap">
-                                <div class="imgBox">
-                                    <img class="recipe_pic" src="${contextPath}/resource\images\food\sam.jpg" alt="#">
-                                </div>
-                            </div>
-                            <div class="textBox">
-                                <p class="sub_title">생으로 먹어보세요!!</p>
-                                <p class="title">생생삼겹살</p>
-                            </div>
-                        </a>
-                    </li>
-                    <!--4개-->
-                    <li class="list_li">
-                        <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href="./recipe_detail.html">
-                            <div class="imgwrap">
-                                <div class="imgBox">
-                                    <img class="recipe_pic" src="${contextPath}/resource\images\food\gan.jpg" alt="#">
-                                </div>
-                            </div>
-                            <div class="textBox">
-                                <p class="sub_title">남이 해줄 때 제일 맛있는</p>
-                                <p class="title">비빔밥</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list_li">
-                        <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href="./recipe_detail.html">
-                            <div class="imgwrap">
-                                <div class="imgBox">
-                                    <img class="recipe_pic" src="${contextPath}/resource\images\food\sample2.jpg" alt="#">
-                                </div>
-                            </div>
-                            <div class="textBox">
-                                <p class="sub_title">늘 먹어도 맛있어요</p>
-                                <p class="title">햄버거</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list_li">
-                        <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href="./recipe_detail.html">
-                            <div class="imgwrap">
-                                <div class="imgBox">
-                                    <img class="recipe_pic" src="${contextPath}/resource\images\food\soshige.jpg" alt="#">
-                                </div>
-                            </div>
-                            <div class="textBox">
-                                <p class="sub_title">먹어도 아무 뒤탈 없는</p>
-                                <p class="title">아주 큰 로또 당첨</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list_li">
-                        <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href="./recipe_detail.html">
-                            <div class="imgwrap">
-                                <div class="imgBox">
-                                    <img class="recipe_pic" src="${contextPath}/resource\images\food\sam.jpg" alt="#">
-                                </div>
-                            </div>
-                            <div class="textBox">
-                                <p class="sub_title">생으로 먹어보세요!!</p>
-                                <p class="title">생생삼겹살</p>
-                            </div>
-
-                        </a>
-                    </li>
-                    <!--4개-->
+                	<c:choose>
+                		<c:when test="${empty recipeList}">
+                			<li class="noList">
+                				<h6>레시피가 없습니다.</h6>
+                			</li>
+                		</c:when>
+                		<c:when test="${!empty recipeList}">
+                			<c:forEach var="recipe" items="${recipeList}">
+                				<li class="list_li">
+			                        <i class="fa-regular fa-heart"></i>                         
+			                        <a class="recipe_link" href="./recipe_detail.html">
+			                            <div class="imgwrap">
+			                                <div class="imgBox">
+			                                    <img class="recipe_pic" src="${contextPath}/resource/images/food/${recipeList}" alt="#">
+			                                </div>
+			                            </div>
+			                            <div class="textBox">
+			                                <p class="sub_title">${recipe.recSubt}</p>
+			                                <p class="title">${recipe.recTitle}</p>
+			                            </div>
+			                        </a>
+			                    </li>
+                			</c:forEach>
+                		</c:when>
+                	</c:choose>
                 </ul>
             </div>
             <!--페이징 단락-->

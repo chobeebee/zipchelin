@@ -1,26 +1,22 @@
 package com.zipchelin.repository.mybatis.mappers;
 
-import java.util.List;
-
+import com.zipchelin.domain.Recipe;
 import org.apache.ibatis.annotations.Mapper;
 
-import com.zipchelin.domain.Recipe;
+import java.util.List;
 
 @Mapper
 public interface RecipeMapper {
 
-	//리스트 목록
-	List<Recipe> selectRecipeAll();
+    public List<Recipe> selectRecipeAll();
 
-	List<Recipe> selectEachCategory(int cateNum);
+    public List<Recipe> selectEachCategory(int cateNum);
 
-	void addRecipe(Recipe recipe);
+    public int selectMaxNum();
 
-	void addRecipeImg(Recipe recipe);
+    public void addRecipe(Recipe recipe);
 
-	void addRecipeDesc(Recipe recipe);
+    public void updateRecipe(Recipe recipe);
 
-	void updateRecipe(Recipe recipe);
-
-	void delRecipe(int recNum);
+    public void delRecipe(int recNum);
 }

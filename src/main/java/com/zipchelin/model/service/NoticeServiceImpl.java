@@ -46,10 +46,11 @@ public class NoticeServiceImpl implements NoticeService{
 		return noticeRepository.getListPaging(cri);
 	}
 
-	@Override
-	public int getTotal() {
-		return noticeRepository.getTotal();
+	
+	@Override public int getTotal() { 
+		return noticeRepository.getTotal(); 
 	}
+	 
 
 	
 }

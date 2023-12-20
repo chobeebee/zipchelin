@@ -1,19 +1,22 @@
 package com.zipchelin.repository;
 
-//import java.util.List;
+import java.util.List;
 
-//import com.zipchelin.domain.Myrecipe;
+import com.zipchelin.domain.Myrecipe;
+import com.zipchelin.model.page.Criteria;
 
-public class MyrecipeRepository {
+public interface MyrecipeRepository {
+	
+	List<Myrecipe> getMyrecipe();
 
-	/*String addMyrecipe(Myrecipe Myrecipe);
-	
-	List<Myrecipe> selectAll();
-	
-	int selectMyrecipe(Myrecipe myrecipe);
-	
-	void delMyrecipe(int myreNum);
+	String addMyrecipe(Myrecipe Myrecipe);
 	
 	void updateMyrecipe(Myrecipe myrecipe);
-	*/
+	
+	void delMyrecipe(Integer newArr);
+	
+	List<Myrecipe> getListPaging(Criteria cri);
+
+	int getTotal();
+	
 }

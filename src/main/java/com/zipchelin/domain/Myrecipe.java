@@ -9,11 +9,13 @@ import com.zipchelin.model.dto.myrecipe.MyrecipeResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
 @AllArgsConstructor
 public class Myrecipe {
 	private String userId;
@@ -25,6 +27,7 @@ public class Myrecipe {
 	
 	public MyrecipeResponseDto toDto() {
 		return MyrecipeResponseDto.builder()
+				.userId(userId)
 				.myreNum(myreNum)
 				.myreTitle(myreTitle)
 				.myreUp(myreUp)

@@ -42,10 +42,12 @@ public class MypageMapperMybatis implements MypageRepository{
 		int pickCnt=0;
 		pickCnt+=mypageMapper.countMyGuiPick(id);
 		pickCnt+=mypageMapper.countMyRecPick(id);
+		System.out.println("pickCnt="+pickCnt);
 		//내 글
 		int postCnt=0;
 		postCnt+=mypageMapper.countMyQna(id);
 		postCnt+=mypageMapper.countMyMyre(id);
+		System.out.println("postCnt="+postCnt);
 		//내 댓글
 		int replyCnt=0;
 		replyCnt+=mypageMapper.countMyMyreReply(id);

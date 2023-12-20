@@ -106,7 +106,8 @@
             <!--찜페이지-탭-->
             <div class="componentWrap myPage_componentWrap">
                 <ul class="tabGroup">
-                    <li><a href="#" class="tab active" data-tab="tabAll">레시피</a></li>
+                    <li><a href="#" class="tab active" data-tab="tabAll">전체</a></li>
+                    <li><a href="#" class="tab" data-tab="tab01">레시피</a></li>
                     <li><a href="#" class="tab" data-tab="tab01">가이드</a></li>
                 </ul>
             </div>

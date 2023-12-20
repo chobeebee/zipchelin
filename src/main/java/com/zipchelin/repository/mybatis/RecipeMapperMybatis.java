@@ -24,19 +24,12 @@ public class RecipeMapperMybatis implements RecipeMapper{
 	}
 
 	@Override
+	public int selectMaxNum() {
+		return 0;
+	}
+
+	@Override
 	public void addRecipe(Recipe recipe) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void addRecipeImg(Recipe recipe) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void addRecipeDesc(Recipe recipe) {
 		// TODO Auto-generated method stub
 
 	}
@@ -52,5 +45,6 @@ public class RecipeMapperMybatis implements RecipeMapper{
 		// TODO Auto-generated method stub
 
 	}
+
 
 }

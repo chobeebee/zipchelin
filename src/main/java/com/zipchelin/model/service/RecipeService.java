@@ -1,8 +1,6 @@
 package com.zipchelin.model.service;
 
-import org.springframework.stereotype.Service;
+public class RecipeService {
 
-@Service
-public interface RecipeService {
 
 }

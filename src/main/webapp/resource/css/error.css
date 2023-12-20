@@ -29,15 +29,6 @@
     display: table !important;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
-*, ::after, ::before {
-    box-sizing: border-box;
-}
-
 div {
     display: block;
 }
@@ -100,12 +91,10 @@ div {
 p {
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
     font-size: 15px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Jost", sans-serif;
     font-weight: 600;
     margin: 0;
     padding: 0;

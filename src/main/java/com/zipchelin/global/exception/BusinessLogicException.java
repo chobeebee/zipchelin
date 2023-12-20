@@ -1,4 +1,4 @@
-package com.zipchelin.web.exception;
+package com.zipchelin.global.exception;
 
 public class BusinessLogicException extends RuntimeException {
 

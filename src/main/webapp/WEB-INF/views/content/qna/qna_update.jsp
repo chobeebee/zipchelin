@@ -66,7 +66,7 @@
     <main>
         <section class="form-list">
         <form action="/qna/update" method="post">
-            <h1 class="best-title">요리 상담소123</h1>
+            <h1 class="best-title">요리 상담소</h1>
             <div>
                 <div class="information informationBox">
                 <input name="qnaNum" value="${qna.qnaNum }" type="hidden">

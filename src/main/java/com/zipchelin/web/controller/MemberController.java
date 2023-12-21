@@ -1,12 +1,11 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.global.auth.CustomUserDetails;
-import com.zipchelin.model.dto.member.EmailDto;
-import com.zipchelin.model.dto.member.MemberLoginDto;
-import com.zipchelin.model.dto.member.MemberSaveDto;
-import com.zipchelin.model.service.MemberService;
 import com.zipchelin.global.exception.BusinessLogicException;
 import com.zipchelin.global.exception.DuplicateException;
+import com.zipchelin.global.provider.CustomUserDetails;
+import com.zipchelin.model.dto.member.EmailDto;
+import com.zipchelin.model.dto.member.MemberSaveDto;
+import com.zipchelin.model.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +23,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
+import java.util.Map;
 import java.util.Optional;
 
 @Slf4j
@@ -35,13 +35,17 @@ public class MemberController {
     private final MemberService memberService;
 
     @GetMapping("/login")
-    public String viewLogin(@ModelAttribute("params") MemberLoginDto params,
-                            @AuthenticationPrincipal CustomUserDetails loginMember,
+    public String viewLogin(@AuthenticationPrincipal CustomUserDetails loginMember,
                             @RequestParam(required = false) String error,
+                            HttpServletRequest request,
                             Model model) {
 
         if (loginMember != null) {
             return "redirect:/";
+        }
+        String prevPage = request.getHeader("Referer");
+        if (prevPage != null && !prevPage.contains("/login") && !prevPage.contains("/sign-up")) {
+            request.getSession().setAttribute("prevPage", prevPage);
         }
         model.addAttribute("error", error);
 
@@ -115,6 +119,17 @@ public class MemberController {
             Cookie cookie = new Cookie("emailAuth", "true");
             cookie.setMaxAge(60 * 5); // 이메일 인증 여부는 5분 동안 유효
             response.addCookie(cookie);
+            return ResponseEntity.ok(true);
+        }
+        return ResponseEntity.ok(false);
+    }
+
+    @ResponseBody
+    @PostMapping("/confirmId")
+    public ResponseEntity<Boolean> confirmId(@RequestBody Map<String, String> params) {
+
+        String id = params.get("id");
+        if (memberService.countId(id)) {
             return ResponseEntity.ok(true);
         }
         return ResponseEntity.ok(false);

@@ -89,10 +89,10 @@
     </section>
 </main>
 
-<c:if test="${error != null}">
+<c:if test="${param.error eq 'true'}">
     <div id="login_fail">
         <div id="login_fail_box">
-            <p id="login_fail_msg">해당하는 아이디가 없거나 비밀번호가 틀렸습니다.</p>
+            <p id="login_fail_msg">${param.errmsg}</p>
             <button id="login_fail_out" type="button" onClick="login_fail_get_out()">확인</button>
         </div>
     </div>

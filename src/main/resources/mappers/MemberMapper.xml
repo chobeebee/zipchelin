@@ -34,6 +34,8 @@
 
     <!-- 중복 체크 -->
     <select id="countById" parameterType="string" resultType="int">
-
+        select count(*)
+        from member_tbl
+        where member_id = #{memberId}
     </select>
 </mapper>

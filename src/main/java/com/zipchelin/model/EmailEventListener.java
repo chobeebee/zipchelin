@@ -9,6 +9,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @Component
@@ -18,15 +21,14 @@ public class EmailEventListener {
     @Async
     @EventListener
     public void listen(EmailApplicationEvent event) {
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                MemberService.codeStore.remove(event.getEmail());
-                timer.cancel();
-                log.info("3분 경과, 이메일 삭제 = {}", MemberService.codeStore);
-            }
-        }, 60 * 1000);
+
+        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+
+        scheduler.schedule(() -> {
+            MemberService.codeStore.remove(event.getEmail());
+            log.info("3분 경과, 이메일 삭제 = {}", MemberService.codeStore);
+            scheduler.shutdown();
+        }, 3, TimeUnit.MINUTES);
     }
 }
 

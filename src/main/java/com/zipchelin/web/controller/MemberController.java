@@ -5,8 +5,8 @@ import com.zipchelin.model.dto.member.EmailDto;
 import com.zipchelin.model.dto.member.MemberLoginDto;
 import com.zipchelin.model.dto.member.MemberSaveDto;
 import com.zipchelin.model.service.MemberService;
-import com.zipchelin.web.exception.BusinessLogicException;
-import com.zipchelin.web.exception.DuplicateException;
+import com.zipchelin.global.exception.BusinessLogicException;
+import com.zipchelin.global.exception.DuplicateException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -97,7 +97,7 @@ public class MemberController {
 
     @ResponseBody
     @PostMapping("/sendMail")
-    public String sendEmail(@RequestBody EmailDto params) {
+    public String sendEmail(@Validated @RequestBody EmailDto params) {
         String email = params.getEmail();
         try {
             memberService.mailForm(email);
@@ -138,10 +138,5 @@ public class MemberController {
     @GetMapping("/leave-done")
     public String viewLeaveDone() {
         return "member/leave_done";
-    }
-
-    @GetMapping("/email-auth")
-    public String viewEmailAuth() {
-        return "member/email_auth";
     }
 }

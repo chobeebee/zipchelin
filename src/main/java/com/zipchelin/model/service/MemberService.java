@@ -5,31 +5,45 @@ import com.zipchelin.model.EmailApplicationEvent;
 import com.zipchelin.model.dto.member.EmailDto;
 import com.zipchelin.model.dto.member.MemberSaveDto;
 import com.zipchelin.repository.MemberRepository;
-import com.zipchelin.web.exception.BusinessLogicException;
-import com.zipchelin.web.exception.DuplicateException;
+import com.zipchelin.global.exception.BusinessLogicException;
+import com.zipchelin.global.exception.DuplicateException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
+import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.Random;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 @Slf4j
 @RequiredArgsConstructor
 public class MemberService {
 
-    public static HashMap<String, String> codeStore = new HashMap<>();
+    public static ConcurrentHashMap<String, String> codeStore = new ConcurrentHashMap<>();
 
     private final JavaMailSender mailSender;
     private final MemberRepository memberRepository;
@@ -57,7 +71,6 @@ public class MemberService {
         log.info("받은 코드 = {}, 서버의 코드 = {}", code, findCode);
 
         if (code.equals(findCode)) {
-            log.info("일치!");
             codeStore.remove(email);
             return true;
         }
@@ -80,8 +93,8 @@ public class MemberService {
                 "<h1>" + authCode + "</h1><h3> 입니다.</h3>" +
                 "<br><p>인증번호를 입력해주세요.</p>";
 
-        mailSend(toMail, title, content);
-        ;
+        CompletableFuture.runAsync(() -> mailSend(toMail, title, content));
+
         publisher.publishEvent(new EmailApplicationEvent(this, email, authCode));
     }
 
@@ -89,7 +102,7 @@ public class MemberService {
         Random r = new Random();
         StringBuilder randomNumber = new StringBuilder();
         for (int i = 0; i < 6; i++) {
-            randomNumber.append(Integer.toString(r.nextInt(10)));
+            randomNumber.append(r.nextInt(10));
         }
         return randomNumber.toString();
     }

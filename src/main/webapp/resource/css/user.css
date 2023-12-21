@@ -360,7 +360,20 @@ body, h1, h2, h3, h4, h5, input, select, textarea, button {
     padding: 2px;
 }
 
+.valid_warning {
+    color: red;
+    width: 100%;
+    margin: 8px 0;
+    text-align: left;
+    font-size: 0.8em;
+}
+
+.transition-effect {
+    transition: all 0.3s ease;
+}
+
 .sign_warning {
+    display: none;
     color: red;
     width: 100%;
     margin: 8px 0;

@@ -1,6 +1,6 @@
 package com.zipchelin.domain;
 
-import java.time.LocalDateTime;
+import java.sql.Date;
 
 import com.zipchelin.model.dto.MyPost;
 import com.zipchelin.model.dto.myrecipe.MyrecipeRequestDto;
@@ -23,7 +23,7 @@ public class Myrecipe {
 	private String myreTitle;
 	private String myreContent;
 	private int myreUp;
-	private LocalDateTime myreDate;
+	private Date myreDate;
 	
 	public MyrecipeResponseDto toDto() {
 		return MyrecipeResponseDto.builder()

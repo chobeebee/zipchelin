@@ -33,25 +33,9 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/base.css">
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
 
-    <!-- plugin CSS -->
-    <!-- <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css"> -->
-
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="/assets/front/js/html5shiv.js"></script>
-    <script type="text/javascript" src="/assets/front/js/respond.min.js"></script>
-    <script type="text/javascript" src="/assets/front/js/IE9.js"></script>
-    <![endif]-->
-    <!--[if IE 9]>
-    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
-    <![endif]-->
-    <!--[if lte IE 8]>
-    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
-    <![endif]-->
-
     <!-- myrecipelist CSS -->
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/community.css">
     
-
 <title>요리 상담소 리스트</title>
 </head>
 <body>

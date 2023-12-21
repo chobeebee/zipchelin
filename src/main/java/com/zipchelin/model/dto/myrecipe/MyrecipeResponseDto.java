@@ -1,11 +1,12 @@
 package com.zipchelin.model.dto.myrecipe;
 
+import java.sql.Date;
+
 import com.zipchelin.domain.Myrecipe;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-
-import java.time.LocalDateTime;
 
 @Getter
 @Builder
@@ -16,7 +17,7 @@ public class MyrecipeResponseDto {
     private String myreTitle;
     private String myreContent;
     private int myreUp;
-    private LocalDateTime myreDate;
+    private Date myreDate;
 
     public Myrecipe toEntity() {
         return Myrecipe.builder()

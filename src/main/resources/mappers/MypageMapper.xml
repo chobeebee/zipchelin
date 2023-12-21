@@ -87,7 +87,7 @@
         from guide_tbl g,
              gui_pick p
         where g.gui_num = p.gui_num
-          and p.user_id = #{id};
+          and p.user_id = #{id}
     </select>
 
     <!-- 찜한 레시피 목록 -->
@@ -106,6 +106,6 @@
         from recipe_tbl r,
              rec_Pick p
         where r.rec_num = p.rec_num
-          and p.user_id = #{id};
+          and p.user_id = #{id}
     </select>
 </mapper>

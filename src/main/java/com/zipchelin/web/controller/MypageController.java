@@ -83,7 +83,7 @@ public class MypageController {
     @GetMapping("/myheart")
     public String myheart(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
         String id = userDetails.getMember().getMemberId();
-        //model.addAttribute("heartList", mypageService.selectHeartList(id));
+        model.addAttribute("heartList", mypageService.selectHeartList(id));
         return "mypage/myheart";
     }
 

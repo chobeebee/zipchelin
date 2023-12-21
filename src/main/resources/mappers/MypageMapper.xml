@@ -81,16 +81,16 @@
     </select>
 
     <!-- 찜한 가이드 목록 -->
-    <select id="selectGuiHeart" parameterType="String" resultType="com.zipchelin.domain.Guide">
+    <!--  <select id="selectGuiHeart" parameterType="String" resultType="com.zipchelin.domain.Guide">
         select g.gui_num, g.cate_num, g.gui_date, g.gui_view, g.gui_title, g.gui_subt, g.gui_desc
         from guide_tbl g,
              gui_pick p
         where g.gui_num = p.gui_num
           and p.user_id = #{id}
-    </select>
+    </select>-->
 
     <!-- 찜한 레시피 목록 -->
-    <select id="selectRecHeart" parameterType="String" resultType="com.zipchelin.domain.Recipe">
+    <!-- <select id="selectRecHeart" parameterType="String" resultType="com.zipchelin.domain.Recipe">
         select r.rec_num,
                r.cate_num,
                r.rec_date,
@@ -106,7 +106,7 @@
              rec_Pick p
         where r.rec_num = p.rec_num
           and p.user_id = #{id}
-    </select>
+    </select> -->
     
     <!-- 내 qna 댓글 목록 -->
     <select id="selectQnaReply" parameterType="String" resultType="com.zipchelin.domain.QnaReply">
@@ -117,4 +117,15 @@
     <select id="selectRecipeReply" parameterType="String" resultType="com.zipchelin.domain.RecipeReply">
     	select r.m_re_num, r.myre_num, r.user_img, r.post_id, r.re_id, r.re_content, r.re_up, r.re_date  from qna_reply_tbl q, myrecipe_reply_tbl r where q.re_id=r.re_id and r.re_id=#{id}
     </select>
+    
+    <!-- 마이페이지 찜목록 페이징 -->
+    <!-- <select id="getListPaging" resultType="com.zipchelin.domain.">
+        <![CDATA[
+        select rn, notice_num, notice_title, notice_date
+        from (select rownum as rn, notice_num, notice_title, notice_date
+              from notice_tbl
+              where rownum <= #{pageNum} * #{amount})
+        where rn > (#{pageNum} - 1) * #{amount}
+        ]]>
+    </select> -->
 </mapper>

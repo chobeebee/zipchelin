@@ -1,6 +1,8 @@
 package com.zipchelin.repository;
 
 import com.zipchelin.domain.*;
+import com.zipchelin.model.dto.Myheart;
+import com.zipchelin.model.page.Criteria;
 
 import java.util.List;
 import java.util.Map;
@@ -19,11 +21,13 @@ public interface MypageRepository {
 
     public List<Myrecipe> selectMyreById(String id);
 
-    public List<Guide> selectGuiHeart(String id);
+    //public List<Guide> selectGuiHeart(String id);
 
-    public List<Recipe> selectRecHeart(String id);
+    //public List<Recipe> selectRecHeart(String id);
     
     public List<QnaReply> selectQnaReply(String id);
     
     public List<RecipeReply> selectRecipeReply(String id);
+    
+    //public List<Myheart> getListPaging(Criteria cri);
 }

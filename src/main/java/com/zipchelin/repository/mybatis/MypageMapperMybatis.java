@@ -1,6 +1,8 @@
 package com.zipchelin.repository.mybatis;
 
 import com.zipchelin.domain.*;
+import com.zipchelin.model.dto.Myheart;
+import com.zipchelin.model.page.Criteria;
 import com.zipchelin.repository.MypageRepository;
 import com.zipchelin.repository.mybatis.mappers.MypageMapper;
 import lombok.RequiredArgsConstructor;
@@ -67,15 +69,15 @@ public class MypageMapperMybatis implements MypageRepository {
         return mypageMapper.selectMyreById(id);
     }
 
-    @Override
-    public List<Guide> selectGuiHeart(String id) {
-        return mypageMapper.selectGuiHeart(id);
-    }
+    //@Override
+    //public List<Guide> selectGuiHeart(String id) {
+    //    return mypageMapper.selectGuiHeart(id);
+    //}
 
-    @Override
-    public List<Recipe> selectRecHeart(String id) {
-        return mypageMapper.selectRecHeart(id);
-    }
+    //@Override
+    //public List<Recipe> selectRecHeart(String id) {
+    //    return mypageMapper.selectRecHeart(id);
+    //}
     
     @Override
     public List<QnaReply> selectQnaReply(String id){
@@ -86,5 +88,12 @@ public class MypageMapperMybatis implements MypageRepository {
     public List<RecipeReply> selectRecipeReply(String id){
     	return mypageMapper.selectRecipeReply(id);
     }
+
+    /*
+	@Override
+	public List<Myheart> getListPaging(Criteria cri) {
+		return mypageMapper.getListPaging(cri);
+	}
+	*/
 
 }

@@ -7,6 +7,7 @@ import com.zipchelin.model.dto.Myreply;
 import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.model.dto.myrecipe.MyrecipeResponseDto;
 import com.zipchelin.model.dto.qna.QnaResponseDto;
+import com.zipchelin.model.page.Criteria;
 import com.zipchelin.repository.MypageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,7 +98,8 @@ public class MypageService {
         }
         return postList;
     }
-
+    
+    /*
     public List<Myheart> selectHeartList(String id) {
         List<Myheart> heartList = new ArrayList<Myheart>();
 
@@ -126,6 +128,7 @@ public class MypageService {
         }
         return heartList;
     }
+    */
     
     public List<Myreply> selectReplyList(String id){
     	List<Myreply> replyList=new ArrayList<Myreply>();
@@ -154,4 +157,8 @@ public class MypageService {
         }
         return replyList;
     }
+    
+   /* public List<Myheart> getListPaging(Criteria cri) {
+        return mypageRepository.getListPaging(cri);
+    }*/
 }

@@ -33,10 +33,10 @@ $(function () {
     $('ul.tabGroup li').click(function () {
         var tab_id = $(this).attr('data-tab');
 
-        $('ul.tabGroup li').removeClass('active');
+        $('ul.tabGroup li span').removeClass('active');
         $('.tabContainer').removeClass('on');
 
-        $(this).addClass('active');
+        $(this).children().addClass('active');
         $("#" + tab_id).addClass('on');
 
         return false;
@@ -178,4 +178,13 @@ function edit_complete_btn() {
 		$('#edit_form').submit();
 	}
 }
+
+function getMyPostData(requestedAjax){
+	$.ajax({
+                type : "GET",
+                url : "/mypage/getMypost/"+requestedAjax,
+                success : function(){alert("성공");}
+            });
+}
+
         

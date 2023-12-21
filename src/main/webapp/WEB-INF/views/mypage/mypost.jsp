@@ -56,9 +56,9 @@
         <h3 class="pageTitle">내가 쓴 글</h3>
         <div class="componentWrap">
             <ul class="tabGroup">
-                <li><a href="#" class="tab active" data-tab="tabAll">전체</a></li>
-                <li><a href="#" class="tab" data-tab="tab01">나만의레시피</a></li>
-                <li><a href="#" class="tab" data-tab="tab02">요리상담소</a></li>
+                <li><span class="tab active" onclick="getMyPostData('all')" data-tab="tabAll">전체</span></li>
+                <li><span class="tab" onclick="getMyPostData('myre')" data-tab="tab01">나만의레시피</span></li>
+                <li><span class="tab" onclick="getMyPostData('qna')" data-tab="tab02">요리상담소</span></li>
             </ul>
             <div class="btnGroup bdBtnGroup">
                 <button class="btn btnBd" id="showChk">선택</button>

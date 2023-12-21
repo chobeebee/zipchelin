@@ -1,12 +1,14 @@
 package com.zipchelin.web.controller;
 
 import com.zipchelin.global.provider.CustomUserDetails;
+import com.zipchelin.model.dto.MyPost;
 import com.zipchelin.model.dto.member.MemberRequestDto;
 import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.model.service.MypageService;
 import lombok.RequiredArgsConstructor;
 
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -37,14 +39,19 @@ public class MypageController {
     @GetMapping("/mypage")
     public String mypage(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
         String id = userDetails.getMember().getMemberId();
+        List<MyPost> myPostList=mypageService.selectMyPostList2(id);
+        
+        model.addAttribute("memberId", id);
         model.addAttribute("count", mypageService.selectCount(id));
-        model.addAttribute("myPostList",mypageService.selectMyPostList2(id));
+        model.addAttribute("myPostList",myPostList);
+        model.addAttribute("myPostListSize", myPostList.size());
         return "mypage/mypage";
     }
 
     @GetMapping("/pwdConfirm")
     public String pwdConfirm(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
     	String id = userDetails.getMember().getMemberId();
+    	model.addAttribute("memberId", id);
         model.addAttribute("count", mypageService.selectCount(id));
         return "mypage/mypwdConfirm";
     }
@@ -52,6 +59,7 @@ public class MypageController {
     @PostMapping("/myedit")
     public String mypageEdit(@AuthenticationPrincipal CustomUserDetails userDetails, @RequestParam("pwdCheck") String pwd, Model model) {
     	String id = userDetails.getMember().getMemberId();
+    	model.addAttribute("memberId", id);
         model.addAttribute("count", mypageService.selectCount(id));
         //DB의 비밀번호가 암호화 되어있어 비교 불가.
 		/*String next=null;
@@ -85,6 +93,7 @@ public class MypageController {
     @GetMapping("/mypost")
     public String mypost(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
         String id=userDetails.getMember().getMemberId();
+        model.addAttribute("memberId", id);
         model.addAttribute("count", mypageService.selectCount(id));
         model.addAttribute("myPostList",mypageService.selectMyPostList(id));
         return "mypage/mypost";
@@ -93,6 +102,7 @@ public class MypageController {
     @GetMapping("/myheart")
     public String myheart(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
         String id = userDetails.getMember().getMemberId();
+        model.addAttribute("memberId", id);
         model.addAttribute("count", mypageService.selectCount(id));
         model.addAttribute("heartList", mypageService.selectHeartList(id));
         return "mypage/myheart";
@@ -101,6 +111,7 @@ public class MypageController {
     @GetMapping("/myreply")
     public String myreply(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
     	String id = userDetails.getMember().getMemberId();
+    	model.addAttribute("memberId", id);
         model.addAttribute("count", mypageService.selectCount(id));
         return "mypage/myreply";
     }
@@ -108,6 +119,7 @@ public class MypageController {
     @PostMapping("/memberUpdate")
     public String memberUpdate(HttpServletRequest request,Model model, @AuthenticationPrincipal CustomUserDetails userDetails) throws UnsupportedEncodingException {
     	String id = userDetails.getMember().getMemberId();
+    	model.addAttribute("memberId", id);
         model.addAttribute("count", mypageService.selectCount(id));
     	//비밀번호 암호화? 안됨
     	request.setCharacterEncoding("utf-8");

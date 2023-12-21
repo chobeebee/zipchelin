@@ -88,8 +88,10 @@ public class MypageController {
     }
 
     @GetMapping("/myreply")
-    public String myreply() {
-        return "mypage/myreply";
+    public String myreply(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
+    	String id = userDetails.getMember().getMemberId();
+        model.addAttribute("replyList", mypageService.selectHeartList(id));
+    	return "mypage/myreply";
     }
 
 }

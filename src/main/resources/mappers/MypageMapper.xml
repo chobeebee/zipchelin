@@ -108,4 +108,14 @@
         where r.rec_num = p.rec_num
           and p.user_id = #{id}
     </select>
+    
+    <!-- 내 qna 댓글 목록 -->
+    <select id="selectQnaReply" parameterType="String" resultType="com.zipchelin.domain.QnaReply">
+    	select q.q_re_num, q.qna_num, q.user_img, q.re_order, q.re_id, q.re_content, q.re_up, q.re_date  from qna_reply_tbl q, myrecipe_reply_tbl r where q.re_id=r.re_id and q.re_id=#{id}
+    </select>
+    
+    <!-- 내 recipe 댓글 목록 -->
+    <select id="selectRecipeReply" parameterType="String" resultType="com.zipchelin.domain.RecipeReply">
+    	select r.m_re_num, r.myre_num, r.user_img, r.post_id, r.re_id, r.re_content, r.re_up, r.re_date  from qna_reply_tbl q, myrecipe_reply_tbl r where q.re_id=r.re_id and r.re_id=#{id}
+    </select>
 </mapper>

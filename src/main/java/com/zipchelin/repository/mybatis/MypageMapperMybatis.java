@@ -76,6 +76,15 @@ public class MypageMapperMybatis implements MypageRepository {
     public List<Recipe> selectRecHeart(String id) {
         return mypageMapper.selectRecHeart(id);
     }
-
+    
+    @Override
+    public List<QnaReply> selectQnaReply(String id){
+    	return mypageMapper.selectQnaReply(id);
+    }
+    
+    @Override
+    public List<RecipeReply> selectRecipeReply(String id){
+    	return mypageMapper.selectRecipeReply(id);
+    }
 
 }

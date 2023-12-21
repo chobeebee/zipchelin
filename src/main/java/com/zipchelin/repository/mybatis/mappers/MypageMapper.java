@@ -33,4 +33,8 @@ public interface MypageMapper {
     public List<Guide> selectGuiHeart(String id);
 
     public List<Recipe> selectRecHeart(String id);
+    
+    public List<QnaReply> selectQnaReply(String id);
+    
+    public List<RecipeReply> selectRecipeReply(String id);
 }

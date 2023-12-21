@@ -1,5 +1,6 @@
 package com.zipchelin.domain;
 
+import com.zipchelin.model.dto.Myreply;
 import com.zipchelin.model.dto.recipeReply.RecipeReplyRequestDto;
 import com.zipchelin.model.dto.recipeReply.RecipeReplyResponseDto;
 import lombok.AllArgsConstructor;
@@ -8,6 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -21,7 +23,7 @@ public class RecipeReply {
     private String reId;
     private String reContent;
     private int reUp;
-    private LocalDateTime reDate;
+    private Date replyDate;
 
     public RecipeReplyResponseDto toDto() {
         return RecipeReplyResponseDto.builder()
@@ -45,5 +47,14 @@ public class RecipeReply {
                 .reContent(reContent)
                 .reUp(reUp)
                 .build();
+    }
+    
+    public Myreply toMyreply() {
+    	return Myreply.builder()
+    			.qnaOrRec("rec")
+    			.replyDate(replyDate)
+    			.qnaReply(null)
+    			.recipeReply(this)
+    			.build();
     }
 }

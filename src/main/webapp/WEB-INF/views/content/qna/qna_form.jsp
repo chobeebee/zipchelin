@@ -40,20 +40,6 @@
     <!-- plugin CSS -->
     <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.min.css">
 
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="/assets/front/js/html5shiv.js"></script>
-    <script type="text/javascript" src="/assets/front/js/respond.min.js"></script>
-    <script type="text/javascript" src="/assets/front/js/IE9.js"></script>
-    <![endif]-->
-    <!--[if IE 9]>
-    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css"
-          rel="stylesheet">
-    <![endif]-->
-    <!--[if lte IE 8]>
-    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css"
-          rel="stylesheet">
-    <![endif]-->
-
     <!-- myrecipelist CSS -->
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/community.css">
 
@@ -77,7 +63,7 @@
                     <p><input class="formBox" name="qnaTitle" id="qnaTitle" placeholder="제목을 입력해주세요"></p>
                 </div>
                 <div class="information">
-                    <h2 class="form-title">내용</h1>
+                    <h2 class="form-title">내용</h2>
                         <textarea name="qnaContent" id="form-content" class="form-content" cols="30" rows="10"
                                   placeholder="내용을 입력해주세요"></textarea>
                 </div>
@@ -96,32 +82,6 @@
 <footer id="footer">
     <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
 </footer>
-<link rel="stylesheet" type="text/css" href="/front/css/community.css">
-<!-- google icon CDN -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-
-<!-- basic CSS -->
-<link rel="stylesheet" type="text/css" href="/front/css/reset.css">
-<link rel="stylesheet" type="text/css" href="/front/css/base.css">
-<link rel="stylesheet" type="text/css" href="/front/css/common.css">
-
-<!-- plugin CSS -->
-<link rel="stylesheet" href="/front/css/swiper-bundle.css">
-
-<!--[if lt IE 9]>
-<script type="text/javascript" src="/assets/front/js/html5shiv.js"></script>
-<script type="text/javascript" src="/assets/front/js/respond.min.js"></script>
-<script type="text/javascript" src="/assets/front/js/IE9.js"></script>
-<![endif]-->
-<!--[if IE 9]>
-<link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css"
-      rel="stylesheet">
-<![endif]-->
-<!--[if lte IE 8]>
-<link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css"
-      rel="stylesheet">
-<![endif]-->
-
 
 <!-- js -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>

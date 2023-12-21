@@ -143,10 +143,10 @@
                 			<c:forEach var="recipe" items="${recipeList}">
                 				<li class="list_li">
 			                        <i class="fa-regular fa-heart"></i>                         
-			                        <a class="recipe_link" href="./recipe_detail.html">
+			                        <a class="recipe_link" href="/recipe/${recipe.recNum}">
 			                            <div class="imgwrap">
 			                                <div class="imgBox">
-			                                    <img class="recipe_pic" src="${contextPath}/resource/images/food/${recipeList}" alt="#">
+			                                    <img class="recipe_pic" src="${contextPath}/resource/images/food/${recipe.recImg0}" alt="#">
 			                                </div>
 			                            </div>
 			                            <div class="textBox">

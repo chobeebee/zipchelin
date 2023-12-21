@@ -32,7 +32,7 @@ public class MypageController {
     public String mypage(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
         String id = userDetails.getMember().getMemberId();
         model.addAttribute("count", mypageService.selectCount(id));
-        //model.addAttribute("myPostList",mypageService.selectMyPostList2(id));
+        model.addAttribute("myPostList",mypageService.selectMyPostList2(id));
         return "mypage/mypage";
     }
 
@@ -75,15 +75,15 @@ public class MypageController {
 
     @GetMapping("/mypost")
     public String mypost(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
-        //String id=userDetails.getMember().getMemberId();
-        //model.addAttribute("myPostList",mypageService.selectMyPostList(id));
+        String id=userDetails.getMember().getMemberId();
+        model.addAttribute("myPostList",mypageService.selectMyPostList(id));
         return "mypage/mypost";
     }
 
     @GetMapping("/myheart")
     public String myheart(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
         String id = userDetails.getMember().getMemberId();
-        //model.addAttribute("heartList", mypageService.selectHeartList(id));
+        model.addAttribute("heartList", mypageService.selectHeartList(id));
         return "mypage/myheart";
     }
 

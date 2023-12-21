@@ -3,6 +3,7 @@ package com.zipchelin.model.service;
 import com.zipchelin.domain.*;
 import com.zipchelin.model.dto.MyPost;
 import com.zipchelin.model.dto.Myheart;
+import com.zipchelin.model.dto.member.MemberRequestDto;
 import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.model.dto.myrecipe.MyrecipeResponseDto;
 import com.zipchelin.model.dto.qna.QnaResponseDto;
@@ -124,5 +125,9 @@ public class MypageService {
             }
         }
         return heartList;
+    }
+    
+    public void memberUpdate(MemberRequestDto dto) {
+    	mypageRepository.memberUpdate(dto.toEntity());
     }
 }

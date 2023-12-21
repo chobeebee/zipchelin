@@ -12,8 +12,6 @@ public interface MypageMapper {
 
     public String checkPwd(Map<String, String> map);
 
-    public void updateMember(Member member);
-
     public int countMyGuiPick(String id);
 
     public int countMyRecPick(String id);
@@ -33,4 +31,6 @@ public interface MypageMapper {
     public List<Guide> selectGuiHeart(String id);
 
     public List<Recipe> selectRecHeart(String id);
+    
+    public void memberUpdate(Member member);
 }

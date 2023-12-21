@@ -105,7 +105,7 @@
 
             <!--프로필사진 수정-->
             <div class="profile_section clearfix">
-                <img src="${contextPath}/resource/icon/profile.jpg" alt="profile_img" class="profile_img_edit"
+                <img src="${contextPath}/resource/images/icon/profile.jpg" alt="profile_img" class="profile_img_edit"
                      onclick="loaction.href='#'">
                 <div class="profile_edit_btn">
                     <label for="profile_edit" class="profile_btn btnBd">

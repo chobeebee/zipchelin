@@ -1,7 +1,6 @@
 package com.zipchelin.model.dto.common;
 
 import com.zipchelin.model.dto.qna.QnaDto;
-
 import lombok.Getter;
 
 @Getter

@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequiredArgsConstructor
 public class HomeController {
 
-	@GetMapping("/")
-	public String Home() {
-		return "index";
-	}
+    @GetMapping("/")
+    public String Home() {
+        return "index";
+    }
 
-	@GetMapping("/test")
-	@ResponseBody
-	public String getMember(@AuthenticationPrincipal CustomUserDetails userDetails) {
-		log.info("로그인 회원 정보 = {}", userDetails.getMember());
-		return "회원 정보 확인하기";
-	}
+    @GetMapping("/test")
+    @ResponseBody
+    public String getMember(@AuthenticationPrincipal CustomUserDetails userDetails) {
+        log.info("로그인 회원 정보 = {}", userDetails.getMember());
+        return "회원 정보 확인하기";
+    }
 }

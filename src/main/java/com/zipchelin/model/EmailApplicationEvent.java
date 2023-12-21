@@ -1,4 +1,4 @@
-package com.zipchelin.model.dto.member;
+package com.zipchelin.model;
 
 import lombok.Getter;
 import org.springframework.context.ApplicationEvent;

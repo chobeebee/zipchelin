@@ -1,10 +1,17 @@
 @charset "utf-8";
-.mypage{margin-top: 60px;}
+.mypage {
+    margin-top: 60px;
+}
 
 /**마이페이지 - 메인**/
 /*leftBox*/
-.myMenu{float: left; width: 24%; margin-right: 24px;}
-.myPage_leftBox{
+.myMenu {
+    float: left;
+    width: 24%;
+    margin-right: 24px;
+}
+
+.myPage_leftBox {
     border: 1px solid #e9e9e9;
     border-radius: 10px;
     float: left;
@@ -14,21 +21,24 @@
     background-color: #fff;
     margin-top: 60px;
 }
-.myProfile_img{
+
+.myProfile_img {
     border-radius: 50%;
     display: block;
-    margin: 0  auto;
+    margin: 0 auto;
     width: 80px;
     height: 80px;
 }
-.userId_text{
+
+.userId_text {
     margin: 16px 0;
     font-size: 16px;
     text-align: center;
 }
-.myPage_edit_btn{
+
+.myPage_edit_btn {
     display: block;
-    width:100px;
+    width: 100px;
     border-radius: 5px;
     background-color: #4FA72F;
     color: #fff;
@@ -36,79 +46,93 @@
     margin: 0 auto;
     padding: 10px;
 }
-.myBox_count{
+
+.myBox_count {
     width: 100%;
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
 }
-.myBox_countBox{
+
+.myBox_countBox {
     border-radius: 10px;
     width: 90px;
     padding: 0 6px;
     text-align: center;
 }
-.myBox_countBox > p{
+
+.myBox_countBox > p {
     margin-top: 12px;
     color: #999;
     font-size: 14px;
     text-align: center;
 }
-.myBox_countBox > p a{
+
+.myBox_countBox > p a {
     display: inline-block;
     color: #4FA72F;
 }
 
-.myPage_main{
+.myPage_main {
     float: right;
     width: calc(76% - 24px);
     padding-left: 32px;
     margin-top: 40px;
 }
-.my_icon_btn{
+
+.my_icon_btn {
     margin: 20px auto;
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid #222;
 }
-.my_icon{
+
+.my_icon {
     display: flex;
     gap: 6px;
     align-items: center;
     width: 30%;
     margin-bottom: 10px;
 }
-.my_icon p{
+
+.my_icon p {
     font-size: 16px;
 }
-.more_btn_box{
+
+.more_btn_box {
     flex-basis: 120px;
     margin-bottom: 10px;
 }
-.myPage_more_btn{
+
+.myPage_more_btn {
     width: 100%;
     padding: 12px 0 10px;
     border-radius: 4px;
 }
-.myPage_list{
+
+.myPage_list {
     width: 100%;
     margin: 24px auto 72px;
     display: flex
 }
-.myPage_content{
+
+.myPage_content {
     display: flex;
     justify-content: space-between;
     flex: 1;
     gap: 12px;
     min-width: 0;
 }
-.myPage_content .imgwrap .imgBox.vertical{
+
+.myPage_content .imgwrap .imgBox.vertical {
     height: 160px;
 }
-.myPage_text, .heart_list_text{
+
+.myPage_text, .heart_list_text {
     margin: 12px 0 0;
 }
-.mypage_list_title{
+
+.mypage_list_title {
     width: auto;
     max-width: 94%;
     font-size: 16px;
@@ -118,14 +142,15 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.mypage_list_subtitle{ 
-    width: auto; 
-    max-width: 94%; 
-    padding-bottom: 4px; 
-    color: #999999; 
-    line-height: 14px; 
-    overflow: hidden; 
-    white-space: nowrap; 
+
+.mypage_list_subtitle {
+    width: auto;
+    max-width: 94%;
+    padding-bottom: 4px;
+    color: #999999;
+    line-height: 14px;
+    overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
 }
 
@@ -140,6 +165,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
 .post-section p {
     width: 100%;
     margin-bottom: 16px;
@@ -147,43 +173,55 @@
     text-overflow: ellipsis;
     overflow: hidden;
 }
-.postdate{
+
+.postdate {
     display: block;
     color: #999;
     font-size: 12px;
     font-weight: 300;
 }
+
 .accList .icon {
     display: inline-block;
     margin-right: 4px;
     color: #c1c1c1;
     font-size: 18px;
 }
+
 .accList .accItem:first-child {
     margin-right: 8px;
 }
+
 .accList .accItem {
     display: flex;
     align-items: center;
 }
+
 .accList {
     display: flex;
     color: #999;
     font-size: 11px;
 }
+
 .post-section {
     width: 70%;
 }
+
 .imgBox img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.allwrite {margin-top: -20px;}
+
+.allwrite {
+    margin-top: -20px;
+}
+
 .edit_post_container {
     padding: 24px 24px 0;
     border-bottom: 1px solid #e9e9e9;
 }
+
 .edit_post_container .imgwrap {
     display: flex;
     justify-content: space-between;
@@ -191,21 +229,24 @@
     padding-bottom: 24px;
     font-family: 'S-CoreDream', sans-serif;
 }
-.edit_post_container_last{
+
+.edit_post_container_last {
     margin-bottom: 45px;
 }
 
 /*찜, 가이드 페이지*/
-.myPage_componentWrap{
+.myPage_componentWrap {
     margin-bottom: 32px;
     border-bottom: 1px solid #e9e9e9;
 }
-.myPage_content li, .heart_list_zone > li{
+
+.myPage_content li, .heart_list_zone > li {
     position: relative;
     flex-basis: calc(25% - 12px);
     min-width: 0;
 }
-.heart_list_zone{
+
+.heart_list_zone {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -213,7 +254,7 @@
     min-width: 0;
 }
 
-#heart_btn_icon{
+#heart_btn_icon {
     font-size: 22px;
     position: absolute;
     right: 12px;
@@ -228,13 +269,14 @@
 }
 
 /*정보 수정*/
-.profile_section{
+.profile_section {
     border-top: 2px solid #222;
     border-bottom: 1px solid #e9e9e9;
     margin-top: 15px;
     padding: 24px;
 }
-.title{
+
+.title {
     width: 100%;
     margin: 16px 0 8px;
     font-size: 18px;
@@ -245,7 +287,7 @@
     overflow: hidden;
 }
 
-.mypage_leftBox_edit{
+.mypage_leftBox_edit {
     margin: 50px;
     width: 250px;
     height: 350px;
@@ -258,61 +300,69 @@
     position: relative;
 }
 
-.edit_info{
+.edit_info {
     float: left;
     width: calc(76% - 24px);
     padding-left: 32px;
     margin-top: 60px;
 }
-.edit_info > h3{
+
+.edit_info > h3 {
     font-size: 22px;
 }
 
-.edit_info .btnGroup{
+.edit_info .btnGroup {
     margin: 30px 24px 0;
 }
 
-.profile_img_edit{
+.profile_img_edit {
     float: left;
     border-radius: 50%;
     width: 130px;
     height: 130px;
     cursor: pointer;
 }
-.profile_edit_btn{
+
+.profile_edit_btn {
     float: left;
     margin: 18px 24px;
 }
 
-.profile_edit_btn .profile_btn{
+.profile_edit_btn .profile_btn {
     display: block;
     border-radius: 5px;
     font-size: 12px;
     margin: 4px 6px;
 }
-.profile_edit_btn label.profile_btn{
+
+.profile_edit_btn label.profile_btn {
     display: inline-block;
     padding: 12px 8px;
     text-align: center;
 }
-.profile_select_btn{
+
+.profile_select_btn {
     display: none;
 }
-.edit_wrap{
+
+.edit_wrap {
     padding: 24px;
     border-bottom: 1px solid #e9e9e9;
 }
-.edit_form_item{
+
+.edit_form_item {
     padding: 16px 0;
 }
-.unregister a{
+
+.unregister a {
     position: relative;
     display: inline-block;
     padding-top: 30px;
     margin-bottom: 16px;
     color: #c1c1c1;
 }
-.unregister a:after{
+
+.unregister a:after {
     content: '';
     display: inline-block;
     position: absolute;
@@ -323,7 +373,7 @@
     background-color: #c1c1c1;
 }
 
-.edit_label{
+.edit_label {
     display: block;
     margin-bottom: 8px;
     font-size: 0.9em;
@@ -331,15 +381,15 @@
     left: 6px;
 }
 
-.edit_input{
+.edit_input {
     width: 100%;
 }
 
-.edit_input2{
+.edit_input2 {
     width: 40%;
 }
 
-.edit_warning{
+.edit_warning {
     position: relative;
     top: 9px;
     left: 3px;
@@ -347,42 +397,46 @@
     font-size: 12px;
     display: none;
 }
-.edit_warning2{
+
+.edit_warning2 {
     position: relative;
     top: 9px;
     left: 3px;
     color: #FF0000;
 }
-.edit_tel_warning{
+
+.edit_tel_warning {
     position: relative;
     top: 9px;
     left: 3px;
     color: #FF0000;
 }
-.edit_tel_warning2{
+
+.edit_tel_warning2 {
     position: relative;
     top: 9px;
     left: 3px;
     color: #FF0000;
 }
-.edit_pwdToggle{
+
+.edit_pwdToggle {
     left: 310px;
 }
 
-.edit_sign_input_box{
+.edit_sign_input_box {
     display: flex;
     align-items: center;
 }
 
-.edit_email_input{
+.edit_email_input {
     margin-right: 10px;
 }
 
-.edit_email_input2{
+.edit_email_input2 {
     margin: 0 10px;
 }
 
-#edit_email_input_choose{
+#edit_email_input_choose {
     text-align: center;
     width: 130px;
     box-sizing: border-box;
@@ -390,7 +444,7 @@
 }
 
 
-.edit_confirm_btn{
+.edit_confirm_btn {
     width: 14%;
     right: 0;
     border-radius: 4px;
@@ -399,71 +453,192 @@
     align-items: center;
     height: 44.72px;
     margin-left: 10px;
-} 
+}
 
-.edit_can_fin_btn{
+.edit_can_fin_btn {
     margin: auto;
     text-align: center;
     position: relative;
 }
 
-.edit_fin_button{
-    width:100px;
+.edit_fin_button {
+    width: 100px;
     border-radius: 5px;
     background-color: #4FA72F;
     color: #fff;
 }
 
-.edit_cancle_button{
-    width:100px;
+.edit_cancle_button {
+    width: 100px;
     border-radius: 5px;
     background-color: #4FA72F;
     color: #fff;
 }
 
-.mypage_eidt_contain{
+.mypage_eidt_contain {
     margin-top: 150px;
 }
 
 
 /* *** 비밀번호 확인 페이지 *** */
-.pwdConfirmWrap{position: relative; float: right; padding: 60px; width: calc(76% - 24px); min-height: 540px; text-align: center;}
-#confirmForm{position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
-#confirmForm .confirmInfo{margin-bottom: 32px;}
-#confirmForm .confirmInfo h6{margin-bottom: 16px; font-size: 28px;}
-#confirmForm .confirmInfo p{ color: #4a4a4a; font-size: 18px; line-height: 28px;}
-#confirmForm #pwdCheck{margin-bottom: 6px; width: 326px;}
-#confirmForm .btnGroup{margin-top: 40px; justify-content: center;}
+.pwdConfirmWrap {
+    position: relative;
+    float: right;
+    padding: 60px;
+    width: calc(76% - 24px);
+    min-height: 540px;
+    text-align: center;
+}
+
+#confirmForm {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#confirmForm .confirmInfo {
+    margin-bottom: 32px;
+}
+
+#confirmForm .confirmInfo h6 {
+    margin-bottom: 16px;
+    font-size: 28px;
+}
+
+#confirmForm .confirmInfo p {
+    color: #4a4a4a;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+#confirmForm #pwdCheck {
+    margin-bottom: 6px;
+    width: 326px;
+}
+
+#confirmForm .btnGroup {
+    margin-top: 40px;
+    justify-content: center;
+}
 
 
 /* *** 내가 쓴 글 페이지 ***  */
-.AllList{float: right; width: calc(76% - 24px);}
-.componentWrap{display: flex; justify-content: space-between; border-bottom: 1px solid #e9e9e9;}
-.componentWrap .btnGroup{flex: 1 0 auto; justify-content: flex-end; margin-bottom: 6px; min-height: 40px;}
-.btnGroup.hide{display: none;}
-.bdBtnGroup button{margin-right: 6px;}
-.bdBtnGroup button:last-child{ margin-right: 0;}
-.bdBtnGroup .btn{position: relative;}
-.bdBtnGroup label{position: absolute; left: 0; top: 0; width: 100%; height: 100%; line-height: 39px;}
+.AllList {
+    float: right;
+    width: calc(76% - 24px);
+}
+
+.componentWrap {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.componentWrap .btnGroup {
+    flex: 1 0 auto;
+    justify-content: flex-end;
+    margin-bottom: 6px;
+    min-height: 40px;
+}
+
+.btnGroup.hide {
+    display: none;
+}
+
+.bdBtnGroup button {
+    margin-right: 6px;
+}
+
+.bdBtnGroup button:last-child {
+    margin-right: 0;
+}
+
+.bdBtnGroup .btn {
+    position: relative;
+}
+
+.bdBtnGroup label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 39px;
+}
 
 /* *** 쓴 글,댓글 리스트 *** */
 /* 공통 */
-.listItem .chkWrap {display: none; align-self: center;}
+.listItem .chkWrap {
+    display: none;
+    align-self: center;
+}
 
 /* 쓴 글 */
-.mypostItem .contBox h6{white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
-.mypostItem .contBox p{width: 100%; margin-bottom: 16px; font-size: 15px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+.mypostItem .contBox h6 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.mypostItem .contBox p {
+    width: 100%;
+    margin-bottom: 16px;
+    font-size: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 
 /* 댓글 */
-.myreplyItem{position: relative;}
-.myreplyItem .contBox{width: 94%;}
-.myreplyItem .contBox h6{margin-bottom: 16px;}
-.myreplyItem .accList{position: absolute; right: 32px; bottom: 24px;}
-.replyPage{color: #bbb; font-size: 14px;}
-.replyPage .community_menu{padding-right: 8px; color: #8acc39; font-weight: 500;}
-.replyPage .linkTitle{display: inline-block ; max-width: 70%; vertical-align: middle; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
-.replyPage .material-symbols-outlined{font-size: 18px; vertical-align: middle;}
+.myreplyItem {
+    position: relative;
+}
+
+.myreplyItem .contBox {
+    width: 94%;
+}
+
+.myreplyItem .contBox h6 {
+    margin-bottom: 16px;
+}
+
+.myreplyItem .accList {
+    position: absolute;
+    right: 32px;
+    bottom: 24px;
+}
+
+.replyPage {
+    color: #bbb;
+    font-size: 14px;
+}
+
+.replyPage .community_menu {
+    padding-right: 8px;
+    color: #8acc39;
+    font-weight: 500;
+}
+
+.replyPage .linkTitle {
+    display: inline-block;
+    max-width: 70%;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.replyPage .material-symbols-outlined {
+    font-size: 18px;
+    vertical-align: middle;
+}
 
 /*임시 탭*/
-.tabContainer.on {display: block;}
-.tabContainer {display: none;}
+.tabContainer.on {
+    display: block;
+}
+
+.tabContainer {
+    display: none;
+}

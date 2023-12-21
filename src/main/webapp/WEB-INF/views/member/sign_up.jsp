@@ -67,15 +67,13 @@
                 <div class="sign_input_box">
                     <form:input type="text" path="memberId" id="sign_id" class="sign_info_input2"
                                 placeholder="숫자/영문자 포함 6~12자"/>
-                    <button type="button" onclick="" class="sign_input_button btnBd">중복확인</button>
+                    <button type="button" onclick="id_dupl_valid()" class="sign_input_button btnBd">중복확인</button>
                 </div>
                 <div id="sign_id_warning_box">
-                    <form:errors path="memberId" element="p" class="sign_warning"/>
-                    <spring:hasBindErrors name="params">
-                        <c:if test="${errors.hasGlobalErrors()}">
-                            <p class="sign_warning">중복된 아이디입니다.</p>
-                        </c:if>
-                    </spring:hasBindErrors>
+                    <form:errors path="memberId" element="p" class="valid_warning"/>
+                    <p class="sign_warning" id="sign_warning_id">아이디는 필수 입력사항입니다.</p>
+                    <p class="sign_warning" id="sign_warning_id_rule">아이디는 숫자/영문자 포함 6~12자 여야 합니다.</p>
+                    <p class="sign_warning" id="sign_warning_id_dup">중복되는 아이디 입니다.</p>
                 </div>
             </div>
             <div class="form_item">
@@ -83,13 +81,13 @@
                 <div class="inputField sign_info_input">
                     <form:input type="password" path="memberPwd" id="sign_pwd" class=""
                                 placeholder="특수문자/영문자/숫자 포함 8~15자"/>
-                    <form:errors path="memberPwd" element="p" class="sign_warning"/>
+                    <form:errors path="memberPwd" element="p" class="valid_warning"/>
                 </div>
                 <div class="inputField sign_info_input">
-                    <form:input type="password" path="pwdConfirm" id="sign_pwd2" class="" placeholder="비밀번호 확인" />
+                    <form:input type="password" path="pwdConfirm" id="sign_pwd2" class="" placeholder="비밀번호 확인"/>
                     <spring:hasBindErrors name="params">
                         <c:if test="${errors.hasGlobalErrors()}">
-                            <p class="sign_warning">비밀번호와 일치하지 않습니다.</p>
+                            <p class="valid_warning">입력하신 비밀번호와 일치하지 않습니다.</p>
                         </c:if>
                     </spring:hasBindErrors>
                 </div>
@@ -99,32 +97,33 @@
                 <div class="sign_input_box">
                     <form:input type="text" path="memberName" id="sign_name" class="sign_info_input" placeholder="이름"/>
                 </div>
-                <form:errors path="memberName" element="p" class="sign_warning"/>
+                <form:errors path="memberName" element="p" class="valid_warning"/>
             </div>
             <div class="form_item">
-                <label for="sign_tel" class="sign_left_label">이메일</label>
+                <label for="sign_email" class="sign_left_label">이메일</label>
                 <div>
                     <div class="sign_input_box">
-                        <form:input type="email" path="memberEmail" id="sign_tel" class="sign_info_input2"
+                        <form:input type="email" path="memberEmail" id="sign_email" class="sign_info_input2"
                                     placeholder="이메일"/>
-                        <button type="button" onclick="" class="sign_input_button btnBd">본인인증</button>
+                        <button type="button" id="mailSendBtn" class="sign_input_button btnBd">본인인증</button>
                     </div>
-                    <form:errors path="memberEmail" element="p" class="sign_warning"/>
+                    <form:errors path="memberEmail" element="p" class="valid_warning"/>
                 </div>
             </div>
             <div class="form_item">
-                <label for="" class="sign_left_label">인증번호</label>
+                <label for="emailCode" class="sign_left_label">인증번호</label>
                 <div class="sign_input_box">
-                    <input type="text" id="" class="sign_info_input2" placeholder="인증번호">
-                    <button type="button" onclick="" class="sign_input_button btnBd">확인</button>
+                    <input type="text" id="emailCode" class="sign_info_input2" placeholder="인증번호">
+                    <form:checkbox path="emailAuth" id="isEmailAuthed"/>
+                    <button type="button" id="mailAuthBtn" class="sign_input_button btnBd">확인</button>
                 </div>
+                <form:errors path="emailAuth" element="p" class="valid_warning"/>
             </div>
             <div class="form_item">
                 <div>
                     <form:checkbox path="terms" class="chkBox" label="이용약관을 읽고 동의하였습니다."/>
-<%--                    <form:label path="terms"><a href="#" class="sign_agreement">이용약관</a>을 읽고 동의하였습니다.</form:label>--%>
                 </div>
-                <form:errors path="terms" element="p" class="sign_warning"/>
+                <form:errors path="terms" element="p" class="valid_warning"/>
             </div>
 
             <div>
@@ -142,7 +141,99 @@
 <!-- js -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
+    $('#mailSendBtn').on('click', function (e) {
+        e.preventDefault();
 
+        $('#mailSendBtn').addClass('transition-effect').prop('disabled', true)
+            .css({
+                'background-color': '#4FA72F',
+                'color': '#fff',
+            }).html('전송 중...');
+
+        const params = {
+            email: $('#sign_email').val(),
+            code: ''
+        }
+
+        $.ajax({
+            url: '/member/sendMail',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(params),
+            dataType: 'text',
+            async: true,
+
+            success: function (response) {
+                console.log(response);
+                if (response === 'success') {
+                    $('#mailSendBtn').removeClass('transition-effect').prop('disabled', false)
+                        .css({
+                            'background-color': '#fff',
+                            'color': '#4FA72F',
+                        }).html('전송완료');
+                    alert('이메일이 전송되었습니다.');
+                } else {
+                    $('#mailSendBtn').removeClass('transition-effect').prop('disabled', false)
+                        .css({
+                            'background-color': '#fff',
+                            'color': '#4FA72F',
+                        }).html('전송실패');
+                    alert(response);
+                }
+            },
+            error: function (request, error) {
+                console.log(error);
+            }
+        })
+    });
+
+    $('#mailAuthBtn').on('click', function (e) {
+        const params = {
+            email: $('#sign_email').val(),
+            code: $('#emailCode').val()
+        };
+
+        $.ajax({
+            url: '/member/confirmMail',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(params),
+            dataType: 'json',
+            async: true,
+
+            success: function (response) {
+                console.log(response);
+                if (response) {
+                    alert('인증이 완료되었습니다. <br>해당 인증은 5분 간 유효합니다.');
+                    $('#isEmailAuthed').prop('checked', true);
+                } else {
+                    alert('잘못된 인증번호입니다. 다시 확인해주세요.');
+                }
+            },
+            error: function (request, error) {
+                console.log(error);
+            }
+        })
+    });
+
+    function id_dupl_valid() {
+        var id_rule = /^[A-Za-z0-9]{6,12}$/;
+
+        if ($('#sign_id').val() == '') {
+            $('#sign_warning_id_rule').css('display', 'none');
+            $('#sign_id').css('border-color', 'red');
+            $('#sign_warning_id').css('display', 'block');
+        } else {
+            $('#sign_warning_id').css('display', 'none');
+            if (!id_rule.test($('#sign_id').val())) {
+                $('#sign_warning_id_rule').css('display', 'block');
+                $('#sign_id').css('border-color', 'red');
+            } else {
+                $('#sign_warning_id_rule').css('display', 'none');
+                $('#sign_id').css('border-color', 'black');
+            }
+        }
+    }
 </script>
 <script src="${contextPath}/resource/js/common.js"></script>
 </body>

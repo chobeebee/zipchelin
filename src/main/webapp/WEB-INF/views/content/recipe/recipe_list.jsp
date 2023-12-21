@@ -140,23 +140,24 @@
                 			</li>
                 		</c:when>
                 		<c:when test="${!empty recipeList}">
-                			
+                			<c:forEach var="recipe" items="${recipeList}">
+                				<li class="list_li">
+			                        <i class="fa-regular fa-heart"></i>                         
+			                        <a class="recipe_link" href="./recipe_detail.html">
+			                            <div class="imgwrap">
+			                                <div class="imgBox">
+			                                    <img class="recipe_pic" src="${contextPath}/resource/images/food/${recipeList}" alt="#">
+			                                </div>
+			                            </div>
+			                            <div class="textBox">
+			                                <p class="sub_title">${recipe.recSubt}</p>
+			                                <p class="title">${recipe.recTitle}</p>
+			                            </div>
+			                        </a>
+			                    </li>
+                			</c:forEach>
                 		</c:when>
                 	</c:choose>
-                    <li class="list_li">
-                        <i class="fa-regular fa-heart"></i>                         
-                        <a class="recipe_link" href="./recipe_detail">
-                            <div class="imgwrap">
-                                <div class="imgBox">
-                                    <img class="recipe_pic" src="${contextPath}/resource\images\food\gan.jpg" alt="#">
-                                </div>
-                            </div>
-                            <div class="textBox">
-                                <p class="sub_title">남이 해줄 때 제일 맛있는</p>
-                                <p class="title">비빔밥</p>
-                            </div>
-                        </a>
-                    </li>
                 </ul>
             </div>
             <!--페이징 단락-->

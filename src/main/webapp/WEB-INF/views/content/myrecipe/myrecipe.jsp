@@ -39,18 +39,6 @@
     <!-- plugin CSS -->
     <link rel="stylesheet" href="/front/css/swiper-bundle.css">
 
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="/assets/front/js/html5shiv.js"></script>
-    <script type="text/javascript" src="/assets/front/js/respond.min.js"></script>
-    <script type="text/javascript" src="/assets/front/js/IE9.js"></script>
-    <![endif]-->
-    <!--[if IE 9]>
-    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
-    <![endif]-->
-    <!--[if lte IE 8]>
-    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
-    <![endif]-->
-
     <!-- myrecipelist CSS -->
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/community.css">
 
@@ -73,19 +61,19 @@
 			                <div class="best imgwrap">
 			                    <a href="/front/html/community/myrecipe_post.html">
 			                        <div class="imgBox vertical">
-			                            <img src="${contextPath}/resource/images/food/gan.jpg" alt="">
+			                            
 			                        </div>
 			                        <div class="best_cont">
-			                            <span class="postdate">${myrecipe_date}</span>
-			                            <h6 class="title">${myrecipe_title}</h6>
-			                            <ul class="accList">
+			                            <span class="postdate">${myre_date}</span>
+			                            <h6 class="title">${myre_title}</h6>
+			                           <!--  <ul class="accList">
 			                                <li class="accItem">
 			                                    <span class="icon material-symbols-outlined">visibility</span>268
 			                                </li>
 			                                <li class="accItem">
 			                                    <span class="icon material-symbols-outlined">comment</span>80
 			                                </li>
-			                            </ul>
+			                            </ul>  -->
 			                        </div>
 			                    </a>
 			                </div>
@@ -109,9 +97,9 @@
                 <li class="post-container">
                     <a href="/front/html/community/myrecipe_post.html" class="imgwrap">
                         <div class="post-section">
-                            <span class="postdate">${myrecipe_date}</span>
-                                <h6 class="title">${myrecipe_title}</p>
-                                <ul class="accList">
+                            <span class="postdate">${myre_date}</span>
+                                <h6 class="title">${myre_title}</h6>
+                                <!-- <ul class="accList">
                                     <li class="accItem">
                                         <span class="icon material-symbols-outlined">visibility</span>268
                                     </li>
@@ -119,16 +107,16 @@
                                         <span class="icon material-symbols-outlined">comment</span>12
                                     </li>
                                 </ul>
+                                 -->
                         </div>
                         <div class="imgBox align">
-                            <img src="${contextPath}/resource/images/food/gan.jpg" alt="">
+                            
                         </div>
                     </a>
                 </li>
             </ul>        
 
             <div class="paging">
-                </a>
                 <ul>
                     <!--li에 .disabled가 있으면 화살표에 클릭방지 생김-->
                     <li class="arrow prev disabled"><button disabled><span class="material-symbols-outlined">navigate_before</span></button></li>

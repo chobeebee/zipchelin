@@ -3,12 +3,10 @@ package com.zipchelin.web.controller;
 import com.zipchelin.global.auth.CustomUserDetails;
 import com.zipchelin.model.dto.member.EmailDto;
 import com.zipchelin.model.dto.member.MemberLoginDto;
-import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.model.dto.member.MemberSaveDto;
 import com.zipchelin.model.service.MemberService;
-import com.zipchelin.web.exception.BusinessLogicException;
-import com.zipchelin.web.exception.DuplicateException;
-import com.zipchelin.web.resolver.Login;
+import com.zipchelin.global.exception.BusinessLogicException;
+import com.zipchelin.global.exception.DuplicateException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -22,8 +20,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
+import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -60,15 +61,20 @@ public class MemberController {
     }
 
     @GetMapping("/sign-up")
-    public String viewSignUp(@Login MemberResponseDto loginMember, @ModelAttribute("params") MemberSaveDto params) {
-        if (loginMember != null) {
-            return "redirect:/";
-        }
+    public String viewSignUp(@ModelAttribute("params") MemberSaveDto params, HttpServletRequest request) {
+
+        // 이메일 인증 쿠키가 남아있을 경우 인증 로직을 건너뜀
+        Optional<Cookie> emailAuthCookie = Arrays.stream(request.getCookies())
+                .filter(cookie -> "emailAuth".equals(cookie.getName()))
+                .findFirst();
+        emailAuthCookie.ifPresent(cookie -> params.setEmailAuth(Boolean.parseBoolean(cookie.getValue())));
+
         return "member/sign_up";
     }
 
     @PostMapping("/sign-up")
-    public String signUp(@Validated @ModelAttribute("params") MemberSaveDto params, BindingResult bindingResult) {
+    public String signUp(@Validated @ModelAttribute("params") MemberSaveDto params,
+                         BindingResult bindingResult) {
 
         if (!params.getMemberPwd().equals(params.getPwdConfirm())) {
             bindingResult.reject("pwdCheck");
@@ -91,22 +97,27 @@ public class MemberController {
 
     @ResponseBody
     @PostMapping("/sendMail")
-    public ResponseEntity<EmailDto> sendEmail(@RequestBody EmailDto params) {
+    public String sendEmail(@Validated @RequestBody EmailDto params) {
         String email = params.getEmail();
-        log.info("이메일 받음! = {}", email);
-
         try {
             memberService.mailForm(email);
         } catch (BusinessLogicException e) {
-            return ResponseEntity.noContent().build();
+            return e.getMessage();
         }
-        return ResponseEntity.noContent().build();
+        return "success";
     }
 
     @ResponseBody
     @PostMapping("/confirmMail")
-    public ResponseEntity<Boolean> confirmMail(@RequestBody EmailDto params) {
-        return ResponseEntity.ok(memberService.confirmEmail(params));
+    public ResponseEntity<Boolean> confirmMail(@RequestBody EmailDto params, HttpServletResponse response) {
+
+        if (memberService.confirmEmail(params)) {
+            Cookie cookie = new Cookie("emailAuth", "true");
+            cookie.setMaxAge(60 * 5); // 이메일 인증 여부는 5분 동안 유효
+            response.addCookie(cookie);
+            return ResponseEntity.ok(true);
+        }
+        return ResponseEntity.ok(false);
     }
 
     @GetMapping("/find")
@@ -127,10 +138,5 @@ public class MemberController {
     @GetMapping("/leave-done")
     public String viewLeaveDone() {
         return "member/leave_done";
-    }
-
-    @GetMapping("/email-auth")
-    public String viewEmailAuth() {
-        return "member/email_auth";
     }
 }

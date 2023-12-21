@@ -5,39 +5,60 @@
 
     <!-- 레시피 리스트 전체 조회 -->
     <select id="selectRecipeAll" resultType="com.zipchelin.domain.Recipe">
-        select rec_title, rec_subt, rec_img0 from recipe_tbl order by rec_num desc
-    </select> 
+        select rec_title, rec_subt, rec_img0
+        from recipe_tbl
+        order by rec_num desc
+    </select>
     <!-- 하트 구현 어떻게 하지 힝(세션이용?), rpi.rec_img_no = 0 또는 1로 바꾸기 -->
 
-	<!-- 레시피 카테고리별 조회 -->
+    <!-- 레시피 카테고리별 조회 -->
     <select id="selectEachCategory" parameterType="int" resultType="com.zipchelin.domain.Recipe">
-        select rec_title, rec_subt, rec_img0 from recipe_tbl
-         where cate_num = #{cate_num} order by rec_num desc
+        select rec_title, rec_subt, rec_img0
+        from recipe_tbl
+        where cate_num = #{cate_num}
+        order by rec_num desc
     </select>
-      	
+
     <!-- 레시피 글쓰기 새 글의 recnum 가져오기 -->
     <select id="selectMaxNum" resultType="int">
-    	select max(recNum)+1 as recNum from recipe_tbl  
+        select max(recNum) + 1 as recNum
+        from recipe_tbl
     </select>
-    
+
     <insert id="addRecipe" parameterType="com.zipchelin.domain.Recipe">
-		insert into recipe_tbl(rec_num, cateNum, recTitle, recSubt, recImg0, recDesc0,
-		 recIngreMain, recIngreSub, recTool, recImg1, recDesc1, recImg2, recDesc2, recImg3, recDesc3, recTen)
-		 values(#{rec_num}, #{cateNum}, #{recTitle}, #{recSubt}, #{recImg0}, #{recDesc0},
-		 #{recIngreMain}, #{recIngreSub}, #{recTool}, #{recImg1}, #{recDesc1}, #{recImg2}, #{recDesc2}, 
-		 #{recImg3}, #{recDesc3}, #{recTen})
+        insert into recipe_tbl(rec_num, cateNum, recTitle, recSubt, recImg0, recDesc0,
+                               recIngreMain, recIngreSub, recTool, recImg1, recDesc1, recImg2, recDesc2, recImg3,
+                               recDesc3, recTen)
+        values (#{rec_num}, #{cateNum}, #{recTitle}, #{recSubt}, #{recImg0}, #{recDesc0},
+                #{recIngreMain}, #{recIngreSub}, #{recTool}, #{recImg1}, #{recDesc1}, #{recImg2}, #{recDesc2},
+                #{recImg3}, #{recDesc3}, #{recTen})
     </insert>
-    
+
     <update id="updateRecipe" parameterType="com.zipchelin.domain.Recipe">
-    	update recipe_tbl set cateNum=#{cateNum}, recTitle=#{recTitle}, recSubt=#{recSubt}, recImg0=#{recImg0},
-    	 recDesc0=#{recDesc0}, recIngreMain=#{recIngreMain}, recIngreSub=#{recIngreSub}, recTool=#{recTool},
-    	 recImg1=#{recImg1}, recDesc1=#{recDesc1}, recImg2=#{recImg2}, recDesc2=#{recDesc2}, recImg3=#{recImg3},
-    	 recDesc3=#{recDesc3}, recTen=#{recTen} where recNum=#{recNum}
+        update recipe_tbl
+        set cateNum=#{cateNum},
+            recTitle=#{recTitle},
+            recSubt=#{recSubt},
+            recImg0=#{recImg0},
+            recDesc0=#{recDesc0},
+            recIngreMain=#{recIngreMain},
+            recIngreSub=#{recIngreSub},
+            recTool=#{recTool},
+            recImg1=#{recImg1},
+            recDesc1=#{recDesc1},
+            recImg2=#{recImg2},
+            recDesc2=#{recDesc2},
+            recImg3=#{recImg3},
+            recDesc3=#{recDesc3},
+            recTen=#{recTen}
+        where recNum = #{recNum}
     </update>
-    
+
     <delete id="delRecipe" parameterType="int">
-    	delete form recipe_tbl where recNum=#{recNum}
+        delete
+        form recipe_tbl where recNum=
+        #{recNum}
     </delete>
-    
+
 
 </mapper>

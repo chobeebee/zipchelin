@@ -1,6 +1,6 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.global.auth.CustomUserDetails;
+import com.zipchelin.global.provider.CustomUserDetails;
 import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.model.service.MypageService;
 import lombok.RequiredArgsConstructor;

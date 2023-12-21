@@ -1,12 +1,11 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.global.auth.CustomUserDetails;
-import com.zipchelin.model.dto.member.EmailDto;
-import com.zipchelin.model.dto.member.MemberLoginDto;
-import com.zipchelin.model.dto.member.MemberSaveDto;
-import com.zipchelin.model.service.MemberService;
+import com.zipchelin.global.provider.CustomUserDetails;
 import com.zipchelin.global.exception.BusinessLogicException;
 import com.zipchelin.global.exception.DuplicateException;
+import com.zipchelin.model.dto.member.EmailDto;
+import com.zipchelin.model.dto.member.MemberSaveDto;
+import com.zipchelin.model.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -35,13 +34,17 @@ public class MemberController {
     private final MemberService memberService;
 
     @GetMapping("/login")
-    public String viewLogin(@ModelAttribute("params") MemberLoginDto params,
-                            @AuthenticationPrincipal CustomUserDetails loginMember,
+    public String viewLogin(@AuthenticationPrincipal CustomUserDetails loginMember,
                             @RequestParam(required = false) String error,
+                            HttpServletRequest request,
                             Model model) {
 
         if (loginMember != null) {
             return "redirect:/";
+        }
+        String prevPage = request.getHeader("Referer");
+        if (prevPage != null && !prevPage.contains("/login") && !prevPage.contains("/sign-up")) {
+            request.getSession().setAttribute("prevPage", prevPage);
         }
         model.addAttribute("error", error);
 

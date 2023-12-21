@@ -1,6 +1,6 @@
 package com.zipchelin.global.handler;
 
-import org.springframework.security.authentication.BadCredentialsException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
@@ -9,19 +9,18 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
+@Slf4j
 @Component
-public class MyAuthenticationFailureHandler extends SimpleUrlAuthenticationFailureHandler {
+public class CustomAuthFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
 
-        String errorMsg = "아이디 또는 비밀번호 오류입니다.";
-        if (exception instanceof BadCredentialsException) {
-            errorMsg = "비밀번호 오류입니다.";
-        }
-
-        setDefaultFailureUrl("/member/login?error=true");
+        String errmsg = URLEncoder.encode(exception.getMessage(), StandardCharsets.UTF_8);
+        setDefaultFailureUrl("/member/login?error=true&errmsg=" + errmsg);
         super.onAuthenticationFailure(request, response, exception);
     }
 }

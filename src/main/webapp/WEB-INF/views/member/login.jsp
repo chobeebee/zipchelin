@@ -90,10 +90,19 @@
 </main>
 
 <c:if test="${param.error eq 'true'}">
-    <div id="login_fail">
-        <div id="login_fail_box">
-            <p id="login_fail_msg">${param.errmsg}</p>
-            <button id="login_fail_out" type="button" onClick="login_fail_get_out()">확인</button>
+    <div class="login_modal">
+        <div class="login_modal_box">
+            <p class="login_modal_msg">${param.errmsg}</p>
+            <button class="login_modal_out" type="button" onClick="login_modal_get_out()">확인</button>
+        </div>
+    </div>
+</c:if>
+
+<c:if test="${welcomeMsg != null}">
+    <div class="login_modal">
+        <div class="login_modal_box">
+            <p class="login_modal_msg">${welcomeMsg}</p>
+            <button class="login_modal_out" type="button" onClick="login_modal_get_out()">확인</button>
         </div>
     </div>
 </c:if>

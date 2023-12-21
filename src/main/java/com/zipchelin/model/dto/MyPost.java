@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Builder
 public class MyPost {
     private String myreOrQna;
-    private Date postDate;
+    private LocalDateTime postDate;
     private Myrecipe myrecipe;
     private Qna qna;
 }

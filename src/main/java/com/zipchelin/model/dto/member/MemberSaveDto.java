@@ -1,6 +1,7 @@
 package com.zipchelin.model.dto.member;
 
 import com.zipchelin.domain.Member;
+import com.zipchelin.web.resolver.FieldMatch;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -25,7 +26,6 @@ public class MemberSaveDto {
 
     @Pattern(regexp = "(?=.*[0-9])(?=.*[a-zA-Z]).{6,12}", message = "비밀번호는 6~12자의 영문/숫자를 포함해야 합니다.")
     private String memberPwd;
-
     private String pwdConfirm;
 
     @NotBlank(message = "이름은 필수 입력사항 입니다.")

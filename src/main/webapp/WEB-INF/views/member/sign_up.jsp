@@ -51,168 +51,6 @@
           rel="stylesheet">
     <![endif]-->
     <title>회원가입</title>
-
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script>
-        $('#sign_id').on('input', debounce(function (e) {
-
-            let btn = $('#idAuthBtn');
-            let id = $('#sign_id');
-            let id_rule = /^[a-z0-9]{6,12}$/;
-
-            if (id.val() === '' || !id_rule.test(id.val())) {
-                btn.removeClass('transition-effect').prop('disabled', false)
-                    .css({
-                        'border-color': '#FF0000FF',
-                        'background-color': '#fff',
-                        'color': '#FF0000FF',
-                    }).html('양식오류');
-                id.css('border-color', 'red');
-                $('#isIdAuthed').prop('checked', false);
-                return;
-            }
-
-            const params = {id: id.val()};
-
-            $.ajax({
-                url: '/member/confirmId',
-                type: 'POST',
-                contentType: 'application/json; charset=utf-8',
-                data: JSON.stringify(params),
-                dataType: 'json',
-                async: true,
-
-                success: function (response) {
-                    if (response) {
-                        btn.removeClass('transition-effect').prop('disabled', false)
-                            .css({
-                                'border-color': '#4FA72F',
-                                'background-color': '#fff',
-                                'color': '#4FA72F',
-                            }).html('사용가능');
-                        id.css('border-color', 'black');
-                        $('#isIdAuthed').prop('checked', true);
-                    } else {
-                        btn.removeClass('transition-effect').prop('disabled', false)
-                            .css({
-                                'border-color': '#FF0000FF',
-                                'background-color': '#fff',
-                                'color': '#FF0000FF',
-                            }).html('아이디 중복');
-                        id.css('border-color', 'red');
-                        $('#isIdAuthed').prop('checked', false);
-                    }
-                },
-                error: function (request, error) {
-                    console.log(error);
-                }
-            })
-        }, 500));
-
-        function debounce(func, delay) {
-            let timeoutId;
-            return function (...args) {
-                clearTimeout(timeoutId);
-                timeoutId = setTimeout(() => {
-                    func.apply(this, args);
-                }, delay);
-            };
-        }
-
-        $('#mailSendBtn').on('click', function (e) {
-            e.preventDefault();
-
-            let email = $('#sign_email');
-            let sendBtn = $('#mailSendBtn');
-            let email_rule = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (email.val() === '' || !email_rule.test(email.val())) {
-                sendBtn.addClass('transition-effect')
-                    .css({
-                        'border-color': '#FF0000FF',
-                        'background-color': '#fff',
-                        'color': '#FF0000FF',
-                    }).html('양식오류');
-                email.css('border-color', 'red');
-                return;
-            }
-
-            sendBtn.addClass('transition-effect').prop('disabled', true)
-                .css({
-                    'background-color': '#4FA72F',
-                    'color': '#fff',
-                }).html('전송 중...');
-
-            const params = {
-                email: email.val(),
-                code: ''
-            }
-
-            $.ajax({
-                url: '/member/sendMail',
-                type: 'POST',
-                contentType: 'application/json; charset=utf-8',
-                data: JSON.stringify(params),
-                dataType: 'text',
-                async: true,
-
-                success: function (response) {
-                    console.log(response);
-                    if (response === 'success') {
-                        sendBtn.removeClass('transition-effect').prop('disabled', false)
-                            .css({
-                                'border-color': '#4FA72F',
-                                'background-color': '#fff',
-                                'color': '#4FA72F',
-                            }).html('전송완료');
-                        email.css('border-color', '#4FA72F');
-                        alert('이메일이 전송되었습니다.');
-                    } else {
-                        sendBtn.removeClass('transition-effect').prop('disabled', false)
-                            .css({
-                                'border-color': '#FF0000FF',
-                                'background-color': '#fff',
-                                'color': '#4FA72F',
-                            }).html('전송실패');
-                        email.css('border-color', 'red');
-                        alert(response);
-                    }
-                },
-                error: function (request, error) {
-                    console.log(error);
-                }
-            })
-        });
-
-        $('#mailAuthBtn').on('click', function (e) {
-            const params = {
-                email: $('#sign_email').val(),
-                code: $('#emailCode').val()
-            };
-
-            $.ajax({
-                url: '/member/confirmMail',
-                type: 'POST',
-                contentType: 'application/json; charset=utf-8',
-                data: JSON.stringify(params),
-                dataType: 'json',
-                async: true,
-
-                success: function (response) {
-                    console.log(response);
-                    if (response) {
-                        alert('인증이 완료되었습니다. 해당 인증은 5분 간 유효합니다.');
-                        $('#isEmailAuthed').prop('checked', true);
-                    } else {
-                        alert('잘못된 인증번호입니다. 다시 확인해주세요.');
-                    }
-                },
-                error: function (request, error) {
-                    console.log(error);
-                }
-            })
-        });
-    </script>
 </head>
 <body id="sign_body">
 <%-- 헤더 --%>
@@ -300,6 +138,167 @@
 </footer>
 
 <!-- js -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    $('#sign_id').on('input', debounce(function (e) {
+
+        let btn = $('#idAuthBtn');
+        let id = $('#sign_id');
+        let id_rule = /^[a-z0-9]{6,12}$/;
+
+        if (id.val() === '' || !id_rule.test(id.val())) {
+            btn.removeClass('transition-effect').prop('disabled', false)
+                .css({
+                    'border-color': '#FF0000FF',
+                    'background-color': '#fff',
+                    'color': '#FF0000FF',
+                }).html('양식오류');
+            id.css('border-color', 'red');
+            $('#isIdAuthed').prop('checked', false);
+            return;
+        }
+
+        const params = {id: id.val()};
+
+        $.ajax({
+            url: '/member/confirmId',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(params),
+            dataType: 'json',
+            async: true,
+
+            success: function (response) {
+                if (response) {
+                    btn.removeClass('transition-effect').prop('disabled', false)
+                        .css({
+                            'border-color': '#4FA72F',
+                            'background-color': '#fff',
+                            'color': '#4FA72F',
+                        }).html('사용가능');
+                    id.css('border-color', 'black');
+                    $('#isIdAuthed').prop('checked', true);
+                } else {
+                    btn.removeClass('transition-effect').prop('disabled', false)
+                        .css({
+                            'border-color': '#FF0000FF',
+                            'background-color': '#fff',
+                            'color': '#FF0000FF',
+                        }).html('아이디 중복');
+                    id.css('border-color', 'red');
+                    $('#isIdAuthed').prop('checked', false);
+                }
+            },
+            error: function (request, error) {
+                console.log(error);
+            }
+        })
+    }, 500));
+
+    function debounce(func, delay) {
+        let timeoutId;
+        return function (...args) {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func.apply(this, args);
+            }, delay);
+        };
+    }
+
+    $('#mailSendBtn').on('click', function (e) {
+        e.preventDefault();
+
+        let email = $('#sign_email');
+        let sendBtn = $('#mailSendBtn');
+        let email_rule = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (email.val() === '' || !email_rule.test(email.val())) {
+            sendBtn.addClass('transition-effect')
+                .css({
+                    'border-color': '#FF0000FF',
+                    'background-color': '#fff',
+                    'color': '#FF0000FF',
+                }).html('양식오류');
+            email.css('border-color', 'red');
+            return;
+        }
+
+        sendBtn.addClass('transition-effect').prop('disabled', true)
+            .css({
+                'background-color': '#4FA72F',
+                'color': '#fff',
+            }).html('전송 중...');
+
+        const params = {
+            email: email.val(),
+            code: ''
+        }
+
+        $.ajax({
+            url: '/member/sendMail',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(params),
+            dataType: 'text',
+            async: true,
+
+            success: function (response) {
+                console.log(response);
+                if (response === 'success') {
+                    sendBtn.removeClass('transition-effect').prop('disabled', false)
+                        .css({
+                            'border-color': '#4FA72F',
+                            'background-color': '#fff',
+                            'color': '#4FA72F',
+                        }).html('전송완료');
+                    email.css('border-color', '#4FA72F');
+                    alert('이메일이 전송되었습니다.');
+                } else {
+                    sendBtn.removeClass('transition-effect').prop('disabled', false)
+                        .css({
+                            'border-color': '#FF0000FF',
+                            'background-color': '#fff',
+                            'color': '#4FA72F',
+                        }).html('전송실패');
+                    email.css('border-color', 'red');
+                    alert(response);
+                }
+            },
+            error: function (request, error) {
+                console.log(error);
+            }
+        })
+    });
+
+    $('#mailAuthBtn').on('click', function (e) {
+        const params = {
+            email: $('#sign_email').val(),
+            code: $('#emailCode').val()
+        };
+
+        $.ajax({
+            url: '/member/confirmMail',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(params),
+            dataType: 'json',
+            async: true,
+
+            success: function (response) {
+                console.log(response);
+                if (response) {
+                    alert('인증이 완료되었습니다. 해당 인증은 5분 간 유효합니다.');
+                    $('#isEmailAuthed').prop('checked', true);
+                } else {
+                    alert('잘못된 인증번호입니다. 다시 확인해주세요.');
+                }
+            },
+            error: function (request, error) {
+                console.log(error);
+            }
+        })
+    });
+</script>
 <script src="${contextPath}/resource/js/common.js"></script>
 </body>
 </html>

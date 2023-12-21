@@ -16,7 +16,7 @@ import java.sql.Date;
 public class Recipe {
 
     //recipe_tbl
-    private int recNum;
+    private long recNum;
     private int cateNum;
     private String recTitle;
     private String recSubt;
@@ -41,11 +41,12 @@ public class Recipe {
     //
     public RecipeListResponseDto toDto() {
         return RecipeListResponseDto.builder()
-                .recNum(recNum)
-                .cateNum(cateNum)
-                .recTitle(recTitle)
-                .recSubt(recSubt)
-                .build();
+        		.recNum(recNum)
+				.cateNum(cateNum)
+				.recTitle(recTitle)
+				.recSubt(recSubt)
+				.recImg0(recImg0)
+				.build();
     }
 
     public Myheart toMyheart() {

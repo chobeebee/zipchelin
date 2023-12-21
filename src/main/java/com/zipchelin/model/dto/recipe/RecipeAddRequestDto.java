@@ -14,7 +14,7 @@ import javax.validation.constraints.NotBlank;
 public class RecipeAddRequestDto {
 
     @NotBlank
-    private int recNum;
+    private long recNum;
 
     @NotBlank
     private int cateNum;

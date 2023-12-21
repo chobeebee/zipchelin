@@ -1,6 +1,5 @@
 package com.zipchelin.global.provider;
 
-import com.zipchelin.global.auth.CustomUserDetails;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -31,7 +30,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         }
 
         UsernamePasswordAuthenticationToken authenticationTokentoken =
-                new UsernamePasswordAuthenticationToken(userDetails.getMember(), null, userDetails.getAuthorities());
+                new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
 
         return authenticationTokentoken;
     }
@@ -39,6 +38,6 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     @Override
     public boolean supports(Class<?> authentication) {
         // 유저네임패스워드토큰이 파라미터로 넘어온 클래스와 일치할 때 커스텀인증공급이 실행
-        return UsernamePasswordAuthenticationToken.class.isAssignableFrom(authentication);
+         return UsernamePasswordAuthenticationToken.class.isAssignableFrom(authentication);
     }
 }

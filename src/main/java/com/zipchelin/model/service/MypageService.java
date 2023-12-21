@@ -91,7 +91,7 @@ public class MypageService {
 
     public List<MyPost> selectMyPostList2(String id) {
         List<MyPost> postList = selectMyPostList(id);
-        while (postList.get(4) != null) {
+        while (postList.size() >= 5) {
             postList.remove(4);
         }
         return postList;

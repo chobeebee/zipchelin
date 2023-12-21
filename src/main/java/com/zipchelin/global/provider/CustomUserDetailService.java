@@ -1,4 +1,4 @@
-package com.zipchelin.global.auth;
+package com.zipchelin.global.provider;
 
 import com.zipchelin.domain.Member;
 import com.zipchelin.repository.MemberRepository;
@@ -24,8 +24,6 @@ public class CustomUserDetailService implements UserDetailsService {
 //        List<GrantedAuthority> roles = new ArrayList<>();
 //        roles.add(new SimpleGrantedAuthority(member.getMemberRole()));
 
-        CustomUserDetails userDetails = new CustomUserDetails(member);
-
-        return userDetails;
+        return new CustomUserDetails(member);
     }
 }

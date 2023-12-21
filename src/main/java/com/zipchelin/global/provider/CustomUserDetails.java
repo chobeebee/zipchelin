@@ -1,4 +1,4 @@
-package com.zipchelin.global.auth;
+package com.zipchelin.global.provider;
 
 import com.zipchelin.domain.Member;
 import lombok.Data;

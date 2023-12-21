@@ -304,6 +304,13 @@ input[type="radio"].chkRadio:checked + label:before {
     vertical-align: middle;
 }
 
+.paging li a {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 34px;
+}
+
 .paging li.active a {
     border-radius: 50%;
     background-color: #8acc39;
@@ -311,11 +318,16 @@ input[type="radio"].chkRadio:checked + label:before {
     font-weight: 500;
 }
 
-.paging li a {
-    width: 30px;
-    height: 30px;
-    font-size: 14px;
-    line-height: 34px;
+.paging li:not(.active) a:hover{
+	color: #8acc39;
+}
+
+.paging li.arrow:hover a{
+	color: #222;
+}
+
+.paging li.arrow .material-symbols-outlined{
+	line-height: 30px
 }
 
 .arrow a {
@@ -330,6 +342,7 @@ input[type="radio"].chkRadio:checked + label:before {
 .arrow button span {
     vertical-align: middle;
 }
+
 
 /* header */
 header {
@@ -774,4 +787,19 @@ address > span {
 
 .categoryBox:hover img, .categoryBox.active img {
     opacity: 1;
+}
+
+
+/* 리스트 없음 */
+.noList {
+	width:100%;
+    min-height: 360px;
+    padding: 20%;
+    text-align: center;
+    background-color: #F7F8F6;
+}
+
+.noList h6 {
+    font-size: 22px;
+    font-weight: 400;
 }

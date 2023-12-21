@@ -17,10 +17,13 @@ import javax.validation.constraints.Pattern;
 @AllArgsConstructor
 public class MemberSaveDto {
 
-    @Pattern(regexp = "(?=.*[0-9])(?=.*[a-z]).{6,12}", message = "아이디는 6~12자의 영문 소문자, 숫자를 사용해야 합니다.")
+    @Pattern(regexp = "(?=.*[0-9])(?=.*[a-z]).{6,12}", message = "아이디는 6~12자의 영문 소문자/숫자를 포함해야 합니다.")
     private String memberId;
 
-    @Pattern(regexp = "(?=.*[0-9])(?=.*[a-zA-Z]).{6,12}", message = "비밀번호는 6~12자의 영문 대 소문자, 숫자를 사용해야 합니다.")
+    @AssertTrue(message = "아이디 중복확인을 해주세요.")
+    private Boolean idAuth;
+
+    @Pattern(regexp = "(?=.*[0-9])(?=.*[a-zA-Z]).{6,12}", message = "비밀번호는 6~12자의 영문/숫자를 포함해야 합니다.")
     private String memberPwd;
 
     private String pwdConfirm;

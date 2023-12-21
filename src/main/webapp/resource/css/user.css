@@ -360,6 +360,20 @@ body, h1, h2, h3, h4, h5, input, select, textarea, button {
     padding: 2px;
 }
 
+.auth_button {
+    border: 1px solid #4FA72F;
+    background-color: #fff;
+    color: #4FA72F;
+    cursor: default;
+    width: 22%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    border-radius: 4px;
+    line-height: 1.2em;
+    padding: 2px;
+}
+
 .valid_warning {
     color: red;
     width: 100%;

@@ -1,38 +1,25 @@
 package com.zipchelin.model.service;
 
 import com.zipchelin.domain.Member;
+import com.zipchelin.global.exception.BusinessLogicException;
+import com.zipchelin.global.exception.DuplicateException;
 import com.zipchelin.model.EmailApplicationEvent;
 import com.zipchelin.model.dto.member.EmailDto;
 import com.zipchelin.model.dto.member.MemberSaveDto;
 import com.zipchelin.repository.MemberRepository;
-import com.zipchelin.global.exception.BusinessLogicException;
-import com.zipchelin.global.exception.DuplicateException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.View;
-import org.springframework.web.servlet.ViewResolver;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
-import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
-import java.util.Locale;
 import java.util.Optional;
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
@@ -121,5 +108,10 @@ public class MemberService {
         } catch (MessagingException | UnsupportedEncodingException e) {
             throw new BusinessLogicException(e);
         }
+    }
+
+    public boolean countId(String memberId) {
+        int count = memberRepository.countById(memberId);
+        return count == 0;
     }
 }

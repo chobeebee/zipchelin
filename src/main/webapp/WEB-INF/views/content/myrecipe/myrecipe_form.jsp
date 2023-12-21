@@ -51,8 +51,8 @@
 <!-- 메인 -->
 <main>
     <section class="form-list">
-        <h1 class="best-title">나만의 레시피</h1>
         <form>
+        	<h1 class="best-title">나만의 레시피</h1>
             <div>
                 <div class="information informationBox">
                     <h2 class="form-title">제목</h2>
@@ -64,11 +64,10 @@
                               placeholder="내용을 입력해주세요"></textarea>
                 </div>
             </div>
-
             <div class="btnGroup lg form">
-                <input type="button" value="전송" onclick="submitPost();">
                 <button onclick="location.href='myrecipe.html'" class="btnBgGray form" class="btn_cancel">취소</button>
                 <button onclick="location.href='myrecipe.html'" class="btnBg" class="btn_upload">올리기</button>
+                <input type="button" value="전송" onclick="submitPost();">
             </div>
         </form>
     </section>

@@ -3,7 +3,7 @@ package com.zipchelin.model.service;
 import com.zipchelin.domain.*;
 import com.zipchelin.model.dto.MyPost;
 import com.zipchelin.model.dto.Myheart;
-import com.zipchelin.model.dto.member.MemberRequestDto;
+import com.zipchelin.model.dto.Myreply;
 import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.model.dto.myrecipe.MyrecipeResponseDto;
 import com.zipchelin.model.dto.qna.QnaResponseDto;
@@ -92,7 +92,7 @@ public class MypageService {
 
     public List<MyPost> selectMyPostList2(String id) {
         List<MyPost> postList = selectMyPostList(id);
-        while (postList.size() >= 5) {
+        while(postList.size() >= 5) {
             postList.remove(4);
         }
         return postList;
@@ -127,7 +127,31 @@ public class MypageService {
         return heartList;
     }
     
-    public void memberUpdate(MemberRequestDto dto) {
-    	mypageRepository.memberUpdate(dto.toEntity());
+    public List<Myreply> selectReplyList(String id){
+    	List<Myreply> replyList=new ArrayList<Myreply>();
+    	
+    	List<QnaReply> qnaReplyList = mypageRepository.selectQnaReply(id);
+        for (QnaReply qna : qnaReplyList) {
+        	replyList.add(qna.toMyreply());
+        }
+
+        List<RecipeReply> recipeReplyList = mypageRepository.selectRecipeReply(id);
+        for (RecipeReply rec : recipeReplyList) {
+        	replyList.add(rec.toMyreply());
+        }
+
+        for (int i = 0; i < replyList.size() - 1; i++) {
+            for (int j = i + 1; j < replyList.size(); j++) {
+                if (replyList.get(i).getReplyDate().before(recipeReplyList.get(j).getReplyDate())) {
+                	Myreply ireply = replyList.get(i);
+                	Myreply jreply = replyList.get(j);
+                    replyList.remove(i);
+                    replyList.add(i, jreply);
+                    replyList.remove(j);
+                    replyList.add(j, ireply);
+                }
+            }
+        }
+        return replyList;
     }
 }

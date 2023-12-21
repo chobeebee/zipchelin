@@ -2,15 +2,11 @@ package com.zipchelin.web.controller;
 
 import com.zipchelin.global.provider.CustomUserDetails;
 import com.zipchelin.model.dto.MyPost;
-import com.zipchelin.model.dto.member.MemberRequestDto;
 import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.model.service.MypageService;
 import lombok.RequiredArgsConstructor;
 
-import java.io.UnsupportedEncodingException;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -38,33 +34,28 @@ public class MypageController {
 
     @GetMapping("/mypage")
     public String mypage(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
-        String id = userDetails.getMember().getMemberId();
-        List<MyPost> myPostList=mypageService.selectMyPostList2(id);
+    	String id = userDetails.getMember().getMemberId();
+    	List<MyPost> myPostList=mypageService.selectMyPostList2(id);
         
-        model.addAttribute("memberId", id);
         model.addAttribute("count", mypageService.selectCount(id));
-        model.addAttribute("myPostList",myPostList);
+        model.addAttribute("myPostList", myPostList);
         model.addAttribute("myPostListSize", myPostList.size());
+        
         return "mypage/mypage";
     }
 
     @GetMapping("/pwdConfirm")
-    public String pwdConfirm(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
-    	String id = userDetails.getMember().getMemberId();
-    	model.addAttribute("memberId", id);
-        model.addAttribute("count", mypageService.selectCount(id));
+    public String pwdConfirm() {
         return "mypage/mypwdConfirm";
     }
 
     @PostMapping("/myedit")
     public String mypageEdit(@AuthenticationPrincipal CustomUserDetails userDetails, @RequestParam("pwdCheck") String pwd, Model model) {
-    	String id = userDetails.getMember().getMemberId();
-    	model.addAttribute("memberId", id);
-        model.addAttribute("count", mypageService.selectCount(id));
         //DB의 비밀번호가 암호화 되어있어 비교 불가.
 		/*String next=null;
 		
 		//1. 입력된 비밀번호를 가지고 DAO로 가서 비밀번호 일치 여부 확인
+		String id=userDetails.getMember().getMemberId();
 		String result=mypageService.checkPwd(id, pwd);
 		System.out.println("result="+result);
 		
@@ -90,20 +81,25 @@ public class MypageController {
         return "mypage/myedit";
     }
 
-    @GetMapping("/mypost")
-    public String mypost(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
+    @GetMapping(value={"/mypost/{requestedAjax}","/mypost"})
+    public String mypost(@PathVariable(required = false) String requestedAjax, Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
         String id=userDetails.getMember().getMemberId();
-        model.addAttribute("memberId", id);
-        model.addAttribute("count", mypageService.selectCount(id));
-        model.addAttribute("myPostList",mypageService.selectMyPostList(id));
+        
+        if(requestedAjax==null) {
+        	model.addAttribute("myPostList",mypageService.selectMyPostList(id));
+        }else if(requestedAjax.equals("all")){
+        	model.addAttribute("myPostList",mypageService.selectMyPostList(id));
+        }else if(requestedAjax.equals("myre")) {
+        	model.addAttribute("myPostList",mypageService.selectMyreById(id));
+        }else if(requestedAjax.equals("qna")) {
+        	model.addAttribute("myPostList",mypageService.selectQnaById(id));
+        }
         return "mypage/mypost";
     }
 
     @GetMapping("/myheart")
     public String myheart(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
         String id = userDetails.getMember().getMemberId();
-        model.addAttribute("memberId", id);
-        model.addAttribute("count", mypageService.selectCount(id));
         model.addAttribute("heartList", mypageService.selectHeartList(id));
         return "mypage/myheart";
     }
@@ -111,24 +107,8 @@ public class MypageController {
     @GetMapping("/myreply")
     public String myreply(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
     	String id = userDetails.getMember().getMemberId();
-    	model.addAttribute("memberId", id);
-        model.addAttribute("count", mypageService.selectCount(id));
-        return "mypage/myreply";
-    }
-    
-    @PostMapping("/memberUpdate")
-    public String memberUpdate(HttpServletRequest request,Model model, @AuthenticationPrincipal CustomUserDetails userDetails) throws UnsupportedEncodingException {
-    	String id = userDetails.getMember().getMemberId();
-    	model.addAttribute("memberId", id);
-        model.addAttribute("count", mypageService.selectCount(id));
-    	//비밀번호 암호화? 안됨
-    	request.setCharacterEncoding("utf-8");
-    	String pwd=request.getParameter("pwd");
-    	String name=request.getParameter("name");
-    	String email=request.getParameter("email");
-    	MemberRequestDto dto=new MemberRequestDto(id,pwd,name,email,"default");
-    	mypageService.memberUpdate(dto);
-    	return "mypage/mypage";
+        model.addAttribute("replyList", mypageService.selectHeartList(id));
+    	return "mypage/myreply";
     }
 
 }

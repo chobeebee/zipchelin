@@ -140,7 +140,8 @@
 <!-- js -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
-    $('#sign_id').on('change', function (e) {
+    $('#sign_id').on('input', debounce(function (e) {
+
         let btn = $('#idAuthBtn');
         let id = $('#sign_id');
         let id_rule = /^[a-z0-9]{6,12}$/;
@@ -151,7 +152,7 @@
                     'border-color': '#FF0000FF',
                     'background-color': '#fff',
                     'color': '#FF0000FF',
-                }).html('사용불가');
+                }).html('양식오류');
             id.css('border-color', 'red');
             $('#isIdAuthed').prop('checked', false);
             return;
@@ -192,7 +193,17 @@
                 console.log(error);
             }
         })
-    });
+    }, 500));
+
+    function debounce(func, delay) {
+        let timeoutId;
+        return function (...args) {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func.apply(this, args);
+            }, delay);
+        };
+    }
 
     $('#mailSendBtn').on('click', function (e) {
         e.preventDefault();

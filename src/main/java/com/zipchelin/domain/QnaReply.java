@@ -1,5 +1,7 @@
 package com.zipchelin.domain;
 
+import com.zipchelin.model.dto.Myheart;
+import com.zipchelin.model.dto.Myreply;
 import com.zipchelin.model.dto.qnaReply.QnaReplyRequestDto;
 import com.zipchelin.model.dto.qnaReply.QnaReplyResponseDto;
 import lombok.AllArgsConstructor;
@@ -8,6 +10,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -21,7 +24,7 @@ public class QnaReply {
     private String reId;
     private String reContent;
     private int reUp;
-    private LocalDateTime reDate;
+    private Date replyDate;
 
     public QnaReplyResponseDto toDto() {
         return QnaReplyResponseDto.builder()
@@ -45,5 +48,14 @@ public class QnaReply {
                 .reContent(reContent)
                 .reUp(reUp)
                 .build();
+    }
+    
+    public Myreply toMyreply() {
+    	return Myreply.builder()
+    			.qnaOrRec("qna")
+    			.replyDate(replyDate)
+    			.qnaReply(this)
+    			.recipeReply(null)
+    			.build();
     }
 }

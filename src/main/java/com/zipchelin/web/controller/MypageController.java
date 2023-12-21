@@ -1,9 +1,13 @@
 package com.zipchelin.web.controller;
 
 import com.zipchelin.global.provider.CustomUserDetails;
+import com.zipchelin.model.dto.MyPost;
 import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.model.service.MypageService;
 import lombok.RequiredArgsConstructor;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -30,9 +34,13 @@ public class MypageController {
 
     @GetMapping("/mypage")
     public String mypage(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
-        String id = userDetails.getMember().getMemberId();
+    	String id = userDetails.getMember().getMemberId();
+    	List<MyPost> myPostList=mypageService.selectMyPostList2(id);
+        
         model.addAttribute("count", mypageService.selectCount(id));
-        model.addAttribute("myPostList",mypageService.selectMyPostList2(id));
+        model.addAttribute("myPostList", myPostList);
+        model.addAttribute("myPostListSize", myPostList.size());
+        
         return "mypage/mypage";
     }
 
@@ -73,10 +81,19 @@ public class MypageController {
         return "mypage/myedit";
     }
 
-    @GetMapping("/mypost")
-    public String mypost(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
+    @GetMapping(value={"/mypost/{requestedAjax}","/mypost"})
+    public String mypost(@PathVariable(required = false) String requestedAjax, Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
         String id=userDetails.getMember().getMemberId();
-        model.addAttribute("myPostList",mypageService.selectMyPostList(id));
+        
+        if(requestedAjax==null) {
+        	model.addAttribute("myPostList",mypageService.selectMyPostList(id));
+        }else if(requestedAjax.equals("all")){
+        	model.addAttribute("myPostList",mypageService.selectMyPostList(id));
+        }else if(requestedAjax.equals("myre")) {
+        	model.addAttribute("myPostList",mypageService.selectMyreById(id));
+        }else if(requestedAjax.equals("qna")) {
+        	model.addAttribute("myPostList",mypageService.selectQnaById(id));
+        }
         return "mypage/mypost";
     }
 

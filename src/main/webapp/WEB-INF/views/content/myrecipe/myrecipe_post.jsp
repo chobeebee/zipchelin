@@ -58,7 +58,9 @@
 </head>
 <body>
 <!-- 헤더 -->
-<header class="header"></header>
+<header class="header">
+    <jsp:include page="/WEB-INF/views/main/header.jsp"/>
+</header>
 
 <!-- 메인 -->
 <main>
@@ -335,8 +337,11 @@
         </div>
     </section>
 </main>
+
 <!-- 푸터 -->
-<footer id="footer"></footer>
+<footer id="footer">
+    <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+</footer>
 
 <div id="modal">
     <div class="modalBox">
@@ -352,7 +357,7 @@
 </div>
 
 
-<!-- js -->
+<!— js —>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="${contextPath}/resource/js/common.js"></script>
 <script src="${contextPath}/resource/js/community.js"></script>

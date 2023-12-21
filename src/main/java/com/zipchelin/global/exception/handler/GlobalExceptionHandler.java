@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(UsernameNotFoundException.class)
-    String userNameNotFoundHandle(UsernameNotFoundException e, Model model) {
-        model.addAttribute("error", e.getMessage());
-        return "/member/login";
-    }
-
-    @ExceptionHandler(BadCredentialsException.class)
-    String badCredentialsHandle(BadCredentialsException e, Model model) {
-        model.addAttribute("error", e.getMessage());
-        return "/member/login";
-    }
+//    @ExceptionHandler(UsernameNotFoundException.class)
+//    String userNameNotFoundHandle(UsernameNotFoundException e, Model model) {
+//        model.addAttribute("error", e.getMessage());
+//        return "/member/login";
+//    }
+//
+//    @ExceptionHandler(BadCredentialsException.class)
+//    String badCredentialsHandle(BadCredentialsException e, Model model) {
+//        model.addAttribute("error", e.getMessage());
+//        return "/member/login";
+//    }
 }

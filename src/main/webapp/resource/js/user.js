@@ -232,8 +232,8 @@ function login_form_submit() {
     }
 }
 
-function login_fail_get_out() {
-    $('#login_fail').css('display', 'none');
+function login_modal_get_out() {
+    $('.login_modal').css('display', 'none');
 }
 
 function email_auth_check() {

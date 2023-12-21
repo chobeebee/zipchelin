@@ -1,6 +1,7 @@
 package com.zipchelin.model.dto.myrecipe;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 import com.zipchelin.domain.Myrecipe;
 
@@ -17,7 +18,7 @@ public class MyrecipeResponseDto {
     private String myreTitle;
     private String myreContent;
     private int myreUp;
-    private Date myreDate;
+    private LocalDateTime myreDate;
 
     public Myrecipe toEntity() {
         return Myrecipe.builder()

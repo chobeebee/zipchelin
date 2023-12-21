@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.zipchelin.domain.Qna;
 import com.zipchelin.model.dto.qna.QnaDto;
 import com.zipchelin.model.dto.qna.QnaRequest;
 import com.zipchelin.model.dto.qna.QnaResponse;
@@ -15,7 +16,7 @@ public interface QnaMapper {
 
     QnaResponse findById(Long id);
 
-    void update(QnaRequest params);
+    long update(Qna params);
 
     void deleteById(Long id);
 

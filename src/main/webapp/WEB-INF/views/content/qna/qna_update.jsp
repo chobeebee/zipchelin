@@ -65,7 +65,7 @@
     <!-- 메인 -->
     <main>
         <section class="form-list">
-        <form action="/community/qna/update1/${qna.qnaNum }" method="post">
+        <form action="/community/qna/update/${qna.qnaNum }" method="post">
             <h1 class="best-title">요리 상담소</h1>
             <div>
                 <div class="information informationBox">

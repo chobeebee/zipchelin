@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.zipchelin.model.dto.qna.QnaDto;
 import com.zipchelin.model.dto.qna.QnaRequest;
+import com.zipchelin.model.dto.qna.QnaRequestDto;
 import com.zipchelin.model.dto.qna.QnaResponse;
 import com.zipchelin.model.service.QnaService;
 
@@ -80,11 +81,15 @@ public class QnaController {
 		return "content/qna/qna_update";
 	}
 	
-	@PostMapping("/update1/{num}")
-	public String updateQna(@PathVariable("num") final QnaRequest params,HttpServletRequest request) throws IOException {
+	@PostMapping("/update/{num}")
+	public String updateQna(@PathVariable("num") Long qnaNum, @ModelAttribute QnaRequestDto params, HttpServletRequest request) throws IOException {
+		
+		long num = params.getQnaNum();
+		System.out.println(num);
+		
 		qnaService.updateQna(params);
 		
-		return "/community/qna/qna";
+		return "redirect:/community/qna/post/" + qnaNum;
 	}
 	
 }

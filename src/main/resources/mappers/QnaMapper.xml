@@ -30,7 +30,7 @@
 
 
     <!-- 게시글 수정 -->
-    <update id="update" parameterType="com.zipchelin.model.dto.qna.QnaRequest">
+    <update id="update" parameterType="com.zipchelin.domain.Qna">
         UPDATE qna_tbl
         SET qna_title   = #{qnaTitle},
             qna_content = #{qnaContent}

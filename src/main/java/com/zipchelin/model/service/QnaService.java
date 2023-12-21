@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.zipchelin.domain.Qna;
 import com.zipchelin.model.dto.common.Pagination;
 import com.zipchelin.model.dto.qna.QnaDto;
 import com.zipchelin.model.dto.qna.QnaRequest;
+import com.zipchelin.model.dto.qna.QnaRequestDto;
 import com.zipchelin.model.dto.qna.QnaResponse;
 import com.zipchelin.repository.QnaRepository;
 
@@ -30,9 +32,10 @@ public class QnaService {
     }
 
     @Transactional
-    public String updateQna(final QnaRequest params) {
-    	repository.update(params);
-        return params.getUserId();
+    public long updateQna(final QnaRequestDto params) {
+    	Qna qna = params.toEntity();
+    	long qnaNum = repository.update(qna);
+        return qnaNum;
     }
 
     public Long deleteQna(final Long id) {

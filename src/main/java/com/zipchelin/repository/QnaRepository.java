@@ -2,6 +2,7 @@ package com.zipchelin.repository;
 
 import java.util.List;
 
+import com.zipchelin.domain.Qna;
 import com.zipchelin.model.dto.qna.QnaDto;
 import com.zipchelin.model.dto.qna.QnaRequest;
 import com.zipchelin.model.dto.qna.QnaResponse;
@@ -12,7 +13,7 @@ public interface QnaRepository {
 
     QnaResponse findById(Long id);
 
-    void update(QnaRequest params);
+    long update(Qna params);
 
     void deleteById(Long id);
 

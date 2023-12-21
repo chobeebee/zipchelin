@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.zipchelin.domain.Qna;
 import com.zipchelin.model.dto.qna.QnaDto;
 import com.zipchelin.model.dto.qna.QnaRequest;
 import com.zipchelin.model.dto.qna.QnaResponse;
@@ -29,8 +30,9 @@ public class QnaRepositoryMybatis implements QnaRepository {
 	}
 
 	@Override
-	public void update(QnaRequest params) {
-		
+	public long update(Qna params) {
+		mapper.update(params);
+		return params.getQnaNum();
 	}
 
 	@Override

@@ -69,7 +69,7 @@
                     <option value="#" selected>최신순</option>
                     <option value="#">오래된순</option>
                 </select>
-                <button onclick="location.href='${contextPath}/qna/form'" class="btnBg btnSm" class="btn_write">질문하기</button>
+                <button onclick="location.href='${contextPath}/community/qna/form'" class="btnBg btnSm" class="btn_write">질문하기</button>
             </div>
             
         <div class="qna">
@@ -84,7 +84,7 @@
                 </li>
                 <c:forEach var="qna" items="${qna }">
 	               <li>
-	                   <a href="${contextPath}/qna/post/${qna.qnaNum}" class="textbox tableWd">
+	                   <a href="${contextPath}/community/qna/post/${qna.qnaNum}" class="textbox tableWd">
 	                       <div class="num tableItem">${qna.qnaNum }</div>
 	                       <div class="text-title tableItem title">
 	                           <span class="question">Q. </span>

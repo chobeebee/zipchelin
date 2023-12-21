@@ -26,10 +26,6 @@ public class CommunityController {
 		return "content/myrecipe/myrecipe_post";
 	}
 	
-	@GetMapping("/qna")
-	public String qna() {
-		return "content/qna/qna";
-	}
 	
 	@GetMapping("/qnaform")
 	public String qnaForm() {

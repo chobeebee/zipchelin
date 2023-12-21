@@ -65,7 +65,7 @@
     <!-- 메인 -->
     <main>
         <section class="form-list">
-        <form action="/qna/update" method="post">
+        <form action="/community/qna/update1/${qna.qnaNum }" method="post">
             <h1 class="best-title">요리 상담소</h1>
             <div>
                 <div class="information informationBox">
@@ -80,7 +80,7 @@
             </div>
             
             <div class="btnGroup lg form" >
-           		<a href="${contextPath}/qna/post/${qna.qnaNum}">
+           		<a href="${contextPath}/community/qna/post/${qna.qnaNum}">
                 	<button type="button"  class="btnBgGray form" class="btn_cancel"> 취소</button>
                 </a>
                 	<input type="submit" class="btnBg" class="btn_upload" onclick="submitPost();">

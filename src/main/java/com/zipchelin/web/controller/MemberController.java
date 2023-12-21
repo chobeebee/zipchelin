@@ -1,8 +1,8 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.global.provider.CustomUserDetails;
 import com.zipchelin.global.exception.BusinessLogicException;
 import com.zipchelin.global.exception.DuplicateException;
+import com.zipchelin.global.provider.CustomUserDetails;
 import com.zipchelin.model.dto.member.EmailDto;
 import com.zipchelin.model.dto.member.MemberSaveDto;
 import com.zipchelin.model.service.MemberService;
@@ -23,6 +23,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
+import java.util.Map;
 import java.util.Optional;
 
 @Slf4j
@@ -118,6 +119,17 @@ public class MemberController {
             Cookie cookie = new Cookie("emailAuth", "true");
             cookie.setMaxAge(60 * 5); // 이메일 인증 여부는 5분 동안 유효
             response.addCookie(cookie);
+            return ResponseEntity.ok(true);
+        }
+        return ResponseEntity.ok(false);
+    }
+
+    @ResponseBody
+    @PostMapping("/confirmId")
+    public ResponseEntity<Boolean> confirmId(@RequestBody Map<String, String> params) {
+
+        String id = params.get("id");
+        if (memberService.countId(id)) {
             return ResponseEntity.ok(true);
         }
         return ResponseEntity.ok(false);

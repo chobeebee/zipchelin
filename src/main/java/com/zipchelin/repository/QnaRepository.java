@@ -1,15 +1,12 @@
-package com.zipchelin.repository.mybatis.mappers;
+package com.zipchelin.repository;
 
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 
 import com.zipchelin.model.dto.qna.QnaDto;
 import com.zipchelin.model.dto.qna.QnaRequest;
 import com.zipchelin.model.dto.qna.QnaResponse;
 
-@Mapper
-public interface QnaMapper {
+public interface QnaRepository {
 
     void save(QnaRequest params);
 

@@ -11,6 +11,8 @@ import com.zipchelin.model.page.Criteria;
 import com.zipchelin.model.service.MyrecipeService;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RequestMapping("/community/*")
 @Controller
@@ -41,20 +43,5 @@ public class CommunityController {
 	}
 	
 	
-	//요리상담소 이동
-	@GetMapping("/qna")
-	public String qna() {
-		return "content/qna/qna";
-	}
-	
-	@GetMapping("/qnaform")
-	public String qnaForm() {
-		return "content/qna/qna_form";
-	}
-	
-	@GetMapping("/qnapost")
-	public String qnaPost() {
-		return "content/qna/qna_post";
-	}
 	
 }

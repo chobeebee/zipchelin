@@ -1,6 +1,5 @@
 package com.zipchelin.repository.mybatis.mappers;
 
-import com.zipchelin.model.service.QnaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -8,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class QnaMapperTest {
 
     @Autowired
-    QnaService qnaMapper;
+    QnaMapper qnaMapper;
 
 //	@Test
 //	void save() {
@@ -46,4 +45,15 @@ public class QnaMapperTest {
 //        qnaMapper.deleteById("test1");
 //        System.out.println("삭제 이후의 전체 게시글 개수는 : " + qnaMapper.findAll().size() + "개입니다.");
 //	}
+    
+//    @Test
+//    void searchKeyword() {
+//    	PagingDto params = new PagingDto(2, 5, 7);
+//        
+//        
+//        List<QnaResponse> findAll = qnaMapper.findAll(params);
+//        System.out.println(params.getOffsetStart());
+//        System.out.println(params.getOffsetEnd());
+//    }
+
 }

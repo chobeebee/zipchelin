@@ -104,13 +104,33 @@
             <div class="paging">
                 <ul>
                     <!--li에 .disabled가 있으면 화살표에 클릭방지 생김-->
-                    <li class="arrow prev disabled"><button disabled><span class="material-symbols-outlined">navigate_before</span></button></li>
-                    <li class="active"><a href="javascript:">1</a></li>
-                    <li><a href="javascript:">2</a></li>
-                    <li><a href="javascript:">3</a></li>
-                    <li><a href="javascript:">4</a></li>
-                    <li><a href="javascript:">5</a></li>
-                    <li class="arrow next"><button><span class="material-symbols-outlined">navigate_next</span></button></li>
+                    <c:choose>
+                    <c:when test="${params.pagination.existPrevPage}">
+                    	<li class="arrow prev"><a href="${contextPath}/community/qna?page=${params.pagination.startPage-1 }"><button><span class="material-symbols-outlined">navigate_before</span></button></a></li>
+                    </c:when>
+                    <c:otherwise>
+                    	<li class="arrow prev disabled"><button disabled><span class="material-symbols-outlined">navigate_before</span></button></li>
+                    </c:otherwise>                        
+                    </c:choose>
+                   <c:forEach var="num" begin="${params.pagination.startPage}"
+                              end="${params.pagination.endPage}">
+                       <c:if test="${params.page != num}">
+                           <li><a href="${contextPath}/community/qna?page=${num}">${num}</a></li>
+                       </c:if>
+                       <c:if test="${params.page == num}">
+                           <li class="active"><a href="javascript:void(0)" onclick="movePage(${num})">${num}</a>
+                           </li>
+                       </c:if>
+                       
+                   </c:forEach>
+                    <c:choose>
+                    <c:when test="${params.pagination.existNextPage}">
+                    	<li class="arrow next"><a href="${contextPath}/community/qna?page=${params.pagination.endPage+1 }"><button><span class="material-symbols-outlined">navigate_next</span></button></a></li>
+                    </c:when>
+                    <c:otherwise>
+                    	<li class="arrow next disabled"><button disabled><span class="material-symbols-outlined">navigate_next</span></button></li>
+                    </c:otherwise>                        
+                    </c:choose>
                 </ul>
             </div>
         </section>

@@ -38,7 +38,7 @@
         <%-- 로그인 사용자 --%>
         <sec:authorize access="isAuthenticated()">
             <a href="${contextPath}/member/logout">로그아웃</a>
-            <a href="${contextPath}/mypage/home">마이페이지</a>
+            <a href="${contextPath}/mypage/mypage">마이페이지</a>
         </sec:authorize>
     </div>
 </div>

@@ -99,6 +99,7 @@ var password_rule = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/
 
 //비밀번호 체크
 function edit_complete_btn() {
+	var checkCnt=0;
     if ($('#edit_pwd').val() == '') {
         $('#edit_warning_pwd').css('display', 'block');
         $('#edit_pwd').css('border-color', 'red');
@@ -110,6 +111,7 @@ function edit_complete_btn() {
         } else {
             $('#edit_warning_pwd_rule').css('display', 'none');
             $('#edit_pwd').css('border-color', 'black');
+            checkCnt++;
         }
     }
     //비밀번호확인 체크
@@ -119,6 +121,7 @@ function edit_complete_btn() {
     } else {
         $('#edit_warning_pwd_check').css('display', 'none')
         $('#check_pwd').css('border-color', 'black');
+        checkCnt++;
     }
 
     //이름
@@ -128,15 +131,20 @@ function edit_complete_btn() {
     } else {
         $('#edit_warning_pwd_check2').css('display', 'none')
         $('#name_input').css('border-color', 'black');
+        checkCnt++;
     }
 
     //이메일
-    if ($('#edit_email_1').val() == '') {
+    if ($('#edit_email_1').val() == ''||$('#edit_email_2').val() == '') {
         $('#edit_warning_email').css('display', 'block');
         $('#edit_email_1').css('border-color', 'red');
+        $('#edit_email_2').css('border-color', 'red');
     } else {
         $('#edit_warning_email').css('display', 'none')
         $('#edit_email_1').css('border-color', 'black');
+        $('#edit_email_2').css('border-color', 'black');
+        $('#edit_email').val($('#edit_email_1').val()+"@"+$('#edit_email_2').val());
+        checkCnt++;
     }
 
     //전화번호 정규식
@@ -162,8 +170,12 @@ function edit_complete_btn() {
             } else {
                 $('#edit_warning_tel').css('display', 'none');
                 $('#edit_tel').css('border-color', 'black');
+                checkCnt++;
             }
         }
     }
+    if(checkCnt==5){
+		$('#edit_form').submit();
+	}
 }
         

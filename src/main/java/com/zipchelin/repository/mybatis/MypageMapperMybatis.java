@@ -27,12 +27,6 @@ public class MypageMapperMybatis implements MypageRepository {
     }
 
     @Override
-    public void updateMember(Member member) {
-        mypageMapper.updateMember(member);
-    }
-
-
-    @Override
     public Map<String, Integer> selectCount(String id) {
         //찜
         int pickCnt = 0;
@@ -76,6 +70,11 @@ public class MypageMapperMybatis implements MypageRepository {
     public List<Recipe> selectRecHeart(String id) {
         return mypageMapper.selectRecHeart(id);
     }
+
+	@Override
+	public void memberUpdate(Member member) {
+		mypageMapper.memberUpdate(member);
+	}
 
 
 }

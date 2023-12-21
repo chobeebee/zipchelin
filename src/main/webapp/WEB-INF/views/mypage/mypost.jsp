@@ -80,7 +80,7 @@
                             <label for="listChk01"></label>
                         </div>
                         <div class="contBox">
-                            <a href="/front/html/community/myrecipe_post.html">
+                            <a href="">
                                 <span class="postDate">2023.10.17 00:00</span>
                                 <h6>생명을 불어 넣는 생명을 불어 넣는 생명을 불어 넣는 생명을 불어 넣는 생명을 불어 넣는 생명을 불어 넣는</h6>
                                 <p>모래뿐일 것이다 이상의 꽃이 없으면 쓸쓸한 인간에 남는 것은 영락과 부패 뿐이다 낙원을 영락과 부패 뿐이다 영락과 부패 뿐이다 </p>

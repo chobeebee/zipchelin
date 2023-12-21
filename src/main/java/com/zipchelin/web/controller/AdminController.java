@@ -1,4 +1,4 @@
-package com.zipchelin.web.controller;
+	package com.zipchelin.web.controller;
 
 import com.zipchelin.domain.Notice;
 import com.zipchelin.model.dto.notice.PageMakerDTO;
@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Arrays;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -80,14 +82,8 @@ public class AdminController {
 
     // 공지사항 삭제
     @PostMapping("/delnotice")
-    public String delNotice(String noticeNum, HttpServletRequest request) {
-        String[] ajaxMsg = request.getParameterValues("valueArr");
-        Integer[] newArr = new Integer[ajaxMsg.length];
-        for (int i = 0; i < ajaxMsg.length; i++) {
-            newArr[i] = Integer.parseInt(ajaxMsg[i]);
-            noticeService.delNotice(newArr[i]);
-        }
-        return "redirect:/admin/notice";
+    public void delNotice(HttpServletRequest request) {
+    	noticeService.delNotice(request);
     }
 
 

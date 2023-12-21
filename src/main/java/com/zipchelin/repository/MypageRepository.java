@@ -11,8 +11,6 @@ public interface MypageRepository {
 
     public String checkPwd(Map<String, String> map);
 
-    public void updateMember(Member member);
-
     public Map<String, Integer> selectCount(String id);
 
     public List<Qna> selectQnaById(String id);
@@ -22,4 +20,6 @@ public interface MypageRepository {
     public List<Guide> selectGuiHeart(String id);
 
     public List<Recipe> selectRecHeart(String id);
+    
+    public void memberUpdate(Member member);
 }

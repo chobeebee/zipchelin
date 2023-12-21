@@ -16,19 +16,17 @@ function delNotice() {
             valueArr.push(list[i].value);
         }
     }
-    if (valueArr.length == 0) {
-        alert("선택된 글이 없습니다.");
-    } else {
-        var chk = confirm("정말 삭제하겠습니까?");
-        $.ajax({
-            url: url,
-            type: 'post',
-            traditional: true,
-            data: {
-                valueArr: valueArr
-            }
-        });
-    }
+    $.ajax({
+        url: url,
+        type: 'post',
+        traditional: true,
+        data: {
+            valueArr: valueArr
+        },
+        success: function(response) {
+			 window.location.href = "/admin/notice"
+		}
+    })
 }
 
 let moveForm = $("#moveForm");

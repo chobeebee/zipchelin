@@ -41,15 +41,14 @@
                             <div class="d-flex justify-content-end mb-2">
                                 <a href="${contextPath}/admin/addnotice" class="btn btn-secondary mr-2"
                                    aria-current="page">등록</a>
-                                <input type="submit" class="btn btn-primary" value="삭제">
+                                <input type="submit" class="btn btn-primary" value="삭제" onclick="delNotice();">
                             </div>
                         </form>
                         <div class="table-responsive">
                             <table class="table table-bordered noticeList" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr class="bg-gray-100">
-                                    <th class="white-space-nowrap align-middle"><input type="checkbox"
-                                                                                       classs="allCheck"></th>
+                                    <th class="white-space-nowrap align-middle "><input type="checkbox" class="allCheck"></th>
                                     <th>번호</th>
                                     <th>제목</th>
                                     <th>등록일자</th>

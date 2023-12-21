@@ -30,7 +30,7 @@
 
 
     <!-- 게시글 수정 -->
-    <update id="update" parameterType="com.zipchelin.model.dto.qna.QnaRequest">
+    <update id="update" parameterType="com.zipchelin.domain.Qna">
         UPDATE qna_tbl
         SET qna_title   = #{qnaTitle},
             qna_content = #{qnaContent}
@@ -53,21 +53,16 @@
             resultType="com.zipchelin.model.dto.qna.QnaResponse">
         select
         * from(select a.*, rownum as rnum from(select * from qna_tbl order by qna_num desc) a)
-        <![CDATA[
-				where rnum >= 0
-				and rnum <= 10
-				]]>
-        <!--
+       
          <![CDATA[
-              where rnum >= #{paging.startIndex}
-              and rnum <= #{paging.endIndex}
+              where rnum >= ${pagination.rownumStart}
+              and rnum <= ${pagination.rownumEnd}
               ]]>
-               -->
 
     </select>
 
     <!-- 게시글 수 카운팅 -->
-    <select id="count" parameterType="com.zipchelin.model.dto.qna.QnaDto" resultType="int">
+    <select id="count" resultType="int">
         SELECT COUNT(*)
         FROM qna_tbl
     </select>

@@ -8,7 +8,10 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Service
 @RequiredArgsConstructor
@@ -32,8 +35,9 @@ public class NoticeService {
 
     }
 
-    public void delNotice(Integer newArr) {
-        noticeRepository.delNotice(newArr);
+    public void delNotice(HttpServletRequest request) {
+        String[] ajaxMsg = request.getParameterValues("valueArr");
+        Arrays.stream(ajaxMsg).map(Integer::parseInt).forEach(noticeRepository::delNotice);
     }
 
     public List<Notice> getListPaging(Criteria cri) {

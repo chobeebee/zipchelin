@@ -28,7 +28,7 @@ public class NoticeMapperTest {
         noticeService.selectAll().forEach(notice -> log.info("" + notice));
     }
     
-    /*@Test
+    @Test
     void addNotice() {
        for(int i=0; i<99; i++) {
           Notice notice = Notice.builder()
@@ -37,7 +37,7 @@ public class NoticeMapperTest {
                 .build();
                 noticeService.addNotice(notice);
        }
-    }*/
+    }
 
     @Test
     @Disabled

@@ -64,8 +64,8 @@
 			                            <img src="${contextPath}/resource/images/food/gan.jpg" alt="#">
 			                        </div>
 			                        <div class="best_cont">
-			                            <span class="postdate">${myre_date}</span>
-			                            <h6 class="title">${myre_title}</h6>
+			                            <span class="postdate">${myrecipe.myreDate}</span>
+			                            <h6 class="title">${myrecipe.myreTitle}</h6>
 			                            <ul class="accList">
 			                                <li class="accItem">
 			                                    <span class="icon material-symbols-outlined">visibility</span>268
@@ -145,10 +145,10 @@
         </section>
     </main>
     
-<!-- 푸터 -->
-<footer id="footer">
-    <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
-</footer>
+	<!-- 푸터 -->
+	<footer id="footer">
+	    <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+	</footer>
 
     <!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>

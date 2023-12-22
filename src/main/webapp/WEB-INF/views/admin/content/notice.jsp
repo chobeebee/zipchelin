@@ -70,11 +70,11 @@
 
                                 </tbody>
                             </table>
-                            <div class="pageInfo_wrap">
+                            <div class="pageInfo_wrap paging">
                                 <div class="pageInfo_area">
                                     <ul class="pageInfo" id="pageInfo">
                                         <c:if test="${pageMaker.prev}">
-                                            <li class="pageInfo_btn previous"><a href="${pageMaker.startPage-1}">Previous</a>
+                                            <li class="pageInfo_btn previous "><a href="${pageMaker.startPage-1}">Previous</a>
                                             </li>
                                         </c:if>
                                         <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
@@ -99,11 +99,6 @@
         </div>
         <form id="moveForm" method="get">
         </form>
-
-        <!-- 푸터 -->
-        <footer id="footer">
-            <jsp:include page="/WEB-INF/views/admin/layout/footer.jsp"/>
-        </footer>
     </div>
 </div>
 

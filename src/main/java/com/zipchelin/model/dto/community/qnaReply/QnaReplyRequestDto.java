@@ -13,10 +13,10 @@ import javax.validation.constraints.NotBlank;
 public class QnaReplyRequestDto {
 
     @NotBlank
-    private int qReNum;
+    private long qReNum;
 
     @NotBlank
-    private int qnaNum;
+    private long qnaNum;
 
     @NotBlank
     private String userImg;

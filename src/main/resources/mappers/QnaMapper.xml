@@ -9,7 +9,7 @@
 
 
     <!-- 게시글 저장 -->
-    <insert id="save" parameterType="com.zipchelin.model.dto.community.qna.QnaRequest">
+    <insert id="save" parameterType="com.zipchelin.model.dto.community.qna.QnaRequestDto">
         INSERT INTO qna_tbl
         VALUES ( qna_sq.nextval
                , #{userId}
@@ -22,7 +22,7 @@
 
 
     <!-- 게시글 상세정보 조회 -->
-    <select id="findById" parameterType="Long" resultType="com.zipchelin.model.dto.community.qna.QnaResponse">
+    <select id="findById" parameterType="Long" resultType="com.zipchelin.model.dto.community.qna.QnaResponseDto">
         select *
         from qna_tbl
         WHERE qna_num = #{qnaNum}
@@ -50,7 +50,7 @@
 
     <!-- 게시글 리스트 조회 -->
     <select id="findAll" parameterType="com.zipchelin.model.dto.community.qna.QnaDto"
-            resultType="com.zipchelin.model.dto.community.qna.QnaResponse">
+            resultType="com.zipchelin.model.dto.community.qna.QnaResponseDto">
         select
         * from(select a.*, rownum as rnum from(select * from qna_tbl order by qna_num desc) a)
        

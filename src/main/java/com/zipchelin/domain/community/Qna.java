@@ -20,6 +20,7 @@ public class Qna {
     private String qnaTitle;
     private String qnaContent;
     private LocalDateTime qnaDate;
+    private int qnaReCount;
     private int qnaUp;
 
     public QnaResponseDto toDto() {
@@ -30,6 +31,7 @@ public class Qna {
                 .qnaContent(qnaContent)
                 .qnaDate(qnaDate)
                 .qnaUp(qnaUp)
+                .qnaReCount(qnaReCount)
                 .build();
     }
 

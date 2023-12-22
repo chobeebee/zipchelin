@@ -16,6 +16,7 @@ public class QnaResponseDto {
     private String qnaTitle;
     private String qnaContent;
     private LocalDateTime qnaDate;
+    private int qnaReCount;
     private int qnaUp;
 
     public Qna toEntity() {
@@ -26,6 +27,7 @@ public class QnaResponseDto {
                 .qnaContent(qnaContent)
                 .qnaDate(qnaDate)
                 .qnaUp(qnaUp)
+                .qnaReCount(qnaReCount)
                 .build();
     }
 }

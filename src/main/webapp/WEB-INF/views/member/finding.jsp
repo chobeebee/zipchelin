@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
 
     <!-- page CSS -->
-    <link rel="stylesheet" href="${contextPath}/resource/css/member.css">
+    <link rel="stylesheet" href="${contextPath}/resource/css/user.css">
 
     <!-- plugin CSS -->
     <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css">

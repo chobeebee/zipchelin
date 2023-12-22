@@ -1,6 +1,6 @@
-package com.zipchelin.model.dto.community.recipeReply;
+package com.zipchelin.model.dto.community.myrecipeReply;
 
-import com.zipchelin.domain.community.RecipeReply;
+import com.zipchelin.domain.community.MyRecipeReply;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,7 +10,7 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @Builder
 @AllArgsConstructor
-public class RecipeReplyResponseDto {
+public class MyRecipeReplyRequestDto {
 
     @NotBlank
     private int mReNum;
@@ -33,8 +33,8 @@ public class RecipeReplyResponseDto {
     @NotBlank
     private int reUp;
 
-    public RecipeReply toEntity() {
-        return RecipeReply.builder()
+    public MyRecipeReply toEntity() {
+        return MyRecipeReply.builder()
                 .mReNum(mReNum)
                 .myReNum(myReNum)
                 .userImg(userImg)

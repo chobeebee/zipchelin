@@ -1,7 +1,7 @@
 package com.zipchelin.model.dto.member.mypage;
 
 
-import com.zipchelin.domain.community.RecipeReply;
+import com.zipchelin.domain.community.MyRecipeReply;
 import com.zipchelin.domain.community.QnaReply;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,5 +15,5 @@ public class Myreply {
 	    private String qnaOrRec;
 	    private Date replyDate;
 	    private QnaReply qnaReply;
-	    private RecipeReply recipeReply;
+	    private MyRecipeReply myRecipeReply;
 }

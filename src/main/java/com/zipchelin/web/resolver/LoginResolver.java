@@ -1,7 +1,6 @@
 package com.zipchelin.web.resolver;
 
 import com.zipchelin.model.dto.member.MemberResponseDto;
-import com.zipchelin.web.ConstField;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -31,6 +30,6 @@ public class LoginResolver implements HandlerMethodArgumentResolver {
             return null;
         }
 
-        return session.getAttribute(ConstField.LOGIN_MEMBER);
+        return session.getAttribute("loginMember");
     }
 }

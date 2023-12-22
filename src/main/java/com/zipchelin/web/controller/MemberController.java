@@ -104,14 +104,14 @@ public class MemberController {
 
     @ResponseBody
     @PostMapping("/sendMail")
-    public String sendEmail(@Validated @RequestBody EmailDto params) {
+    public ResponseEntity<String> sendEmail(@Validated @RequestBody EmailDto params) {
         String email = params.getEmail();
         try {
             memberService.mailForm(email);
         } catch (BusinessLogicException e) {
-            return e.getMessage();
+            return ResponseEntity.ok(e.getMessage());
         }
-        return "success";
+        return ResponseEntity.ok("success");
     }
 
     @ResponseBody

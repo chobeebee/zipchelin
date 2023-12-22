@@ -29,6 +29,12 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             throw new BadCredentialsException("잘못된 비밀번호입니다.");
         }
 
+        if (isReAuthedRequired()) {
+            // 재인증 로직 (추가 암호 요청 등)
+            // 실패 시 재인증 예외 throw
+            // 인증절차 진행
+        }
+
         UsernamePasswordAuthenticationToken authenticationTokentoken =
                 new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
 
@@ -39,5 +45,9 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     public boolean supports(Class<?> authentication) {
         // 유저네임패스워드토큰이 파라미터로 넘어온 클래스와 일치할 때 커스텀인증공급이 실행
          return UsernamePasswordAuthenticationToken.class.isAssignableFrom(authentication);
+    }
+
+    private boolean isReAuthedRequired() {
+        return true;
     }
 }

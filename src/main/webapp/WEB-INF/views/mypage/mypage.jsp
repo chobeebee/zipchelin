@@ -1,4 +1,4 @@
-<%@page import="com.zipchelin.model.dto.MyPost"%>
+<%@page import="com.zipchelin.model.dto.member.mypage.MyPost"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"

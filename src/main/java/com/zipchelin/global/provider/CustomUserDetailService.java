@@ -1,6 +1,6 @@
 package com.zipchelin.global.provider;
 
-import com.zipchelin.domain.Member;
+import com.zipchelin.domain.member.Member;
 import com.zipchelin.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;

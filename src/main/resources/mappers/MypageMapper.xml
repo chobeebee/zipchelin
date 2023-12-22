@@ -12,7 +12,7 @@
     </select>
 
     <!-- 멤버 조회 -->
-    <select id="selectMemberById" resultType="com.zipchelin.domain.Member" parameterType="string">
+    <select id="selectMemberById" resultType="com.zipchelin.domain.member.Member" parameterType="string">
         select member_ID,
                member_PWD,
                member_NAME,
@@ -26,7 +26,7 @@
     </select>
 
     <!-- 멤버 수정 -->
-    <update id="memberUpdate" parameterType="com.zipchelin.domain.Member">
+    <update id="memberUpdate" parameterType="com.zipchelin.domain.member.Member">
         update member_TBL
         set member_pwd   = #{memberPwd},
             member_email = #{memberEmail},
@@ -67,21 +67,21 @@
     </select>
 
     <!-- 내 Qna -->
-    <select id="selectQnaById" parameterType="String" resultType="com.zipchelin.domain.Qna">
+    <select id="selectQnaById" parameterType="String" resultType="com.zipchelin.domain.community.Qna">
         select *
         from qna_tbl
         where user_id = #{id}
     </select>
 
     <!-- 내 마이레시피 -->
-    <select id="selectMyreById" parameterType="String" resultType="com.zipchelin.domain.Myrecipe">
+    <select id="selectMyreById" parameterType="String" resultType="com.zipchelin.domain.community.Myrecipe">
         select *
         from myrecipe_tbl
         where user_id = #{id}
     </select>
 
     <!-- 찜한 가이드 목록 -->
-    <!--  <select id="selectGuiHeart" parameterType="String" resultType="com.zipchelin.domain.Guide">
+    <!--  <select id="selectGuiHeart" parameterType="String" resultType="com.zipchelin.domain.admin.Guide">
         select g.gui_num, g.cate_num, g.gui_date, g.gui_view, g.gui_title, g.gui_subt, g.gui_desc
         from guide_tbl g,
              gui_pick p
@@ -90,7 +90,7 @@
     </select>-->
 
     <!-- 찜한 레시피 목록 -->
-    <!-- <select id="selectRecHeart" parameterType="String" resultType="com.zipchelin.domain.Recipe">
+    <!-- <select id="selectRecHeart" parameterType="String" resultType="com.zipchelin.domain.admin.Recipe">
         select r.rec_num,
                r.cate_num,
                r.rec_date,
@@ -109,12 +109,12 @@
     </select> -->
     
     <!-- 내 qna 댓글 목록 -->
-    <select id="selectQnaReply" parameterType="String" resultType="com.zipchelin.domain.QnaReply">
+    <select id="selectQnaReply" parameterType="String" resultType="com.zipchelin.domain.community.QnaReply">
     	select q.q_re_num, q.qna_num, q.user_img, q.re_order, q.re_id, q.re_content, q.re_up, q.re_date  from qna_reply_tbl q, myrecipe_reply_tbl r where q.re_id=r.re_id and q.re_id=#{id}
     </select>
     
     <!-- 내 recipe 댓글 목록 -->
-    <select id="selectRecipeReply" parameterType="String" resultType="com.zipchelin.domain.RecipeReply">
+    <select id="selectRecipeReply" parameterType="String" resultType="com.zipchelin.domain.admin.RecipeReply">
     	select r.m_re_num, r.myre_num, r.user_img, r.post_id, r.re_id, r.re_content, r.re_up, r.re_date  from qna_reply_tbl q, myrecipe_reply_tbl r where q.re_id=r.re_id and r.re_id=#{id}
     </select>
     

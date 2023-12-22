@@ -1,6 +1,6 @@
 package com.zipchelin.repository.mybatis.mappers;
 
-import com.zipchelin.domain.Guide;
+import com.zipchelin.domain.admin.Guide;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

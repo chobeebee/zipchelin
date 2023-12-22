@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.zipchelin.domain.Myrecipe;
+import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.model.page.Criteria;
 import com.zipchelin.repository.MyrecipeRepository;
 import com.zipchelin.repository.mybatis.mappers.MyrecipeMapper;

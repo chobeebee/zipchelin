@@ -2,7 +2,7 @@ package com.zipchelin.repository;
 
 import java.util.List;
 
-import com.zipchelin.domain.Recipe;
+import com.zipchelin.domain.admin.Recipe;
 
 public interface RecipeRepository {
 

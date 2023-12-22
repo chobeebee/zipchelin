@@ -4,7 +4,7 @@
 <mapper namespace="com.zipchelin.repository.mybatis.mappers.MyrecipeMapper">
 	
 	<!-- 나만의 레시피 리스트 목록 조회 -->
-    <select id="getListPaging" resultType="com.zipchelin.domain.Myrecipe">
+    <select id="getListPaging" resultType="com.zipchelin.domain.community.Myrecipe">
         <![CDATA[
         select rn, myre_title, myre_date
         from (select rownum as rn, myre_title, myre_date

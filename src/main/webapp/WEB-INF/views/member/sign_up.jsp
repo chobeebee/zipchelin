@@ -148,7 +148,7 @@
                     'border-color': '#FF0000FF',
                     'background-color': '#fff',
                     'color': '#FF0000FF',
-                }).html('양식오류');
+                }).html('형식오류');
             id.css('border-color', 'red');
             $('#isIdAuthed').prop('checked', false);
             return;
@@ -213,7 +213,7 @@
                     'border-color': '#FF0000FF',
                     'background-color': '#fff',
                     'color': '#FF0000FF',
-                }).html('양식오류');
+                }).html('형식오류');
             email.css('border-color', 'red');
             return;
         }

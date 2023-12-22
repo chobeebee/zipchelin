@@ -14,7 +14,7 @@
 <!--마이페이지 레프트박스 (프로필이미지, 아이디, 정보수정버튼)-->
 <div class="myBox_profile">
     <img src="${contextPath}/resource/images/icon/profile.jpg" class="myProfile_img" alt="profile">
-    <h3 class="userId_text">USER_ID</h3>
+    <h3 class="userId_text">${memberId}</h3>
     <button class="myPage_edit_btn" onclick="location.href='${contextPath}/mypage/pwdConfirm'">정보수정</button>
 </div><!--마이페이지 레프트박스 (프로필이미지, 아이디, 정보수정버튼) 끝-->
 

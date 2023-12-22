@@ -1,11 +1,12 @@
 package com.zipchelin.model.dto.qnaReply;
 
-import com.zipchelin.domain.QnaReply;
+import javax.validation.constraints.NotBlank;
+
+import com.zipchelin.domain.community.QnaReply;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-
-import javax.validation.constraints.NotBlank;
 
 @Getter
 @Builder
@@ -30,7 +31,7 @@ public class QnaReplyRequestDto {
     @NotBlank
     private int reUp;
 
-    public QnaReply toEntity() {
+    public com.zipchelin.domain.community.QnaReply toEntity() {
         return QnaReply.builder()
                 .qReNum(qReNum)
                 .qnaNum(qnaNum)

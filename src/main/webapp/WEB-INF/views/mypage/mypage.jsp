@@ -1,3 +1,5 @@
+<%@page import="com.zipchelin.model.dto.member.mypage.MyPost"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"
          isELIgnored="false"
@@ -165,58 +167,47 @@
             <!--내글 리스트 전체-->
             <div class="myPage_list ">
                 <ul class="myPage_content">
-                    <li>
-                        <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
-                        <a class="myPage_post_img_link imgwrap" href="/front/html/community/myrecipe_post.html">
-                            <div class="imgBox vertical">
-                                <img class="myPage_img" id="mypage_imgs"
-                                     src="${contextPath}/resource/images/food/단호박스콘.png" alt="단호박스콘">
-                            </div>
-                            <div class="myPage_text">
-                                <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
-                        <a class="myPage_post_img_link imgwrap" href="/front/html/community/myrecipe_post.html">
-                            <div class="imgBox vertical">
-                                <img class="myPage_img" id="mypage_imgs"
-                                     src="${contextPath}/resource/images/food/단호박스콘.png" alt="단호박스콘">
-                            </div>
-                            <div class="myPage_text">
-                                <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
-                        <a class="myPage_post_img_link imgwrap" href="/front/html/community/myrecipe_post.html">
-                            <div class="imgBox vertical">
-                                <img class="myPage_img" id="mypage_imgs"
-                                     src="${contextPath}/resource/images/food/단호박스콘.png" alt="단호박스콘">
-                            </div>
-                            <div class="myPage_text">
-                                <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa-regular fa-heart" id="heart_btn_icon"></i>
-                        <a class="myPage_post_img_link imgwrap" href="/front/html/community/myrecipe_post.html">
-                            <div class="imgBox vertical">
-                                <img class="myPage_img" id="mypage_imgs"
-                                     src="${contextPath}/resource/images/food/단호박스콘.png" alt="단호박스콘">
-                            </div>
-                            <div class="myPage_text">
-                                <p class="mypage_list_subtitle">여기는 부제목을 적어주세요.</p>
-                                <h3 class="mypage_list_title">여기는 제목을 적어주세요.</h3>
-                            </div>
-                        </a>
-                    </li>
+                	<c:choose>
+	                	<c:when test="${myPostListSize > 0}">
+	                		<c:forEach items="${myPostList}" var="post">
+	                			<c:choose>
+			                    	<c:when test="${post.myreOrQna=='myre'}">
+			                    		<li>
+			                        	<i class="fa-regular fa-heart" id="heart_btn_icon"></i>
+			                        		<a class="myPage_post_img_link imgwrap" href="/front/html/community/myrecipe_post.html">
+			                            		<div class="imgBox vertical">
+			                                		<img class="myPage_img" id="mypage_imgs"
+			                                     	src="${contextPath}/resource/images/food/단호박스콘.png" alt="단호박스콘">
+			                            		</div>
+			                            		<div class="myPage_text">
+			                                		<p class="mypage_list_subtitle">마이레시피</p>
+			                                		<h3 class="mypage_list_title">${post.myrecipe.myreTitle}</h3>
+			                            		</div>
+			                        		</a>
+			                    		</li>
+			                    	</c:when>
+			                    	<c:when test="${post.myreOrQna=='qna'}">
+			                    		<li>
+			                        	<i class="fa-regular fa-heart" id="heart_btn_icon"></i>
+			                        		<a class="myPage_post_img_link imgwrap" href="/front/html/community/myrecipe_post.html">
+			                            		<div class="imgBox vertical">
+			                                		<img class="myPage_img" id="mypage_imgs"
+			                                     	src="${contextPath}/resource/images/food/단호박스콘.png" alt="단호박스콘">
+			                            		</div>
+			                            		<div class="myPage_text">
+			                                		<p class="mypage_list_subtitle">QnA</p>
+			                                		<h3 class="mypage_list_title">${post.qna.qnaTitle}</h3>
+			                            		</div>
+			                        		</a>
+			                    		</li>
+			                    	</c:when>
+		                    	</c:choose>
+		                    </c:forEach>
+	                	</c:when>
+	                	<c:when test="${myPostListSize==0}">
+	                		글을 쓰지 않았습니다.
+	                	</c:when>
+                	</c:choose>
                 </ul>
             </div><!--내글 리스트 전체 끝-->
 

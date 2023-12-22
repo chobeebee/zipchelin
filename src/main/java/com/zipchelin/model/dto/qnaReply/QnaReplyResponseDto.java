@@ -1,11 +1,12 @@
 package com.zipchelin.model.dto.qnaReply;
 
-import com.zipchelin.domain.QnaReply;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
 import javax.validation.constraints.NotBlank;
+
+import com.zipchelin.domain.community.QnaReply;
 
 @Getter
 @Builder

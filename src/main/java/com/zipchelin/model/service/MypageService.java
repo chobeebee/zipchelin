@@ -1,12 +1,15 @@
 package com.zipchelin.model.service;
 
-import com.zipchelin.domain.*;
-import com.zipchelin.model.dto.MyPost;
-import com.zipchelin.model.dto.Myheart;
-import com.zipchelin.model.dto.member.MemberRequestDto;
+import com.zipchelin.domain.community.MyRecipeReply;
+import com.zipchelin.domain.community.Myrecipe;
+import com.zipchelin.domain.community.Qna;
+import com.zipchelin.domain.community.QnaReply;
+import com.zipchelin.domain.member.Member;
+import com.zipchelin.model.dto.member.mypage.MyPost;
+import com.zipchelin.model.dto.member.mypage.Myreply;
 import com.zipchelin.model.dto.member.MemberResponseDto;
-import com.zipchelin.model.dto.myrecipe.MyrecipeResponseDto;
-import com.zipchelin.model.dto.qna.QnaResponseDto;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponseDto;
+import com.zipchelin.model.dto.community.qna.QnaResponseDto;
 import com.zipchelin.repository.MypageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,12 +95,13 @@ public class MypageService {
 
     public List<MyPost> selectMyPostList2(String id) {
         List<MyPost> postList = selectMyPostList(id);
-        while (postList.size() >= 5) {
+        while(postList.size() >= 5) {
             postList.remove(4);
         }
         return postList;
     }
-
+    
+    /*
     public List<Myheart> selectHeartList(String id) {
         List<Myheart> heartList = new ArrayList<Myheart>();
 
@@ -126,8 +130,37 @@ public class MypageService {
         }
         return heartList;
     }
+    */
     
-    public void memberUpdate(MemberRequestDto dto) {
-    	mypageRepository.memberUpdate(dto.toEntity());
+    public List<Myreply> selectReplyList(String id){
+    	List<Myreply> replyList=new ArrayList<Myreply>();
+    	
+    	List<QnaReply> qnaReplyList = mypageRepository.selectQnaReply(id);
+        for (QnaReply qna : qnaReplyList) {
+        	replyList.add(qna.toMyreply());
+        }
+
+        List<MyRecipeReply> myRecipeReplyList = mypageRepository.selectRecipeReply(id);
+        for (MyRecipeReply rec : myRecipeReplyList) {
+        	replyList.add(rec.toMyreply());
+        }
+
+        for (int i = 0; i < replyList.size() - 1; i++) {
+            for (int j = i + 1; j < replyList.size(); j++) {
+                if (replyList.get(i).getReplyDate().before(myRecipeReplyList.get(j).getReplyDate())) {
+                	Myreply ireply = replyList.get(i);
+                	Myreply jreply = replyList.get(j);
+                    replyList.remove(i);
+                    replyList.add(i, jreply);
+                    replyList.remove(j);
+                    replyList.add(j, ireply);
+                }
+            }
+        }
+        return replyList;
     }
+    
+   /* public List<Myheart> getListPaging(Criteria cri) {
+        return mypageRepository.getListPaging(cri);
+    }*/
 }

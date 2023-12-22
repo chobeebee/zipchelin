@@ -1,6 +1,11 @@
 package com.zipchelin.repository.mybatis.mappers;
 
-import com.zipchelin.domain.*;
+import com.zipchelin.domain.community.MyRecipeReply;
+
+import com.zipchelin.domain.community.Myrecipe;
+import com.zipchelin.domain.community.Qna;
+import com.zipchelin.domain.community.QnaReply;
+import com.zipchelin.domain.member.Member;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -11,6 +16,8 @@ public interface MypageMapper {
     public Member selectMemberById(String id);
 
     public String checkPwd(Map<String, String> map);
+
+    public void updateMember(Member member);
 
     public int countMyGuiPick(String id);
 
@@ -28,9 +35,13 @@ public interface MypageMapper {
 
     public List<Myrecipe> selectMyreById(String id);
 
-    public List<Guide> selectGuiHeart(String id);
+    //public List<Guide> selectGuiHeart(String id);
 
-    public List<Recipe> selectRecHeart(String id);
+    //public List<Recipe> selectRecHeart(String id);
     
-    public void memberUpdate(Member member);
+    public List<QnaReply> selectQnaReply(String id);
+    
+    public List<MyRecipeReply> selectRecipeReply(String id);
+    
+    //public List<Myheart> getListPaging(Criteria cri);
 }

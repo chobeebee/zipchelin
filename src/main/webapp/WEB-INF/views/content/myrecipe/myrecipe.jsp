@@ -61,19 +61,19 @@
 			                <div class="best imgwrap">
 			                    <a href="/front/html/community/myrecipe_post.html">
 			                        <div class="imgBox vertical">
-			                            
+			                            <img src="${contextPath}/resource/images/food/gan.jpg" alt="#">
 			                        </div>
 			                        <div class="best_cont">
-			                            <span class="postdate">${myre_date}</span>
-			                            <h6 class="title">${myre_title}</h6>
-			                           <!--  <ul class="accList">
+			                            <span class="postdate">${myrecipe.myreDate}</span>
+			                            <h6 class="title">${myrecipe.myreTitle}</h6>
+			                            <ul class="accList">
 			                                <li class="accItem">
 			                                    <span class="icon material-symbols-outlined">visibility</span>268
 			                                </li>
 			                                <li class="accItem">
 			                                    <span class="icon material-symbols-outlined">comment</span>80
 			                                </li>
-			                            </ul>  -->
+			                            </ul> 
 			                        </div>
 			                    </a>
 			                </div>
@@ -90,16 +90,18 @@
                     <option value="#" selected>최신순</option>
                     <option value="#">오래된순</option>
                 </select>
-                <button class="btnBg btnSm" class="btn_write" onclick="location.href='./myrecipe_form.html'">작성하기</button>
+                <button onclick="location.href='${contextPath}/myrecipe/myrecipeform'" class="btnBg btnSm" class="btn_write">작성하기</button>
             </div>
-            
+          
             <ul class="allwrite clearfix">
                 <li class="post-container">
                     <a href="/front/html/community/myrecipe_post.html" class="imgwrap">
                         <div class="post-section">
-                            <span class="postdate">${myre_date}</span>
-                                <h6 class="title">${myre_title}</h6>
-                                <!-- <ul class="accList">
+                        	<c:forEach var="myrecipe" items="${myrecipeList}" varStatus="myrecipeTitle">
+                        	
+                            <span class="postdate">${myrecipe.myreDate}</span>
+                                <h6 class="title">${myrecipe.myreTitle}</h6>
+                                <ul class="accList">
                                     <li class="accItem">
                                         <span class="icon material-symbols-outlined">visibility</span>268
                                     </li>
@@ -107,31 +109,46 @@
                                         <span class="icon material-symbols-outlined">comment</span>12
                                     </li>
                                 </ul>
-                                 -->
+                             </c:forEach>
                         </div>
-                        <div class="imgBox align">
-                            
-                        </div>
+                        
+                       <!--   <div class="imgBox align">
+                            <img src="${contextPath}/resource/images/food/gan.jpg" alt="#">
+                        </div> -->
                     </a>
                 </li>
-            </ul>        
-
-            <div class="paging">
-                <ul>
-                    <!--li에 .disabled가 있으면 화살표에 클릭방지 생김-->
-                    <li class="arrow prev disabled"><button disabled><span class="material-symbols-outlined">navigate_before</span></button></li>
-                    <li class="active"><a href="javascript:">1</a></li>
-                    <li><a href="javascript:">2</a></li>
-                    <li><a href="javascript:">3</a></li>
-                    <li><a href="javascript:">4</a></li>
-                    <li><a href="javascript:">5</a></li>
-                    <li class="arrow next"><button><span class="material-symbols-outlined">navigate_next</span></button></li>
-                </ul>
-            </div>
+            </ul>     
+            
+			<div class="pageInfo_wrap paging">
+		        <div class="pageInfo_area">
+		            <ul class="pageInfo" id="pageInfo">
+		                <c:if test="${pageMaker.prev}">
+		                    <li class="pageInfo_btn previous arrow prev disabled"><a href="${pageMaker.startPage-1}"><span
+		                            class="material-symbols-outlined">navigate_before</span></a></li>
+		                </c:if>
+		                <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+		                    <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a>
+		                    </li>
+		                </c:forEach>
+		                <c:if test="${pageMaker.next}">
+		                    <li class="pageInfo_btn next arrow next"><a href="${pageMaker.endPage + 1 }"><span
+		                            class="material-symbols-outlined">navigate_next</span></a></li>
+		                </c:if>
+		            </ul>
+		        </div>
+		    </div>
+		    <form action="get" id="moveForm">
+		        <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+		        <input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+		    </form>
+            
         </section>
     </main>
-    <!-- 푸터 -->
-    <footer id="footer"></footer>
+    
+	<!-- 푸터 -->
+	<footer id="footer">
+	    <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+	</footer>
 
     <!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>

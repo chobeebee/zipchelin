@@ -1,6 +1,6 @@
 package com.zipchelin.repository.mybatis.mappers;
 
-import com.zipchelin.domain.Recipe;
+import com.zipchelin.domain.admin.Recipe;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

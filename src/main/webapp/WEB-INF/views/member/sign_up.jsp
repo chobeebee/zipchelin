@@ -84,11 +84,7 @@
                 </div>
                 <div class="inputField sign_info_input">
                     <form:input type="password" path="pwdConfirm" id="sign_pwd2" class="" placeholder="비밀번호 확인"/>
-                    <spring:hasBindErrors name="params">
-                        <c:if test="${errors.hasGlobalErrors()}">
-                            <p class="valid_warning">입력하신 비밀번호와 일치하지 않습니다.</p>
-                        </c:if>
-                    </spring:hasBindErrors>
+                    <form:errors path="pwdConfirm" element="p" class="valid_warning"/>
                 </div>
             </div>
             <div class="form_item">
@@ -140,7 +136,8 @@
 <!-- js -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
-    $('#sign_id').on('change', function (e) {
+    $('#sign_id').on('input', debounce(function () {
+
         let btn = $('#idAuthBtn');
         let id = $('#sign_id');
         let id_rule = /^[a-z0-9]{6,12}$/;
@@ -151,7 +148,7 @@
                     'border-color': '#FF0000FF',
                     'background-color': '#fff',
                     'color': '#FF0000FF',
-                }).html('사용불가');
+                }).html('형식오류');
             id.css('border-color', 'red');
             $('#isIdAuthed').prop('checked', false);
             return;
@@ -165,7 +162,6 @@
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(params),
             dataType: 'json',
-            async: true,
 
             success: function (response) {
                 if (response) {
@@ -188,14 +184,23 @@
                     $('#isIdAuthed').prop('checked', false);
                 }
             },
-            error: function (request, error) {
-                console.log(error);
+            error: function (xhr, error) {
+                console.log(xhr.status, xhr.statusText, error);
             }
         })
-    });
+    }, 500));
 
-    $('#mailSendBtn').on('click', function (e) {
-        e.preventDefault();
+    function debounce(func, delay) {
+        let timeoutId;
+        return function (...args) {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func.apply(this, args);
+            }, delay);
+        };
+    }
+
+    $('#mailSendBtn').on('click', function () {
 
         let email = $('#sign_email');
         let sendBtn = $('#mailSendBtn');
@@ -207,7 +212,7 @@
                     'border-color': '#FF0000FF',
                     'background-color': '#fff',
                     'color': '#FF0000FF',
-                }).html('양식오류');
+                }).html('형식오류');
             email.css('border-color', 'red');
             return;
         }
@@ -229,10 +234,8 @@
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(params),
             dataType: 'text',
-            async: true,
 
             success: function (response) {
-                console.log(response);
                 if (response === 'success') {
                     sendBtn.removeClass('transition-effect').prop('disabled', false)
                         .css({
@@ -247,19 +250,19 @@
                         .css({
                             'border-color': '#FF0000FF',
                             'background-color': '#fff',
-                            'color': '#4FA72F',
+                            'color': '#FF0000FF',
                         }).html('전송실패');
                     email.css('border-color', 'red');
                     alert(response);
                 }
             },
-            error: function (request, error) {
-                console.log(error);
+            error: function (xhr, error) {
+                console.log(xhr.status, xhr.statusText, error);
             }
         })
     });
 
-    $('#mailAuthBtn').on('click', function (e) {
+    $('#mailAuthBtn').on('click', function () {
         const params = {
             email: $('#sign_email').val(),
             code: $('#emailCode').val()
@@ -271,10 +274,8 @@
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(params),
             dataType: 'json',
-            async: true,
 
             success: function (response) {
-                console.log(response);
                 if (response) {
                     alert('인증이 완료되었습니다. 해당 인증은 5분 간 유효합니다.');
                     $('#isEmailAuthed').prop('checked', true);
@@ -282,8 +283,8 @@
                     alert('잘못된 인증번호입니다. 다시 확인해주세요.');
                 }
             },
-            error: function (request, error) {
-                console.log(error);
+            error: function (xhr, error) {
+                console.log(xhr.status, xhr.statusText, error);
             }
         })
     });

@@ -1,6 +1,6 @@
 package com.zipchelin.repository;
 
-import com.zipchelin.domain.Guide;
+import com.zipchelin.domain.admin.Guide;
 
 public interface GuideRepository {
     void addGuide(Guide guide);

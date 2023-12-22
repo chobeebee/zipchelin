@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.model.dto.admin.page.Criteria;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponse;
 import com.zipchelin.repository.MyrecipeRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -40,6 +41,10 @@ public class MyrecipeService {
 
 	public int getTotal() { 
 		return myrecipeRepository.getTotal(); 
+	}
+
+	public MyrecipeResponse findMyrecipeById(final Long id) {
+		return myrecipeRepository.findById(id);
 	}
 
 }

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8" 
     isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <%
 	request.setCharacterEncoding("utf-8");
@@ -90,33 +91,35 @@
                     <option value="#" selected>최신순</option>
                     <option value="#">오래된순</option>
                 </select>
-                <button onclick="location.href='${contextPath}/myrecipe/myrecipeform'" class="btnBg btnSm" class="btn_write">작성하기</button>
+                <button onclick="location.href='${contextPath}/community/myrecipe/form'" class="btnBg btnSm" class="btn_write">작성하기</button>
             </div>
           
             <ul class="allwrite clearfix">
-                <li class="post-container">
-                    <a href="/front/html/community/myrecipe_post.html" class="imgwrap">
-                        <div class="post-section">
-                        	<c:forEach var="myrecipe" items="${myrecipeList}" varStatus="myrecipeTitle">
-                        	
-                            <span class="postdate">${myrecipe.myreDate}</span>
-                                <h6 class="title">${myrecipe.myreTitle}</h6>
-                                <ul class="accList">
-                                    <li class="accItem">
-                                        <span class="icon material-symbols-outlined">visibility</span>268
-                                    </li>
-                                    <li class="accItem">                        
-                                        <span class="icon material-symbols-outlined">comment</span>12
-                                    </li>
-                                </ul>
-                             </c:forEach>
-                        </div>
-                        
-                       <!--   <div class="imgBox align">
-                            <img src="${contextPath}/resource/images/food/gan.jpg" alt="#">
-                        </div> -->
-                    </a>
-                </li>
+	            <c:forEach var="myrecipe" items="${myrecipeList}" varStatus="myrecipeTitle">
+	                <li class="post-container">
+	                    <a href="${contextPath}/community/myrecipe/post" class="imgwrap">
+	                        <div class="post-section">
+	                            <span class="postdate"><fmt:formatDate pattern="yyyy-MM-dd" value="${myrecipe.myreDate}" /></span>
+	                            <h6 class="title">${myrecipe.myreTitle}</h6>
+	                            <p>
+	                                ${myrecipe.myreContent}
+	                            </p>
+	                            <ul class="accList">
+	                                <li class="accItem">
+	                                    <span class="icon material-symbols-outlined">visibility</span>268
+	                                </li>
+	                                <li class="accItem">                        
+	                                    <span class="icon material-symbols-outlined">comment</span>12
+	                                </li>
+	                            </ul>
+	                        </div>
+	                        
+	                        <div class="imgBox align">
+	                            <img src="${contextPath}/resource/images/food/gan.jpg" alt="#">
+	                        </div>
+	                    </a>
+	                </li>
+                </c:forEach>
             </ul>     
             
 			<div class="pageInfo_wrap paging">

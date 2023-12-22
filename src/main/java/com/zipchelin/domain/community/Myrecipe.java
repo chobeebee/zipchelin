@@ -2,9 +2,9 @@ package com.zipchelin.domain.community;
 
 import java.time.LocalDateTime;
 
-import com.zipchelin.model.dto.member.mypage.MyPost;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeRequestDto;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponseDto;
+import com.zipchelin.model.dto.member.mypage.MyPost;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

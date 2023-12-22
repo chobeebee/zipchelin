@@ -6,15 +6,22 @@
 	<!-- 나만의 레시피 리스트 목록 조회 -->
     <select id="getListPaging" resultType="com.zipchelin.domain.community.Myrecipe">
         <![CDATA[
-        select rn, myre_title, myre_date
-        from (select rownum as rn, myre_title, myre_date
+        select rn, myre_title, myre_content, myre_date
+        from (select rownum as rn, myre_title, myre_date, myre_content
               from myrecipe_tbl
               where rownum <= #{pageNum} * #{amount})
         where rn > (#{pageNum} - 1) * #{amount}
         ]]>
     </select>
 	
-	 <!-- 게시물 총 갯수 -->
+	<!-- 게시글 상세정보 조회 -->
+    <select id="findById" parameterType="Long" resultType="com.zipchelin.model.dto.community.myrecipe.MyrecipeResponse">
+        select *
+        from myrecipe_tbl
+        WHERE myre_num = #{myreNum}
+    </select>
+    
+	<!-- 게시물 총 갯수 -->
     <select id="getTotal" resultType="int">
         select count(*) from myrecipe_tbl 
     </select>

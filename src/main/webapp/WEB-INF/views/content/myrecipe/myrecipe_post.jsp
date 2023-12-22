@@ -37,20 +37,6 @@
     <!-- plugin CSS -->
     <link rel="stylesheet" href="/front/css/swiper-bundle.css">
 
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="/assets/front/js/html5shiv.js"></script>
-    <script type="text/javascript" src="/assets/front/js/respond.min.js"></script>
-    <script type="text/javascript" src="/assets/front/js/IE9.js"></script>
-    <![endif]-->
-    <!--[if IE 9]>
-    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css"
-          rel="stylesheet">
-    <![endif]-->
-    <!--[if lte IE 8]>
-    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css"
-          rel="stylesheet">
-    <![endif]-->
-
     <!-- page CSS -->
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/community.css">
 
@@ -78,10 +64,10 @@
                                                                 value="${myrecipe.myreDate}"/></span>
                         <div class="comment_writeracc">
                             <button class="comment_update">
-                                <span>수정</span>
+                                <a href="${contextPath}/myrecipe/update/${myrecipe.myreNum}">수정</a>
                             </button>
                             <button class="comment_delete">
-                                <span>삭제</span>
+                                <a href="${contextPath}/myrecipe/delete/${qna.qnaNum}">삭제</a>
                             </button>
                         </div>
                     </div>

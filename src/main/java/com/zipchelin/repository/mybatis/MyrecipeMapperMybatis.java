@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.model.dto.admin.page.Criteria;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponse;
 import com.zipchelin.repository.MyrecipeRepository;
 import com.zipchelin.repository.mybatis.mappers.MyrecipeMapper;
 
@@ -47,6 +48,12 @@ public class MyrecipeMapperMybatis implements MyrecipeRepository {
 	 @Override
 	 public int getTotal() {
 		return myrecipeMapper.getTotal();
+	}
+
+	@Override
+	public MyrecipeResponse findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

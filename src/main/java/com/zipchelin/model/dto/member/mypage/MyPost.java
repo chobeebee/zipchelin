@@ -5,6 +5,7 @@ import com.zipchelin.domain.community.Qna;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.sql.Date;
 import java.time.LocalDateTime;
 
 @Getter

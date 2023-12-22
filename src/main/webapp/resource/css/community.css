@@ -135,6 +135,7 @@ main {
 
 .post-section {
     width: 70%;
+    margin: auto;
 }
 
 .post-section .title {
@@ -303,6 +304,7 @@ main {
     vertical-align: top;
 }
 
+
 .commentbox {
     display: flex;
     padding: 20px 0;
@@ -322,7 +324,7 @@ main {
 
 .comment-contentbox {
     position: relative;
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     align-items: center;
 }

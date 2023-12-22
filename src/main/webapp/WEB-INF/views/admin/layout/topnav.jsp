@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <ul class="navbar-nav ml-auto">
     <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="mr-2 d-none d-lg-inline text-gray-600 small">관리자</span>
             <img class="img-profile rounded-circle" src="${contextPath}/resource/admin/img/profile.svg">
         </a>

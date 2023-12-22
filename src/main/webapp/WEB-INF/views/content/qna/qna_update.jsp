@@ -65,24 +65,25 @@
     <!-- 메인 -->
     <main>
         <section class="form-list">
-        <form action="/qna/update" method="post">
+        <form action="/community/qna/update/${qna.qnaNum }" method="post">
             <h1 class="best-title">요리 상담소</h1>
             <div>
                 <div class="information informationBox">
                 <input name="qnaNum" value="${qna.qnaNum }" type="hidden">
-                <input name="userImg" value="0" type="hidden">
                     <h2 class="form-title">제목</h2>
-                    <p><input class="formBox" name="qnaTitle" id="qnaTitle" placeholder="제목을 입력해주세요"></p>
+                    <p><input class="formBox" name="qnaTitle" id="qnaTitle" value="${qna.qnaTitle }"></p>
                 </div>
                 <div class="information">
                     <h2 class="form-title">내용</h1>
-                    <textarea name="qnaContent" id="qnaContent" class="form-content" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
+                    <textarea name="qnaContent" id="form-content" class="form-content" cols="30" rows="10">${qna.qnaContent }</textarea>
                 </div>
             </div>
             
             <div class="btnGroup lg form" >
-                <button type="button"  class="btnBgGray form" class="btn_cancel"><a href="${contextPath}/qna/">취소</a></button>
-                <button type="submit" class="btnBg" class="btn_upload">올리기</button>
+           		<a href="${contextPath}/community/qna/post/${qna.qnaNum}">
+                	<button type="button"  class="btnBgGray form" class="btn_cancel"> 취소</button>
+                </a>
+                	<input type="submit" class="btnBg" class="btn_upload" onclick="submitPost();">
     	    </div>
 		</form>
             

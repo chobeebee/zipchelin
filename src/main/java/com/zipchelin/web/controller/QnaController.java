@@ -1,6 +1,9 @@
 package com.zipchelin.web.controller;
 
+import java.io.IOException;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.zipchelin.model.dto.qna.QnaDto;
 import com.zipchelin.model.dto.qna.QnaRequest;
+import com.zipchelin.model.dto.qna.QnaRequestDto;
 import com.zipchelin.model.dto.qna.QnaResponse;
 import com.zipchelin.model.service.QnaService;
 
@@ -20,22 +24,25 @@ import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/qna/*")
+@RequestMapping("/community/qna*")
 public class QnaController {
 	
 	private final QnaService qnaService;
 	
 	@GetMapping("")
     public String viewQna(@ModelAttribute("params") final QnaDto params, Model model) {
+
 		List<QnaResponse> qna= qnaService.findAllQna(params);
+		
 		model.addAttribute("qna",qna);
+		model.addAttribute("params", params);
         return "content/qna/qna";
     }
 	
-//	@GetMapping("/qna_post")
-//    public String postQna() {
-//        return "content/qna/qna_post";
-//    }
+	@PostMapping("/upload")
+    public String postQna() {
+        return "content/qna/upload";
+    }
 	
 	@GetMapping("/post/{num}")  // /qna/post/id값
     public String postQna(@PathVariable("num") Long id, Model model) {
@@ -56,13 +63,13 @@ public class QnaController {
 	@PostMapping("/save")
 	public String saveQna(final QnaRequest params) {
 		qnaService.saveQna(params);
-		return "redirect:/qna/qna";
+		return "redirect:/community/qna/";
 	}
 	
 	@GetMapping("/delete/{num}")
 	public String deleteQna(@PathVariable("num") final Long id) {
 		qnaService.deleteQna(id);
-		return "redirect:/qna/qna";
+		return "redirect:/community/qna/";
 	}
 	
 	@GetMapping("/update/{num}")
@@ -71,13 +78,18 @@ public class QnaController {
 			QnaResponse qna = qnaService.findQnaById(id);
 			model.addAttribute("qna",qna);
 		}
-    return "content/qna/qna_update";
+		return "content/qna/qna_update";
 	}
 	
-	@PostMapping("/update")
-	public String updateQna(final QnaRequest params) {
+	@PostMapping("/update/{num}")
+	public String updateQna(@PathVariable("num") Long qnaNum, @ModelAttribute QnaRequestDto params, HttpServletRequest request) throws IOException {
+		
+		long num = params.getQnaNum();
+		System.out.println(num);
+		
 		qnaService.updateQna(params);
-		System.out.println(params);
-		return "redirect:/qna/qna";
+		
+		return "redirect:/community/qna/post/" + qnaNum;
 	}
+	
 }

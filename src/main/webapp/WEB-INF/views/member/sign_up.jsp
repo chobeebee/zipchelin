@@ -3,6 +3,7 @@
          isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <%
     request.setCharacterEncoding("utf-8");
@@ -65,31 +66,25 @@
                 <label for="sign_id" class="sign_left_label">아이디</label>
                 <div class="sign_input_box">
                     <form:input type="text" path="memberId" id="sign_id" class="sign_info_input2"
-                                placeholder="숫자/영문자 포함 6~12자"/>
-                    <button type="button" onclick="" class="sign_input_button btnBd">중복확인</button>
+                                placeholder="영문 소문자/숫자 포함 6~12자"/>
+                    <form:checkbox path="idAuth" id="isIdAuthed"/>
+                    <button type="button" id="idAuthBtn" class="auth_button">중복확인</button>
                 </div>
                 <div id="sign_id_warning_box">
-                    <form:errors path="memberId" cssStyle="color: red"/>
-                    <p class="sign_warning" id="sign_warning_id">아이디는 필수 입력사항입니다.</p>
-                    <p class="sign_warning" id="sign_warning_id_rule">아이디는 숫자/영문자 포함 6~12자 여야 합니다.</p>
-                    <p class="sign_warning" id="sign_warning_id_dup">중복되는 아이디 입니다.</p>
+                    <form:errors path="memberId" element="p" class="valid_warning"/>
+                    <form:errors path="idAuth" element="p" class="valid_warning"/>
                 </div>
             </div>
             <div class="form_item">
                 <label for="sign_pwd" class="sign_left_label">비밀번호</label>
                 <div class="inputField sign_info_input">
                     <form:input type="password" path="memberPwd" id="sign_pwd" class=""
-                                placeholder="특수문자/영문자/숫자 포함 8~15자"/>
-                    <form:errors path="memberPwd" cssStyle="color: red"/>
-                    <span class="pwdToggle material-symbols-outlined">visibility_off</span>
-                    <p class="sign_warning" id="sign_warning_pwd">비밀번호는 필수 입력사항입니다</p>
-                    <p class="sign_warning" id="sign_warning_pwd_rule">비밀번호는 특수문자/영문자/숫자 포함 8~15자 여야 합니다</p>
+                                placeholder="영문 대소문자/숫자 포함 8~15자"/>
+                    <form:errors path="memberPwd" element="p" class="valid_warning"/>
                 </div>
                 <div class="inputField sign_info_input">
-                    <input type="password" name="pwd" id="sign_pwd2" class="" placeholder="비밀번호 확인">
-                    <span class="pwdToggle material-symbols-outlined">visibility_off</span>
-                    <p class="sign_warning" id="sign_warning_pwd2">비밀번호가 먼저 입력되어야 합니다.</p>
-                    <p class="sign_warning" id="sign_warning_pwd2_rule">비밀번호가 일치하지 않습니다.</p>
+                    <form:input type="password" path="pwdConfirm" id="sign_pwd2" class="" placeholder="비밀번호 확인"/>
+                    <form:errors path="pwdConfirm" element="p" class="valid_warning"/>
                 </div>
             </div>
             <div class="form_item">
@@ -97,51 +92,36 @@
                 <div class="sign_input_box">
                     <form:input type="text" path="memberName" id="sign_name" class="sign_info_input" placeholder="이름"/>
                 </div>
-                <form:errors path="memberName" cssStyle="color: red"/>
-                <p class="sign_warning" id="sign_warning_name">이름은 필수입력사항 입니다.</p>
-            </div>
-            <div class="form_item form_email">
-                <label for="sign_email_1" class="sign_left_label">이메일</label>
-                <div class="sign_input_box">
-                    <form:input type="text" path="memberEmail" id="sign_email_1" class="sign_email_input"
-                                placeholder="이메일"/>
-                        <%--                        <span>@</span>--%>
-                        <%--                        <input type="text" id="sign_email_2" class="sign_email_input" value="gmail.com" disabled>--%>
-                        <%--                        <select id="sign_email_input_choose">--%>
-                        <%--                            <option selected>gmail.com</option>--%>
-                        <%--                            <option>naver.com</option>--%>
-                        <%--                            <option>kakao.com</option>--%>
-                        <%--                            <option>직접입력</option>--%>
-                        <%--                        </select>--%>
-                        <%--                        <input type="hidden" id="sign_email" name="email">--%>
-                </div>
-                <form:errors path="memberEmail" cssStyle="color: red"/>
-                <p class="sign_warning" id="sign_warning_email">이메일은 필수입력사항 입니다.</p>
+                <form:errors path="memberName" element="p" class="valid_warning"/>
             </div>
             <div class="form_item">
-                <label for="sign_tel" class="sign_left_label">전화번호</label>
+                <label for="sign_email" class="sign_left_label">이메일</label>
                 <div>
                     <div class="sign_input_box">
-                        <form:input type="text" path="memberPhone" id="sign_tel" class="sign_info_input2"
-                                    placeholder="전화번호(-)제외"/>
-                        <button type="button" onclick="" class="sign_input_button btnBd">본인인증</button>
+                        <form:input type="email" path="memberEmail" id="sign_email" class="sign_info_input2"
+                                    placeholder="이메일"/>
+                        <button type="button" id="mailSendBtn" class="sign_input_button btnBd">본인인증</button>
                     </div>
-                    <form:errors path="memberPhone" cssStyle="color: red"/>
-                    <p class="sign_warning" id="sign_warning_tel">전화번호는 필수입력사항입니다.</p>
-                    <p class="sign_warning" id="sign_warning_tel_rule">전화번호가 잘못되었습니다.</p>
-                    <p class="sign_warning" id="sign_warning_tel_minus">전화번호에 (-)가 포함되어선 안됩니다.</p>
+                    <form:errors path="memberEmail" element="p" class="valid_warning"/>
                 </div>
             </div>
             <div class="form_item">
-                <div>
-                    <input type="checkbox" id="sign_agree" class="chkBox">
-                    <label for="sign_agree"><a href="#" class="sign_agreement">이용약관</a>을 읽고 동의하였습니다.</label>
+                <label for="emailCode" class="sign_left_label">인증번호</label>
+                <div class="sign_input_box">
+                    <input type="text" id="emailCode" class="sign_info_input2" placeholder="인증번호">
+                    <form:checkbox path="emailAuth" id="isEmailAuthed"/>
+                    <button type="button" id="mailAuthBtn" class="sign_input_button btnBd">확인</button>
                 </div>
-                <p class="sign_warning" id="sign_warning_agree">약관동의는 필수 입니다.</p>
+                <form:errors path="emailAuth" element="p" class="valid_warning"/>
+            </div>
+            <div class="form_item">
+                <div>
+                    <form:checkbox path="terms" class="chkBox" label="이용약관을 읽고 동의하였습니다."/>
+                </div>
+                <form:errors path="terms" element="p" class="valid_warning"/>
             </div>
 
             <div>
-                    <%--                <button onclick="sign_form_submit()" id="sign_submit_button" class="btnBg">회원가입</button>--%>
                 <button type="submit" id="sign_submit_button" class="btnBg">회원가입</button>
             </div>
         </form:form>
@@ -155,7 +135,163 @@
 
 <!-- js -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    $('#sign_id').on('input', debounce(function () {
+
+        let btn = $('#idAuthBtn');
+        let id = $('#sign_id');
+        let id_rule = /^[a-z0-9]{6,12}$/;
+
+        if (id.val() === '' || !id_rule.test(id.val())) {
+            btn.removeClass('transition-effect').prop('disabled', false)
+                .css({
+                    'border-color': '#FF0000FF',
+                    'background-color': '#fff',
+                    'color': '#FF0000FF',
+                }).html('양식오류');
+            id.css('border-color', 'red');
+            $('#isIdAuthed').prop('checked', false);
+            return;
+        }
+
+        const params = {id: id.val()};
+
+        $.ajax({
+            url: '/member/confirmId',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(params),
+            dataType: 'json',
+            async: true,
+
+            success: function (response) {
+                if (response) {
+                    btn.removeClass('transition-effect').prop('disabled', false)
+                        .css({
+                            'border-color': '#4FA72F',
+                            'background-color': '#fff',
+                            'color': '#4FA72F',
+                        }).html('사용가능');
+                    id.css('border-color', 'black');
+                    $('#isIdAuthed').prop('checked', true);
+                } else {
+                    btn.removeClass('transition-effect').prop('disabled', false)
+                        .css({
+                            'border-color': '#FF0000FF',
+                            'background-color': '#fff',
+                            'color': '#FF0000FF',
+                        }).html('아이디 중복');
+                    id.css('border-color', 'red');
+                    $('#isIdAuthed').prop('checked', false);
+                }
+            },
+            error: function (request, error) {
+                console.log(error);
+            }
+        })
+    }, 500));
+
+    function debounce(func, delay) {
+        let timeoutId;
+        return function (...args) {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func.apply(this, args);
+            }, delay);
+        };
+    }
+
+    $('#mailSendBtn').on('click', function () {
+
+        let email = $('#sign_email');
+        let sendBtn = $('#mailSendBtn');
+        let email_rule = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (email.val() === '' || !email_rule.test(email.val())) {
+            sendBtn.addClass('transition-effect')
+                .css({
+                    'border-color': '#FF0000FF',
+                    'background-color': '#fff',
+                    'color': '#FF0000FF',
+                }).html('양식오류');
+            email.css('border-color', 'red');
+            return;
+        }
+
+        sendBtn.addClass('transition-effect').prop('disabled', true)
+            .css({
+                'background-color': '#4FA72F',
+                'color': '#fff',
+            }).html('전송 중...');
+
+        const params = {
+            email: email.val(),
+            code: ''
+        }
+
+        $.ajax({
+            url: '/member/sendMail',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(params),
+            dataType: 'text',
+            async: true,
+
+            success: function (response) {
+                if (response === 'success') {
+                    sendBtn.removeClass('transition-effect').prop('disabled', false)
+                        .css({
+                            'border-color': '#4FA72F',
+                            'background-color': '#fff',
+                            'color': '#4FA72F',
+                        }).html('전송완료');
+                    email.css('border-color', '#4FA72F');
+                    alert('이메일이 전송되었습니다.');
+                } else {
+                    sendBtn.removeClass('transition-effect').prop('disabled', false)
+                        .css({
+                            'border-color': '#FF0000FF',
+                            'background-color': '#fff',
+                            'color': '#FF0000FF',
+                        }).html('전송실패');
+                    email.css('border-color', 'red');
+                    alert(response);
+                }
+            },
+            error: function (request, error) {
+                console.log(error);
+            }
+        })
+    });
+
+    $('#mailAuthBtn').on('click', function () {
+        const params = {
+            email: $('#sign_email').val(),
+            code: $('#emailCode').val()
+        };
+
+        $.ajax({
+            url: '/member/confirmMail',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(params),
+            dataType: 'json',
+            async: true,
+
+            success: function (response) {
+                if (response) {
+                    alert('인증이 완료되었습니다. 해당 인증은 5분 간 유효합니다.');
+                    $('#isEmailAuthed').prop('checked', true);
+                } else {
+                    alert('잘못된 인증번호입니다. 다시 확인해주세요.');
+                }
+            },
+            error: function (request, error) {
+                console.log(error);
+            }
+        })
+    });
+</script>
 <script src="${contextPath}/resource/js/common.js"></script>
-<%--    <script src="${contextPath}/resource/js/member.js"></script>--%>
 </body>
 </html>

@@ -37,6 +37,6 @@ public class MemberMapperMybatis implements MemberRepository {
 
     @Override
     public int countById(String memberId) {
-        return 0;
+        return memberMapper.countById(memberId);
     }
 }

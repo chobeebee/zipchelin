@@ -76,19 +76,18 @@
                             <span class="post-date">${qna.qnaDate }</span>
                             <div class="comment_writeracc">
                                 <button class="comment_update">
-                                    <a href="${contextPath}/qna/update/${qna.qnaNum}">수정</a>
+                                    <a href="${contextPath}/community/qna/update/${qna.qnaNum}">수정</a>
                                 </button>
                                 <button class="comment_delete">
-                                    <a href="${contextPath}/qna/delete/${qna.qnaNum}">삭제</a>
+                                    <a href="${contextPath}/community/qna/delete/${qna.qnaNum}">삭제</a>
                                 </button>
                             </div>
                         </div>
                     </div>
                     <div class="post-content">
-                        <p class="content">내용 : ${qna.qnaContent }</p><br>
-                        <p> 이미지 : ${qna.userImg }</p>
+                        <p class="content">${qna.qnaContent }</p><br>
                     </div>
-                        <a href="${contextPath}/qna/qna">
+                        <a href="${contextPath}/community/qna">
                             <div class="btnGroup lg btn_list"><button class="btnBgGray btn_list">목록</button></div>
                         </a>
                 </div>

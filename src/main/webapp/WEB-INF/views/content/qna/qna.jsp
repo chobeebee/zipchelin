@@ -33,25 +33,9 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/base.css">
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/common.css">
 
-    <!-- plugin CSS -->
-    <!-- <link rel="stylesheet" href="${contextPath}/resource/css/swiper-bundle.css"> -->
-
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="/assets/front/js/html5shiv.js"></script>
-    <script type="text/javascript" src="/assets/front/js/respond.min.js"></script>
-    <script type="text/javascript" src="/assets/front/js/IE9.js"></script>
-    <![endif]-->
-    <!--[if IE 9]>
-    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
-    <![endif]-->
-    <!--[if lte IE 8]>
-    <link type="text/css" href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
-    <![endif]-->
-
     <!-- myrecipelist CSS -->
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/community.css">
     
-
 <title>요리 상담소 리스트</title>
 </head>
 <body>
@@ -69,7 +53,7 @@
                     <option value="#" selected>최신순</option>
                     <option value="#">오래된순</option>
                 </select>
-                <button onclick="location.href='${contextPath}/qna/form'" class="btnBg btnSm" class="btn_write">질문하기</button>
+                <button onclick="location.href='${contextPath}/community/qna/form'" class="btnBg btnSm" class="btn_write">질문하기</button>
             </div>
             
         <div class="qna">
@@ -84,12 +68,12 @@
                 </li>
                 <c:forEach var="qna" items="${qna }">
 	               <li>
-	                   <a href="${contextPath}/qna/post/${qna.qnaNum}" class="textbox tableWd">
+	                   <a href="${contextPath}/community/qna/post/${qna.qnaNum}" class="textbox tableWd">
 	                       <div class="num tableItem">${qna.qnaNum }</div>
 	                       <div class="text-title tableItem title">
 	                           <span class="question">Q. </span>
 	                           <p>${qna.qnaTitle }</p>
-	                           <span class="iconFile material-symbols-outlined">${qna.userImg }</span>
+	                           <span class="iconFile material-symbols-outlined"></span>
 	                       </div>
 	                       <div class="tableItem">${qna.qnaUp }</div>
 	                       <div class="tableItem">${qna.qnaReCount }</div>
@@ -104,13 +88,33 @@
             <div class="paging">
                 <ul>
                     <!--li에 .disabled가 있으면 화살표에 클릭방지 생김-->
-                    <li class="arrow prev disabled"><button disabled><span class="material-symbols-outlined">navigate_before</span></button></li>
-                    <li class="active"><a href="javascript:">1</a></li>
-                    <li><a href="javascript:">2</a></li>
-                    <li><a href="javascript:">3</a></li>
-                    <li><a href="javascript:">4</a></li>
-                    <li><a href="javascript:">5</a></li>
-                    <li class="arrow next"><button><span class="material-symbols-outlined">navigate_next</span></button></li>
+                    <c:choose>
+                    <c:when test="${params.pagination.existPrevPage}">
+                    	<li class="arrow prev"><a href="${contextPath}/community/qna?page=${params.pagination.startPage-1 }"><button><span class="material-symbols-outlined">navigate_before</span></button></a></li>
+                    </c:when>
+                    <c:otherwise>
+                    	<li class="arrow prev disabled"><button disabled><span class="material-symbols-outlined">navigate_before</span></button></li>
+                    </c:otherwise>                        
+                    </c:choose>
+                   <c:forEach var="num" begin="${params.pagination.startPage}"
+                              end="${params.pagination.endPage}">
+                       <c:if test="${params.page != num}">
+                           <li><a href="${contextPath}/community/qna?page=${num}">${num}</a></li>
+                       </c:if>
+                       <c:if test="${params.page == num}">
+                           <li class="active"><a href="javascript:void(0)" onclick="movePage(${num})">${num}</a>
+                           </li>
+                       </c:if>
+                       
+                   </c:forEach>
+                    <c:choose>
+                    <c:when test="${params.pagination.existNextPage}">
+                    	<li class="arrow next"><a href="${contextPath}/community/qna?page=${params.pagination.endPage+1 }"><button><span class="material-symbols-outlined">navigate_next</span></button></a></li>
+                    </c:when>
+                    <c:otherwise>
+                    	<li class="arrow next disabled"><button disabled><span class="material-symbols-outlined">navigate_next</span></button></li>
+                    </c:otherwise>                        
+                    </c:choose>
                 </ul>
             </div>
         </section>

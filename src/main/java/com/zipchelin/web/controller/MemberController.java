@@ -1,31 +1,32 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.model.dto.member.MemberLoginDto;
-import com.zipchelin.model.dto.member.MemberRequestDto;
-import com.zipchelin.model.dto.member.MemberResponseDto;
+import com.zipchelin.global.exception.BusinessLogicException;
+import com.zipchelin.global.exception.DuplicateException;
+import com.zipchelin.global.provider.CustomUserDetails;
+import com.zipchelin.model.dto.member.EmailDto;
+import com.zipchelin.model.dto.member.MemberSaveDto;
 import com.zipchelin.model.service.MemberService;
-import com.zipchelin.web.exception.DuplicateException;
-import com.zipchelin.web.resolver.Login;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -36,13 +37,17 @@ public class MemberController {
     private final MemberService memberService;
 
     @GetMapping("/login")
-    public String viewLogin(@ModelAttribute("params") MemberLoginDto params,
-                            @Login MemberResponseDto loginMember,
+    public String viewLogin(@AuthenticationPrincipal CustomUserDetails loginMember,
                             @RequestParam(required = false) String error,
+                            HttpServletRequest request,
                             Model model) {
 
         if (loginMember != null) {
             return "redirect:/";
+        }
+        String prevPage = request.getHeader("Referer");
+        if (prevPage != null && !prevPage.contains("/login") && !prevPage.contains("/sign-up")) {
+            request.getSession().setAttribute("prevPage", prevPage);
         }
         model.addAttribute("error", error);
 
@@ -61,59 +66,81 @@ public class MemberController {
         return "redirect:/";
     }
 
-    @GetMapping("/auth/kakao")
-    @ResponseBody
-    public String kakaoLogin(@RequestParam("code") String code) {
-
-        // Http header 생성
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
-
-        // Http body 생성
-        MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
-        params.add("grant_type", "authorization_code");
-        params.add("client_id", "240ed63fb7fd0d14c407e95cfcc365f0");
-        params.add("redirect_uri", "http://localhost:8090/member/auth/kakao");
-        params.add("code", code);
-
-        // 생성된 header와 body를 하나의 오브젝트에 담기
-        HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest = new HttpEntity<>(params, headers);
-
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> response = restTemplate.exchange(
-                "https://kauth.kakao.com/oauth/token",
-                HttpMethod.POST,
-                kakaoTokenRequest,
-                String.class
-        );
-
-        return response.getBody();
-    }
-
     @GetMapping("/sign-up")
-    public String viewSignUp(@Login MemberResponseDto loginMember, @ModelAttribute("params") MemberRequestDto params) {
-        if (loginMember != null) {
-            return "redirect:/";
-        }
+    public String viewSignUp(@ModelAttribute("params") MemberSaveDto params, HttpServletRequest request) {
+
+        // 이메일 인증 쿠키가 남아있을 경우 인증 로직을 건너뜀
+        Optional<Cookie> emailAuthCookie = Arrays.stream(request.getCookies())
+                .filter(cookie -> "emailAuth".equals(cookie.getName()))
+                .findFirst();
+        emailAuthCookie.ifPresent(cookie -> params.setEmailAuth(Boolean.parseBoolean(cookie.getValue())));
+
         return "member/sign_up";
     }
 
     @PostMapping("/sign-up")
-    public String signUp(@Validated @ModelAttribute("params") MemberRequestDto params, BindingResult bindingResult) {
+    public String signUp(@Validated @ModelAttribute("params") MemberSaveDto params,
+                         BindingResult bindingResult,
+                         RedirectAttributes redirectAttributes) {
+
+        if (!params.getMemberPwd().equals(params.getPwdConfirm())) {
+            bindingResult.rejectValue("pwdConfirm", "errorCode", "입력한 비밀번호와 일치해야 합니다.");
+            return "member/sign_up";
+        }
 
         if (bindingResult.hasErrors()) {
             return "member/sign_up";
         }
 
-        // Duplicate 에러가 발생하면 캐치해서 글로벌 검증 메시지로 반환
+        // 서비스에서 발생시킨 커스텀 에러를 캐치해서 특정 검증 메시지로 반환
         try {
             String memberName = memberService.saveMember(params);
+            redirectAttributes.addFlashAttribute("welcomeMsg", memberName + "님 가입을 환영합니다!");
         } catch (DuplicateException e) {
-            bindingResult.reject("duplicate", e.getMessage());
+            bindingResult.rejectValue("idAuth", "errorCode", e.getMessage());
+            return "member/sign_up";
+        } catch (BusinessLogicException e) {
+            bindingResult.rejectValue("emailAuth", "errorCode", e.getMessage());
             return "member/sign_up";
         }
 
         return "redirect:/member/login";
+    }
+
+    @ResponseBody
+    @PostMapping("/sendMail")
+    public String sendEmail(@Validated @RequestBody EmailDto params) {
+        String email = params.getEmail();
+        try {
+            memberService.mailForm(email);
+        } catch (BusinessLogicException e) {
+            return e.getMessage();
+        }
+        return "success";
+    }
+
+    @ResponseBody
+    @PostMapping("/confirmMail")
+    public ResponseEntity<Boolean> confirmMail(@RequestBody EmailDto params, HttpServletResponse response) {
+
+        if (memberService.confirmEmail(params)) {
+            Cookie cookie = new Cookie("emailAuth", "true");
+            cookie.setMaxAge(60 * 5); // 이메일 인증 여부는 5분 동안 유효
+            response.addCookie(cookie);
+            return ResponseEntity.ok(true);
+        }
+        return ResponseEntity.ok(false);
+    }
+
+    @ResponseBody
+    @PostMapping("/confirmId")
+    public ResponseEntity<Boolean> confirmId(@RequestBody Map<String, String> params) {
+
+        String id = params.get("id");
+        if (memberService.countId(id)) {
+            return ResponseEntity.ok(true);
+        }
+        return ResponseEntity.ok(false);
     }
 
     @GetMapping("/find")
@@ -134,10 +161,5 @@ public class MemberController {
     @GetMapping("/leave-done")
     public String viewLeaveDone() {
         return "member/leave_done";
-    }
-
-    @GetMapping("/email-auth")
-    public String viewEmailAuth() {
-        return "member/email_auth";
     }
 }

@@ -1,5 +1,6 @@
 package com.zipchelin.domain;
 
+import java.sql.Date;
 import java.time.LocalDateTime;
 
 import com.zipchelin.model.dto.MyPost;
@@ -9,36 +10,37 @@ import com.zipchelin.model.dto.myrecipe.MyrecipeResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
 @AllArgsConstructor
 public class Myrecipe {
+	private String userId;
 	private int myreNum;
 	private String myreTitle;
-	private String myreCont;
+	private String myreContent;
 	private int myreUp;
-	private int myreReply;
 	private LocalDateTime myreDate;
 	
 	public MyrecipeResponseDto toDto() {
 		return MyrecipeResponseDto.builder()
+				.userId(userId)
 				.myreNum(myreNum)
 				.myreTitle(myreTitle)
-				.myreCont(myreCont)
 				.myreUp(myreUp)
-				.myreReply(myreReply)
 				.myreDate(myreDate)
 				.build();
 	}
 	
 	public MyrecipeRequestDto fromDto() {
 		return MyrecipeRequestDto.builder()
-				.myreNum(myreNum)
+				.userId(userId)
+				.myreContent(myreContent)
 				.myreTitle(myreTitle)
-				.myreCont(myreCont)
 				.build();
 	}
 	

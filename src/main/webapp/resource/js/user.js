@@ -43,7 +43,7 @@ function find_form_submit() {//제출 메서드
     let email_1 = $('#find_email_1').val();
     let email_2 = $('#find_email_2').val();
     let name = $('#find_name').val();
-    let find_check_count=0;
+    let find_check_count = 0;
 
     //이메일 공백 확인
     if (email_1 == '' || email_2 == '') {
@@ -62,8 +62,8 @@ function find_form_submit() {//제출 메서드
     }
 
     //무엇을 찾는지 확인 후 action 설정 후 submit
-    if(find_check_count==2){
-            $('#find_email').val(email_1 + '@' + email_2);
+    if (find_check_count == 2) {
+        $('#find_email').val(email_1 + '@' + email_2);
         if ($("input[name='find']:checked").val() == 'finding_id') {
             $('#find_sign_up_form').attr('action', 'finding_id');
         } else if ($("input[name='find']:checked").val() == 'finding_pwd') {
@@ -72,7 +72,6 @@ function find_form_submit() {//제출 메서드
         $('#find_sign_up_form').submit();
     }
 }
-
 
 
 /* 회원가입 */
@@ -97,16 +96,16 @@ function sign_form_submit() {
 
     if ($('#sign_id').val() == '') {
         $('#sign_warning_id_rule').css('display', 'none');
-        $('#sign_id').css('border-color','red');
+        $('#sign_id').css('border-color', 'red');
         $('#sign_warning_id').css('display', 'block');
     } else {
         $('#sign_warning_id').css('display', 'none');
-        if(!id_rule.test($('#sign_id').val())){
+        if (!id_rule.test($('#sign_id').val())) {
             $('#sign_warning_id_rule').css('display', 'block');
-            $('#sign_id').css('border-color','red');
-        }else{
+            $('#sign_id').css('border-color', 'red');
+        } else {
             $('#sign_warning_id_rule').css('display', 'none');
-            $('#sign_id').css('border-color','black');
+            $('#sign_id').css('border-color', 'black');
             sign_check_count++;
         }
     }
@@ -119,51 +118,51 @@ function sign_form_submit() {
     //비밀번호 체크
     if ($('#sign_pwd').val() == '') {
         $('#sign_warning_pwd').css('display', 'block');
-        $('#sign_pwd').css('border-color','red');
+        $('#sign_pwd').css('border-color', 'red');
     } else {
         $('#sign_warning_pwd').css('display', 'none');
-        if(!password_rule.test($('#sign_pwd').val())){
+        if (!password_rule.test($('#sign_pwd').val())) {
             $('#sign_warning_pwd_rule').css('display', 'block');
-            $('#sign_pwd').css('border-color','red');
-        }else{
+            $('#sign_pwd').css('border-color', 'red');
+        } else {
             $('#sign_warning_pwd_rule').css('display', 'none');
-            $('#sign_pwd').css('border-color','black');
+            $('#sign_pwd').css('border-color', 'black');
             sign_check_count++;
         }
     }
     //비밀번호확인 체크
     if ($('#sign_pwd').val() == '') {
         $('#sign_warning_pwd2').css('display', 'block');
-        $('#sign_pwd2').css('border-color','red');
+        $('#sign_pwd2').css('border-color', 'red');
     } else {
         $('#sign_warning_pwd2').css('display', 'none');
-        if($('#sign_pwd2').val() != $('#sign_pwd').val()){
+        if ($('#sign_pwd2').val() != $('#sign_pwd').val()) {
             $('#sign_warning_pwd2_rule').css('display', 'block');
-            $('#sign_pwd2').css('border-color','red');
-        }else{
+            $('#sign_pwd2').css('border-color', 'red');
+        } else {
             $('#sign_warning_pwd2_rule').css('display', 'none');
-            $('#sign_pwd2').css('border-color','black');
+            $('#sign_pwd2').css('border-color', 'black');
             sign_check_count++;
         }
     }
     //이름 체크
     if ($('#sign_name').val() == '') {
         $('#sign_warning_name').css('display', 'block');
-        $('#sign_name').css('border-color','red');
+        $('#sign_name').css('border-color', 'red');
     } else {
         $('#sign_warning_name').css('display', 'none');
-        $('#sign_name').css('border-color','black');
+        $('#sign_name').css('border-color', 'black');
         sign_check_count++;
     }
     //이메일 체크
     if ($('#sign_email_1').val() == '' || $('#sign_email_2').val() == '') {
         $('#sign_warning_email').css('display', 'block');
-        $('#sign_email_1').css('border-color','red');
-        $('#sign_email_2').css('border-color','red');
+        $('#sign_email_1').css('border-color', 'red');
+        $('#sign_email_2').css('border-color', 'red');
     } else {
         $('#sign_warning_email').css('display', 'none');
-        $('#sign_email_1').css('border-color','black');
-        $('#sign_email_2').css('border-color','black');
+        $('#sign_email_1').css('border-color', 'black');
+        $('#sign_email_2').css('border-color', 'black');
         let email = $('#sign_email_1').val() + '@' + $('#sign_email_2').val();
         $('#sign_email').val(email);
         sign_check_count++;
@@ -175,21 +174,21 @@ function sign_form_submit() {
         $('#sign_warning_tel').css('display', 'block');
         $('#sign_warning_tel_minus').css('display', 'none');
         $('#sign_warning_tel_rule').css('display', 'none');
-        $('#sign_tel').css('border-color','red');
+        $('#sign_tel').css('border-color', 'red');
     } else {
         $('#sign_warning_tel').css('display', 'none');
-        if($('#sign_tel').val().match('-')){
+        if ($('#sign_tel').val().match('-')) {
             $('#sign_warning_tel_rule').css('display', 'none');
             $('#sign_warning_tel_minus').css('display', 'block');
-            $('#sign_tel').css('border-color','red');
-        }else{
+            $('#sign_tel').css('border-color', 'red');
+        } else {
             $('#sign_warning_tel_minus').css('display', 'none');
-            if(!tel_rule.test($('#sign_tel').val())){
+            if (!tel_rule.test($('#sign_tel').val())) {
                 $('#sign_warning_tel_rule').css('display', 'block');
-                $('#sign_tel').css('border-color','red');
-            }else{
+                $('#sign_tel').css('border-color', 'red');
+            } else {
                 $('#sign_warning_tel_rule').css('display', 'none');
-                $('#sign_tel').css('border-color','black');
+                $('#sign_tel').css('border-color', 'black');
                 sign_check_count++;
             }
         }
@@ -209,40 +208,40 @@ function sign_form_submit() {
 
 //로그인
 
-function login_form_submit(){
-    let user_id=$('#login_id').val();
-    let user_pwd=$('#login_password').val();
-    let login_check_count=0;
-    if(user_id==''){
-        $('#login_id_warning').css('display','block')
-    }else{
-        $('#login_id_warning').css('display','none')
+function login_form_submit() {
+    let user_id = $('#login_id').val();
+    let user_pwd = $('#login_password').val();
+    let login_check_count = 0;
+    if (user_id == '') {
+        $('#login_id_warning').css('display', 'block')
+    } else {
+        $('#login_id_warning').css('display', 'none')
         login_check_count++;
     }
 
-    if(user_pwd==''){
-        $('#login_pwd_warning').css('display','block')
-    }else{
-        $('#login_pwd_warning').css('display','none')
+    if (user_pwd == '') {
+        $('#login_pwd_warning').css('display', 'block')
+    } else {
+        $('#login_pwd_warning').css('display', 'none')
         login_check_count++;
     }
-    if(login_check_count==2){
+    if (login_check_count == 2) {
         $('#login_form').submit();
-    }else{
+    } else {
         return false;
     }
 }
 
-function login_fail_get_out(){
-    $('#login_fail').css('display','none');
+function login_modal_get_out() {
+    $('.login_modal').css('display', 'none');
 }
 
-function email_auth_check(){
-    if($('#auth_input').val()==''){
-        $('.auth_warning').css('display','block')
+function email_auth_check() {
+    if ($('#auth_input').val() == '') {
+        $('.auth_warning').css('display', 'block')
         return false;
-    }else{
-        $('.auth_warning').css('display','none')
+    } else {
+        $('.auth_warning').css('display', 'none')
         $('#auth_form').submit();
     }
 }

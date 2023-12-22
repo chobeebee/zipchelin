@@ -5,17 +5,13 @@
 
     <!-- 멤버 저장 -->
     <insert id="save" parameterType="com.zipchelin.domain.Member">
-        insert into member_TBL (
-        member_ID, member_PWD, member_NAME, member_EMAIL, member_PHONE
-        )
-        values (
-        #{memberId}, #{memberPwd}, #{memberName}, #{memberEmail}, #{memberPhone}
-        )
+        insert into member_TBL (member_ID, member_PWD, member_NAME, member_EMAIL, provider, provider_id)
+        values (#{memberId}, #{memberPwd}, #{memberName}, #{memberEmail}, #{provider}, #{providerId})
     </insert>
 
     <!-- 멤버 조회 -->
     <select id="findById" resultType="com.zipchelin.domain.Member" parameterType="string">
-        select member_ID, member_PWD, member_NAME, member_EMAIL, member_PHONE, JOIN_DATE, member_IMG, MEMBER_ROLE
+        select member_ID, member_PWD, member_NAME, member_EMAIL, JOIN_DATE, member_IMG, MEMBER_ROLE
         from member_TBL
         where member_ID = #{memberId}
     </select>
@@ -25,7 +21,6 @@
         update member_TBL
         set member_pwd   = #{memberPwd},
             member_email = #{memberEmail},
-            member_phone = #{memberPhone},
             member_img   = #{memberImg}
         where member_ID = #{memberId}
     </update>
@@ -39,6 +34,8 @@
 
     <!-- 중복 체크 -->
     <select id="countById" parameterType="string" resultType="int">
-
+        select count(*)
+        from member_tbl
+        where member_id = #{memberId}
     </select>
 </mapper>

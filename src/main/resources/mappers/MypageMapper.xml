@@ -2,56 +2,130 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.zipchelin.repository.mybatis.mappers.MypageMapper">
-	
-	<!-- 비밀번호 체크 -->
-	<select id="checkPwd" parameterType="java.util.Map">
-		select decode(count(*),1,'true',0,'false') result from member_tbl where member_id=#{memberId} and member_pwd=#{memberPwd}
-	</select>
-	
-	<!-- 멤버 조회 -->
+
+    <!-- 비밀번호 체크 -->
+    <select id="checkPwd" parameterType="java.util.Map" resultType="String">
+        select decode(count(*), 1, 'true', 0, 'false') result
+        from member_tbl
+        where member_id = #{id}
+          and member_pwd = #{pwd}
+    </select>
+
+    <!-- 멤버 조회 -->
     <select id="selectMemberById" resultType="com.zipchelin.domain.Member" parameterType="string">
-        select member_ID, member_PWD, member_NAME, member_EMAIL, member_PHONE, JOIN_DATE, member_IMG, MEMBER_ROLE
+        select member_ID,
+               member_PWD,
+               member_NAME,
+               member_EMAIL,
+               member_PHONE,
+               JOIN_DATE,
+               member_IMG,
+               MEMBER_ROLE
         from member_TBL
         where member_ID = #{id}
     </select>
 
     <!-- 멤버 수정 -->
-    <update id="updateMember" parameterType="com.zipchelin.domain.Member">
+    <update id="memberUpdate" parameterType="com.zipchelin.domain.Member">
         update member_TBL
         set member_pwd   = #{memberPwd},
             member_email = #{memberEmail},
-            member_phone = #{memberPhone},
             member_img   = #{memberImg}
         where member_ID = #{memberId}
     </update>
-    
+
     <!-- 내 글,내 댓글, 찜 수 체크-->
     <select id="countMyGuiPick" parameterType="String" resultType="int">
-    	select count(*) from gui_pick where user_id=#{id}
-	</select>
-	<select id="countMyRecPick" parameterType="String" resultType="int">
-		select count(*) from rec_pick where user_id=#{id}
-	</select>
-	<select id="countMyQna" parameterType="String" resultType="int">
-		select count(*) from qna_tbl where user_id=#{id}
-	</select>
-	<select id="countMyMyre" parameterType="String" resultType="int">
-		select count(*) from myrecipe_tbl where user_id=#{id}
-	</select>
-	<select id="countMyMyreReply" parameterType="String" resultType="int">
-		select count(*) from myrecipe_reply_tbl where re_id=#{id}
-	</select>
-	<select id="countMyQnaReply" parameterType="String" resultType="int">
-		select count(*) from qna_reply_tbl where re_id=#{id}
-	</select>
-	
-	<!-- 내 Qna -->
-	<select id="selectQnaById" parameterType="String" resultType="com.zipchelin.domain.Qna">
-			select * from qna_tbl where user_id=#{id}
-	</select>
-		
-	<!-- 내 마이레시피 -->
-	<select id="selectMyreById" parameterType="String" resultType="com.zipchelin.domain.Myrecipe">
-			select * from myrecipe_tbl where user_id=#{id}
-	</select>
+        select count(*)
+        from gui_pick
+        where user_id = #{id}
+    </select>
+    <select id="countMyRecPick" parameterType="String" resultType="int">
+        select count(*)
+        from rec_pick
+        where user_id = #{id}
+    </select>
+    <select id="countMyQna" parameterType="String" resultType="int">
+        select count(*)
+        from qna_tbl
+        where user_id = #{id}
+    </select>
+    <select id="countMyMyre" parameterType="String" resultType="int">
+        select count(*)
+        from myrecipe_tbl
+        where user_id = #{id}
+    </select>
+    <select id="countMyMyreReply" parameterType="String" resultType="int">
+        select count(*)
+        from myrecipe_reply_tbl
+        where re_id = #{id}
+    </select>
+    <select id="countMyQnaReply" parameterType="String" resultType="int">
+        select count(*)
+        from qna_reply_tbl
+        where re_id = #{id}
+    </select>
+
+    <!-- 내 Qna -->
+    <select id="selectQnaById" parameterType="String" resultType="com.zipchelin.domain.Qna">
+        select *
+        from qna_tbl
+        where user_id = #{id}
+    </select>
+
+    <!-- 내 마이레시피 -->
+    <select id="selectMyreById" parameterType="String" resultType="com.zipchelin.domain.Myrecipe">
+        select *
+        from myrecipe_tbl
+        where user_id = #{id}
+    </select>
+
+    <!-- 찜한 가이드 목록 -->
+    <!--  <select id="selectGuiHeart" parameterType="String" resultType="com.zipchelin.domain.Guide">
+        select g.gui_num, g.cate_num, g.gui_date, g.gui_view, g.gui_title, g.gui_subt, g.gui_desc
+        from guide_tbl g,
+             gui_pick p
+        where g.gui_num = p.gui_num
+          and p.user_id = #{id}
+    </select>-->
+
+    <!-- 찜한 레시피 목록 -->
+    <!-- <select id="selectRecHeart" parameterType="String" resultType="com.zipchelin.domain.Recipe">
+        select r.rec_num,
+               r.cate_num,
+               r.rec_date,
+               r.rec_view,
+               r.rec_ten,
+               r.rec_title,
+               r.rec_subt,
+               r.rec_desc,
+               r.rec_ingre_main,
+               r.rec_ingre_sub,
+               r.rec_tool
+        from recipe_tbl r,
+             rec_Pick p
+        where r.rec_num = p.rec_num
+          and p.user_id = #{id}
+    </select> -->
+    
+    <!-- 내 qna 댓글 목록 -->
+    <select id="selectQnaReply" parameterType="String" resultType="com.zipchelin.domain.QnaReply">
+    	select q.q_re_num, q.qna_num, q.user_img, q.re_order, q.re_id, q.re_content, q.re_up, q.re_date  from qna_reply_tbl q, myrecipe_reply_tbl r where q.re_id=r.re_id and q.re_id=#{id}
+    </select>
+    
+    <!-- 내 recipe 댓글 목록 -->
+    <select id="selectRecipeReply" parameterType="String" resultType="com.zipchelin.domain.RecipeReply">
+    	select r.m_re_num, r.myre_num, r.user_img, r.post_id, r.re_id, r.re_content, r.re_up, r.re_date  from qna_reply_tbl q, myrecipe_reply_tbl r where q.re_id=r.re_id and r.re_id=#{id}
+    </select>
+    
+    <!-- 마이페이지 찜목록 페이징 -->
+    <!-- <select id="getListPaging" resultType="com.zipchelin.domain.">
+        <![CDATA[
+        select rn, notice_num, notice_title, notice_date
+        from (select rownum as rn, notice_num, notice_title, notice_date
+              from notice_tbl
+              where rownum <= #{pageNum} * #{amount})
+        where rn > (#{pageNum} - 1) * #{amount}
+        ]]>
+    </select> -->
 </mapper>

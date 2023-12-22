@@ -1,21 +1,93 @@
 @charset "utf-8";
 
-main{display: block; margin: auto; padding: 100px 20px 60px; width: 1320px;}
-/* header{height: 100px; background-color: #ffffff; border-bottom: 1px solid #eee} */
-body,h1,h2,h3,h4,h5,input,select,textarea,button{font-size: 15px;}
+main {
+    display: block;
+    margin: auto;
+    padding: 100px 20px 60px;
+    width: 1320px;
+}
 
-.noticeList{margin: 0 100px 60px; border-top: 2px solid #222222; font-family: 'S-CoreDream'; cursor: pointer;}
-.noticeList .titleBox{display: flex; align-items: center; padding: 24px 16px; border-bottom: 1px solid #e9e9e9;}
-.noticeList .num{flex-basis: 60px; text-align: center; color: #8acc39; font-size: 16px;}
-.noticeList .title{flex: 1; padding: 0 16px; font-size: 18px;}
-.noticeList .date{flex-basis: 100px; color: #999; font-size: 13px;}
-.noticeList .icon{flex-basis: 36px; font-size: 36px;}
-.noticeList .contentBox{height:0; padding: 0 40px; background-color: #F7F8F6; overflow:hidden; transition: all 0.2s;}
-.noticeList .contentBox p{line-height: 28px; word-break: break-all;}
-.noticeItem.active .contentBox{height:auto; padding: 40px; transition: all 0.2s;}
-.noticeItem .titleBox .icon{transform: rotate(0deg); transition: all 0.2s;}
-.noticeItem.active .titleBox .icon{transform: rotate(180deg); transition: all 0.2s;}
+/* header{height: 100px; background-color: #ffffff; border-bottom: 1px solid #eee} */
+body, h1, h2, h3, h4, h5, input, select, textarea, button {
+    font-size: 15px;
+}
+
+.noticeList {
+    margin: 0 100px 60px;
+    border-top: 2px solid #222222;
+    font-family: 'S-CoreDream';
+    cursor: pointer;
+}
+
+.noticeList .titleBox {
+    display: flex;
+    align-items: center;
+    padding: 24px 16px;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.noticeList .num {
+    flex-basis: 60px;
+    text-align: center;
+    color: #8acc39;
+    font-size: 16px;
+}
+
+.noticeList .title {
+    flex: 1;
+    padding: 0 16px;
+    font-size: 18px;
+}
+
+.noticeList .date {
+    flex-basis: 100px;
+    color: #999;
+    font-size: 13px;
+}
+
+.noticeList .icon {
+    flex-basis: 36px;
+    font-size: 36px;
+}
+
+.noticeList .contentBox {
+    height: 0;
+    padding: 0 40px;
+    background-color: #F7F8F6;
+    overflow: hidden;
+    transition: all 0.2s;
+}
+
+.noticeList .contentBox p {
+    line-height: 28px;
+    word-break: break-all;
+}
+
+.noticeItem.active .contentBox {
+    height: auto;
+    padding: 40px;
+    transition: all 0.2s;
+}
+
+.noticeItem .titleBox .icon {
+    transform: rotate(0deg);
+    transition: all 0.2s;
+}
+
+.noticeItem.active .titleBox .icon {
+    transform: rotate(180deg);
+    transition: all 0.2s;
+}
 
 /* 공지 리스트 없음 */
-.noticeItem.noList{min-height: 360px; padding: 20%; text-align: center; background-color: #F7F8F6;}
-.noticeItem.noList h6{font-size: 22px; font-weight: 400;}
+.noticeItem.noList {
+    min-height: 360px;
+    padding: 20%;
+    text-align: center;
+    background-color: #F7F8F6;
+}
+
+.noticeItem.noList h6 {
+    font-size: 22px;
+    font-weight: 400;
+}

@@ -55,13 +55,13 @@
             <div class="login_input_left login_input_div">
                 <label for="login_id">아이디</label>
                 <input name="memberId" id="login_id" placeholder="아이디"/>
-                <%--                    <form:errors element="p" path="memberId" class="login_warning" />--%>
+                <p class="login_warning" id="login_id_warning">아이디가 입력되지 않았습니다.</p>
             </div>
             <div class="inputField login_input_left login_input_div">
                 <label for="login_password">비밀번호</label>
                 <input type="password" name="memberPwd" id="login_password" placeholder="비밀번호"/>
                 <span class="pwdToggle material-symbols-outlined">visibility_off</span>
-                <%--                    <form:errors element="p" path="memberPwd" class="login_warning" />--%>
+                <p class="login_warning" id="login_pwd_warning">비밀번호가 입력되지 않았습니다.</p>
             </div>
             <div class="login_acc">
                 <div class="login_input_div">
@@ -73,17 +73,15 @@
                 </div>
             </div>
             <div>
-                <%--                    <button class="login_login btnBg" type="button" onclick="login_form_submit()">로그인</button>--%>
-                <button class="login_login btnBg" type="submit">로그인</button>
+                <button class="login_login btnBg" type="button" onclick="login_form_submit()">로그인</button>
             </div>
         </form>
         <div class="login_sns">
             <h2>소셜 로그인</h2>
             <div>
-                <div class="login_email"><a href="#"><img src="${contextPath}/resource/images/icon/kakao_circle.png"
-                                                          alt="카카오 로그인"></a></div>
-                <div class="login_email"><a href="#"><img src="${contextPath}/resource/images/icon/naver_circle.png"
-                                                          alt="네이버 로그인"></a></div>
+                <div class="login_email"><a href="${contextPath}/oauth2/authorization/naver"><img
+                        src="${contextPath}/resource/images/icon/naver_circle.png"
+                        alt="네이버 로그인"></a></div>
                 <div class="login_email circle_bd"><a href="${contextPath}/oauth2/authorization/google"><img
                         src="${contextPath}/resource/images/icon/google_circle.png" alt="구글 로그인"> </a></div>
             </div>
@@ -91,11 +89,20 @@
     </section>
 </main>
 
-<c:if test="${error != null}">
-    <div id="login_fail">
-        <div id="login_fail_box">
-            <p id="login_fail_msg">해당하는 아이디가 없거나 비밀번호가 틀렸습니다.</p>
-            <button id="login_fail_out" type="button" onClick="login_fail_get_out()">확인</button>
+<c:if test="${param.error eq 'true'}">
+    <div class="login_modal">
+        <div class="login_modal_box">
+            <p class="login_modal_msg">${param.errmsg}</p>
+            <button class="login_modal_out" type="button" onClick="login_modal_get_out()">확인</button>
+        </div>
+    </div>
+</c:if>
+
+<c:if test="${welcomeMsg != null}">
+    <div class="login_modal">
+        <div class="login_modal_box">
+            <p class="login_modal_msg">${welcomeMsg}</p>
+            <button class="login_modal_out" type="button" onClick="login_modal_get_out()">확인</button>
         </div>
     </div>
 </c:if>

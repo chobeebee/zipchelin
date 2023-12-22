@@ -1,6 +1,6 @@
 package com.zipchelin.repository.mybatis.mappers;
 
-import com.zipchelin.domain.Notice;
+import com.zipchelin.domain.admin.Notice;
 import com.zipchelin.model.page.Criteria;
 import com.zipchelin.model.service.NoticeService;
 import org.junit.jupiter.api.Disabled;

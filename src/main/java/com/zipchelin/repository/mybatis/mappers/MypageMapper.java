@@ -1,9 +1,11 @@
 package com.zipchelin.repository.mybatis.mappers;
 
-import com.zipchelin.domain.*;
-import com.zipchelin.model.dto.Myheart;
-import com.zipchelin.model.page.Criteria;
+import com.zipchelin.domain.admin.RecipeReply;
 
+import com.zipchelin.domain.community.Myrecipe;
+import com.zipchelin.domain.community.Qna;
+import com.zipchelin.domain.community.QnaReply;
+import com.zipchelin.domain.member.Member;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

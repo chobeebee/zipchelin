@@ -1,13 +1,15 @@
 package com.zipchelin.model.service;
 
-import com.zipchelin.domain.*;
-import com.zipchelin.model.dto.MyPost;
-import com.zipchelin.model.dto.Myheart;
-import com.zipchelin.model.dto.Myreply;
+import com.zipchelin.domain.admin.RecipeReply;
+import com.zipchelin.domain.community.Myrecipe;
+import com.zipchelin.domain.community.Qna;
+import com.zipchelin.domain.community.QnaReply;
+import com.zipchelin.domain.member.Member;
+import com.zipchelin.model.dto.member.mypage.MyPost;
+import com.zipchelin.model.dto.member.mypage.Myreply;
 import com.zipchelin.model.dto.member.MemberResponseDto;
-import com.zipchelin.model.dto.myrecipe.MyrecipeResponseDto;
-import com.zipchelin.model.dto.qna.QnaResponseDto;
-import com.zipchelin.model.page.Criteria;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponseDto;
+import com.zipchelin.model.dto.community.qna.QnaResponseDto;
 import com.zipchelin.repository.MypageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.zipchelin.domain.Recipe;
+import com.zipchelin.domain.admin.Recipe;
 import com.zipchelin.repository.RecipeRepository;
 import com.zipchelin.repository.mybatis.mappers.RecipeMapper;
 

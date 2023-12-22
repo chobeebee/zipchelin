@@ -15,7 +15,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -38,9 +37,7 @@ public class MemberController {
 
     @GetMapping("/login")
     public String viewLogin(@AuthenticationPrincipal CustomUserDetails loginMember,
-                            @RequestParam(required = false) String error,
-                            HttpServletRequest request,
-                            Model model) {
+                            HttpServletRequest request) {
 
         if (loginMember != null) {
             return "redirect:/";
@@ -49,7 +46,6 @@ public class MemberController {
         if (prevPage != null && !prevPage.contains("/login") && !prevPage.contains("/sign-up")) {
             request.getSession().setAttribute("prevPage", prevPage);
         }
-        model.addAttribute("error", error);
 
         return "member/login";
     }

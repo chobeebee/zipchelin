@@ -1,6 +1,6 @@
 package com.zipchelin.model.service;
 
-import com.zipchelin.domain.Member;
+import com.zipchelin.domain.member.Member;
 import com.zipchelin.global.exception.BusinessLogicException;
 import com.zipchelin.global.exception.DuplicateException;
 import com.zipchelin.model.EmailApplicationEvent;

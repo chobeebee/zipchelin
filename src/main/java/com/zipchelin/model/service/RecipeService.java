@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.zipchelin.domain.Recipe;
+import com.zipchelin.domain.admin.Recipe;
 import com.zipchelin.repository.RecipeRepository;
 
 import lombok.RequiredArgsConstructor;

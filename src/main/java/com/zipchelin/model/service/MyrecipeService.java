@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.zipchelin.domain.Myrecipe;
+import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.model.page.Criteria;
 import com.zipchelin.repository.MyrecipeRepository;
 

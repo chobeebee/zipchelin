@@ -8,6 +8,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -22,7 +23,7 @@ public class MyRecipeReply {
     private String reId;
     private String reContent;
     private int reUp;
-    private Date replyDate;
+    private LocalDateTime replyDate;
 
     public MyRecipeReplyResponseDto toDto() {
         return MyRecipeReplyResponseDto.builder()

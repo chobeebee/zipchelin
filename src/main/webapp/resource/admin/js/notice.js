@@ -22,12 +22,13 @@ function delNotice() {
         traditional: true,
         data: {
             valueArr: valueArr
-        },
-        success: function(response) {
-			 window.location.href = "/admin/notice"
-		}
+        }
     })
+    location.reload();
 }
+
+
+
 
 let moveForm = $("#moveForm");
 $(".pageInfo a").on("click", function (e) {

@@ -77,7 +77,7 @@
 	                       </div>
 	                       <div class="tableItem">${qna.qnaUp }</div>
 	                       <div class="tableItem">${qna.qnaReCount }</div>
-	                       <div class="qna-id tableItem">${qna.userId }</div>
+	                       <div class="qna-id tableItem">${qna.memberId }</div>
 	                       <div class="qna-date tableItem">${qna.qnaDate }</div>
 	                   </a>
 	               </li>

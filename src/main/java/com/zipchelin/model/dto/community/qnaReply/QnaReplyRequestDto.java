@@ -13,19 +13,16 @@ import javax.validation.constraints.NotBlank;
 public class QnaReplyRequestDto {
 
     @NotBlank
-    private int qReNum;
+    private long qReNum;
 
     @NotBlank
-    private int qnaNum;
+    private long qnaNum;
 
     @NotBlank
     private String userImg;
 
     @NotBlank
-    private int Order;
-
-    @NotBlank
-    private String reId;
+    private String memberId;
 
     @NotBlank
     private String reContent;
@@ -38,8 +35,7 @@ public class QnaReplyRequestDto {
                 .qReNum(qReNum)
                 .qnaNum(qnaNum)
                 .userImg(userImg)
-                .Order(Order)
-                .reId(reId)
+                .memberId(memberId)
                 .reContent(reContent)
                 .reUp(reUp)
                 .build();

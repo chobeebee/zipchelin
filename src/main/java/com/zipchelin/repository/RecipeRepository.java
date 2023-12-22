@@ -3,6 +3,7 @@ package com.zipchelin.repository;
 import java.util.List;
 
 import com.zipchelin.domain.admin.Recipe;
+import com.zipchelin.model.dto.admin.recipe.RecipeListResponseDto;
 
 public interface RecipeRepository {
 

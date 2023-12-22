@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper
-	namespace="com.zipchelin.repository.mybatis.mappers.RecipeMapper">
+<mapper namespace="com.zipchelin.repository.mybatis.mappers.RecipeMapper">
 
 	<!-- 레시피 리스트 전체 조회 -->
-	<select id="selectRecipeAll"
-		resultType="com.zipchelin.domain.admin.Recipe">
-		select rec_title, rec_subt, rec_img0
-		from recipe_tbl
-		order by rec_num desc
+	<select id="selectRecipeAll" resultType="com.zipchelin.domain.admin.Recipe">
+		select rec_num, rec_subt, rec_title from recipe_tbl order by rec_num desc
 	</select>
 	<!-- 하트 구현 어떻게 하지 힝(세션이용?), rpi.rec_img_no = 0 또는 1로 바꾸기 -->
 
 	<!-- 레시피 카테고리별 조회 -->
-	<select id="selectEachCategory" parameterType="int"
-		resultType="com.zipchelin.domain.admin.Recipe">
-		select rec_title, rec_subt, rec_img0
-		from recipe_tbl
-		where cate_num = #{cate_num}
-		order by rec_num desc
+	<select id="selectEachCategory" parameterType="java.lang.Integer" resultType="com.zipchelin.domain.admin.Recipe">
+		select rec_title, rec_subt from recipe_tbl where cate_num=#{cateNum} order by rec_num desc
 	</select>
 
 	<!-- 레시피 글쓰기 새 글의 recnum 가져오기 -->

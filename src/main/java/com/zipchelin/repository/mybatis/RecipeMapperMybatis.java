@@ -18,14 +18,13 @@ public class RecipeMapperMybatis implements RecipeRepository {
 
 	@Override
 	public List<Recipe> selectRecipeAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return recipeMapper.selectRecipeAll();
 	}
 
 	@Override
 	public List<Recipe> selectEachCategory(int cateNum) {
-		//return recipeMapper.selectEachCategory(cateNum);
-		return null;
+		return recipeMapper.selectEachCategory(cateNum);
+		//return null;
 	}
 
 	@Override

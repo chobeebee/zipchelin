@@ -63,67 +63,67 @@
             <div class="category">
                 <ul class="categoryName clearfix">
                     <li>
-                        <a href="#" class="categoryBox active">
+                        <a href="javascript:" class="categoryBox active">
                             <img class="cm_menu" src="${contextPath}/resource/images/icon/cm_menu.png" alt="menu">
                             <p>전체보기</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="categoryBox">
+                        <a href="javascript:" class="categoryBox" onclick="ajaxCateRecipe(1);">
                             <img src="${contextPath}/resource/images/icon/cm_rice.png" alt="rice">
                             <p>밥요리</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="categoryBox">
+                        <a href="javascript:" class="categoryBox" onclick="ajaxCateRecipe(2);">
                             <img src="${contextPath}/resource/images/icon/cm_soup.png" alt="soup">
                             <p>국&탕</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="categoryBox">
+                        <a href="javascript:" class="categoryBox" onclick="ajaxCateRecipe(3);">
                             <img src="${contextPath}/resource/images/icon/cm_chan.png" alt="chan">
                             <p>밑반찬</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="categoryBox">
+                        <a href="javascript:" class="categoryBox" onclick="ajaxCateRecipe(4);">
                             <img src="${contextPath}/resource/images/icon/cm_boiled.png" alt="boiled">
                             <p>찜&조림</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="categoryBox">
+                        <a href="javascript:" class="categoryBox" onclick="ajaxCateRecipe(5);">
                             <img src="${contextPath}/resource/images/icon/cm_salad.png" alt="salad">
                             <p>샐러드</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="categoryBox">
+                        <a href="javascript:" class="categoryBox" onclick="ajaxCateRecipe(6);">
                             <img src="${contextPath}/resource/images/icon/cm_box.png" alt="box">
                             <p>도시락</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="categoryBox">
+                        <a href="javascript:" class="categoryBox" onclick="ajaxCateRecipe(7);">
                             <img src="${contextPath}/resource/images/icon/cm_fried.png" alt="fried">
                             <p>튀김</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="categoryBox">
+                        <a href="javascript:" class="categoryBox" onclick="ajaxCateRecipe(8);">
                             <img src="${contextPath}/resource/images/icon/cm_dessert.png" alt="dessert">
                             <p>간식&분식</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="categoryBox">
+                        <a href="javascript:" class="categoryBox" onclick="ajaxCateRecipe(9);">
                             <img src="${contextPath}/resource/images/icon/cm_dessert2.png" alt="dessert2">
                             <p>디저트</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="categoryBox">
+                        <a href="javascript:" class="categoryBox" onclick="ajaxCateRecipe(10);">
                             <img src="${contextPath}/resource/images/icon/cm_etc.png" alt="etc">
                             <p>기타요리</p>
                         </a>
@@ -146,7 +146,7 @@
 			                        <a class="recipe_link" href="/recipe/${recipe.recNum}">
 			                            <div class="imgwrap">
 			                                <div class="imgBox">
-			                                    <img class="recipe_pic" src="${contextPath}/resource/images/food/${recipe.recImg0}" alt="#">
+			                                    <%-- <img class="recipe_pic" src="${contextPath}/resource/images/food/${recipe.recImg0}" alt="#"> --%>
 			                                </div>
 			                            </div>
 			                            <div class="textBox">
@@ -183,6 +183,15 @@
     <!-- js -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="${contextPath}/resource/js/common.js"></script>
-    <script src="${contextPath}/resource/js/guide.js"></script>
+    
+    <script>
+    	$('.categoryBox').on('click', function(){
+    		$('.categoryBox').removeClass('active');
+    		$(this).addClass('active');
+    	});
+    	
+    	
+    	
+    </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 package com.zipchelin.repository.mybatis;
 
-import com.zipchelin.domain.community.RecipeReply;
+import com.zipchelin.domain.community.MyRecipeReply;
 import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.domain.community.Qna;
 import com.zipchelin.domain.community.QnaReply;
@@ -87,7 +87,7 @@ public class MypageMapperMybatis implements MypageRepository {
     }
     
     @Override
-    public List<RecipeReply> selectRecipeReply(String id){
+    public List<MyRecipeReply> selectRecipeReply(String id){
     	return mypageMapper.selectRecipeReply(id);
     }
 

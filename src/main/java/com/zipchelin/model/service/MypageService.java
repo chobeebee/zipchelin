@@ -1,6 +1,6 @@
 package com.zipchelin.model.service;
 
-import com.zipchelin.domain.community.RecipeReply;
+import com.zipchelin.domain.community.MyRecipeReply;
 import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.domain.community.Qna;
 import com.zipchelin.domain.community.QnaReply;
@@ -140,14 +140,14 @@ public class MypageService {
         	replyList.add(qna.toMyreply());
         }
 
-        List<RecipeReply> recipeReplyList = mypageRepository.selectRecipeReply(id);
-        for (RecipeReply rec : recipeReplyList) {
+        List<MyRecipeReply> myRecipeReplyList = mypageRepository.selectRecipeReply(id);
+        for (MyRecipeReply rec : myRecipeReplyList) {
         	replyList.add(rec.toMyreply());
         }
 
         for (int i = 0; i < replyList.size() - 1; i++) {
             for (int j = i + 1; j < replyList.size(); j++) {
-                if (replyList.get(i).getReplyDate().before(recipeReplyList.get(j).getReplyDate())) {
+                if (replyList.get(i).getReplyDate().before(myRecipeReplyList.get(j).getReplyDate())) {
                 	Myreply ireply = replyList.get(i);
                 	Myreply jreply = replyList.get(j);
                     replyList.remove(i);

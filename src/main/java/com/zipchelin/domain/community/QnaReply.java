@@ -53,7 +53,7 @@ public class QnaReply {
     			.qnaOrRec("qna")
     			.replyDate(replyDate)
     			.qnaReply(this)
-    			.recipeReply(null)
+    			.myRecipeReply(null)
     			.build();
     }
 }

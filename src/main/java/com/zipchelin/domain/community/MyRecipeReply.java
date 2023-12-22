@@ -1,8 +1,8 @@
 package com.zipchelin.domain.community;
 
 import com.zipchelin.model.dto.member.mypage.Myreply;
-import com.zipchelin.model.dto.community.recipeReply.RecipeReplyRequestDto;
-import com.zipchelin.model.dto.community.recipeReply.RecipeReplyResponseDto;
+import com.zipchelin.model.dto.community.myrecipeReply.MyRecipeReplyRequestDto;
+import com.zipchelin.model.dto.community.myrecipeReply.MyRecipeReplyResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,7 +14,7 @@ import java.util.Date;
 @Setter
 @Builder
 @AllArgsConstructor
-public class RecipeReply {
+public class MyRecipeReply {
     private int mReNum;
     private int myReNum;
     private String userImg;
@@ -24,8 +24,8 @@ public class RecipeReply {
     private int reUp;
     private Date replyDate;
 
-    public RecipeReplyResponseDto toDto() {
-        return RecipeReplyResponseDto.builder()
+    public MyRecipeReplyResponseDto toDto() {
+        return MyRecipeReplyResponseDto.builder()
                 .mReNum(mReNum)
                 .myReNum(myReNum)
                 .userImg(userImg)
@@ -36,8 +36,8 @@ public class RecipeReply {
                 .build();
     }
 
-    public RecipeReplyRequestDto fromDto() {
-        return RecipeReplyRequestDto.builder()
+    public MyRecipeReplyRequestDto fromDto() {
+        return MyRecipeReplyRequestDto.builder()
                 .mReNum(mReNum)
                 .myReNum(myReNum)
                 .userImg(userImg)
@@ -53,7 +53,7 @@ public class RecipeReply {
     			.qnaOrRec("rec")
     			.replyDate(replyDate)
     			.qnaReply(null)
-    			.recipeReply(this)
+    			.myRecipeReply(this)
     			.build();
     }
 }

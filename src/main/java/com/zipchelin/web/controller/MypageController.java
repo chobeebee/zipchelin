@@ -6,6 +6,7 @@ import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.model.service.MypageService;
 import lombok.RequiredArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,14 +86,31 @@ public class MypageController {
     public String mypost(@PathVariable(required = false) String requestedAjax, Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
         String id=userDetails.getMember().getMemberId();
         
+        List<MyPost> myPostList=new ArrayList<MyPost>();
+        
         if(requestedAjax==null) {
-        	model.addAttribute("myPostList",mypageService.selectMyPostList(id));
+        	
+        	myPostList=mypageService.selectMyPostList(id);
+        	model.addAttribute("myPostList",myPostList);
+        	model.addAttribute("myPostListSize",myPostList.size());
+        	
         }else if(requestedAjax.equals("all")){
-        	model.addAttribute("myPostList",mypageService.selectMyPostList(id));
+        	
+        	myPostList=mypageService.selectMyPostList(id);
+        	model.addAttribute("myPostList",myPostList);
+        	model.addAttribute("myPostListSize",myPostList.size());
+        	
         }else if(requestedAjax.equals("myre")) {
-        	model.addAttribute("myPostList",mypageService.selectMyreById(id));
+        	
+        	myPostList=mypageService.selectMyreById(id);
+        	model.addAttribute("myPostList",myPostList);
+        	model.addAttribute("myPostListSize",myPostList.size());
+        	
         }else if(requestedAjax.equals("qna")) {
-        	model.addAttribute("myPostList",mypageService.selectQnaById(id));
+        	
+        	myPostList=mypageService.selectQnaById(id);
+        	model.addAttribute("myPostList",myPostList);
+        	model.addAttribute("myPostListSize",myPostList.size());
         }
         return "mypage/mypost";
     }

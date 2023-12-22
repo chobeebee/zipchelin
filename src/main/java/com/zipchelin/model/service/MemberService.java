@@ -1,8 +1,8 @@
 package com.zipchelin.model.service;
 
-import com.zipchelin.domain.Member;
-import com.zipchelin.global.exception.BusinessLogicException;
-import com.zipchelin.global.exception.DuplicateException;
+import com.zipchelin.domain.member.Member;
+import com.zipchelin.web.exception.BusinessLogicException;
+import com.zipchelin.web.exception.DuplicateException;
 import com.zipchelin.model.EmailApplicationEvent;
 import com.zipchelin.model.dto.member.EmailDto;
 import com.zipchelin.model.dto.member.MemberSaveDto;
@@ -40,11 +40,17 @@ public class MemberService {
     @Transactional
     public String saveMember(MemberSaveDto params) {
 
+        if (!codeStore.containsKey(params.getMemberEmail() + "/authed")) {
+            log.info("비인가 이메일 가입시도 = {}", params.getMemberEmail());
+            throw new BusinessLogicException("인증되지 않았거나, 인증이 만료된 이메일 입니다.");
+        }
+
         Optional<Member> findById = memberRepository.findById(params.getMemberId());
         if (findById.isPresent()) {
             throw new DuplicateException("이미 존재하는 아이디입니다.");
         }
 
+        codeStore.remove(params.getMemberEmail() + "/authed");
         params.encodingPassword(passwordEncoder);
         return memberRepository.save(params.toEntity());
     }
@@ -59,6 +65,8 @@ public class MemberService {
 
         if (code.equals(findCode)) {
             codeStore.remove(email);
+            codeStore.put(email + "/authed", "authed");
+            publisher.publishEvent(new EmailApplicationEvent(this, email + "/authed", "authed"));
             return true;
         }
         return false;
@@ -68,11 +76,11 @@ public class MemberService {
 
         String authCode = createCode();
         if (codeStore.containsKey(email)) {
-            throw new BusinessLogicException("이미 인증번호가 발송되었습니다. 3분 이내에 재전송이 불가합니다.");
+            throw new BusinessLogicException("같은 이메일로는 3분 이내에 재전송이 불가합니다.");
         }
 
         codeStore.put(email, authCode);
-        log.info("서버에 저장 // 이메일 = {}, 코드 = {}", email, authCode);
+        log.info("서버의 인메모리 저장소 // 이메일 = {}, 코드 = {}", email, authCode);
 
         String toMail = email;
         String title = "회원 가입 인증 이메일 입니다.";
@@ -106,7 +114,7 @@ public class MemberService {
             helper.setText(content, true);
             mailSender.send(message);
         } catch (MessagingException | UnsupportedEncodingException e) {
-            throw new BusinessLogicException(e);
+            log.error("MemberService.mailSend()", e);
         }
     }
 

@@ -1,12 +1,15 @@
 package com.zipchelin.model.service;
 
-import com.zipchelin.domain.*;
-import com.zipchelin.model.dto.MyPost;
-import com.zipchelin.model.dto.Myheart;
-import com.zipchelin.model.dto.Myreply;
+import com.zipchelin.domain.community.MyRecipeReply;
+import com.zipchelin.domain.community.Myrecipe;
+import com.zipchelin.domain.community.Qna;
+import com.zipchelin.domain.community.QnaReply;
+import com.zipchelin.domain.member.Member;
+import com.zipchelin.model.dto.member.mypage.MyPost;
+import com.zipchelin.model.dto.member.mypage.Myreply;
 import com.zipchelin.model.dto.member.MemberResponseDto;
-import com.zipchelin.model.dto.myrecipe.MyrecipeResponseDto;
-import com.zipchelin.model.dto.qna.QnaResponseDto;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponseDto;
+import com.zipchelin.model.dto.community.qna.QnaResponseDto;
 import com.zipchelin.repository.MypageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,7 +100,8 @@ public class MypageService {
         }
         return postList;
     }
-
+    
+    /*
     public List<Myheart> selectHeartList(String id) {
         List<Myheart> heartList = new ArrayList<Myheart>();
 
@@ -126,6 +130,7 @@ public class MypageService {
         }
         return heartList;
     }
+    */
     
     public List<Myreply> selectReplyList(String id){
     	List<Myreply> replyList=new ArrayList<Myreply>();
@@ -135,14 +140,14 @@ public class MypageService {
         	replyList.add(qna.toMyreply());
         }
 
-        List<RecipeReply> recipeReplyList = mypageRepository.selectRecipeReply(id);
-        for (RecipeReply rec : recipeReplyList) {
+        List<MyRecipeReply> myRecipeReplyList = mypageRepository.selectRecipeReply(id);
+        for (MyRecipeReply rec : myRecipeReplyList) {
         	replyList.add(rec.toMyreply());
         }
 
         for (int i = 0; i < replyList.size() - 1; i++) {
             for (int j = i + 1; j < replyList.size(); j++) {
-                if (replyList.get(i).getReplyDate().before(recipeReplyList.get(j).getReplyDate())) {
+                if (replyList.get(i).getReplyDate().before(myRecipeReplyList.get(j).getReplyDate())) {
                 	Myreply ireply = replyList.get(i);
                 	Myreply jreply = replyList.get(j);
                     replyList.remove(i);
@@ -154,4 +159,8 @@ public class MypageService {
         }
         return replyList;
     }
+    
+   /* public List<Myheart> getListPaging(Criteria cri) {
+        return mypageRepository.getListPaging(cri);
+    }*/
 }

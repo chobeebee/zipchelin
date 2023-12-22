@@ -1,8 +1,8 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.global.exception.BusinessLogicException;
-import com.zipchelin.global.exception.DuplicateException;
-import com.zipchelin.global.provider.CustomUserDetails;
+import com.zipchelin.web.exception.BusinessLogicException;
+import com.zipchelin.web.exception.DuplicateException;
+import com.zipchelin.web.security.provider.CustomUserDetails;
 import com.zipchelin.model.dto.member.EmailDto;
 import com.zipchelin.model.dto.member.MemberSaveDto;
 import com.zipchelin.model.service.MemberService;
@@ -14,10 +14,10 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -36,9 +36,7 @@ public class MemberController {
 
     @GetMapping("/login")
     public String viewLogin(@AuthenticationPrincipal CustomUserDetails loginMember,
-                            @RequestParam(required = false) String error,
-                            HttpServletRequest request,
-                            Model model) {
+                            HttpServletRequest request) {
 
         if (loginMember != null) {
             return "redirect:/";
@@ -47,7 +45,6 @@ public class MemberController {
         if (prevPage != null && !prevPage.contains("/login") && !prevPage.contains("/sign-up")) {
             request.getSession().setAttribute("prevPage", prevPage);
         }
-        model.addAttribute("error", error);
 
         return "member/login";
     }
@@ -78,21 +75,27 @@ public class MemberController {
 
     @PostMapping("/sign-up")
     public String signUp(@Validated @ModelAttribute("params") MemberSaveDto params,
-                         BindingResult bindingResult) {
+                         BindingResult bindingResult,
+                         RedirectAttributes redirectAttributes) {
 
         if (!params.getMemberPwd().equals(params.getPwdConfirm())) {
-            bindingResult.reject("pwdCheck");
+            bindingResult.rejectValue("pwdConfirm", "errorCode", "입력한 비밀번호와 일치해야 합니다.");
+            return "member/sign_up";
         }
 
         if (bindingResult.hasErrors()) {
             return "member/sign_up";
         }
 
-        // Duplicate 에러가 발생하면 캐치해서 글로벌 검증 메시지로 반환
+        // 서비스에서 발생시킨 커스텀 에러를 캐치해서 특정 검증 메시지로 반환
         try {
             String memberName = memberService.saveMember(params);
+            redirectAttributes.addFlashAttribute("welcomeMsg", memberName + "님 가입을 환영합니다!");
         } catch (DuplicateException e) {
-            bindingResult.reject("duplicate", e.getMessage());
+            bindingResult.rejectValue("idAuth", "errorCode", e.getMessage());
+            return "member/sign_up";
+        } catch (BusinessLogicException e) {
+            bindingResult.rejectValue("emailAuth", "errorCode", e.getMessage());
             return "member/sign_up";
         }
 
@@ -101,14 +104,14 @@ public class MemberController {
 
     @ResponseBody
     @PostMapping("/sendMail")
-    public String sendEmail(@Validated @RequestBody EmailDto params) {
+    public ResponseEntity<String> sendEmail(@Validated @RequestBody EmailDto params) {
         String email = params.getEmail();
         try {
             memberService.mailForm(email);
         } catch (BusinessLogicException e) {
-            return e.getMessage();
+            return ResponseEntity.ok(e.getMessage());
         }
-        return "success";
+        return ResponseEntity.ok("success");
     }
 
     @ResponseBody

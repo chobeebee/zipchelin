@@ -1,6 +1,6 @@
 package com.zipchelin.repository;
 
-import com.zipchelin.domain.Member;
+import com.zipchelin.domain.member.Member;
 
 import java.util.Optional;
 

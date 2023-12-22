@@ -26,9 +26,9 @@ public class EmailEventListener {
 
         scheduler.schedule(() -> {
             MemberService.codeStore.remove(event.getEmail());
-            log.info("3분 경과, 이메일 삭제 = {}", MemberService.codeStore);
+            log.info("3분 경과, 이메일 삭제 = {}", event.getEmail());
             scheduler.shutdown();
-        }, 3, TimeUnit.MINUTES);
+        }, 1, TimeUnit.MINUTES);
     }
 }
 

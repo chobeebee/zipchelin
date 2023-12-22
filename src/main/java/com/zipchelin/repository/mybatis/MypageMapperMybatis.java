@@ -1,6 +1,10 @@
 package com.zipchelin.repository.mybatis;
 
-import com.zipchelin.domain.*;
+import com.zipchelin.domain.community.MyRecipeReply;
+import com.zipchelin.domain.community.Myrecipe;
+import com.zipchelin.domain.community.Qna;
+import com.zipchelin.domain.community.QnaReply;
+import com.zipchelin.domain.member.Member;
 import com.zipchelin.repository.MypageRepository;
 import com.zipchelin.repository.mybatis.mappers.MypageMapper;
 import lombok.RequiredArgsConstructor;
@@ -67,15 +71,15 @@ public class MypageMapperMybatis implements MypageRepository {
         return mypageMapper.selectMyreById(id);
     }
 
-    @Override
-    public List<Guide> selectGuiHeart(String id) {
-        return mypageMapper.selectGuiHeart(id);
-    }
+    //@Override
+    //public List<Guide> selectGuiHeart(String id) {
+    //    return mypageMapper.selectGuiHeart(id);
+    //}
 
-    @Override
-    public List<Recipe> selectRecHeart(String id) {
-        return mypageMapper.selectRecHeart(id);
-    }
+    //@Override
+    //public List<Recipe> selectRecHeart(String id) {
+    //    return mypageMapper.selectRecHeart(id);
+    //}
     
     @Override
     public List<QnaReply> selectQnaReply(String id){
@@ -83,8 +87,15 @@ public class MypageMapperMybatis implements MypageRepository {
     }
     
     @Override
-    public List<RecipeReply> selectRecipeReply(String id){
+    public List<MyRecipeReply> selectRecipeReply(String id){
     	return mypageMapper.selectRecipeReply(id);
     }
+
+    /*
+	@Override
+	public List<Myheart> getListPaging(Criteria cri) {
+		return mypageMapper.getListPaging(cri);
+	}
+	*/
 
 }

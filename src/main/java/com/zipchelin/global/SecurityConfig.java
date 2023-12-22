@@ -1,7 +1,7 @@
 package com.zipchelin.global;
 
-import com.zipchelin.global.oauth.PrincipalOAuth2Service;
-import com.zipchelin.global.provider.CustomAuthenticationProvider;
+import com.zipchelin.web.security.oauth.PrincipalOAuth2Service;
+import com.zipchelin.web.security.provider.CustomAuthenticationProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.zipchelin.domain.Qna;
+import com.zipchelin.domain.community.Qna;
 import com.zipchelin.model.dto.common.Pagination;
-import com.zipchelin.model.dto.qna.QnaDto;
-import com.zipchelin.model.dto.qna.QnaRequest;
-import com.zipchelin.model.dto.qna.QnaRequestDto;
-import com.zipchelin.model.dto.qna.QnaResponse;
+import com.zipchelin.model.dto.community.qna.QnaDto;
+import com.zipchelin.model.dto.community.qna.QnaRequest;
+import com.zipchelin.model.dto.community.qna.QnaRequestDto;
+import com.zipchelin.model.dto.community.qna.QnaResponse;
 import com.zipchelin.repository.QnaRepository;
 
 import lombok.RequiredArgsConstructor;

@@ -631,27 +631,33 @@
                 </div>
 
                 <!--가이드페이지-페이징-->
-                <div class="paging">
-                    <ul class="myheart_paging">
-                        <!--li에 .disabled가 있으면 화살표에 클릭방지 생김-->
-                        <li class="arrow prev disabled">
-                            <button disabled><span class="material-symbols-outlined">navigate_before</span></button>
-                        </li>
-                        <li class="active"><a href="javascript:">1</a></li>
-                        <li><a href="javascript:">2</a></li>
-                        <li><a href="javascript:">3</a></li>
-                        <li><a href="javascript:">4</a></li>
-                        <li><a href="javascript:">5</a></li>
-                        <li class="arrow next">
-                            <button><span class="material-symbols-outlined">navigate_next</span></button>
-                        </li>
-                    </ul>
-                </div>
+                <div class="pageInfo_wrap paging">
+        <div class="pageInfo_area">
+            <ul class="pageInfo" id="pageInfo">
+                <c:if test="${pageMaker.prev}">
+                    <li class="pageInfo_btn previous arrow prev disabled"><a href="${pageMaker.startPage-1}"><span
+                            class="material-symbols-outlined">navigate_before</span></a></li>
+                </c:if>
+                <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+                    <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a>
+                    </li>
+                </c:forEach>
+                <c:if test="${pageMaker.next}">
+                    <li class="pageInfo_btn next arrow next"><a href="${pageMaker.endPage + 1 }"><span
+                            class="material-symbols-outlined">navigate_next</span></a></li>
+                </c:if>
+            </ul>
+        </div>
+    </div>
+    <form action="get" id="moveForm">
+        <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+        <input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+    </form>
             </div>
         </div>
 
     </div>
-
+	
 </main>
 
 <!-- 푸터 -->

@@ -1,7 +1,7 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.global.provider.CustomUserDetails;
-import com.zipchelin.model.dto.MyPost;
+import com.zipchelin.web.security.provider.CustomUserDetails;
+import com.zipchelin.model.dto.member.mypage.MyPost;
 import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.model.service.MypageService;
 import lombok.RequiredArgsConstructor;
@@ -99,15 +99,15 @@ public class MypageController {
 
     @GetMapping("/myheart")
     public String myheart(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
-        String id = userDetails.getMember().getMemberId();
-        model.addAttribute("heartList", mypageService.selectHeartList(id));
+        //String id = userDetails.getMember().getMemberId();
+        //model.addAttribute("heartList", mypageService.selectHeartList(id));
         return "mypage/myheart";
     }
 
     @GetMapping("/myreply")
     public String myreply(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
     	String id = userDetails.getMember().getMemberId();
-        model.addAttribute("replyList", mypageService.selectHeartList(id));
+        model.addAttribute("replyList", mypageService.selectReplyList(id));
     	return "mypage/myreply";
     }
 

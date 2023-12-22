@@ -1,4 +1,4 @@
-package com.zipchelin.model.dto;
+package com.zipchelin.domain.member;
 
 import lombok.Getter;
 

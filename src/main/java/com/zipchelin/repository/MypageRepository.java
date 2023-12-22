@@ -1,6 +1,6 @@
 package com.zipchelin.repository;
 
-import com.zipchelin.domain.community.RecipeReply;
+import com.zipchelin.domain.community.MyRecipeReply;
 import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.domain.community.Qna;
 import com.zipchelin.domain.community.QnaReply;
@@ -29,7 +29,7 @@ public interface MypageRepository {
     
     public List<QnaReply> selectQnaReply(String id);
     
-    public List<RecipeReply> selectRecipeReply(String id);
+    public List<MyRecipeReply> selectRecipeReply(String id);
     
     //public List<Myheart> getListPaging(Criteria cri);
 }

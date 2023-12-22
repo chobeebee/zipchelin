@@ -1,4 +1,4 @@
-package com.zipchelin.global.exception.handler;
+package com.zipchelin.web.exception.handler;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.BadCredentialsException;

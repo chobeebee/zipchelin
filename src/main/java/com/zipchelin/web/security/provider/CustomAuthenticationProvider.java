@@ -1,4 +1,4 @@
-package com.zipchelin.global.provider;
+package com.zipchelin.web.security.provider;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;

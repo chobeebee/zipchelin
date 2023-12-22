@@ -1,7 +1,7 @@
 package com.zipchelin.repository.mybatis.mappers;
 
 import com.zipchelin.domain.admin.Notice;
-import com.zipchelin.model.page.Criteria;
+import com.zipchelin.model.dto.admin.page.Criteria;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

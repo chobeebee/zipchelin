@@ -2,7 +2,7 @@
 
 import com.zipchelin.domain.admin.Notice;
 import com.zipchelin.model.dto.admin.notice.PageMakerDTO;
-import com.zipchelin.model.page.Criteria;
+import com.zipchelin.model.dto.admin.page.Criteria;
 import com.zipchelin.model.service.NoticeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

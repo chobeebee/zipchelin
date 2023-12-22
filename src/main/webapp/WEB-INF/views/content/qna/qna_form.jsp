@@ -69,7 +69,7 @@
             <h1 class="best-title">요리 상담소</h1>
             <div>
                 <div class="information informationBox">
-                <input name="userId" value="86" type="hidden">
+                <input name="memberId" value="86" type="hidden">
                     <h2 class="form-title">제목</h2>
                     <p><input class="formBox" name="qnaTitle" id="qnaTitle" placeholder="제목을 입력해주세요"></p>
                 </div>

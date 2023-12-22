@@ -72,7 +72,7 @@
                             <div class="comment-profile">
                                 <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                             </div>
-                            <strong class="post-id">${qna.userId }</strong>
+                            <strong class="post-id">${qna.memberId }</strong>
                             <span class="post-date">${qna.qnaDate }</span>
                             <div class="comment_writeracc">
                                 <button class="comment_update">

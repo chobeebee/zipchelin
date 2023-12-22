@@ -8,6 +8,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -18,21 +19,20 @@ public class QnaReply {
     private long qReNum;
     private long qnaNum;
     private String userImg;
-    private int Order;
-    private String reId;
+    private String memberId;
     private String reContent;
     private int reUp;
-    private Date replyDate;
+    private LocalDateTime reDate;
 
     public QnaReplyResponseDto toDto() {
         return QnaReplyResponseDto.builder()
                 .qReNum(qReNum)
                 .qnaNum(qnaNum)
                 .userImg(userImg)
-                .Order(Order)
-                .reId(reId)
+                .memberId(memberId)
                 .reContent(reContent)
                 .reUp(reUp)
+                .reDate(null)
                 .build();
     }
 
@@ -41,17 +41,15 @@ public class QnaReply {
                 .qReNum(qReNum)
                 .qnaNum(qnaNum)
                 .userImg(userImg)
-                .Order(Order)
-                .reId(reId)
+                .memberId(memberId)
                 .reContent(reContent)
-                .reUp(reUp)
                 .build();
     }
     
     public Myreply toMyreply() {
     	return Myreply.builder()
     			.qnaOrRec("qna")
-    			.replyDate(replyDate)
+    			.replyDate(reDate)
     			.qnaReply(this)
     			.myRecipeReply(null)
     			.build();

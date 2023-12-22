@@ -9,7 +9,7 @@ import com.zipchelin.model.dto.community.qna.QnaResponseDto;
 
 public interface QnaRepository {
 
-    void save(QnaRequestDto params);
+    long save(QnaRequestDto params);
 
     QnaResponseDto findById(Long id);
 

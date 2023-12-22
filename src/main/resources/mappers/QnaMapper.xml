@@ -12,12 +12,15 @@
     <insert id="save" parameterType="com.zipchelin.model.dto.community.qna.QnaRequestDto">
         INSERT INTO qna_tbl
         VALUES ( qna_sq.nextval
-               , #{userId}
+               , #{memberId}
                , #{qnaTitle}
                , #{qnaContent}
                , sysdate
                , 0
                , 0)
+               <selectKey keyProperty="qnaNum" resultType="long" order="AFTER">
+               		select qna_sq.currval from dual
+               </selectKey>
     </insert>
 
 

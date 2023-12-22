@@ -1,24 +1,24 @@
 package com.zipchelin.model.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.zipchelin.domain.community.MyRecipeReply;
 import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.domain.community.Qna;
 import com.zipchelin.domain.community.QnaReply;
 import com.zipchelin.domain.member.Member;
+import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.model.dto.member.mypage.MyPost;
 import com.zipchelin.model.dto.member.mypage.Myreply;
-import com.zipchelin.model.dto.member.MemberResponseDto;
-import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponseDto;
-import com.zipchelin.model.dto.community.qna.QnaResponseDto;
 import com.zipchelin.repository.MypageRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
@@ -147,7 +147,7 @@ public class MypageService {
 
         for (int i = 0; i < replyList.size() - 1; i++) {
             for (int j = i + 1; j < replyList.size(); j++) {
-                if (replyList.get(i).getReplyDate().before(myRecipeReplyList.get(j).getReplyDate())) {
+                if (replyList.get(i).getReplyDate().isBefore(myRecipeReplyList.get(j).getReplyDate())) {
                 	Myreply ireply = replyList.get(i);
                 	Myreply jreply = replyList.get(j);
                     replyList.remove(i);

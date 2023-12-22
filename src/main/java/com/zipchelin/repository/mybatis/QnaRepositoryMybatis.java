@@ -20,8 +20,10 @@ public class QnaRepositoryMybatis implements QnaRepository {
 	private final QnaMapper mapper;
 
 	@Override
-	public void save(QnaRequestDto params) {
+	public long save(QnaRequestDto params) {
+		
 		mapper.save(params);
+		return params.getQnaNum();
 	}
 
 	@Override

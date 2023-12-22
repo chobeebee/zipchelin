@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zipchelin.domain.community.Myrecipe;
-import com.zipchelin.model.page.Criteria;
+import com.zipchelin.model.dto.admin.page.Criteria;
 import com.zipchelin.repository.MyrecipeRepository;
 
 import lombok.RequiredArgsConstructor;

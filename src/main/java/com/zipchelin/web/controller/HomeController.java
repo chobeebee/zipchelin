@@ -1,6 +1,6 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.global.provider.CustomUserDetails;
+import com.zipchelin.web.security.provider.CustomUserDetails;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

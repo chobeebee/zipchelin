@@ -1,8 +1,8 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.global.exception.BusinessLogicException;
-import com.zipchelin.global.exception.DuplicateException;
-import com.zipchelin.global.provider.CustomUserDetails;
+import com.zipchelin.web.exception.BusinessLogicException;
+import com.zipchelin.web.exception.DuplicateException;
+import com.zipchelin.web.security.provider.CustomUserDetails;
 import com.zipchelin.model.dto.member.EmailDto;
 import com.zipchelin.model.dto.member.MemberSaveDto;
 import com.zipchelin.model.service.MemberService;
@@ -12,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -105,14 +104,14 @@ public class MemberController {
 
     @ResponseBody
     @PostMapping("/sendMail")
-    public String sendEmail(@Validated @RequestBody EmailDto params) {
+    public ResponseEntity<String> sendEmail(@Validated @RequestBody EmailDto params) {
         String email = params.getEmail();
         try {
             memberService.mailForm(email);
         } catch (BusinessLogicException e) {
-            return e.getMessage();
+            return ResponseEntity.ok(e.getMessage());
         }
-        return "success";
+        return ResponseEntity.ok("success");
     }
 
     @ResponseBody

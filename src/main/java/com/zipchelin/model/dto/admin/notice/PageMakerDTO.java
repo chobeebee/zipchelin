@@ -1,6 +1,6 @@
 package com.zipchelin.model.dto.admin.notice;
 
-import com.zipchelin.model.page.Criteria;
+import com.zipchelin.model.dto.admin.page.Criteria;
 
 public class PageMakerDTO {
     private int startPage;

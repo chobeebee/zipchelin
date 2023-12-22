@@ -1,4 +1,4 @@
-package com.zipchelin.model.page;
+package com.zipchelin.model.dto.admin.page;
 
 public class Criteria {
     // 현제 페이지

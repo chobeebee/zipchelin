@@ -1,6 +1,6 @@
 package com.zipchelin.repository.mybatis.mappers;
 
-import com.zipchelin.domain.admin.RecipeReply;
+import com.zipchelin.domain.community.RecipeReply;
 
 import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.domain.community.Qna;

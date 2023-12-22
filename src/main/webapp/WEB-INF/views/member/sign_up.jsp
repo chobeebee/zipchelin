@@ -162,7 +162,6 @@
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(params),
             dataType: 'json',
-            async: true,
 
             success: function (response) {
                 if (response) {
@@ -185,8 +184,8 @@
                     $('#isIdAuthed').prop('checked', false);
                 }
             },
-            error: function (request, error) {
-                console.log(error);
+            error: function (xhr, error) {
+                console.log(xhr.status, xhr.statusText, error);
             }
         })
     }, 500));
@@ -235,7 +234,6 @@
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(params),
             dataType: 'text',
-            async: true,
 
             success: function (response) {
                 if (response === 'success') {
@@ -258,8 +256,8 @@
                     alert(response);
                 }
             },
-            error: function (request, error) {
-                console.log(error);
+            error: function (xhr, error) {
+                console.log(xhr.status, xhr.statusText, error);
             }
         })
     });
@@ -276,7 +274,6 @@
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(params),
             dataType: 'json',
-            async: true,
 
             success: function (response) {
                 if (response) {
@@ -286,8 +283,8 @@
                     alert('잘못된 인증번호입니다. 다시 확인해주세요.');
                 }
             },
-            error: function (request, error) {
-                console.log(error);
+            error: function (xhr, error) {
+                console.log(xhr.status, xhr.statusText, error);
             }
         })
     });

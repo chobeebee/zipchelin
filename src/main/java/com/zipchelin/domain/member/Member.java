@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 
 @Getter
 @Builder
-@ToString
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Member {

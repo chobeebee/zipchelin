@@ -21,9 +21,8 @@ public class QnaService {
     private final QnaRepository repository;
 
     @Transactional
-    public String saveQna(final QnaRequestDto params) {
-    	repository.save(params);
-        return params.getUserId();
+    public long saveQna(final QnaRequestDto params) {
+    	return repository.save(params);
     }
 
     public QnaResponseDto findQnaById(final Long id) {

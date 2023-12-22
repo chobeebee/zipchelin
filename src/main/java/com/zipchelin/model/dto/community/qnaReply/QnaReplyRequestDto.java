@@ -22,10 +22,7 @@ public class QnaReplyRequestDto {
     private String userImg;
 
     @NotBlank
-    private int Order;
-
-    @NotBlank
-    private String reId;
+    private String memberId;
 
     @NotBlank
     private String reContent;
@@ -38,8 +35,7 @@ public class QnaReplyRequestDto {
                 .qReNum(qReNum)
                 .qnaNum(qnaNum)
                 .userImg(userImg)
-                .Order(Order)
-                .reId(reId)
+                .memberId(memberId)
                 .reContent(reContent)
                 .reUp(reUp)
                 .build();

@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class QnaResponseDto {
     private long qnaNum;
-    private String userId;
+    private String memberId;
     private String qnaTitle;
     private String qnaContent;
     private LocalDateTime qnaDate;
@@ -22,7 +22,7 @@ public class QnaResponseDto {
     public Qna toEntity() {
         return Qna.builder()
                 .qnaNum(qnaNum)
-                .userId(userId)
+                .memberId(memberId)
                 .qnaTitle(qnaTitle)
                 .qnaContent(qnaContent)
                 .qnaDate(qnaDate)

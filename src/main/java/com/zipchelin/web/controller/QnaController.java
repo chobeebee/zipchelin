@@ -61,8 +61,8 @@ public class QnaController {
 	
 	@PostMapping("/save")
 	public String saveQna(final QnaRequestDto params) {
-		qnaService.saveQna(params);
-		return "redirect:/community/qna/";
+		long qnaNum = qnaService.saveQna(params);
+		return "redirect:/community/qna/post/" + qnaNum;
 	}
 	
 	@GetMapping("/delete/{num}")

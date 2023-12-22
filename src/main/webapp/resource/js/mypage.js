@@ -182,8 +182,7 @@ function edit_complete_btn() {
 function getMyPostData(requestedAjax){
 	$.ajax({
                 type : "GET",
-                url : "/mypage/mypost/"+requestedAjax,
-                success : function(){alert("성공");}
+                url : "/mypage/mypost/"+requestedAjax
             });
 }
 

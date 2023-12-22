@@ -16,26 +16,28 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class Qna {
     private long qnaNum;
-    private String userId;
+    private String memberId;
     private String qnaTitle;
     private String qnaContent;
     private LocalDateTime qnaDate;
+    private int qnaReCount;
     private int qnaUp;
 
     public QnaResponseDto toDto() {
         return QnaResponseDto.builder()
                 .qnaNum(qnaNum)
-                .userId(userId)
+                .memberId(memberId)
                 .qnaTitle(qnaTitle)
                 .qnaContent(qnaContent)
                 .qnaDate(qnaDate)
                 .qnaUp(qnaUp)
+                .qnaReCount(qnaReCount)
                 .build();
     }
 
     public QnaRequestDto fromDto() {
         return QnaRequestDto.builder()
-                .userId(userId)
+                .memberId(memberId)
                 .qnaTitle(qnaTitle)
                 .qnaContent(qnaContent)
                 .build();

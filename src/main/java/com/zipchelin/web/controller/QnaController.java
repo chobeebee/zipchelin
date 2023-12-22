@@ -15,9 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.zipchelin.model.dto.community.qna.QnaDto;
-import com.zipchelin.model.dto.community.qna.QnaRequest;
 import com.zipchelin.model.dto.community.qna.QnaRequestDto;
-import com.zipchelin.model.dto.community.qna.QnaResponse;
+import com.zipchelin.model.dto.community.qna.QnaResponseDto;
 import com.zipchelin.model.service.QnaService;
 
 import lombok.RequiredArgsConstructor;
@@ -32,7 +31,7 @@ public class QnaController {
 	@GetMapping("")
     public String viewQna(@ModelAttribute("params") final QnaDto params, Model model) {
 
-		List<QnaResponse> qna= qnaService.findAllQna(params);
+		List<QnaResponseDto> qna= qnaService.findAllQna(params);
 		
 		model.addAttribute("qna",qna);
 		model.addAttribute("params", params);
@@ -46,7 +45,7 @@ public class QnaController {
 	
 	@GetMapping("/post/{num}")  // /qna/post/id값
     public String postQna(@PathVariable("num") Long id, Model model) {
-		QnaResponse qna= qnaService.findQnaById(id);
+		QnaResponseDto qna= qnaService.findQnaById(id);
 		model.addAttribute("qna",qna);
         return "content/qna/qna_post";
     }
@@ -54,16 +53,16 @@ public class QnaController {
 	@GetMapping("/form")
     public String saveFormQna(@RequestParam(value="id",required = false) final Long id,Model model) {
 			if(id!=null) {
-				QnaResponse qna = qnaService.findQnaById(id);
+				QnaResponseDto qna = qnaService.findQnaById(id);
 				model.addAttribute("qna",qna);
 			}
         return "content/qna/qna_form";
     }
 	
 	@PostMapping("/save")
-	public String saveQna(final QnaRequest params) {
-		qnaService.saveQna(params);
-		return "redirect:/community/qna/";
+	public String saveQna(final QnaRequestDto params) {
+		long qnaNum = qnaService.saveQna(params);
+		return "redirect:/community/qna/post/" + qnaNum;
 	}
 	
 	@GetMapping("/delete/{num}")
@@ -75,7 +74,7 @@ public class QnaController {
 	@GetMapping("/update/{num}")
 	public String updateFormQna(@PathVariable("num") final Long id,Model model) {
 		if(id!=null) {
-			QnaResponse qna = qnaService.findQnaById(id);
+			QnaResponseDto qna = qnaService.findQnaById(id);
 			model.addAttribute("qna",qna);
 		}
 		return "content/qna/qna_update";

@@ -11,14 +11,14 @@ import lombok.Getter;
 public class QnaRequestDto {
 	
 	private Long qnaNum;
-    private String userId;
+    private String memberId;
     private String qnaTitle;
     private String qnaContent;
 
     public Qna toEntity() {
         return Qna.builder()
         		.qnaNum(qnaNum)
-                .userId(userId)
+                .memberId(memberId)
                 .qnaTitle(qnaTitle)
                 .qnaContent(qnaContent)
                 .build();

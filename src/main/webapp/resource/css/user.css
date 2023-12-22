@@ -20,6 +20,8 @@ body, h1, h2, h3, h4, h5, input, select, textarea, button {
     margin-bottom: 100px;
     border: 1px solid #c1c1c1;
     border-radius: 6px;
+    display: table;
+    margin: auto;
 }
 
 .leaveSec {

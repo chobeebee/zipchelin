@@ -43,26 +43,26 @@ public class MypageService {
         return mypageRepository.selectCount(id);
     }
 
-    public List<MyrecipeResponseDto> selectMyreById(String id) {
+    public List<MyPost> selectMyreById(String id) {
         List<Myrecipe> myreList = mypageRepository.selectMyreById(id);
-        List<MyrecipeResponseDto> myreDtoList = new ArrayList<MyrecipeResponseDto>();
+        List<MyPost> myPostList = new ArrayList<MyPost>();
 
         for (Myrecipe myre : myreList) {
-            myreDtoList.add(myre.toDto());
+        	myPostList.add(myre.toMyPost());
         }
 
-        return myreDtoList;
+        return myPostList;
     }
 
-    public List<QnaResponseDto> selectQnaById(String id) {
+    public List<MyPost> selectQnaById(String id) {
         List<Qna> qnaList = mypageRepository.selectQnaById(id);
-        List<QnaResponseDto> qnaDtoList = new ArrayList<QnaResponseDto>();
+        List<MyPost> myPostList = new ArrayList<MyPost>();
 
         for (Qna qna : qnaList) {
-            qnaDtoList.add(qna.toDto());
+        	myPostList.add(qna.toMyPost());
         }
 
-        return qnaDtoList;
+        return myPostList;
     }
 
     public List<MyPost> selectMyPostList(String id) {

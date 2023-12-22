@@ -15,8 +15,8 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 public class QnaReply {
-    private int qReNum;
-    private int qnaNum;
+    private long qReNum;
+    private long qnaNum;
     private String userImg;
     private int Order;
     private String reId;

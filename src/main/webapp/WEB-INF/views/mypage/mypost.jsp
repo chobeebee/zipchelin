@@ -74,29 +74,41 @@
         <div class="tabContWrap">
             <div id="tabAll" class="tabCont show">
                 <ul class="imgLists  mypostList">
-                    <li class="listItem mypostItem imgwrap">
-                        <div class="chkWrap">
-                            <input type="checkbox" class="chkBox" name="chkItem" id="listChk01">
-                            <label for="listChk01"></label>
-                        </div>
-                        <div class="contBox">
-                            <a href="">
-                                <span class="postDate">2023.10.17 00:00</span>
-                                <h6>생명을 불어 넣는 생명을 불어 넣는 생명을 불어 넣는 생명을 불어 넣는 생명을 불어 넣는 생명을 불어 넣는</h6>
-                                <p>모래뿐일 것이다 이상의 꽃이 없으면 쓸쓸한 인간에 남는 것은 영락과 부패 뿐이다 낙원을 영락과 부패 뿐이다 영락과 부패 뿐이다 </p>
-                                <ul class="accList">
-                                    <li class="accItem">
-                                        <span class="icon material-symbols-outlined">visibility</span>268
-                                    </li>
-                                    <li class="accItem">
-                                        <span class="icon material-symbols-outlined">thumb_up</span>80
-                                    </li>
-                                </ul>
-                            </a>
-                        </div>
-                        <div class="imgBox align"><img src="${contextPath}/resource/images/food/sample.jpg"
-                                                       alt="샘플 이미지"></div>
-                    </li>
+                	<c:choose>
+                    		<c:when test="${myPostListSize==0}">
+                    			쓴 글이 없습니다.
+                    		</c:when>
+                    		<c:when test="${myPostListSize>0}">
+                    			<c:forEach items="${myPostList}" var="post">
+                    				<c:when test="${post.myreOrQna=='myre'}">
+                    					<li class="listItem mypostItem imgwrap">
+					                        <div class="chkWrap">
+					                            <input type="checkbox" class="chkBox" name="chkItem" id="listChk01">
+					                            <label for="listChk01"></label>
+					                        </div>
+					                        <div class="contBox">
+					                            <a href="">
+					                                <span class="postDate">${post.postDate}</span>
+					                                <h6>${post.myrecipe.myreTitle}</h6>
+					                                <p>${post.myrecipe.myreContent}</p>
+					                                <ul class="accList">
+					                                    <li class="accItem">
+					                                        <span class="icon material-symbols-outlined">visibility</span>268
+					                                    </li>
+					                                    <li class="accItem">
+					                                        <span class="icon material-symbols-outlined">thumb_up</span>80
+					                                    </li>
+					                                </ul>
+					                            </a>
+					                        </div>
+					                        <div class="imgBox align">
+					                        	<img src="${contextPath}/resource/images/food/sample.jpg" alt="샘플 이미지">
+					                        </div>
+					                    </li>
+                    				</c:when>
+                    			</c:forEach>
+                    		</c:when>
+                    </c:choose>
                 </ul>
                 <div class="paging">
                     <ul>

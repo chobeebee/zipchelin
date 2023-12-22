@@ -182,7 +182,8 @@ function edit_complete_btn() {
 function getMyPostData(requestedAjax){
 	$.ajax({
                 type : "GET",
-                url : "/mypage/mypost/"+requestedAjax
+                url : "/mypage/mypost/"+requestedAjax,
+                success : function(){alert('정상적으로 받아옴');}
             });
 }
 

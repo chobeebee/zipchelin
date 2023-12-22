@@ -1,7 +1,7 @@
 package com.zipchelin.repository.mybatis;
 
 import com.zipchelin.domain.admin.Notice;
-import com.zipchelin.model.page.Criteria;
+import com.zipchelin.model.dto.admin.page.Criteria;
 import com.zipchelin.repository.NoticeRepository;
 import com.zipchelin.repository.mybatis.mappers.NoticeMapper;
 import lombok.RequiredArgsConstructor;

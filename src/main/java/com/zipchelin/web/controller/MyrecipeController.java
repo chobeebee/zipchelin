@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zipchelin.model.dto.admin.notice.PageMakerDTO;
-import com.zipchelin.model.page.Criteria;
+import com.zipchelin.model.dto.admin.page.Criteria;
 import com.zipchelin.model.service.MyrecipeService;
 
 import lombok.RequiredArgsConstructor;

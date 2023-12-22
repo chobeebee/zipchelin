@@ -1,7 +1,7 @@
 package com.zipchelin.web.controller;
 
 import com.zipchelin.model.dto.admin.notice.PageMakerDTO;
-import com.zipchelin.model.page.Criteria;
+import com.zipchelin.model.dto.admin.page.Criteria;
 import com.zipchelin.model.service.NoticeService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;

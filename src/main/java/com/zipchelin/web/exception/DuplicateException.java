@@ -1,4 +1,4 @@
-package com.zipchelin.global.exception;
+package com.zipchelin.web.exception;
 
 public class DuplicateException extends BadRequestException {
 

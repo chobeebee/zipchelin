@@ -14,9 +14,8 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 public class QnaReply {
-    private int qReNum;
-    private int qnaNum;
-    private String userImg;
+    private long qReNum;
+    private long qnaNum;
     private int Order;
     private String reId;
     private String reContent;
@@ -27,7 +26,6 @@ public class QnaReply {
         return QnaReplyResponseDto.builder()
                 .qReNum(qReNum)
                 .qnaNum(qnaNum)
-                .userImg(userImg)
                 .Order(Order)
                 .reId(reId)
                 .reContent(reContent)
@@ -39,7 +37,6 @@ public class QnaReply {
         return QnaReplyRequestDto.builder()
                 .qReNum(qReNum)
                 .qnaNum(qnaNum)
-                .userImg(userImg)
                 .Order(Order)
                 .reId(reId)
                 .reContent(reContent)

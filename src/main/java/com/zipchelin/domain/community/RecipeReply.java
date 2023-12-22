@@ -1,8 +1,8 @@
-package com.zipchelin.domain.admin;
+package com.zipchelin.domain.community;
 
 import com.zipchelin.model.dto.member.mypage.Myreply;
-import com.zipchelin.model.dto.admin.recipeReply.RecipeReplyRequestDto;
-import com.zipchelin.model.dto.admin.recipeReply.RecipeReplyResponseDto;
+import com.zipchelin.model.dto.community.recipeReply.RecipeReplyRequestDto;
+import com.zipchelin.model.dto.community.recipeReply.RecipeReplyResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

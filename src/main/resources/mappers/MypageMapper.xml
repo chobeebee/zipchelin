@@ -114,7 +114,7 @@
     </select>
     
     <!-- 내 recipe 댓글 목록 -->
-    <select id="selectRecipeReply" parameterType="String" resultType="com.zipchelin.domain.admin.RecipeReply">
+    <select id="selectRecipeReply" parameterType="String" resultType="com.zipchelin.domain.community.RecipeReply">
     	select r.m_re_num, r.myre_num, r.user_img, r.post_id, r.re_id, r.re_content, r.re_up, r.re_date  from qna_reply_tbl q, myrecipe_reply_tbl r where q.re_id=r.re_id and r.re_id=#{id}
     </select>
     

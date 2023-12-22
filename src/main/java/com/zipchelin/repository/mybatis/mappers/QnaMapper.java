@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.zipchelin.domain.Qna;
-import com.zipchelin.model.dto.qna.QnaDto;
-import com.zipchelin.model.dto.qna.QnaRequest;
-import com.zipchelin.model.dto.qna.QnaResponse;
+import com.zipchelin.domain.community.Qna;
+import com.zipchelin.model.dto.community.qna.QnaDto;
+import com.zipchelin.model.dto.community.qna.QnaRequest;
+import com.zipchelin.model.dto.community.qna.QnaResponse;
 
 @Mapper
 public interface QnaMapper {

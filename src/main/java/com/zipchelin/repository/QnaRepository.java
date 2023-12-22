@@ -2,10 +2,10 @@ package com.zipchelin.repository;
 
 import java.util.List;
 
-import com.zipchelin.domain.Qna;
-import com.zipchelin.model.dto.qna.QnaDto;
-import com.zipchelin.model.dto.qna.QnaRequest;
-import com.zipchelin.model.dto.qna.QnaResponse;
+import com.zipchelin.domain.community.Qna;
+import com.zipchelin.model.dto.community.qna.QnaDto;
+import com.zipchelin.model.dto.community.qna.QnaRequest;
+import com.zipchelin.model.dto.community.qna.QnaResponse;
 
 public interface QnaRepository {
 

@@ -1,7 +1,7 @@
 	package com.zipchelin.web.controller;
 
-import com.zipchelin.domain.Notice;
-import com.zipchelin.model.dto.notice.PageMakerDTO;
+import com.zipchelin.domain.admin.Notice;
+import com.zipchelin.model.dto.admin.notice.PageMakerDTO;
 import com.zipchelin.model.page.Criteria;
 import com.zipchelin.model.service.NoticeService;
 import lombok.RequiredArgsConstructor;
@@ -11,8 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.Arrays;
 
 import javax.servlet.http.HttpServletRequest;
 

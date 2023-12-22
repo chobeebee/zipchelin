@@ -6,7 +6,7 @@
 
 	<!-- 레시피 리스트 전체 조회 -->
 	<select id="selectRecipeAll"
-		resultType="com.zipchelin.domain.Recipe">
+		resultType="com.zipchelin.domain.admin.Recipe">
 		select rec_title, rec_subt, rec_img0
 		from recipe_tbl
 		order by rec_num desc
@@ -15,7 +15,7 @@
 
 	<!-- 레시피 카테고리별 조회 -->
 	<select id="selectEachCategory" parameterType="int"
-		resultType="com.zipchelin.domain.Recipe">
+		resultType="com.zipchelin.domain.admin.Recipe">
 		select rec_title, rec_subt, rec_img0
 		from recipe_tbl
 		where cate_num = #{cate_num}
@@ -29,7 +29,7 @@
 	</select>
 
 	<insert id="addRecipe"
-		parameterType="com.zipchelin.domain.Recipe">
+		parameterType="com.zipchelin.domain.admin.Recipe">
 		insert into recipe_tbl(rec_num, cateNum, recTitle, recSubt, recImg0,
 		recDesc0,
 		recIngreMain, recIngreSub, recTool, recImg1, recDesc1, recImg2, recDesc2, recImg3,
@@ -42,7 +42,7 @@
 	</insert>
 
 	<update id="updateRecipe"
-		parameterType="com.zipchelin.domain.Recipe">
+		parameterType="com.zipchelin.domain.admin.Recipe">
 		update recipe_tbl
 		set cateNum=#{cateNum},
 		recTitle=#{recTitle},

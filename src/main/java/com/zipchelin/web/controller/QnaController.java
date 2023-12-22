@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.zipchelin.model.dto.qna.QnaDto;
-import com.zipchelin.model.dto.qna.QnaRequest;
-import com.zipchelin.model.dto.qna.QnaRequestDto;
-import com.zipchelin.model.dto.qna.QnaResponse;
+import com.zipchelin.model.dto.community.qna.QnaDto;
+import com.zipchelin.model.dto.community.qna.QnaRequest;
+import com.zipchelin.model.dto.community.qna.QnaRequestDto;
+import com.zipchelin.model.dto.community.qna.QnaResponse;
 import com.zipchelin.model.service.QnaService;
 
 import lombok.RequiredArgsConstructor;

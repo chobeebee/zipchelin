@@ -1,6 +1,6 @@
 package com.zipchelin.repository.mybatis.mappers;
 
-import com.zipchelin.domain.Member;
+import com.zipchelin.domain.member.Member;
 import com.zipchelin.model.dto.member.MemberRequestDto;
 import com.zipchelin.model.dto.member.MemberSaveDto;
 import com.zipchelin.model.service.MemberService;

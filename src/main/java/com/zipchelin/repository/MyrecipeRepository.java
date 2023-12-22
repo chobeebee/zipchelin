@@ -2,7 +2,7 @@ package com.zipchelin.repository;
 
 import java.util.List;
 
-import com.zipchelin.domain.Myrecipe;
+import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.model.page.Criteria;
 
 public interface MyrecipeRepository {

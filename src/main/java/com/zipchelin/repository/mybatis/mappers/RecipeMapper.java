@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.zipchelin.domain.Recipe;
+import com.zipchelin.domain.admin.Recipe;
 
 @Mapper
 public interface RecipeMapper {

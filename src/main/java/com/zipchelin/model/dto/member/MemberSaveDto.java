@@ -1,7 +1,6 @@
 package com.zipchelin.model.dto.member;
 
-import com.zipchelin.domain.Member;
-import com.zipchelin.web.resolver.FieldMatch;
+import com.zipchelin.domain.member.Member;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

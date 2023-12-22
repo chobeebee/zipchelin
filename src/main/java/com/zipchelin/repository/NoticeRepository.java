@@ -1,6 +1,6 @@
 package com.zipchelin.repository;
 
-import com.zipchelin.domain.Notice;
+import com.zipchelin.domain.admin.Notice;
 import com.zipchelin.model.page.Criteria;
 
 import java.util.List;

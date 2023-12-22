@@ -40,7 +40,6 @@ public class MyrecipeController {
 		return "content/myrecipe/myrecipe_post";
 	}
 	
-	
 	//요리상담소 이동
 	@GetMapping("/qna")
 	public String qna() {

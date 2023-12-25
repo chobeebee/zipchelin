@@ -1,4 +1,4 @@
-package com.zipchelin.web.security.handler;
+package com.zipchelin.config.security.handler;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.AuthenticationException;

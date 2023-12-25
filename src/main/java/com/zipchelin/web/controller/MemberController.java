@@ -1,11 +1,12 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.web.exception.BusinessLogicException;
-import com.zipchelin.web.exception.DuplicateException;
-import com.zipchelin.web.security.provider.CustomUserDetails;
+import com.zipchelin.config.security.provider.CustomAuthenticationProvider;
+import com.zipchelin.config.security.provider.CustomUserDetails;
 import com.zipchelin.model.dto.member.EmailDto;
 import com.zipchelin.model.dto.member.MemberSaveDto;
 import com.zipchelin.model.service.MemberService;
+import com.zipchelin.web.exception.BusinessLogicException;
+import com.zipchelin.web.exception.DuplicateException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +34,7 @@ import java.util.Optional;
 public class MemberController {
 
     private final MemberService memberService;
+    private final CustomAuthenticationProvider provider;
 
     @GetMapping("/login")
     public String viewLogin(@AuthenticationPrincipal CustomUserDetails loginMember,
@@ -136,6 +138,16 @@ public class MemberController {
             return ResponseEntity.ok(true);
         }
         return ResponseEntity.ok(false);
+    }
+
+    @GetMapping("/test")
+    public String reAuthTest(@AuthenticationPrincipal CustomUserDetails userDetails) {
+
+        if (provider.reauthenticate(userDetails.getMember().getMemberId(), "test")) {
+            log.info("재인증 확인 = {}", userDetails);
+            return "redirect:/member/test1";
+        }
+        return "redirect:/";
     }
 
     @GetMapping("/find")

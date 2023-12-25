@@ -1,7 +1,7 @@
-package com.zipchelin.global;
+package com.zipchelin.config;
 
-import com.zipchelin.web.security.oauth.PrincipalOAuth2Service;
-import com.zipchelin.web.security.provider.CustomAuthenticationProvider;
+import com.zipchelin.config.security.oauth.PrincipalOAuth2Service;
+import com.zipchelin.config.security.provider.CustomAuthenticationProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -46,14 +46,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
+                .sessionManagement()
+                .maximumSessions(1)
+                .maxSessionsPreventsLogin(false)
+                .expiredUrl("/member/expired");
+
+        http
                 .authorizeRequests()
-                .antMatchers("/mypage123/**").hasRole("USER")
-                .antMatchers("/admin123/**").hasRole("ADMIN")
-                .anyRequest().permitAll()
 //                .antMatchers("/", "/member/**").permitAll()
 //                .antMatchers("/admin/**").hasRole("ADMIN")
 //                .anyRequest().authenticated()
-                .and()
+                .antMatchers("/mypage123/**").hasRole("USER")
+                .antMatchers("/admin123/**").hasRole("ADMIN")
+                .antMatchers("/member/test1").hasAuthority("RE_AUTH")
+                .anyRequest().permitAll();
+
+        http
                 .formLogin()
                 .loginPage("/member/login")
                 .usernameParameter("memberId")
@@ -66,8 +74,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .oauth2Login()
                 .loginPage("/member/login")
                 .userInfoEndpoint()
-                .userService(oAuth2Service)
-        ;
+                .userService(oAuth2Service);
     }
 
     @Bean

@@ -1,4 +1,4 @@
-package com.zipchelin.web.security.oauth;
+package com.zipchelin.config.security.oauth;
 
 public interface OAuth2UserInfo {
 

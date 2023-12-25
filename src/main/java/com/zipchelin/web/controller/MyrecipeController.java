@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.zipchelin.model.dto.admin.notice.PageMakerDTO;
 import com.zipchelin.model.dto.admin.page.Criteria;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponse;
-import com.zipchelin.model.dto.community.qna.QnaResponse;
 import com.zipchelin.model.service.MyrecipeService;
 
 import lombok.RequiredArgsConstructor;

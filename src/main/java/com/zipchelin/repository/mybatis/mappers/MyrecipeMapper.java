@@ -7,7 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.model.dto.admin.page.Criteria;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponse;
-import com.zipchelin.model.dto.community.qna.QnaResponse;
 
 @Mapper
 public interface MyrecipeMapper {

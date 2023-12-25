@@ -1,6 +1,6 @@
 package com.zipchelin.domain.community;
 
-import com.zipchelin.model.dto.member.mypage.Myreply;
+import com.zipchelin.model.dto.mypage.Myreply;
 import com.zipchelin.model.dto.community.myrecipeReply.MyRecipeReplyRequestDto;
 import com.zipchelin.model.dto.community.myrecipeReply.MyRecipeReplyResponseDto;
 import lombok.AllArgsConstructor;
@@ -9,7 +9,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Getter
 @Setter

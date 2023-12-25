@@ -14,8 +14,8 @@ import com.zipchelin.domain.community.Qna;
 import com.zipchelin.domain.community.QnaReply;
 import com.zipchelin.domain.member.Member;
 import com.zipchelin.model.dto.member.MemberResponseDto;
-import com.zipchelin.model.dto.member.mypage.MyPost;
-import com.zipchelin.model.dto.member.mypage.Myreply;
+import com.zipchelin.model.dto.mypage.MyPost;
+import com.zipchelin.model.dto.mypage.Myreply;
 import com.zipchelin.repository.MypageRepository;
 
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.zipchelin.config.security.provider;
+package com.zipchelin.global.security.provider;
 
 import com.zipchelin.domain.member.Member;
 import com.zipchelin.repository.MemberRepository;

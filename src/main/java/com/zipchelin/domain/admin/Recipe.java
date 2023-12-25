@@ -1,7 +1,6 @@
 package com.zipchelin.domain.admin;
 
-import com.zipchelin.model.dto.member.mypage.Myheart;
-import com.zipchelin.model.dto.admin.notice.NoticeRequestDto;
+import com.zipchelin.model.dto.mypage.Myheart;
 import com.zipchelin.model.dto.admin.recipe.RecipeListRequestDto;
 import com.zipchelin.model.dto.admin.recipe.RecipeListResponseDto;
 import lombok.AllArgsConstructor;

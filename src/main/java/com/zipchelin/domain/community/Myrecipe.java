@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeRequestDto;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponseDto;
-import com.zipchelin.model.dto.member.mypage.MyPost;
+import com.zipchelin.model.dto.mypage.MyPost;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

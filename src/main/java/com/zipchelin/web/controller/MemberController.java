@@ -1,7 +1,7 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.config.security.provider.CustomAuthenticationProvider;
-import com.zipchelin.config.security.provider.CustomUserDetails;
+import com.zipchelin.global.security.provider.CustomAuthenticationProvider;
+import com.zipchelin.global.security.provider.CustomUserDetails;
 import com.zipchelin.model.dto.member.EmailDto;
 import com.zipchelin.model.dto.member.MemberSaveDto;
 import com.zipchelin.model.service.MemberService;

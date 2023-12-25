@@ -1,4 +1,4 @@
-package com.zipchelin.config;
+package com.zipchelin.global;
 
 import com.zipchelin.web.resolver.LoginResolver;
 import org.springframework.context.annotation.Configuration;

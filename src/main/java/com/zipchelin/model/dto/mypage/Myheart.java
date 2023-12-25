@@ -1,4 +1,4 @@
-package com.zipchelin.model.dto.member.mypage;
+package com.zipchelin.model.dto.mypage;
 
 import com.zipchelin.domain.admin.Guide;
 import com.zipchelin.domain.admin.Recipe;

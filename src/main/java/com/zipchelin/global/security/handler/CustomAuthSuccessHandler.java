@@ -1,4 +1,4 @@
-package com.zipchelin.config.security.handler;
+package com.zipchelin.global.security.handler;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.DefaultRedirectStrategy;

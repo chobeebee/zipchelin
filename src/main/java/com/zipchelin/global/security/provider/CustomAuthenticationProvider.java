@@ -1,4 +1,4 @@
-package com.zipchelin.config.security.provider;
+package com.zipchelin.global.security.provider;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

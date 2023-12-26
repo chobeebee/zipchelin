@@ -1,5 +1,6 @@
 package com.zipchelin.repository.mybatis.mappers;
 
+import com.zipchelin.domain.community.MyPick;
 import com.zipchelin.domain.community.MyRecipeReply;
 
 import com.zipchelin.domain.community.Myrecipe;
@@ -38,6 +39,12 @@ public interface MypageMapper {
     public List<QnaReply> selectQnaReply(String id);
     
     public List<MyRecipeReply> selectRecipeReply(String id);
+    
+    public void deleteMyre(String deletePost);
+    
+    public void deleteQna(String deletePost);
+    
+    public List<MyPick> selectMyPick(String id);
     
     //public List<Myheart> getListPaging(Criteria cri);
 }

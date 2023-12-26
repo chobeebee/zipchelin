@@ -178,11 +178,13 @@ function edit_complete_btn() {
 		$('#edit_form').submit();
 	}
 }
+
 function getMyPostData(requestAjax){
 	$.ajax({
                 type : "POST",
                 url : "/mypage/getMyPost/"+requestAjax,
                 success : function(myPostList){
+					ajaxLocation=myPostList;
 					$("#postSection").empty();
 					for(let i=0;i<myPostList.length;i++){
 						let myPost=myPostList[i];
@@ -192,6 +194,7 @@ function getMyPostData(requestAjax){
 						let content='';
 						let myreOrQna='';
 						let up='';
+						let num='';
 						
 						if(myPost.myreOrQna=='myre'){
 							postDate=myPost.myrecipe.myreDate.substr(0, 10);
@@ -199,18 +202,20 @@ function getMyPostData(requestAjax){
 							content=myPost.myrecipe.myreContent;
 							myreOrQna='마이레시피';
 							up=myPost.myrecipe.myreUp;
+							num='myre-'+myPost.myrecipe.myreNum;
 						}else if(myPost.myreOrQna=='qna'){
 							postDate=myPost.qna.qnaDate.substr(0, 10);
 							title=myPost.qna.qnaTitle;
 							content=myPost.qna.qnaContent;
 							myreOrQna='QnA';
 							up=myPost.qna.qnaUp;
+							num='qna-'+myPost.qna.qnaNum;
 						}
 						let post=
 						'<li class="listItem mypostItem imgwrap">'+
 							'<div class="chkWrap">'+
-							    '<input type="checkbox" class="chkBox" name="chkItem" id="listChk01">'+
-							    '<label for="listChk01"></label>'+
+							    '<input type="checkbox" class="chkBox" name="chkItem" id="listChk'+i+'" value="'+num+'">'+
+							    '<label for="listChk'+i+'"></label>'+
 							'</div>'+
 							'<div class="contBox">'+
 								'<a href="">'+
@@ -235,6 +240,26 @@ function getMyPostData(requestAjax){
 					}
                 }
             });
+}
+
+function deleteMypost(){
+	var deleteList=[];
+	$(".chkBox:checked").each(function() {
+    var val = $(this).val();
+    deleteList.push(val);
+	});
+	$.ajax({
+		type : "GET",
+        url : "/mypage/deleteMypost",
+        data: {deleteList:deleteList}
+	})
+	location.reload(true);
+}
+
+function offDelete(){
+	$(".chkBox:checked").each(function() {
+    	$(this).prop("checked", false);
+	})
 }
 
         

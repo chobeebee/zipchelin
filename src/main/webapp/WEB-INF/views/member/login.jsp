@@ -73,6 +73,7 @@
                 </div>
             </div>
             <div>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <button class="login_login btnBg" type="button" onclick="login_form_submit()">로그인</button>
             </div>
         </form>

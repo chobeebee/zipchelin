@@ -7,26 +7,29 @@ import com.zipchelin.domain.community.Myrecipe;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @Builder
+@NoArgsConstructor
 @AllArgsConstructor
 public class MyrecipeResponseDto {
-    private String memberId;
     private long myreNum;
+    private String memberId;
     private String myreTitle;
     private String myreContent;
-    private int myreUp;
     private LocalDateTime myreDate;
+    private int myreUp;
+    
 
     public Myrecipe toEntity() {
         return Myrecipe.builder()
-                .memberId(memberId)
                 .myreNum(myreNum)
+                .memberId(memberId)
                 .myreTitle(myreTitle)
                 .myreContent(myreContent)
-                .myreUp(myreUp)
                 .myreDate(myreDate)
+                .myreUp(myreUp)
                 .build();
     }
 }

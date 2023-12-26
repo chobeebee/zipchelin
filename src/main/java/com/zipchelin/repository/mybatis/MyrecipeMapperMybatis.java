@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.zipchelin.domain.community.Myrecipe;
-import com.zipchelin.model.dto.admin.page.Criteria;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeDto;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeRequestDto;
-import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponse;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponseDto;
 import com.zipchelin.repository.MyrecipeRepository;
 import com.zipchelin.repository.mybatis.mappers.MyrecipeMapper;
 
@@ -26,40 +26,29 @@ public class MyrecipeMapperMybatis implements MyrecipeRepository {
 	}
 	
 	@Override
-	public MyrecipeResponse findById(Long id) {
+	public MyrecipeResponseDto findById(Long id) {
 		return myrecipeMapper.findById(id);
 	}
-	
+
 	@Override
-	public List<Myrecipe> getMyrecipe() {
-		return myrecipeMapper.getMyrecipe();
+	public long update(Myrecipe params) {
+		myrecipeMapper.update(params);
+		return params.getMyreNum();
 	}
-	
+
 	@Override
-	public String addMyrecipe(Myrecipe myrecipe) {
-		myrecipeMapper.addMyrecipe(myrecipe);
-		return myrecipe.getMyreTitle();
+	public void deleteById(Long id) {
+		myrecipeMapper.deleteById(id);		
 	}
-	
+
 	@Override
-	public void updateMyrecipe(Myrecipe myrecipe) {
-		myrecipeMapper.updateMyrecipe(myrecipe);
-		
+	public List<MyrecipeResponseDto> findAll(MyrecipeDto params) {
+		return myrecipeMapper.findAll(params);
 	}
-	
+
 	@Override
-	public void delMyrecipe(Integer newArr) {
-		myrecipeMapper.delMyrecipe(newArr);
+	public int count() {
+		return myrecipeMapper.count();
 	}
-	
-	@Override
-	public List<Myrecipe> getListPaging(Criteria cri) {
-		return myrecipeMapper.getListPaging(cri);
-	}
-	
-	 @Override
-	 public int getTotal() {
-		return myrecipeMapper.getTotal();
-	}
-	
+
 }

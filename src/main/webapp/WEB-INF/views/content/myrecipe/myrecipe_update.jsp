@@ -50,41 +50,36 @@
     	<jsp:include page="/WEB-INF/views/main/header.jsp"/>
     </header>
     
-    <!-- 메인 -->
-    <main>
-        <section class="form-list">
-        <form action="/community/qna/update/${qna.qnaNum }" method="post">
-            <h1 class="best-title">요리 상담소</h1>
+   <!-- 메인 -->
+<main>
+    <section class="form-list">
+        <form action="/community/myrecipe/save" method="post">
+        	<h1 class="best-title">나만의 레시피</h1>
             <div>
                 <div class="information informationBox">
-                <input name="qnaNum" value="${qna.qnaNum }" type="hidden">
+                <input name="memberId" value="86" type="hidden">
                     <h2 class="form-title">제목</h2>
-                    <p><input class="formBox" name="qnaTitle" id="qnaTitle" value="${qna.qnaTitle }"></p>
+                    <p><input class="formBox" name="myreTitle" id="myreTitle" value="${myrecipe.myreTitle }"></p>
                 </div>
                 <div class="information">
-                    <h2 class="form-title">내용</h1>
-                    <textarea name="qnaContent" id="form-content" class="form-content" cols="30" rows="10">${qna.qnaContent }</textarea>
+                    <h2 class="form-title">내용</h2>
+                    <textarea name="myreContent" id="form-content" class="form-content" cols="10" rows="20">${myrecipe.myreContent }</textarea>
                 </div>
             </div>
-            
-            <div class="btnGroup lg form" >
-           		<a href="${contextPath}/community/qna/post/${qna.qnaNum}">
-                	<button type="button"  class="btnBgGray form" class="btn_cancel"> 취소</button>
+            <div class="btnGroup lg form">
+               <a href="${contextPath}/community/myrecipe/post/${myrecipe.myreNum}">
+	                <button type="button"  class="btnBgGray form" class="btn_cancel">취소</button>
+	                <input type="submit" class="btnBg" class="btn_upload" onclick="submitPost();">
                 </a>
-                	<input type="submit" class="btnBg" class="btn_upload" onclick="submitPost();">
-    	    </div>
-		</form>
-            
-        </section>
-    </main>
+            </div>
+        </form>
+    </section>
+</main>
 
     <!-- 푸터 -->
     <footer id="footer">
     	<jsp:include page="/WEB-INF/views/main/footer.jsp"/>
     </footer> 
-
-
-
 
     <!-- js --> 
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>

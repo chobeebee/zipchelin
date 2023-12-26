@@ -67,10 +67,10 @@
                         </span>
                         <div class="comment_writeracc">
                             <button class="comment_update">
-                                <a href="${contextPath}/myrecipe/update/${myrecipe.myreNum}">수정</a>
+                                <a href="${contextPath}/community/myrecipe/update/${myrecipe.myreNum}">수정</a>
                             </button>
                             <button class="comment_delete">
-                                <a href="${contextPath}/myrecipe/delete/${myrecipe.myreNum}">삭제</a>
+                                <a href="${contextPath}/community/myrecipe/delete/${myrecipe.myreNum}">삭제</a>
                             </button>
                         </div>
                     </div>

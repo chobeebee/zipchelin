@@ -34,10 +34,6 @@ public interface MypageMapper {
     public List<Qna> selectQnaById(String id);
 
     public List<Myrecipe> selectMyreById(String id);
-
-    //public List<Guide> selectGuiHeart(String id);
-
-    //public List<Recipe> selectRecHeart(String id);
     
     public List<QnaReply> selectQnaReply(String id);
     

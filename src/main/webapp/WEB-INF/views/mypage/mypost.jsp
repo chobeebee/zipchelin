@@ -39,6 +39,12 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/resource/css/mypage.css">
 
     <title>집슐랭</title>
+<script type="text/javascript">
+	window.onload = function(){
+		let requestAjax='all';
+		getMyPostData(requestAjax)
+	}
+</script>
 </head>
 <body>
 <!--헤더 -->
@@ -73,70 +79,31 @@
         </div>
         <div class="tabContWrap">
             <div id="tabAll" class="tabCont show">
-                <ul class="imgLists  mypostList">
-                	<c:choose>
-                    		<c:when test="${myPostListSize==0}">
-                    			쓴 글이 없습니다.
-                    		</c:when>
-                    		<c:when test="${myPostListSize>0}">
-                    			<c:forEach items="${myPostList}" var="post">
-                    				<c:choose>
-                    					<c:when test="${post.myreOrQna=='myre'}">
-	                    					<li class="listItem mypostItem imgwrap">
-						                        <div class="chkWrap">
-						                            <input type="checkbox" class="chkBox" name="chkItem" id="listChk01">
-						                            <label for="listChk01"></label>
-						                        </div>
-						                        <div class="contBox">
-						                            <a href="">
-						                                <span class="postDate">${post.postDate}</span>
-						                                <h6>${post.myrecipe.myreTitle}</h6>
-						                                <p>${post.myrecipe.myreContent}</p>
-						                                <ul class="accList">
-						                                    <li class="accItem">
-						                                        <span class="icon material-symbols-outlined">visibility</span>마이레시피
-						                                    </li>
-						                                    <li class="accItem">
-						                                        <span class="icon material-symbols-outlined">thumb_up</span>${post.myrecipe.myreUp}
-						                                    </li>
-						                                </ul>
-						                            </a>
-						                        </div>
-						                        <div class="imgBox align">
-						                        	<img src="${contextPath}/resource/images/food/sample.jpg" alt="샘플 이미지">
-						                        </div>
-						                    </li>
-	                    				</c:when>
-	                    				<c:when test="${post.myreOrQna=='qna'}">
-	                    					<li class="listItem mypostItem imgwrap">
-						                        <div class="chkWrap">
-						                            <input type="checkbox" class="chkBox" name="chkItem" id="listChk01">
-						                            <label for="listChk01"></label>
-						                        </div>
-						                        <div class="contBox">
-						                            <a href="">
-						                                <span class="postDate">${post.postDate}</span>
-						                                <h6>${post.qna.qnaTitle}</h6>
-						                                <p>${post.qna.qnaContent}</p>
-						                                <ul class="accList">
-						                                    <li class="accItem">
-						                                        <span class="icon material-symbols-outlined">visibility</span>QnA
-						                                    </li>
-						                                    <li class="accItem">
-						                                        <span class="icon material-symbols-outlined">thumb_up</span>${post.qna.qnaUp}
-						                                    </li>
-						                                </ul>
-						                            </a>
-						                        </div>
-						                        <div class="imgBox align">
-						                        	<img src="${contextPath}/resource/images/food/sample.jpg" alt="샘플 이미지">
-						                        </div>
-						                    </li>
-	                    				</c:when>
-                    				</c:choose>
-                    			</c:forEach>
-                    		</c:when>
-                    </c:choose>
+                <ul class="imgLists  mypostList" id="postSection">
+	            	<li class="listItem mypostItem imgwrap">
+						<div class="chkWrap">
+						    <input type="checkbox" class="chkBox" name="chkItem" id="listChk01">
+						    <label for="listChk01"></label>
+						</div>
+						<div class="contBox">
+							<a href="">
+								<span class="postDate">날짜</span>
+						    	<h6>${post.myrecipe.myreTitle}</h6>
+						    	<p>${post.myrecipe.myreContent}</p>
+						    	<ul class="accList">
+						       		<li class="accItem">
+						           		<span class="icon material-symbols-outlined">visibility</span>마이레시피orQna
+						       		</li>
+						       		<li class="accItem">
+						            	<span class="icon material-symbols-outlined">thumb_up</span>추천수
+						       		</li>
+						    </ul>
+						    </a>
+						</div>
+						<div class="imgBox align">
+							<img src="${contextPath}/resource/images/food/sample.jpg" alt="샘플 이미지">
+						</div>
+					</li>
                 </ul>
                 <div class="paging">
                     <ul>

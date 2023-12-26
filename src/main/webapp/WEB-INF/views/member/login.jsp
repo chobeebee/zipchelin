@@ -108,6 +108,15 @@
     </div>
 </c:if>
 
+<c:if test="${DUPLICATE_LOGIN eq true}">
+    <div class="login_modal">
+        <div class="login_modal_box">
+            <p class="login_modal_msg">다른 기기에서 로그인 되어 현재 로그인이 종료되었습니다.</p>
+            <button class="login_modal_out" type="button" onClick="login_modal_get_out()">확인</button>
+        </div>
+    </div>
+</c:if>
+
 <!-- 푸터 -->
 <footer id="footer">
     <jsp:include page="/WEB-INF/views/main/footer.jsp"/>

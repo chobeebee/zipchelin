@@ -48,13 +48,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .sessionManagement()
                 .maximumSessions(1)
-                .maxSessionsPreventsLogin(false)
+                .maxSessionsPreventsLogin(true)
                 .expiredUrl("/member/expired");
 
         http
                 .authorizeHttpRequests()
-                .antMatchers("/mypage/**").authenticated()
-                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/mypage123/**").authenticated()
+                .antMatchers("/admin123/**").hasRole("ADMIN")
                 .antMatchers("/**").permitAll();
 
         http

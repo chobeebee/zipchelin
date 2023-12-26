@@ -1,5 +1,6 @@
 package com.zipchelin.repository.mybatis;
 
+import com.zipchelin.domain.community.MyPick;
 import com.zipchelin.domain.community.MyRecipeReply;
 import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.domain.community.Qna;
@@ -80,6 +81,12 @@ public class MypageMapperMybatis implements MypageRepository {
     public List<MyRecipeReply> selectRecipeReply(String id){
     	return mypageMapper.selectRecipeReply(id);
     }
+
+	@Override
+	public List<MyPick> selectMyPick(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
     /*
 	@Override

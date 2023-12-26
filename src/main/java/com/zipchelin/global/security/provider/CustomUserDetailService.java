@@ -1,4 +1,4 @@
-package com.zipchelin.web.security.provider;
+package com.zipchelin.global.security.provider;
 
 import com.zipchelin.domain.member.Member;
 import com.zipchelin.repository.MemberRepository;
@@ -20,10 +20,6 @@ public class CustomUserDetailService implements UserDetailsService {
         Member member = memberRepository.findById(memberId).orElseThrow(
                 () -> new UsernameNotFoundException("가입되지 않은 아이디입니다.")
         );
-
-//        List<GrantedAuthority> roles = new ArrayList<>();
-//        roles.add(new SimpleGrantedAuthority(member.getMemberRole()));
-
         return new CustomUserDetails(member);
     }
 }

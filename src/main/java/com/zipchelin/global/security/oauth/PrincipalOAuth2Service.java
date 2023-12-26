@@ -1,7 +1,7 @@
-package com.zipchelin.web.security.oauth;
+package com.zipchelin.global.security.oauth;
 
 import com.zipchelin.domain.member.Member;
-import com.zipchelin.web.security.provider.CustomUserDetails;
+import com.zipchelin.global.security.provider.CustomUserDetails;
 import com.zipchelin.repository.MemberRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +26,16 @@ public class PrincipalOAuth2Service extends DefaultOAuth2UserService {
         OAuth2User oAuth2User = super.loadUser(userRequest);
         String provider = userRequest.getClientRegistration().getRegistrationId();
 
-        OAuth2UserInfo oAuth2UserInfo = null;
-        if (provider.equals("google")) {
-            oAuth2UserInfo = new GoogleUserInfo(oAuth2User.getAttributes());
-        } else if (provider.equals("naver")) {
-            oAuth2UserInfo = new NaverUserInfo((Map) oAuth2User.getAttributes().get("response"));
+        OAuth2UserInfo oAuth2UserInfo;
+        switch (provider) {
+            case "google":
+                oAuth2UserInfo = new GoogleUserInfo(oAuth2User.getAttributes());
+                break;
+            case "naver":
+                oAuth2UserInfo = new NaverUserInfo((Map) oAuth2User.getAttributes().get("response"));
+                break;
+            default:
+                throw new IllegalArgumentException("OAuth2Service 인증 오류 : " + provider);
         }
 
         Member member = memberRepository.findById(oAuth2UserInfo.getMemberId()).orElse(null);

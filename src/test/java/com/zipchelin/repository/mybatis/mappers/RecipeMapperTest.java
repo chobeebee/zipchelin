@@ -1,26 +1,26 @@
-package com.zipchelin.repository.mybatis.mappers;
-
-import com.zipchelin.domain.admin.Recipe;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.List;
-
-@SpringBootTest
-public class RecipeMapperTest {
-
-    @Autowired
-    RecipeMapper recipeMapper;
-
-    @Test
-    @Disabled
-    void selectAllRecipe() {
-        List<Recipe> list = recipeMapper.selectRecipeAll();
-        System.out.println(list);
-    }
-
+//package com.zipchelin.repository.mybatis.mappers;
+//
+//import com.zipchelin.domain.admin.Recipe;
+//import org.junit.jupiter.api.Disabled;
+//import org.junit.jupiter.api.Test;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.test.context.SpringBootTest;
+//
+//import java.util.List;
+//
+//@SpringBootTest
+//public class RecipeMapperTest {
+//
+//    @Autowired
+//    RecipeMapper recipeMapper;
+//
+//    @Test
+//    @Disabled
+//    void selectAllRecipe() {
+//        List<Recipe> list = recipeMapper.selectRecipeAll();
+//        System.out.println(list);
+//    }
+//
     //	@Test
     //	void addRecipe() {
     //		RecipeAddRequestDto addValue = RecipeAddRequestDto.builder()
@@ -42,5 +42,5 @@ public class RecipeMapperTest {
     //				.recTen(1)
     //				.build();
     //	}
-
-}
+//
+//}

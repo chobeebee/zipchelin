@@ -1,4 +1,4 @@
-package com.zipchelin.web.security.oauth;
+package com.zipchelin.global.security.oauth;
 
 import java.util.Map;
 

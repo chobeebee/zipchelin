@@ -1,8 +1,9 @@
-package com.zipchelin.web.security.provider;
+package com.zipchelin.global.security.provider;
 
 import com.zipchelin.domain.member.Member;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
@@ -15,6 +16,7 @@ public class CustomUserDetails implements UserDetails, OAuth2User {
 
     private Member member;
     private Map<String, Object> attributes;
+    private Collection<SimpleGrantedAuthority> dynamicAuthorities;
 
     // 일반 로그인
     public CustomUserDetails(Member member) {
@@ -52,6 +54,13 @@ public class CustomUserDetails implements UserDetails, OAuth2User {
             }
         });
         return collect;
+    }
+
+    public void addAuthority(String authority) {
+        if (dynamicAuthorities == null) {
+            dynamicAuthorities = new ArrayList<>();
+        }
+        dynamicAuthorities.add(new SimpleGrantedAuthority(authority));
     }
 
     @Override

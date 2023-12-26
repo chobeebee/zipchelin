@@ -88,7 +88,7 @@
             <ul class="list_ul">
                 <li class="list_li">
                     <i class="fa-regular fa-heart"></i>
-                    <a class="recipe_link" href="${contextPath}/guide/guide-detail">
+                    <a class="recipe_link" href="${contextPath}/guide/detail">
                         <div class="pic_box">
                             <div class="imgwrap">
                                 <div class="imgBox">
@@ -104,7 +104,7 @@
                 </li>
                 <li class="list_li">
                     <i class="fa-regular fa-heart"></i>
-                    <a class="recipe_link" href="${contextPath}/guide/guide-detail">
+                    <a class="recipe_link" href="${contextPath}/guide/detail">
                         <div class="pic_box">
                             <div class="imgwrap">
                                 <div class="imgBox">
@@ -121,7 +121,7 @@
                 </li>
                 <li class="list_li">
                     <i class="fa-regular fa-heart"></i>
-                    <a class="recipe_link" href="${contextPath}/guide/guide-detail">
+                    <a class="recipe_link" href="${contextPath}/guide/detail">
                         <div class="pic_box">
                             <div class="imgwrap">
                                 <div class="imgBox">
@@ -138,7 +138,7 @@
                 </li>
                 <li class="list_li">
                     <i class="fa-regular fa-heart"></i>
-                    <a class="recipe_link" href="${contextPath}/guide/guide-detail">
+                    <a class="recipe_link" href="${contextPath}/guide/detail">
                         <div class="pic_box">
                             <div class="imgwrap">
                                 <div class="imgBox">
@@ -155,7 +155,7 @@
                 <!--4개-->
                 <li class="list_li">
                     <i class="fa-regular fa-heart"></i>
-                    <a class="recipe_link" href="${contextPath}/guide/guide-detail">
+                    <a class="recipe_link" href="${contextPath}/guide/detail">
                         <div class="pic_box">
                             <div class="imgwrap">
                                 <div class="imgBox">
@@ -171,7 +171,7 @@
                 </li>
                 <li class="list_li">
                     <i class="fa-regular fa-heart"></i>
-                    <a class="recipe_link" href="${contextPath}/guide/guide-detail">
+                    <a class="recipe_link" href="${contextPath}/guide/detail">
                         <div class="pic_box">
                             <div class="imgwrap">
                                 <div class="imgBox">
@@ -188,7 +188,7 @@
                 </li>
                 <li class="list_li">
                     <i class="fa-regular fa-heart"></i>
-                    <a class="recipe_link" href="${contextPath}/guide/guide-detail">
+                    <a class="recipe_link" href="${contextPath}/guide/detail">
                         <div class="pic_box">
                             <div class="imgwrap">
                                 <div class="imgBox">
@@ -205,7 +205,7 @@
                 </li>
                 <li class="list_li">
                     <i class="fa-regular fa-heart"></i>
-                    <a class="recipe_link" href="${contextPath}/guide/guide-detail">
+                    <a class="recipe_link" href="${contextPath}/guide/detail">
                         <div class="pic_box">
                             <div class="imgwrap">
                                 <div class="imgBox">
@@ -222,7 +222,7 @@
                 <!--4개-->
                 <li class="list_li">
                     <i class="fa-regular fa-heart"></i>
-                    <a class="recipe_link" href="${contextPath}/guide/guide-detail">
+                    <a class="recipe_link" href="${contextPath}/guide/detail">
                         <div class="pic_box">
                             <div class="imgwrap">
                                 <div class="imgBox">
@@ -238,7 +238,7 @@
                 </li>
                 <li class="list_li">
                     <i class="fa-regular fa-heart"></i>
-                    <a class="recipe_link" href="${contextPath}/guide/guide-detail">
+                    <a class="recipe_link" href="${contextPath}/guide/detail">
                         <div class="pic_box">
                             <div class="imgwrap">
                                 <div class="imgBox">
@@ -255,7 +255,7 @@
                 </li>
                 <li class="list_li">
                     <i class="fa-regular fa-heart"></i>
-                    <a class="recipe_link" href="${contextPath}/guide/guide-detail">
+                    <a class="recipe_link" href="${contextPath}/guide/detail">
                         <div class="pic_box">
                             <div class="imgwrap">
                                 <div class="imgBox">
@@ -272,7 +272,7 @@
                 </li>
                 <li class="list_li">
                     <i class="fa-regular fa-heart"></i>
-                    <a class="recipe_link" href="${contextPath}/guide/guide-detail">
+                    <a class="recipe_link" href="${contextPath}/guide/detail">
                         <div class="pic_box">
                             <div class="imgwrap">
                                 <div class="imgBox">

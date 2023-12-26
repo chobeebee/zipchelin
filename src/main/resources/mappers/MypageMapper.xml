@@ -80,33 +80,10 @@
         where user_id = #{id}
     </select>
 
-    <!-- 찜한 가이드 목록 -->
-    <!--  <select id="selectGuiHeart" parameterType="String" resultType="com.zipchelin.domain.admin.Guide">
-        select g.gui_num, g.cate_num, g.gui_date, g.gui_view, g.gui_title, g.gui_subt, g.gui_desc
-        from guide_tbl g,
-             gui_pick p
-        where g.gui_num = p.gui_num
-          and p.user_id = #{id}
-    </select>-->
-
-    <!-- 찜한 레시피 목록 -->
-    <!-- <select id="selectRecHeart" parameterType="String" resultType="com.zipchelin.domain.admin.Recipe">
-        select r.rec_num,
-               r.cate_num,
-               r.rec_date,
-               r.rec_view,
-               r.rec_ten,
-               r.rec_title,
-               r.rec_subt,
-               r.rec_desc,
-               r.rec_ingre_main,
-               r.rec_ingre_sub,
-               r.rec_tool
-        from recipe_tbl r,
-             rec_Pick p
-        where r.rec_num = p.rec_num
-          and p.user_id = #{id}
-    </select> -->
+    <!-- 마이페이지 찜목록 -->
+    <select id="selectMyPick">
+    	
+    </select>
     
     <!-- 내 qna 댓글 목록 -->
     <select id="selectQnaReply" parameterType="String" resultType="com.zipchelin.domain.community.QnaReply">

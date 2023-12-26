@@ -59,7 +59,7 @@
                         <div class="comment-profile">
                             <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                         </div>
-                        <strong class="post-id">${member.memberId}</strong>
+                        <strong class="post-id">${member.userId}</strong>
                         <span class="post-date"><fmt:formatDate pattern="yyyy.MM.dd"
                                                                 value="${myrecipe.myreDate}"/></span>
                         <div class="comment_writeracc">
@@ -67,15 +67,13 @@
                                 <a href="${contextPath}/myrecipe/update/${myrecipe.myreNum}">수정</a>
                             </button>
                             <button class="comment_delete">
-                                <a href="${contextPath}/myrecipe/delete/${qna.qnaNum}">삭제</a>
+                                <a href="${contextPath}/myrecipe/delete/${myrecipe.myreNum}">삭제</a>
                             </button>
                         </div>
                     </div>
                 </div>
                 <div class="post-content">
-                    <p class="content">내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다<br>내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든
-                        요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다<br>내가 만든 요리 중에 제일 맛있는 요리입니다내가
-                        만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다</p><br>
+                    <p class="content">${myrecipe}</p><br>
                     <img src="/front/images/food/sample.jpg" alt="">
                     <img src="/front/images/food/sample.jpg" alt="">
                     <p class="content">내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다</p><br>

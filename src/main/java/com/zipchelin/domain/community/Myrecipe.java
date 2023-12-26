@@ -18,18 +18,19 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Myrecipe {
+	private long myreNum;
 	private String userId;
-	private int myreNum;
 	private String myreTitle;
 	private String myreContent;
-	private int myreUp;
 	private LocalDateTime myreDate;
+	private int myreUp;
 	
 	public MyrecipeResponseDto toDto() {
 		return MyrecipeResponseDto.builder()
-				.userId(userId)
 				.myreNum(myreNum)
+				.userId(userId)
 				.myreTitle(myreTitle)
+				.myreContent(myreContent)
 				.myreUp(myreUp)
 				.myreDate(myreDate)
 				.build();
@@ -38,8 +39,8 @@ public class Myrecipe {
 	public MyrecipeRequestDto fromDto() {
 		return MyrecipeRequestDto.builder()
 				.userId(userId)
-				.myreContent(myreContent)
 				.myreTitle(myreTitle)
+				.myreContent(myreContent)
 				.build();
 	}
 	

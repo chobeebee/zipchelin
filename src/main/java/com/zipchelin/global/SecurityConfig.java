@@ -45,21 +45,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
+        http
                 .sessionManagement()
                 .maximumSessions(1)
                 .maxSessionsPreventsLogin(false)
                 .expiredUrl("/member/expired");
 
         http
-                .authorizeRequests()
-//                .antMatchers("/", "/member/**").permitAll()
-//                .antMatchers("/admin/**").hasRole("ADMIN")
-//                .anyRequest().authenticated()
-                .antMatchers("/mypage123/**").hasRole("USER")
-                .antMatchers("/admin123/**").hasRole("ADMIN")
-                .antMatchers("/member/test1").hasAuthority("RE_AUTH")
-                .anyRequest().permitAll();
+                .authorizeHttpRequests()
+                .antMatchers("/mypage/**").authenticated()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/**").permitAll();
 
         http
                 .formLogin()
@@ -81,5 +77,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
 }

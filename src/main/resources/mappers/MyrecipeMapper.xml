@@ -10,22 +10,21 @@
         from (select rownum as rn, myre_title, myre_date, myre_content
               from myrecipe_tbl
               where rownum <= #{pageNum} * #{amount})
-        where rn > (#{pageNum} - 1) * #{amount}
+        where rn > (#{pageNum} - 1) * #{amount} order by rn desc
         ]]>
     </select>
 	
 	<!-- 게시글 저장 -->
 	<insert id="save" parameterType="com.zipchelin.model.dto.community.myrecipe.MyrecipeRequestDto">
 		insert into myrecipe_tbl
-		values ( myre_sq.nextval
-				, #{userId}
+		values ( MYRECIPE_SQ.nextval
+				, #{memberId}
 				, #{myreTitle}
 				, #{myreContent}
 				, sysdate
-				, 0
 				, 0)
 				<selectKey keyProperty="myreNum" resultType="long" order="AFTER">
-               		select myrecipe_sq.currval from dual
+               		select MYRECIPE_SQ.currval from dual
                </selectKey>
 	</insert>
 	

@@ -13,6 +13,7 @@ import com.zipchelin.model.dto.admin.notice.PageMakerDTO;
 import com.zipchelin.model.dto.admin.page.Criteria;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeRequestDto;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponse;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponseDto;
 import com.zipchelin.model.service.MyrecipeService;
 
 import lombok.RequiredArgsConstructor;
@@ -38,7 +39,7 @@ public class MyrecipeController {
 	@GetMapping("/form")
 	public String myRecipeForm(@RequestParam(value="id",required = false) final Long id,Model model) {
 		if(id!=null) {
-			MyrecipeResponse myrecipe = myrecipeService.findMyrecipeById(id);
+			MyrecipeResponseDto myrecipe = myrecipeService.findMyrecipeById(id);
 			model.addAttribute("myrecipe", myrecipe);
 		}
 		return "content/myrecipe/myrecipe_form";
@@ -47,12 +48,12 @@ public class MyrecipeController {
 	@PostMapping("/save")
 	public String saveMyrecipe(final MyrecipeRequestDto params) {
 		long myreNum = myrecipeService.saveMyrecipe(params);
-		return "redirect:/community/myrecipe/post" + myreNum;
+		return "redirect:/community/myrecipe/post/" + myreNum;
 	}
 	
 	@GetMapping("/post/{num}")
 	public String myRecipePost(@PathVariable("num") Long id, Model model) {
-		MyrecipeResponse myrecipe= myrecipeService.findMyrecipeById(id);
+		MyrecipeResponseDto myrecipe= myrecipeService.findMyrecipeById(id);
 		model.addAttribute("myrecipe", myrecipe);
 		return "content/myrecipe/myrecipe_post";
 	}

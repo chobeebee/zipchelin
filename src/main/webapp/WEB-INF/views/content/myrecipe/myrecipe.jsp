@@ -53,6 +53,7 @@
     
     <!-- 메인 -->
     <main>
+    <!-- 
         <section class="best-section">
             <h1 class="pageTitle">오늘의 인기글</h1>
             <div class="best-list">
@@ -83,7 +84,7 @@
                 </c:choose>
             </div>
         </section>
-
+ -->
         <section class="myrecipe_section">
             <h1 class="best-title">나만의 레시피</h1>
             <div class="acc-container">
@@ -95,12 +96,14 @@
             </div>
           
             <ul class="allwrite clearfix">
-	            <c:forEach var="myrecipe" items="${myrecipeList}" varStatus="myrecipeTitle">
+	            <c:forEach var="myrecipe" items="${myrecipeList}">
 	                <li class="post-container">
-	                    <a href="${contextPath}/community/myrecipe/post" class="imgwrap">
+	                    <a href="${contextPath}/community/myrecipe/post/${myrecipe.myreNum}" class="imgwrap">
 	                        <div class="post-section">
-	                            <span class="postdate"><fmt:parseDate value="${myrecipe.myreDate}" pattern="yyyy-MM-dd'T'HH:mm" var="parseDateTime" />
-                                    <fmt:formatDate pattern="yyyy-MM-dd" value="${parseDateTime}" /></span>
+	                            <span class="postdate">
+	                            	<fmt:parseDate value="${myrecipe.myreDate}" pattern="yyyy-MM-dd'T'HH:mm" var="parseDateTime" />
+                                    <fmt:formatDate pattern="yyyy-MM-dd" value="${parseDateTime}" />
+                                </span>
 	                            <h6 class="title">${myrecipe.myreTitle}</h6>
 	                            <p>
 	                                ${myrecipe.myreContent}

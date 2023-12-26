@@ -12,7 +12,7 @@ import lombok.Getter;
 @Builder
 @AllArgsConstructor
 public class MyrecipeResponseDto {
-    private String userId;
+    private String memberId;
     private long myreNum;
     private String myreTitle;
     private String myreContent;
@@ -21,7 +21,7 @@ public class MyrecipeResponseDto {
 
     public Myrecipe toEntity() {
         return Myrecipe.builder()
-                .userId(userId)
+                .memberId(memberId)
                 .myreNum(myreNum)
                 .myreTitle(myreTitle)
                 .myreContent(myreContent)

@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 public class MyrecipeResponse {
 	private Long myreNum;
-    private String userId;
+    private String memberId;
     private String myreTitle;
     private String myreContent;
     private LocalDate myreDate;

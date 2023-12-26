@@ -6,6 +6,7 @@ import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.model.dto.admin.page.Criteria;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeRequestDto;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponse;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponseDto;
 
 public interface MyrecipeRepository {
 	
@@ -15,7 +16,7 @@ public interface MyrecipeRepository {
 
 	String addMyrecipe(Myrecipe Myrecipe);
 	
-	MyrecipeResponse findById(Long id);
+	MyrecipeResponseDto findById(Long id);
 	
 	void updateMyrecipe(Myrecipe myrecipe);
 	

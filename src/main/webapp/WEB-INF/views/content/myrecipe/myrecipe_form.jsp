@@ -55,19 +55,20 @@
         	<h1 class="best-title">나만의 레시피</h1>
             <div>
                 <div class="information informationBox">
+                <input name="memberId" value="86" type="hidden">
                     <h2 class="form-title">제목</h2>
-                    <p><input name="form-title" class="formBox" id="formBox" placeholder="제목을 입력해주세요"></p>
+                    <p><input class="formBox" name="myreTitle" id="myreTitle" placeholder="제목을 입력해주세요"></p>
                 </div>
                 <div class="information">
                     <h2 class="form-title">내용</h2>
-                    <textarea name="form-content" id="form-content" class="form-content" cols="10" rows="20"
-                              placeholder="내용을 입력해주세요"></textarea>
+                    <textarea name="myreContent" id="form-content" class="form-content" cols="10" rows="20"></textarea>
                 </div>
             </div>
             <div class="btnGroup lg form">
-                <button onclick="location.href='myrecipe.html'" class="btnBgGray form" class="btn_cancel">취소</button>
-                <button onclick="location.href='myrecipe.html'" class="btnBg" class="btn_upload">올리기</button>
-                <input type="button" value="전송" onclick="submitPost();">
+               <a href="${contextPath}/community/myrecipe/">
+	                <button type="button"  class="btnBgGray form" class="btn_cancel">취소</button>
+	                <input type="submit" class="btnBg" class="btn_upload" onclick="submitPost();">
+                </a>
             </div>
         </form>
     </section>

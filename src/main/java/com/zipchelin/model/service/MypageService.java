@@ -155,4 +155,27 @@ public class MypageService {
    /* public List<Myheart> getListPaging(Criteria cri) {
         return mypageRepository.getListPaging(cri);
     }*/
+    
+    public void deleteMypost(String[] deleteList) {
+    	List<String> myreDeleteList=new ArrayList<>();
+    	List<String> qnaDeleteList=new ArrayList<>();
+    	
+    	for(String post:deleteList) {
+    		String myreOrQna=post.substring(0,post.indexOf("-"));
+    		if(myreOrQna.equals("myre")) {
+    			myreDeleteList.add(post.substring(post.indexOf("-")+1,post.length()));
+    		}else if(myreOrQna.equals("qna")) {
+    			qnaDeleteList.add(post.substring(post.indexOf("-")+1,post.length()));
+    		}
+    	}
+    	
+    	if(myreDeleteList.size()!=0) {
+    		mypageRepository.deleteMyre(myreDeleteList);
+    	}
+    	
+    	if(qnaDeleteList.size()!=0) {
+    		mypageRepository.deleteQna(qnaDeleteList);
+    	}
+    }
+    
 }

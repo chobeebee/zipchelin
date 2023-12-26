@@ -30,5 +30,9 @@ public interface MypageRepository {
     
     public List<MyPick> selectMyPick(String id);
     
+    public void deleteMyre(List<String> deleteList);
+    
+    public void deleteQna(List<String> deleteList);
+    
     //public List<Myheart> getListPaging(Criteria cri);
 }

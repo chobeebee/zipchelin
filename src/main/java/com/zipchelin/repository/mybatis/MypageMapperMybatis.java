@@ -82,10 +82,23 @@ public class MypageMapperMybatis implements MypageRepository {
     	return mypageMapper.selectRecipeReply(id);
     }
 
+    @Override
+    public List<MyPick> selectMyPick(String id) {
+       return mypageMapper.selectMyPick(id);
+    }
+
 	@Override
-	public List<MyPick> selectMyPick(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public void deleteMyre(List<String> deleteList) {
+		for(String deletePost:deleteList) {
+			mypageMapper.deleteMyre(deletePost);
+		}
+	}
+
+	@Override
+	public void deleteQna(List<String> deleteList) {
+		for(String deletePost:deleteList) {
+			mypageMapper.deleteQna(deletePost);
+		}
 	}
 
     /*

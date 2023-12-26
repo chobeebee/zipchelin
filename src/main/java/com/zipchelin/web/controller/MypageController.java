@@ -109,15 +109,6 @@ public class MypageController {
       
     	return myPostList;
     }
-    
-    
-
-    @GetMapping("/myheart")
-    public String myheart(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
-        String id = userDetails.getMember().getMemberId();
-        model.addAttribute("pickList", mypageService.selectPickList(id));
-        return "mypage/myheart";
-    }
 
     @GetMapping("/myreply")
     public String myreply(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
@@ -125,5 +116,16 @@ public class MypageController {
         model.addAttribute("replyList", mypageService.selectReplyList(id));
     	return "mypage/myreply";
     }
-
+    
+    @GetMapping("/deleteMypost")
+    public void deleteMypost(@RequestParam(value="deleteList[]") String[] deleteMypost) {
+    	mypageService.deleteMypost(deleteMypost);
+    }
+    
+    @GetMapping("/myheart")
+    public String myheart(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
+        String id = userDetails.getMember().getMemberId();
+        model.addAttribute("pickList", mypageService.selectPickList(id));
+        return "mypage/myheart";
+    }
 }

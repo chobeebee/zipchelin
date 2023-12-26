@@ -17,7 +17,6 @@
                member_PWD,
                member_NAME,
                member_EMAIL,
-               member_PHONE,
                JOIN_DATE,
                member_IMG,
                MEMBER_ROLE
@@ -48,7 +47,7 @@
     <select id="countMyQna" parameterType="String" resultType="int">
         select count(*)
         from qna_tbl
-        where user_id = #{id}
+        where MEMBER_ID = #{id}
     </select>
     <select id="countMyMyre" parameterType="String" resultType="int">
         select count(*)
@@ -70,7 +69,7 @@
     <select id="selectQnaById" parameterType="String" resultType="com.zipchelin.domain.community.Qna">
         select *
         from qna_tbl
-        where user_id = #{id}
+        where MEMBER_ID = #{id}
     </select>
 
     <!-- 내 마이레시피 -->
@@ -128,4 +127,17 @@
         where rn > (#{pageNum} - 1) * #{amount}
         ]]>
     </select> -->
+    
+    <delete id="deleteMyre" parameterType="String">
+    	delete from myrecipe_tbl where myre_num=#{deletePost}
+    </delete>
+    
+    <delete id="deleteQna" parameterType="String">
+    	delete from qna_tbl where qna_num=#{deletePost}
+    </delete>
+    
+    <!-- 마이페이지 찜목록 -->
+    <select id="selectMyPick">
+       select * from mypick_tbl;
+    </select>
 </mapper>

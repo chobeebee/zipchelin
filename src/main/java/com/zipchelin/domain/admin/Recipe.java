@@ -23,6 +23,7 @@ public class Recipe {
     private int cateNum;
     private String recTitle;
     private String recSubt;
+    private String recDesc;
     private String recImg0;
     private String recDesc0;
     private String recIngreMain;
@@ -44,7 +45,7 @@ public class Recipe {
     public RecipeListRequestDto fromDto() {
         return RecipeListRequestDto.builder()
         		.recNum(recNum)
-				//.cateNum(cateNum)
+				.cateNum(cateNum)
 				.recTitle(recTitle)
 				.recSubt(recSubt)
                 .build();
@@ -53,10 +54,10 @@ public class Recipe {
     public RecipeListResponseDto toDto() {
         return RecipeListResponseDto.builder()
         		.recNum(recNum)
-				//.cateNum(cateNum)
+				.cateNum(cateNum)
 				.recTitle(recTitle)
 				.recSubt(recSubt)
-				//.recImg0(recImg0)
+				.recImg0(recImg0)
 				.build();
     }
 

@@ -6,10 +6,13 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.model.dto.admin.page.Criteria;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeRequestDto;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponse;
 
 @Mapper
 public interface MyrecipeMapper {
+	
+	void save(MyrecipeRequestDto params);
 	
 	public List<Myrecipe> getMyrecipe();
 	

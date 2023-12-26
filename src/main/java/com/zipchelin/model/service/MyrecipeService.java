@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.model.dto.admin.page.Criteria;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeRequestDto;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponse;
 import com.zipchelin.repository.MyrecipeRepository;
 
@@ -18,6 +20,11 @@ public class MyrecipeService {
 
 	@Autowired
 	private final MyrecipeRepository myrecipeRepository;
+	
+	@Transactional
+	public long saveMyrecipe(final MyrecipeRequestDto params) {
+		return myrecipeRepository.save(params);
+	}
 
 	public List<Myrecipe> getMyrecipe() {
 		return myrecipeRepository.getMyrecipe();

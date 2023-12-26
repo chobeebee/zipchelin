@@ -5,11 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.zipchelin.model.dto.admin.notice.PageMakerDTO;
 import com.zipchelin.model.dto.admin.page.Criteria;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeRequestDto;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponse;
 import com.zipchelin.model.service.MyrecipeService;
 
@@ -40,6 +42,12 @@ public class MyrecipeController {
 			model.addAttribute("myrecipe", myrecipe);
 		}
 		return "content/myrecipe/myrecipe_form";
+	}
+	
+	@PostMapping("/save")
+	public String saveMyrecipe(final MyrecipeRequestDto params) {
+		long myreNum = myrecipeService.saveMyrecipe(params);
+		return "redirect:/community/myrecipe/post" + myreNum;
 	}
 	
 	@GetMapping("/post/{num}")

@@ -99,7 +99,8 @@
 	                <li class="post-container">
 	                    <a href="${contextPath}/community/myrecipe/post" class="imgwrap">
 	                        <div class="post-section">
-	                            <span class="postdate"><fmt:formatDate pattern="yyyy-MM-dd" value="${myrecipe.myreDate}" /></span>
+	                            <span class="postdate"><fmt:parseDate value="${myrecipe.myreDate}" pattern="yyyy-MM-dd'T'HH:mm" var="parseDateTime" />
+                                    <fmt:formatDate pattern="yyyy-MM-dd" value="${parseDateTime}" /></span>
 	                            <h6 class="title">${myrecipe.myreTitle}</h6>
 	                            <p>
 	                                ${myrecipe.myreContent}

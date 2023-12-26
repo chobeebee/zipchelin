@@ -13,7 +13,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class MyrecipeResponseDto {
     private String userId;
-    private int myreNum;
+    private long myreNum;
     private String myreTitle;
     private String myreContent;
     private int myreUp;

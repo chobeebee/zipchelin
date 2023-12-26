@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.zipchelin.domain.admin.Recipe;
 import com.zipchelin.model.dto.admin.recipe.RecipeListResponseDto;
+import com.zipchelin.model.dto.common.PagingDto;
+import com.zipchelin.model.dto.common.SearchDto;
 import com.zipchelin.repository.RecipeRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -19,17 +21,32 @@ public class RecipeService {
 
 	private final RecipeRepository recipeRepository;
 
-	public List<RecipeListResponseDto> selectRecipeAll(){
-		List<Recipe> recipeList=recipeRepository.selectRecipeAll();
+	public List<RecipeListResponseDto> selectRecipeAll(final SearchDto params){
+		int totalCount = recipeRepository.count(params);
+		if(totalCount < 1) {
+			return null;
+		}
+		
+		PagingDto paging = new PagingDto(totalCount, params);
+		params.setPaging(paging);
+		
+		List<Recipe> recipeList=recipeRepository.selectRecipeAll(params);
 		List<RecipeListResponseDto> dtoList=new ArrayList<RecipeListResponseDto>();
 		for(Recipe rec:recipeList) {
 			dtoList.add(rec.toDto());
 		}
+		
 		return dtoList;
 	};
 
-	public List<Recipe> selectEachCategory(int cateNum){
-		return recipeRepository.selectEachCategory(cateNum);
+	public List<RecipeListResponseDto> selectEachCategory(int cateNum){
+		List<Recipe> recipeList=recipeRepository.selectEachCategory(cateNum);
+		List<RecipeListResponseDto> dtoList=new ArrayList<RecipeListResponseDto>();
+		for(Recipe rec:recipeList) {
+			dtoList.add(rec.toDto());
+		}
+		
+		return dtoList;
 	};
 
 	public int selectMaxNum() {
@@ -39,8 +56,8 @@ public class RecipeService {
 
 	};
 
-	public void addRecipe(Recipe recipe) {
-
+	public long addRecipe(Recipe recipe) {
+		return recipeRepository.addRecipe(recipe);
 	};
 
 	public void updateRecipe(Recipe recipe) {

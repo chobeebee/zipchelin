@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.model.dto.admin.page.Criteria;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeRequestDto;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponse;
 import com.zipchelin.repository.MyrecipeRepository;
 import com.zipchelin.repository.mybatis.mappers.MyrecipeMapper;
@@ -17,6 +18,17 @@ import lombok.RequiredArgsConstructor;
 public class MyrecipeMapperMybatis implements MyrecipeRepository {
 
 	private final MyrecipeMapper myrecipeMapper;
+	
+	@Override
+	public long save(MyrecipeRequestDto params) {
+		myrecipeMapper.save(params);
+		return params.getMyreNum();
+	}
+	
+	@Override
+	public MyrecipeResponse findById(Long id) {
+		return myrecipeMapper.findById(id);
+	}
 	
 	@Override
 	public List<Myrecipe> getMyrecipe() {
@@ -48,12 +60,6 @@ public class MyrecipeMapperMybatis implements MyrecipeRepository {
 	 @Override
 	 public int getTotal() {
 		return myrecipeMapper.getTotal();
-	}
-
-	@Override
-	public MyrecipeResponse findById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 	
 }

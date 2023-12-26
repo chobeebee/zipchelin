@@ -70,16 +70,6 @@ public class MypageMapperMybatis implements MypageRepository {
     public List<Myrecipe> selectMyreById(String id) {
         return mypageMapper.selectMyreById(id);
     }
-
-    //@Override
-    //public List<Guide> selectGuiHeart(String id) {
-    //    return mypageMapper.selectGuiHeart(id);
-    //}
-
-    //@Override
-    //public List<Recipe> selectRecHeart(String id) {
-    //    return mypageMapper.selectRecHeart(id);
-    //}
     
     @Override
     public List<QnaReply> selectQnaReply(String id){

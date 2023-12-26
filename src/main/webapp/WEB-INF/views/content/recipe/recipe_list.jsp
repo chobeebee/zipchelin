@@ -63,7 +63,7 @@
             <div class="category">
                 <ul class="categoryName clearfix">
                     <li>
-                        <a href="javascript:" class="categoryBox active">
+                        <a href="javascript:" class="categoryBox active" onclick="location.reload()">
                             <img class="cm_menu" src="${contextPath}/resource/images/icon/cm_menu.png" alt="menu">
                             <p>전체보기</p>
                         </a>
@@ -146,7 +146,7 @@
 			                        <a class="recipe_link" href="/recipe/${recipe.recNum}">
 			                            <div class="imgwrap">
 			                                <div class="imgBox">
-			                                    <%-- <img class="recipe_pic" src="${contextPath}/resource/images/food/${recipe.recImg0}" alt="#"> --%>
+			                                    <img class="recipe_pic" src="${contextPath}/resource/images/food/${recipe.recImg0}" alt="#">
 			                                </div>
 			                            </div>
 			                            <div class="textBox">
@@ -160,10 +160,9 @@
                 	</c:choose>
                 </ul>
             </div>
-            <!--페이징 단락-->
+            <!--페이징 단락
             <div class="paging">
                 <ul class="clearfix">
-                    <!--li에 .disabled가 있으면 화살표에 클릭방지 생김-->
                     <li class="arrow prev disabled"><button disabled><span class="material-symbols-outlined">navigate_before</span></button></li>
                     <li class="active"><a href="javascript:">1</a></li>
                     <li><a href="javascript:">2</a></li>
@@ -171,6 +170,39 @@
                     <li><a href="javascript:">4</a></li>
                     <li><a href="javascript:">5</a></li>
                     <li class="arrow next"><button><span class="material-symbols-outlined">navigate_next</span></button></li>
+                </ul>
+            </div>-->
+            <!-- 페이징 시작 -->
+            <div class="paging">
+                <ul class="clearfix">
+                    <c:if test="${params.paging.prevPage}">
+                        <li class="arrow prev"><a href="javascript:void(0)"
+                               onclick="movePage(${params.paging.startPage - 1})">
+                               <span class="material-symbols-outlined">navigate_before</span></a>
+                        </li>
+                    </c:if>
+
+                    <c:forEach var="num" begin="${params.paging.startPage}"
+                               end="${params.paging.endPage}">
+                        <c:if test="${params.page != num}">
+                            <li>
+                            	<a href="javascript:void(0)" onclick="movePage(${num})">${num}</a>
+                            </li>
+                        </c:if>
+                        <c:if test="${params.page == num}">
+                            <li class="active">
+                            	<a href="javascript:void(0)" onclick="movePage(${num})">${num}</a>
+                            </li>
+                        </c:if>
+                    </c:forEach>
+
+                    <c:if test="${params.paging.nextPage}">
+                        <li class="arrow next">
+                        	<a href="javascript:void(0)" onclick="movePage(${params.paging.endPage + 1})">
+                        		<span class="material-symbols-outlined">navigate_next</span>
+                        	</a>
+                        </li>
+                    </c:if>
                 </ul>
             </div>
         </div>
@@ -190,7 +222,52 @@
     		$(this).addClass('active');
     	});
     	
+    	function ajaxCateRecipe(number){
+    		$.ajax({
+    			url: '${contextPath}/recipe/list/'+number,
+    			type: "get",
+    			dataType: "json",
+    			success: recipeList,
+    			error: function(request, status, error){
+    				console.log(error);
+    			}
+    		});
+    	}
     	
+    	function recipeList(data){
+    		console.log(data);
+			//alert('성공');			
+			let html="";
+			
+			$(".list_ul").empty();
+			
+			if(data.length == 0){
+				html +=
+					"<li class='noList'>"+
+    				"<h6>레시피가 없습니다.</h6>"+
+        			"</li>";
+			}else{
+				$.each(data, (index, obj)=>{
+					html+=
+						"<li class='list_li'>"+
+							"<i class='fa-regular fa-heart'></i> "+
+							"<a class='recipe_link' href='/recipe/"+obj.recNum+"'>"+
+									"<div class='imgwrap'>"+
+										"<div class='imgBox'>"+
+											"<img class='recipe_pic' src='${contextPath}/resource/images/food/"+obj.recImg0+"' alt=''>"+
+										"</div>"+
+									"</div>"+
+								"<div class='textBox'>"+
+									"<p class='sub_title'>"+obj.recSubt+"</p>"+
+									"<p class='title'>"+obj.recTitle+"</p>"+
+								"</div>"+
+							"</a>"+
+						"</li>";
+				});
+			}
+			
+			$(".list_ul").append(html);
+		}
     	
     </script>
 </body>

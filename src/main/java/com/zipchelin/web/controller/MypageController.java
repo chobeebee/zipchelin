@@ -1,7 +1,7 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.web.security.provider.CustomUserDetails;
-import com.zipchelin.model.dto.member.mypage.MyPost;
+import com.zipchelin.global.security.provider.CustomUserDetails;
+import com.zipchelin.model.dto.mypage.MyPost;
 import com.zipchelin.model.dto.member.MemberResponseDto;
 import com.zipchelin.model.service.MypageService;
 import lombok.RequiredArgsConstructor;
@@ -46,7 +46,9 @@ public class MypageController {
     }
 
     @GetMapping("/pwdConfirm")
-    public String pwdConfirm() {
+    public String pwdConfirm(Model model,@AuthenticationPrincipal CustomUserDetails userDetails) {
+    	String id = userDetails.getMember().getMemberId();
+    	model.addAttribute("count", mypageService.selectCount(id));
         return "mypage/mypwdConfirm";
     }
 
@@ -82,43 +84,38 @@ public class MypageController {
         return "mypage/myedit";
     }
 
-    @GetMapping(value={"/mypost/{requestedAjax}","/mypost"})
-    public String mypost(@PathVariable(required = false) String requestedAjax, Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
-        String id=userDetails.getMember().getMemberId();
-        
-        List<MyPost> myPostList=new ArrayList<MyPost>();
-        
-        if(requestedAjax==null) {
-        	
-        	myPostList=mypageService.selectMyPostList(id);
-        	model.addAttribute("myPostList",myPostList);
-        	model.addAttribute("myPostListSize",myPostList.size());
-        	
-        }else if(requestedAjax.equals("all")){
-        	
-        	myPostList=mypageService.selectMyPostList(id);
-        	model.addAttribute("myPostList",myPostList);
-        	model.addAttribute("myPostListSize",myPostList.size());
-        	
-        }else if(requestedAjax.equals("myre")) {
-        	
-        	myPostList=mypageService.selectMyreById(id);
-        	model.addAttribute("myPostList",myPostList);
-        	model.addAttribute("myPostListSize",myPostList.size());
-        	
-        }else if(requestedAjax.equals("qna")) {
-        	
-        	myPostList=mypageService.selectQnaById(id);
-        	model.addAttribute("myPostList",myPostList);
-        	model.addAttribute("myPostListSize",myPostList.size());
-        }
+    
+    @GetMapping("/mypost")
+    public String mypost(@AuthenticationPrincipal CustomUserDetails userDetails,Model model) {
+    	String id = userDetails.getMember().getMemberId();
+    	model.addAttribute("count", mypageService.selectCount(id));
         return "mypage/mypost";
     }
+    
+    @ResponseBody
+    @PostMapping("/getMyPost/{requestAjax}")
+    public List<MyPost> getMyPost(@PathVariable("requestAjax") String requestAjax,
+    								@AuthenticationPrincipal CustomUserDetails userDetails){
+    	String id=userDetails.getMember().getMemberId();
+    	List<MyPost> myPostList=new ArrayList<MyPost>();
+      
+    	if(requestAjax.equals("all")){
+    		myPostList=mypageService.selectMyPostList(id);
+    	}else if(requestAjax.equals("myre")) {
+    		myPostList=mypageService.selectMyreById(id);
+    	}else if(requestAjax.equals("qna")) {
+    		myPostList=mypageService.selectQnaById(id);
+    	}
+      
+    	return myPostList;
+    }
+    
+    
 
     @GetMapping("/myheart")
     public String myheart(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
-        //String id = userDetails.getMember().getMemberId();
-        //model.addAttribute("heartList", mypageService.selectHeartList(id));
+        String id = userDetails.getMember().getMemberId();
+        model.addAttribute("pickList", mypageService.selectPickList(id));
         return "mypage/myheart";
     }
 

@@ -178,12 +178,62 @@ function edit_complete_btn() {
 		$('#edit_form').submit();
 	}
 }
-
-function getMyPostData(requestedAjax){
+function getMyPostData(requestAjax){
 	$.ajax({
-                type : "GET",
-                url : "/mypage/mypost/"+requestedAjax,
-                success : function(){alert('정상적으로 받아옴');}
+                type : "POST",
+                url : "/mypage/getMyPost/"+requestAjax,
+                success : function(myPostList){
+					$("#postSection").empty();
+					for(let i=0;i<myPostList.length;i++){
+						let myPost=myPostList[i];
+						
+						let postDate='';
+						let title='';
+						let content='';
+						let myreOrQna='';
+						let up='';
+						
+						if(myPost.myreOrQna=='myre'){
+							postDate=myPost.myrecipe.myreDate.substr(0, 10);
+							title=myPost.myrecipe.myreTitle;
+							content=myPost.myrecipe.myreContent;
+							myreOrQna='마이레시피';
+							up=myPost.myrecipe.myreUp;
+						}else if(myPost.myreOrQna=='qna'){
+							postDate=myPost.qna.qnaDate.substr(0, 10);
+							title=myPost.qna.qnaTitle;
+							content=myPost.qna.qnaContent;
+							myreOrQna='QnA';
+							up=myPost.qna.qnaUp;
+						}
+						let post=
+						'<li class="listItem mypostItem imgwrap">'+
+							'<div class="chkWrap">'+
+							    '<input type="checkbox" class="chkBox" name="chkItem" id="listChk01">'+
+							    '<label for="listChk01"></label>'+
+							'</div>'+
+							'<div class="contBox">'+
+								'<a href="">'+
+									'<span class="postDate">'+postDate+'</span>'+
+							    	'<h6>'+title+'</h6>'+
+							    	'<p>'+content+'</p>'+
+							    	'<ul class="accList">'+
+							       		'<li class="accItem">'+
+							           		'<span class="icon material-symbols-outlined">visibility</span>'+myreOrQna+
+							       		'</li>'+
+							       		'<li class="accItem">'+
+							            	'<span class="icon material-symbols-outlined">thumb_up</span>'+up+
+							       		'</li>'+
+							    '</ul>'+
+							    '</a>'+
+							'</div>'+
+							'<div class="imgBox align">'+
+								'<img src="/resource/images/food/sample.jpg" alt="샘플 이미지">'+
+							'</div>'+
+						'</li>';
+						$("#postSection").append(post);
+					}
+                }
             });
 }
 

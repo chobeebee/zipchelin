@@ -1,6 +1,6 @@
 package com.zipchelin.domain.admin;
 
-import com.zipchelin.model.dto.member.mypage.Myheart;
+import com.zipchelin.model.dto.mypage.Myheart;
 import com.zipchelin.model.dto.admin.guide.GuideRequestDto;
 import com.zipchelin.model.dto.admin.guide.GuideResponseDto;
 import lombok.AllArgsConstructor;

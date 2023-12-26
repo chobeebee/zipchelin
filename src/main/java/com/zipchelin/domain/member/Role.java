@@ -6,7 +6,8 @@ import lombok.Getter;
 public enum Role {
 
     ADMIN("ROLE_ADMIN"),
-    USER("ROLE_USER");
+    USER("ROLE_USER"),
+    REAUTH("RE_AUTH");
 
     private final String auth;
 

@@ -51,7 +51,7 @@
 <!-- 메인 -->
 <main>
     <section class="form-list">
-        <form>
+        <form action="/community/myrecipe/save" method="post">
         	<h1 class="best-title">나만의 레시피</h1>
             <div>
                 <div class="information informationBox">

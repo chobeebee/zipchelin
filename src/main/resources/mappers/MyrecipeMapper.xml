@@ -14,6 +14,21 @@
         ]]>
     </select>
 	
+	<!-- 게시글 저장 -->
+	<insert id="save" parameterType="com.zipchelin.model.dto.community.myrecipe.MyrecipeRequestDto">
+		insert into myrecipe_tbl
+		values ( myre_sq.nextval
+				, #{userId}
+				, #{myreTitle}
+				, #{myreContent}
+				, sysdate
+				, 0
+				, 0)
+				<selectKey keyProperty="myreNum" resultType="long" order="AFTER">
+               		select myrecipe_sq.currval from dual
+               </selectKey>
+	</insert>
+	
 	<!-- 게시글 상세정보 조회 -->
     <select id="findById" parameterType="Long" resultType="com.zipchelin.model.dto.community.myrecipe.MyrecipeResponse">
         select *

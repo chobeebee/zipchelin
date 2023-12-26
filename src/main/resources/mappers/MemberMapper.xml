@@ -5,37 +5,37 @@
 
     <!-- 멤버 저장 -->
     <insert id="save" parameterType="com.zipchelin.domain.member.Member">
-        insert into member_TBL (member_ID, member_PWD, member_NAME, member_EMAIL, provider, provider_id)
+        insert into MEMBER_TBL (MEMBER_ID, MEMBER_PWD, MEMBER_NAME, MEMBER_EMAIL, PROVIDER, PROVIDER_ID)
         values (#{memberId}, #{memberPwd}, #{memberName}, #{memberEmail}, #{provider}, #{providerId})
     </insert>
 
     <!-- 멤버 조회 -->
     <select id="findById" resultType="com.zipchelin.domain.member.Member" parameterType="string">
-        select member_ID, member_PWD, member_NAME, member_EMAIL, JOIN_DATE, member_IMG, MEMBER_ROLE
-        from member_TBL
-        where member_ID = #{memberId}
+        select MEMBER_ID, MEMBER_PWD, MEMBER_NAME, MEMBER_EMAIL, JOIN_DATE, MEMBER_IMG, MEMBER_ROLE
+        from MEMBER_TBL
+        where MEMBER_ID = #{memberId}
     </select>
 
     <!-- 멤버 수정 -->
     <update id="update" parameterType="com.zipchelin.domain.member.Member">
-        update member_TBL
-        set member_pwd   = #{memberPwd},
-            member_email = #{memberEmail},
-            member_img   = #{memberImg}
-        where member_ID = #{memberId}
+        update MEMBER_TBL
+        set MEMBER_pwd   = #{memberPwd},
+            MEMBER_email = #{memberEmail},
+            MEMBER_img   = #{memberImg}
+        where MEMBER_ID = #{memberId}
     </update>
 
     <!-- 멤버 삭제 -->
     <delete id="deleteById" parameterType="String">
         delete
-        from member_TBL
-        where member_ID = #{memberId}
+        from MEMBER_TBL
+        where MEMBER_ID = #{memberId}
     </delete>
 
     <!-- 중복 체크 -->
     <select id="countById" parameterType="string" resultType="int">
         select count(*)
-        from member_tbl
-        where member_id = #{memberId}
+        from MEMBER_TBL
+        where MEMBER_ID = #{memberId}
     </select>
 </mapper>

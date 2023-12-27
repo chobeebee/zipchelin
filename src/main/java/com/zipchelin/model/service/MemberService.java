@@ -148,10 +148,10 @@ public class MemberService {
         String pwdReset = createCode();
         resetPwdForm(findMember.getMemberEmail(), pwdReset);
 
-        String encodePwd = passwordEncoder.encode(pwdReset);
+        String encodedPwd = passwordEncoder.encode(pwdReset);
         Member member = Member.builder()
                 .memberId(params.getFindPwdId())
-                .memberPwd(encodePwd)
+                .memberPwd(encodedPwd)
                 .build();
         memberRepository.pwdReset(member);
     }

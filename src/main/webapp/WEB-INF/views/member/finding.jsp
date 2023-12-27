@@ -48,6 +48,12 @@
           rel="stylesheet">
     <![endif]-->
     <title>아이디/비밀번호 찾기</title>
+    <c:if test="${memberId == null}">
+        <script>
+            alert('잘못된 접근입니다.');
+            history.back();
+        </script>
+    </c:if>
 </head>
 <body>
 <%-- 헤더 --%>
@@ -58,8 +64,8 @@
 <div id="finding_box">
     <img id="finding_img" src="${contextPath}/resource/images/icon/finding.png" alt="">
     <p class="finding_msg" id="finding_msg_request">요청하신 아이디찾기 결과 입니다.</p>
-    <p class="finding_msg">아이디는 <span id="finding_found_id">(user_id or pwd)</span> 입니다.</p>
-    <a id="finding_go_login" href="${contextPath}/member/login.do" style="color: white;">확인</a>
+    <p class="finding_msg">아이디는 '<span id="finding_found_id">${memberId}</span>' 입니다.</p>
+    <a id="finding_go_login" href="${contextPath}/member/login" style="color: white;">로그인</a>
 </div>
 
 <!-- 푸터 -->

@@ -6,77 +6,78 @@
     <!-- 비밀번호 체크 -->
     <select id="checkPwd" parameterType="java.util.Map" resultType="String">
         select decode(count(*), 1, 'true', 0, 'false') result
-        from member_tbl
-        where member_id = #{id}
-          and member_pwd = #{pwd}
+        from MEMBER_tbl
+        where MEMBER_ID = #{id}
+          and MEMBER_pwd = #{pwd}
     </select>
 
     <!-- 멤버 조회 -->
     <select id="selectMemberById" resultType="com.zipchelin.domain.member.Member" parameterType="string">
-        select member_ID,
-               member_PWD,
-               member_NAME,
-               member_EMAIL,
+        select MEMBER_ID,
+               MEMBER_PWD,
+               MEMBER_NAME,
+               MEMBER_EMAIL,
+               MEMBER_PHONE,
                JOIN_DATE,
-               member_IMG,
+               MEMBER_IMG,
                MEMBER_ROLE
-        from member_TBL
-        where member_ID = #{id}
+        from MEMBER_TBL
+        where MEMBER_ID = #{id}
     </select>
 
     <!-- 멤버 수정 -->
     <update id="memberUpdate" parameterType="com.zipchelin.domain.member.Member">
-        update member_TBL
-        set member_pwd   = #{memberPwd},
-            member_email = #{memberEmail},
-            member_img   = #{memberImg}
-        where member_ID = #{memberId}
+        update MEMBER_TBL
+        set MEMBER_pwd   = #{memberPwd},
+            MEMBER_email = #{memberEmail},
+            MEMBER_img   = #{memberImg}
+        where MEMBER_ID = #{memberId}
     </update>
 
     <!-- 내 글,내 댓글, 찜 수 체크-->
     <select id="countMyGuiPick" parameterType="String" resultType="int">
         select count(*)
         from gui_pick
-        where user_id = #{id}
+        where USER_ID = #{id}
     </select>
     <select id="countMyRecPick" parameterType="String" resultType="int">
         select count(*)
         from rec_pick
-        where user_id = #{id}
+        where USER_ID = #{id}
     </select>
     <select id="countMyQna" parameterType="String" resultType="int">
         select count(*)
         from qna_tbl
-        where MEMBER_ID = #{id}
+        where USER_ID = #{id}
     </select>
     <select id="countMyMyre" parameterType="String" resultType="int">
         select count(*)
         from myrecipe_tbl
-        where user_id = #{id}
+        where USER_ID = #{id}
     </select>
     <select id="countMyMyreReply" parameterType="String" resultType="int">
         select count(*)
         from myrecipe_reply_tbl
-        where re_id = #{id}
+        where re_ID = #{id}
     </select>
     <select id="countMyQnaReply" parameterType="String" resultType="int">
         select count(*)
         from qna_reply_tbl
-        where re_id = #{id}
+        where re_ID = #{id}
     </select>
 
     <!-- 내 Qna -->
     <select id="selectQnaById" parameterType="String" resultType="com.zipchelin.domain.community.Qna">
         select *
         from qna_tbl
-        where MEMBER_ID = #{id}
+        where USER_ID = #{id}
     </select>
 
     <!-- 내 마이레시피 -->
     <select id="selectMyreById" parameterType="String" resultType="com.zipchelin.domain.community.Myrecipe">
         select *
         from myrecipe_tbl
-        where user_id = #{id}
+        where USER_ID = #{id}
     </select>
 
     <!-- 찜한 가이드 목록 -->
@@ -85,7 +86,7 @@
         from guide_tbl g,
              gui_pick p
         where g.gui_num = p.gui_num
-          and p.user_id = #{id}
+          and p.USER_ID = #{id}
     </select>-->
 
     <!-- 찜한 레시피 목록 -->
@@ -104,17 +105,17 @@
         from recipe_tbl r,
              rec_Pick p
         where r.rec_num = p.rec_num
-          and p.user_id = #{id}
+          and p.USER_ID = #{id}
     </select> -->
     
     <!-- 내 qna 댓글 목록 -->
     <select id="selectQnaReply" parameterType="String" resultType="com.zipchelin.domain.community.QnaReply">
-    	select q.q_re_num, q.qna_num, q.user_img, q.re_order, q.re_id, q.re_content, q.re_up, q.re_date  from qna_reply_tbl q, myrecipe_reply_tbl r where q.re_id=r.re_id and q.re_id=#{id}
+    	select q.q_re_num, q.qna_num, q.USER_img, q.re_order, q.re_ID, q.re_content, q.re_up, q.re_date  from qna_reply_tbl q, myrecipe_reply_tbl r where q.re_ID=r.re_ID and q.re_ID=#{id}
     </select>
     
     <!-- 내 recipe 댓글 목록 -->
     <select id="selectRecipeReply" parameterType="String" resultType="com.zipchelin.domain.community.MyRecipeReply">
-    	select r.m_re_num, r.myre_num, r.user_img, r.post_id, r.re_id, r.re_content, r.re_up, r.re_date  from qna_reply_tbl q, myrecipe_reply_tbl r where q.re_id=r.re_id and r.re_id=#{id}
+    	select r.m_re_num, r.myre_num, r.USER_img, r.post_ID, r.re_ID, r.re_content, r.re_up, r.re_date  from qna_reply_tbl q, myrecipe_reply_tbl r where q.re_ID=r.re_ID and r.re_ID=#{id}
     </select>
     
     <!-- 마이페이지 찜목록 페이징 -->
@@ -127,17 +128,4 @@
         where rn > (#{pageNum} - 1) * #{amount}
         ]]>
     </select> -->
-    
-    <delete id="deleteMyre" parameterType="String">
-    	delete from myrecipe_tbl where myre_num=#{deletePost}
-    </delete>
-    
-    <delete id="deleteQna" parameterType="String">
-    	delete from qna_tbl where qna_num=#{deletePost}
-    </delete>
-    
-    <!-- 마이페이지 찜목록 -->
-    <select id="selectMyPick">
-       select * from mypick_tbl;
-    </select>
 </mapper>

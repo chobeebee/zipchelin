@@ -115,7 +115,7 @@ body, h1, h2, h3, h4, h5, input, select, textarea, button {
     cursor: pointer;
 }
 
-#find_input_area {
+.find_input_area {
     padding: 40px 32px;
     border-top: 1px solid #E9E9E9;
 }
@@ -150,7 +150,7 @@ body, h1, h2, h3, h4, h5, input, select, textarea, button {
     display: none;
 }
 
-#find_do_find {
+.find_do_find {
     text-align: center;
     width: 100%;
     margin-top: 20px;
@@ -508,4 +508,12 @@ body, h1, h2, h3, h4, h5, input, select, textarea, button {
     color: red;
     display: none;
     margin-top: 10px;
+}
+
+.find_input_id, .find_input_email {
+    margin-bottom: 24px;
+}
+
+.findInput {
+    width: 100%;
 }

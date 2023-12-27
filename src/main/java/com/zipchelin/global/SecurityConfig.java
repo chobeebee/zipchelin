@@ -30,7 +30,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final AuthenticationFailureHandler failureHandler;
     private final PrincipalOAuth2Service oAuth2Service;
     private final UserDetailsService userDetailsService;
-//    private final CustomSessionExpiredStrategy customSessionExpiredStrategy;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -53,7 +52,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .sessionManagement()
                 .maximumSessions(1)
-//                .expiredSessionStrategy(customSessionExpiredStrategy)
                 .maxSessionsPreventsLogin(true)
                 .sessionRegistry(sessionRegistry());
 

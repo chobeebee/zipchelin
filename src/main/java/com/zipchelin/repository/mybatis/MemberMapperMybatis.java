@@ -39,4 +39,19 @@ public class MemberMapperMybatis implements MemberRepository {
     public int countById(String memberId) {
         return memberMapper.countById(memberId);
     }
+
+    @Override
+    public int countByEmail(String memberEmail) {
+        return memberMapper.countByEmail(memberEmail);
+    }
+
+    @Override
+    public Optional<Member> findByEmail(String memberEmail) {
+        return memberMapper.findByEmail(memberEmail);
+    }
+
+    @Override
+    public void pwdReset(Member member) {
+        memberMapper.pwdReset(member);
+    }
 }

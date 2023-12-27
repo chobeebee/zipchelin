@@ -20,14 +20,13 @@ public class CustomAuthFailureHandler extends SimpleUrlAuthenticationFailureHand
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
 
+        String errmsg;
         if (exception instanceof SessionAuthenticationException) {
-            String errmsg = URLEncoder.encode("동일 계정으로 로그인이 되어 있습니다.", StandardCharsets.UTF_8);
-            setDefaultFailureUrl("/member/login?error=true&errmsg=" + errmsg);
-            super.onAuthenticationFailure(request, response, exception);
-            return;
+            errmsg = URLEncoder.encode("동일 계정으로 로그인이 되어 있습니다.", StandardCharsets.UTF_8);
+        } else {
+            errmsg = URLEncoder.encode(exception.getMessage(), StandardCharsets.UTF_8);
         }
 
-        String errmsg = URLEncoder.encode(exception.getMessage(), StandardCharsets.UTF_8);
         setDefaultFailureUrl("/member/login?error=true&errmsg=" + errmsg);
         super.onAuthenticationFailure(request, response, exception);
     }

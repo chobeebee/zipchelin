@@ -140,10 +140,10 @@
 
         let btn = $('#idAuthBtn');
         let id = $('#sign_id');
-        let id_rule = /^[a-z0-9]{6,12}$/;
+        let id_rule = /^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{6,12}$/;
 
         if (id.val() === '' || !id_rule.test(id.val())) {
-            btn.removeClass('transition-effect').prop('disabled', false)
+            btn.removeClass('transition-effect')
                 .css({
                     'border-color': '#FF0000FF',
                     'background-color': '#fff',
@@ -165,7 +165,7 @@
 
             success: function (response) {
                 if (response) {
-                    btn.removeClass('transition-effect').prop('disabled', false)
+                    btn.removeClass('transition-effect')
                         .css({
                             'border-color': '#4FA72F',
                             'background-color': '#fff',
@@ -174,7 +174,7 @@
                     id.css('border-color', 'black');
                     $('#isIdAuthed').prop('checked', true);
                 } else {
-                    btn.removeClass('transition-effect').prop('disabled', false)
+                    btn.removeClass('transition-effect')
                         .css({
                             'border-color': '#FF0000FF',
                             'background-color': '#fff',

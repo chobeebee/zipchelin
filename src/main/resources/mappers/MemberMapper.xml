@@ -19,9 +19,9 @@
     <!-- 멤버 수정 -->
     <update id="update" parameterType="com.zipchelin.domain.member.Member">
         update MEMBER_TBL
-        set MEMBER_pwd   = #{memberPwd},
-            MEMBER_email = #{memberEmail},
-            MEMBER_img   = #{memberImg}
+        set MEMBER_PWD   = #{memberPwd},
+            MEMBER_EMAIL = #{memberEmail},
+            MEMBER_IMG   = #{memberImg}
         where MEMBER_ID = #{memberId}
     </update>
 
@@ -38,4 +38,26 @@
         from MEMBER_TBL
         where MEMBER_ID = #{memberId}
     </select>
+
+    <!-- 이메일 체크 -->
+    <select id="countByEmail" parameterType="string" resultType="int">
+        select count(*)
+        from MEMBER_TBL
+        where MEMBER_EMAIL = #{memberEmail}
+    </select>
+
+    <!-- 이메일 조회 -->
+    <select id="findByEmail" parameterType="string" resultType="com.zipchelin.domain.member.Member">
+        select MEMBER_ID, MEMBER_NAME, MEMBER_EMAIL
+        from MEMBER_TBL
+        where MEMBER_EMAIL = #{memberEmail}
+        and PROVIDER = 'ZIP'
+    </select>
+    
+    <!-- 비밀번호 초기화 -->
+    <update id="pwdReset" parameterType="com.zipchelin.domain.member.Member">
+        update MEMBER_TBL
+        set MEMBER_PWD   = #{memberPwd}
+        where MEMBER_ID = #{memberId}
+    </update>
 </mapper>

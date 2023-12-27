@@ -17,4 +17,10 @@ public interface MemberMapper {
     Optional<Member> findById(String memberId);
 
     int countById(String memberId);
+
+    int countByEmail(String memberEmail);
+
+    Optional<Member> findByEmail(String memberEmail);
+
+    void pwdReset(Member member);
 }

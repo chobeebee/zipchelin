@@ -69,11 +69,11 @@
                     <label for="login_id_save" class="small">아이디 저장</label>
                 </div>
                 <div class="login_input_div">
-                    <a href="${contextPath}/test/member/find" class="login_find">아이디/비밀번호 찾기</a>
+                    <a href="${contextPath}/member/find" class="login_find">아이디/비밀번호 찾기</a>
                 </div>
             </div>
             <div>
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+<%--                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
                 <button class="login_login btnBg" type="button" onclick="login_form_submit()">로그인</button>
             </div>
         </form>

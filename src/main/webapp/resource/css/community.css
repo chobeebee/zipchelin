@@ -152,7 +152,7 @@ main {
 .post-section p {
     width: 100%;
     margin-bottom: 16px;
-    white-space: nowrap;
+    white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -324,7 +324,7 @@ main {
 
 .comment-contentbox {
     position: relative;
-    display: grid;
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
 }

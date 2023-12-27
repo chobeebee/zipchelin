@@ -84,7 +84,7 @@
                     </div>
 
                     <div>
-                        <input value="찾기" type="submit" class="btnBg find_do_find">
+                        <input value="아이디 찾기" type="submit" class="btnBg find_do_find">
                     </div>
                 </div>
             </form:form>
@@ -93,6 +93,8 @@
         <div id="tabFindPwd">
             <form:form modelAttribute="findPwdDto" action="/member/find/pwd" method="post" class="find_sign_up_form">
                 <div class="find_input_area">
+                    <h3 class="findPwdDesc" style="color: red">회원님의 정보는 암호화 되어 운영진도 알 수 없습니다!</h3>
+                        <p class="findPwdDesc">기존 비밀번호는 초기화 된 후 이메일로 새 비밀번호가 발송됩니다.</p>
                     <div class="find_input_id">
                         <label class="sign_left_label">아이디</label>
                         <div class="sign_input_box">
@@ -116,7 +118,7 @@
                     </div>
 
                     <div>
-                        <input value="찾기" type="submit" class="btnBg find_do_find">
+                        <input value="비밀번호 찾기" type="submit" class="btnBg find_do_find">
                     </div>
                 </div>
             </form:form>
@@ -176,11 +178,15 @@
     $("#find_id_button").click(function () {
         $("#tabFindPwd").hide();
         $("#tabFindId").show();
+        $("#find_id_button").addClass('active');
+        $("#find_pwd_button").removeClass('active');
     });
 
     $("#find_pwd_button").click(function () {
-        $("#tabFindId").hide();
         $("#tabFindPwd").show();
+        $("#tabFindId").hide();
+        $("#find_id_button").removeClass('active');
+        $("#find_pwd_button").addClass('active');
     });
 </script>
 <script src="${contextPath}/resource/js/common.js"></script>

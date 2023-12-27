@@ -47,7 +47,7 @@ public class MemberController {
             return "redirect:/";
         }
         String prevPage = request.getHeader("Referer");
-        if (prevPage != null && !prevPage.contains("/login") && !prevPage.contains("/sign-up") && !prevPage.contains("/find")) {
+        if (prevPage != null && !prevPage.contains("/member")) {
             request.getSession().setAttribute("prevPage", prevPage);
         }
 
@@ -161,20 +161,20 @@ public class MemberController {
 
         try {
             String memberId = memberService.findId(findIdDto);
-            redirectAttributes.addFlashAttribute("memberId", memberId);
+            redirectAttributes.addFlashAttribute("idResult", memberId);
         } catch (BusinessLogicException e) {
-            log.info("글로벌 에러 발생 = {}", e.getMessage());
             bindingResult.reject("exception", e.getMessage());
             return "member/find";
         }
 
-        return "redirect:/member/finding";
+        return "redirect:/member/find/result";
     }
 
     @PostMapping("/find/pwd")
     public String findPwd(@Validated @ModelAttribute FindPwdDto findPwdDto,
                           BindingResult bindingResult,
                           @ModelAttribute FindIdDto findIdDto,
+                          RedirectAttributes redirectAttributes,
                           Model model) {
 
         if (bindingResult.hasErrors()) {
@@ -184,17 +184,17 @@ public class MemberController {
 
         try {
             memberService.pwdReset(findPwdDto);
+            redirectAttributes.addFlashAttribute("pwdResult", true);
         } catch (BusinessLogicException e) {
-            log.info("글로벌 에러 발생 = {}", e.getMessage());
             model.addAttribute("pwdError", "pwdError");
             bindingResult.reject("exception", e.getMessage());
             return "member/find";
         }
 
-        return "redirect:/member/login";
+        return "redirect:/member/find/result";
     }
 
-    @GetMapping("/finding")
+    @GetMapping("/find/result")
     public String viewFinding() {
         return "member/finding";
     }

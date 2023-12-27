@@ -511,7 +511,13 @@ body, h1, h2, h3, h4, h5, input, select, textarea, button {
 }
 
 .find_input_id, .find_input_email {
+    margin-top: 30px;
     margin-bottom: 24px;
+}
+
+.findPwdDesc {
+    line-height: 1.5em;
+    text-align: center;
 }
 
 .findInput {

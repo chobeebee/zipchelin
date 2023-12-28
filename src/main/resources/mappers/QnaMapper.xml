@@ -33,10 +33,11 @@
 
 
     <!-- 게시글 수정 -->
-    <update id="update" parameterType="com.zipchelin.domain.community.Qna">
+    <update id="update" parameterType="com.zipchelin.model.dto.community.qna.QnaRequestDto">
         UPDATE qna_tbl
         SET qna_title   = #{qnaTitle},
-            qna_content = #{qnaContent}
+            qna_content = #{qnaContent},
+            qna_date = sysdate
         WHERE qna_num = #{qnaNum}
     </update>
 
@@ -57,7 +58,8 @@
         select
         * from(select a.*, rownum as rnum from(select * from qna_tbl order by qna_num desc) a)
        
-         <![CDATA[
+              
+              <![CDATA[
               where rnum >= ${pagination.rownumStart}
               and rnum <= ${pagination.rownumEnd}
               ]]>

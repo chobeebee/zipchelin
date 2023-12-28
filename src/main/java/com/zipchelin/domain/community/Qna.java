@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 public class Qna {
-    private long qnaNum;
+    private Long qnaNum;
     private String memberId;
     private String qnaTitle;
     private String qnaContent;
@@ -40,6 +40,7 @@ public class Qna {
                 .memberId(memberId)
                 .qnaTitle(qnaTitle)
                 .qnaContent(qnaContent)
+                .qnaDate(qnaDate)
                 .build();
     }
 

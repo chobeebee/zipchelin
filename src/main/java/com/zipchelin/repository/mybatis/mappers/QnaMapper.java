@@ -16,7 +16,7 @@ public interface QnaMapper {
 
     QnaResponseDto findById(Long id);
 
-    long update(Qna params);
+    Long update(Qna params);
 
     void deleteById(Long id);
 

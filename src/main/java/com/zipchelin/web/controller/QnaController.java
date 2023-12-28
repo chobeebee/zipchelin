@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.zipchelin.model.dto.community.qna.QnaDto;
 import com.zipchelin.model.dto.community.qna.QnaRequestDto;
@@ -20,6 +21,8 @@ import com.zipchelin.model.dto.community.qna.QnaResponseDto;
 import com.zipchelin.model.service.QnaService;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 
 @Controller
 @RequiredArgsConstructor
@@ -61,7 +64,7 @@ public class QnaController {
 	
 	@PostMapping("/save")
 	public String saveQna(final QnaRequestDto params) {
-		long qnaNum = qnaService.saveQna(params);
+		Long qnaNum = qnaService.saveQna(params);
 		return "redirect:/community/qna/post/" + qnaNum;
 	}
 	

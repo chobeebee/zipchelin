@@ -4,19 +4,23 @@ import com.zipchelin.domain.community.QnaReply;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 
 @Getter
+@Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class QnaReplyRequestDto {
 
     @NotBlank
-    private long qReNum;
+    private Long qReNum;
 
     @NotBlank
-    private long qnaNum;
+    private Long qnaNum;
 
     @NotBlank
     private String userImg;

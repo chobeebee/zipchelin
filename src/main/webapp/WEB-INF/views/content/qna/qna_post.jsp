@@ -92,18 +92,19 @@
                         </a>
                 </div>
             </article>
-
+			<!-- 
             <div class="comment-section">
                 <div class="commentwrite-box">
                     <a href="/front/html/member/login.html" class="login-link">로그인</a> 후 댓글을 남겨보세요.
                 </div>
             </div>
-            <!-- 로그인 후 댓글창 보이기
+             -->
+            로그인 후 댓글창 보이기
                 <form class="comment-section post_comment" id="aftLogin_comment">
-                <input type="text" class="commentwrite-box aft_lgn" placeholder="주제에 무관한 댓글이나 악플은 삭제될 수 있습니다."></input>
-                <input type="submit" class="comment_post_btn" value="등록"/>
+                <p><textarea id="content" name="content" onkeyup="countingLength(this);" cols="90" rows="4" placeholder="댓글을 입력해 주세요."></textarea></p>
+                <span><button type="button" class="btns" onclick="saveQna(${qna.qnaNum});">등 록</button> <i id="counter">0/300자</i></span>
                 </form>
-            -->
+            
             <div class="commentWrap">
                 <ul class="comment">
                     <li class="commentbox bestcomment">
@@ -317,7 +318,10 @@
             </div>
         </section>
     </main>
-
+    <!-- 푸터 -->
+    <footer id="footer">
+    	<jsp:include page="/WEB-INF/views/main/footer.jsp"/>
+    </footer> 
     <div id="modal">
         <div class="modalBox">
             <div class="modalCont">
@@ -336,6 +340,40 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="${contextPath}/resource/js/common.js"></script>
     <script src="${contextPath}/resource/js/community.js"></script>
-    
+    <script>
+    function saveQna(qnaNum) {
+        const content = document.querySelector('#content');
+
+        if (content.value.length === 0) {
+            alert('내용을 입력해주세요.');
+            return false;
+        }
+
+        const params = {
+            qnaNum: qnaNum,
+            reContent: content.value
+        };
+
+        $.ajax({
+            url: '/community/qna/post/${qna.qnaNum}',
+            type: 'post',
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            data: JSON.stringify(params),
+            // 위에서 선언한 params라는 이름의 객체에 정보를 담고
+            // JSON.stringify 함수로 JSON 문자열로 변환해서 서버로 전송
+            // 기본옵션(true) : 서버에서 응답이 내려오지 않아도 Ajax 로직 실행, false는 응답이 내려와야 다음 로직 실행
+
+            success: function (response) {
+                alert('등록되었습니다.');
+                content.value = '';
+                findAllQnA();
+            },
+            error: function (xhr, error) {
+                console.log(xhr.status, xhr.statusText, error);
+            },
+        })
+    }
+    </script>
 </body>
 </html>

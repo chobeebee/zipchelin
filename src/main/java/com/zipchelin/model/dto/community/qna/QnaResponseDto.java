@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 public class QnaResponseDto {
-    private long qnaNum;
+    private Long qnaNum;
     private String memberId;
     private String qnaTitle;
     private String qnaContent;

@@ -179,11 +179,87 @@ function edit_complete_btn() {
 	}
 }
 
-function getMyPostData(requestedAjax){
+function getMyPostData(requestAjax){
 	$.ajax({
-                type : "GET",
-                url : "/mypage/mypost/"+requestedAjax
+                type : "POST",
+                url : "/mypage/getMyPost/"+requestAjax,
+                success : function(myPostList){
+					ajaxLocation=myPostList;
+					$("#postSection").empty();
+					for(let i=0;i<myPostList.length;i++){
+						let myPost=myPostList[i];
+						
+						let postDate='';
+						let title='';
+						let content='';
+						let myreOrQna='';
+						let up='';
+						let num='';
+						
+						if(myPost.myreOrQna=='myre'){
+							postDate=myPost.myrecipe.myreDate.substr(0, 10);
+							title=myPost.myrecipe.myreTitle;
+							content=myPost.myrecipe.myreContent;
+							myreOrQna='마이레시피';
+							up=myPost.myrecipe.myreUp;
+							num='myre-'+myPost.myrecipe.myreNum;
+						}else if(myPost.myreOrQna=='qna'){
+							postDate=myPost.qna.qnaDate.substr(0, 10);
+							title=myPost.qna.qnaTitle;
+							content=myPost.qna.qnaContent;
+							myreOrQna='QnA';
+							up=myPost.qna.qnaUp;
+							num='qna-'+myPost.qna.qnaNum;
+						}
+						let post=
+						'<li class="listItem mypostItem imgwrap">'+
+							'<div class="chkWrap">'+
+							    '<input type="checkbox" class="chkBox" name="chkItem" id="listChk'+i+'" value="'+num+'">'+
+							    '<label for="listChk'+i+'"></label>'+
+							'</div>'+
+							'<div class="contBox">'+
+								'<a href="">'+
+									'<span class="postDate">'+postDate+'</span>'+
+							    	'<h6>'+title+'</h6>'+
+							    	'<p>'+content+'</p>'+
+							    	'<ul class="accList">'+
+							       		'<li class="accItem">'+
+							           		'<span class="icon material-symbols-outlined">visibility</span>'+myreOrQna+
+							       		'</li>'+
+							       		'<li class="accItem">'+
+							            	'<span class="icon material-symbols-outlined">thumb_up</span>'+up+
+							       		'</li>'+
+							    '</ul>'+
+							    '</a>'+
+							'</div>'+
+							'<div class="imgBox align">'+
+								'<img src="/resource/images/food/sample.jpg" alt="샘플 이미지">'+
+							'</div>'+
+						'</li>';
+						$("#postSection").append(post);
+					}
+                }
             });
+}
+
+function deleteMypost(){
+	var deleteList=[];
+	$(".chkBox:checked").each(function() {
+    var val = $(this).val();
+    deleteList.push(val);
+	});
+	$.ajax({
+		type : "GET",
+        url : "/mypage/deleteMypost",
+        data: {deleteList:deleteList}
+	})
+	location.reload(true);
+}
+
+function offDelete(){
+	$(".chkBox:checked").each(function() {
+    	$(this).prop("checked", false);
+	})
 }
 
         

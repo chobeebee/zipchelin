@@ -5,6 +5,9 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.zipchelin.domain.admin.Recipe;
+import com.zipchelin.model.dto.admin.recipe.RecipeListRequestDto;
+import com.zipchelin.model.dto.admin.recipe.RecipeListResponseDto;
+import com.zipchelin.model.dto.common.SearchDto;
 import com.zipchelin.repository.RecipeRepository;
 import com.zipchelin.repository.mybatis.mappers.RecipeMapper;
 
@@ -17,15 +20,19 @@ public class RecipeMapperMybatis implements RecipeRepository {
 	private final RecipeMapper recipeMapper;
 
 	@Override
-	public List<Recipe> selectRecipeAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Recipe> selectRecipeAll(final SearchDto params) {
+		return recipeMapper.selectRecipeAll(params);
 	}
 
 	@Override
 	public List<Recipe> selectEachCategory(int cateNum) {
-		//return recipeMapper.selectEachCategory(cateNum);
-		return null;
+		return recipeMapper.selectEachCategory(cateNum);
+		//return null;
+	}
+
+	@Override
+	public int count(final SearchDto params) {
+		return recipeMapper.count(params);
 	}
 
 	@Override
@@ -34,9 +41,9 @@ public class RecipeMapperMybatis implements RecipeRepository {
 	}
 
 	@Override
-	public void addRecipe(Recipe recipe) {
-		// TODO Auto-generated method stub
-
+	public long addRecipe(Recipe recipe) {
+		recipeMapper.addRecipe(recipe);
+		return recipe.getRecNum();
 	}
 
 	@Override
@@ -50,6 +57,5 @@ public class RecipeMapperMybatis implements RecipeRepository {
 		// TODO Auto-generated method stub
 
 	}
-
 
 }

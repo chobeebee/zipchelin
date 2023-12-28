@@ -135,6 +135,7 @@ main {
 
 .post-section {
     width: 70%;
+    margin: auto;
 }
 
 .post-section .title {
@@ -302,6 +303,7 @@ main {
     margin-left: 28px;
     vertical-align: top;
 }
+
 
 .commentbox {
     display: flex;

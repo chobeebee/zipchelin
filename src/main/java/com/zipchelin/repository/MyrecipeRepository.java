@@ -3,20 +3,22 @@ package com.zipchelin.repository;
 import java.util.List;
 
 import com.zipchelin.domain.community.Myrecipe;
-import com.zipchelin.model.dto.admin.page.Criteria;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeDto;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeRequestDto;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponseDto;
 
 public interface MyrecipeRepository {
 	
-	List<Myrecipe> getMyrecipe();
+	long save(MyrecipeRequestDto params);
+	
+	MyrecipeResponseDto findById(Long id);
 
-	String addMyrecipe(Myrecipe Myrecipe);
-	
-	void updateMyrecipe(Myrecipe myrecipe);
-	
-	void delMyrecipe(Integer newArr);
-	
-	List<Myrecipe> getListPaging(Criteria cri);
+    long update(Myrecipe params);
 
-	int getTotal();
+    void deleteById(Long id);
+
+    List<MyrecipeResponseDto> findAll(final MyrecipeDto params);
+
+    int count();
 	
 }

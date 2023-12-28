@@ -1,10 +1,12 @@
 package com.zipchelin.domain.admin;
 
-import com.zipchelin.model.dto.member.mypage.Myheart;
+import com.zipchelin.model.dto.mypage.Myheart;
+import com.zipchelin.model.dto.admin.recipe.RecipeListRequestDto;
 import com.zipchelin.model.dto.admin.recipe.RecipeListResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Date;
@@ -12,7 +14,8 @@ import java.sql.Date;
 @Getter
 @Setter
 @Builder
-@AllArgsConstructor //mvc 모델 필드 만들어주는 놈?
+@NoArgsConstructor
+@AllArgsConstructor
 public class Recipe {
 
     //recipe_tbl
@@ -20,6 +23,7 @@ public class Recipe {
     private int cateNum;
     private String recTitle;
     private String recSubt;
+    private String recDesc;
     private String recImg0;
     private String recDesc0;
     private String recIngreMain;
@@ -38,7 +42,15 @@ public class Recipe {
     private int recTen;
     //private (String/int) userId; //리스트에서 하트?
 
-    //
+    public RecipeListRequestDto fromDto() {
+        return RecipeListRequestDto.builder()
+        		.recNum(recNum)
+				.cateNum(cateNum)
+				.recTitle(recTitle)
+				.recSubt(recSubt)
+                .build();
+    }
+    
     public RecipeListResponseDto toDto() {
         return RecipeListResponseDto.builder()
         		.recNum(recNum)

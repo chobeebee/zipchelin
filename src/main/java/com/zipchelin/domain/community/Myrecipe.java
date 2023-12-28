@@ -2,9 +2,9 @@ package com.zipchelin.domain.community;
 
 import java.time.LocalDateTime;
 
-import com.zipchelin.model.dto.member.mypage.MyPost;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeRequestDto;
 import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponseDto;
+import com.zipchelin.model.dto.mypage.MyPost;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,18 +18,19 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Myrecipe {
-	private String userId;
-	private int myreNum;
+	private long myreNum;
+	private String memberId;
 	private String myreTitle;
 	private String myreContent;
-	private int myreUp;
 	private LocalDateTime myreDate;
+	private int myreUp;
 	
 	public MyrecipeResponseDto toDto() {
 		return MyrecipeResponseDto.builder()
-				.userId(userId)
 				.myreNum(myreNum)
+				.memberId(memberId)
 				.myreTitle(myreTitle)
+				.myreContent(myreContent)
 				.myreUp(myreUp)
 				.myreDate(myreDate)
 				.build();
@@ -37,9 +38,9 @@ public class Myrecipe {
 	
 	public MyrecipeRequestDto fromDto() {
 		return MyrecipeRequestDto.builder()
-				.userId(userId)
-				.myreContent(myreContent)
+				.memberId(memberId)
 				.myreTitle(myreTitle)
+				.myreContent(myreContent)
 				.build();
 	}
 	

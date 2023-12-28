@@ -300,7 +300,7 @@ input[type="radio"].chkRadio:checked + label:before {
 
 .paging li {
     display: inline-block;
-    margin: 5px 6px;
+    margin: 5px 2px;
     vertical-align: middle;
 }
 
@@ -309,6 +309,7 @@ input[type="radio"].chkRadio:checked + label:before {
     height: 30px;
     font-size: 14px;
     line-height: 34px;
+    display: block;
 }
 
 .paging li.active a {

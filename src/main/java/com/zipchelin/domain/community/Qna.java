@@ -1,6 +1,6 @@
 package com.zipchelin.domain.community;
 
-import com.zipchelin.model.dto.member.mypage.MyPost;
+import com.zipchelin.model.dto.mypage.MyPost;
 import com.zipchelin.model.dto.community.qna.QnaRequestDto;
 import com.zipchelin.model.dto.community.qna.QnaResponseDto;
 import lombok.AllArgsConstructor;

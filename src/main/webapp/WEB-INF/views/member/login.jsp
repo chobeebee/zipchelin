@@ -69,10 +69,11 @@
                     <label for="login_id_save" class="small">아이디 저장</label>
                 </div>
                 <div class="login_input_div">
-                    <a href="${contextPath}/test/member/find" class="login_find">아이디/비밀번호 찾기</a>
+                    <a href="${contextPath}/member/find" class="login_find">아이디/비밀번호 찾기</a>
                 </div>
             </div>
             <div>
+<%--                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
                 <button class="login_login btnBg" type="button" onclick="login_form_submit()">로그인</button>
             </div>
         </form>
@@ -102,6 +103,15 @@
     <div class="login_modal">
         <div class="login_modal_box">
             <p class="login_modal_msg">${welcomeMsg}</p>
+            <button class="login_modal_out" type="button" onClick="login_modal_get_out()">확인</button>
+        </div>
+    </div>
+</c:if>
+
+<c:if test="${DUPLICATE_LOGIN eq true}">
+    <div class="login_modal">
+        <div class="login_modal_box">
+            <p class="login_modal_msg">다른 기기에서 로그인 되어 현재 로그인이 종료되었습니다.</p>
             <button class="login_modal_out" type="button" onClick="login_modal_get_out()">확인</button>
         </div>
     </div>

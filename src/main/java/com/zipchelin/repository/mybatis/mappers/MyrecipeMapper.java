@@ -5,21 +5,23 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.zipchelin.domain.community.Myrecipe;
-import com.zipchelin.model.dto.admin.page.Criteria;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeDto;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeRequestDto;
+import com.zipchelin.model.dto.community.myrecipe.MyrecipeResponseDto;
 
 @Mapper
 public interface MyrecipeMapper {
 	
-	public List<Myrecipe> getMyrecipe();
+	void save(MyrecipeRequestDto params);
 	
-	public void addMyrecipe(Myrecipe myrecipe);
+	MyrecipeResponseDto findById(Long id);
 	
-	public void updateMyrecipe(Myrecipe myrecipe);
+	long update(Myrecipe params);
 	
-	public void delMyrecipe(Integer newArr);
+	void deleteById(Long id);
 	
-	public List<Myrecipe> getListPaging(Criteria cri);
-
-	public int getTotal();
+	List<MyrecipeResponseDto> findAll(final MyrecipeDto params);
+	
+	int count();
 
 }

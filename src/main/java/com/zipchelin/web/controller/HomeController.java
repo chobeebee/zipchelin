@@ -1,6 +1,6 @@
 package com.zipchelin.web.controller;
 
-import com.zipchelin.web.security.provider.CustomUserDetails;
+import com.zipchelin.global.security.provider.CustomUserDetails;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -21,7 +21,8 @@ public class HomeController {
     @GetMapping("/test")
     @ResponseBody
     public String getMember(@AuthenticationPrincipal CustomUserDetails userDetails) {
-        log.info("로그인 회원 정보 = {}", userDetails.getMember());
+        log.info("로그인 회원 정보 = {}", userDetails);
+        log.info("로그인 회원 정보 = {}", userDetails.getMember().getMemberPwd());
         return "회원 정보 확인하기";
     }
 }

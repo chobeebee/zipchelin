@@ -1,5 +1,6 @@
 package com.zipchelin.repository;
 
+import com.zipchelin.domain.community.MyPick;
 import com.zipchelin.domain.community.MyRecipeReply;
 import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.domain.community.Qna;
@@ -22,14 +23,16 @@ public interface MypageRepository {
     public List<Qna> selectQnaById(String id);
 
     public List<Myrecipe> selectMyreById(String id);
-
-    //public List<Guide> selectGuiHeart(String id);
-
-    //public List<Recipe> selectRecHeart(String id);
     
     public List<QnaReply> selectQnaReply(String id);
     
     public List<MyRecipeReply> selectRecipeReply(String id);
+    
+    public List<MyPick> selectMyPick(String id);
+    
+    public void deleteMyre(List<String> deleteList);
+    
+    public void deleteQna(List<String> deleteList);
     
     //public List<Myheart> getListPaging(Criteria cri);
 }

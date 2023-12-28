@@ -1,29 +1,24 @@
-package com.zipchelin.model.dto.community.myrecipe;
+  package com.zipchelin.model.dto.community.myrecipe;
 
 import com.zipchelin.domain.community.Myrecipe;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
-import javax.validation.constraints.NotBlank;
-
 @Getter
 @Builder
 @AllArgsConstructor
 public class MyrecipeRequestDto {
 
-    @NotBlank
-    private String userId;
-
-    @NotBlank
+	private Long myreNum;
+    private String memberId;
     private String myreTitle;
-
-    @NotBlank
     private String myreContent;
 
     public Myrecipe toEntity() {
         return Myrecipe.builder()
-                .userId(userId)
+        		.myreNum(myreNum)
+                .memberId(memberId)
                 .myreTitle(myreTitle)
                 .myreContent(myreContent)
                 .build();

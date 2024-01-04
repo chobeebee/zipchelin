@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zipchelin.repository.mybatis.mappers.QnaReplyMapper">
+	
+	<!-- tb_comment 테이블 전체 컬럼 -->
+    <sql id="qnaColumns">
+        select *
+        from qna_reply_tbl
+    </sql>
+
+
+    <!-- 댓글 저장 -->
+    <insert id="save" parameterType="com.zipchelin.model.dto.community.qnaReply.QnaReplyRequestDto" useGeneratedKeys="true">
+        INSERT INTO qna_reply_tbl
+        VALUES ( qna_sq.nextval
+               , #{qnaNum}
+               , null
+               , null
+               , #{reContent}
+               , 0
+               , sysdate
+        )
+    </insert>
+
+
+    <!-- 댓글 상세정보 조회 -->
+    <select id="findById" parameterType="long" resultType="com.zipchelin.model.dto.community.qnaReply.QnaReplyResponseDto">
+        select *
+        from qna_reply_tbl
+        WHERE qna_num = #{qnaNum}
+    </select>
+
+
+    <!-- 댓글 수정 -->
+    <update id="update" parameterType="com.zipchelin.model.dto.community.qnaReply.QnaReplyRequestDto">
+        UPDATE qna_reply_tbl
+        SET
+        	qna_num = #{qnaNum},
+            user_img = null,
+            member_id   = #{memberId},
+            re_content = #{reContent},
+            re_up = 0,
+            re_date= sysdate
+        WHERE q_re_num = #{qReNum}
+    </update>
+
+
+    <!-- 댓글 삭제 -->
+    <delete id="deleteById" parameterType="long">
+        delete
+        	qna_reply_tbl
+        where 
+        	q_re_num = #{qReNum}
+    </delete>
+
+
+    <!-- 게시글 리스트 조회 -->
+    <select id="findAll" parameterType="com.zipchelin.model.dto.community.qnaReply.QnaReplyDto"
+            resultType="com.zipchelin.model.dto.community.qnaReply.QnaReplyResponseDto">
+        select
+        * from(select a.*, rownum as rnum from(select * from qna_reply_tbl order by q_re_num desc) a)
+       
+       <!-- 
+         <![CDATA[
+              where rnum >= ${pagination.rownumStart}
+              and rnum <= ${pagination.rownumEnd}
+              ]]>
+               -->
+         <![CDATA[
+              where rnum >= 1
+              and rnum <= 5
+              ]]>
+
+    </select>
+
+    <!-- 게시글 수 카운팅 -->
+    <select id="count" resultType="int">
+        SELECT COUNT(*)
+        FROM qna_reply_tbl
+    </select>
+</mapper>

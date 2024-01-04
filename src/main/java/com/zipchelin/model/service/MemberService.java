@@ -1,12 +1,14 @@
 package com.zipchelin.model.service;
 
 import com.zipchelin.domain.member.Member;
-import com.zipchelin.web.exception.BusinessLogicException;
-import com.zipchelin.web.exception.DuplicateException;
 import com.zipchelin.model.EmailApplicationEvent;
 import com.zipchelin.model.dto.member.EmailDto;
+import com.zipchelin.model.dto.member.FindIdDto;
+import com.zipchelin.model.dto.member.FindPwdDto;
 import com.zipchelin.model.dto.member.MemberSaveDto;
 import com.zipchelin.repository.MemberRepository;
+import com.zipchelin.web.exception.BusinessLogicException;
+import com.zipchelin.web.exception.DuplicateException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;
@@ -121,5 +123,53 @@ public class MemberService {
     public boolean countId(String memberId) {
         int count = memberRepository.countById(memberId);
         return count == 0;
+    }
+
+    public String findId(FindIdDto params) {
+        Member findMember = memberRepository.findByEmail(params.getFindIdEmail())
+                .orElseThrow(() -> new BusinessLogicException("가입되지 않은 이메일입니다."));
+
+        if (!findMember.getMemberName().equals(params.getFindIdName())) {
+            throw new BusinessLogicException("이메일과 이름이 일치하지 않습니다.");
+        }
+
+        return findMember.getMemberId();
+    }
+
+    public void pwdReset(FindPwdDto params) {
+        Member findMember = memberRepository.findById(params.getFindPwdId())
+                .orElseThrow(() -> new BusinessLogicException("가입되지 않은 아이디입니다."));
+
+        if (!findMember.getMemberEmail().equals(params.getFindPwdEmail())
+        || !findMember.getMemberName().equals(params.getFindPwdName())) {
+            throw new BusinessLogicException("입력하신 회원정보와 일치하지 않습니다.");
+        }
+
+        String pwdReset = createCode();
+        resetPwdForm(findMember.getMemberEmail(), pwdReset);
+
+        String encodePwd = passwordEncoder.encode(pwdReset);
+        Member member = Member.builder()
+                .memberId(params.getFindPwdId())
+                .memberPwd(encodePwd)
+                .build();
+        memberRepository.pwdReset(member);
+    }
+
+    public void resetPwdForm(String email, String pwdReset) {
+
+        if (codeStore.containsKey(email)) {
+            throw new BusinessLogicException("같은 이메일로는 3분 이내에 재전송이 불가합니다.");
+        }
+        codeStore.put(email, pwdReset);
+
+        String toMail = email;
+        String title = "비밀번호 찾기 회신입니다.";
+        String content = "<h3>초기화 된 비밀번호는 </h3>" +
+                "<h1>" + pwdReset + "</h1><h3> 입니다.</h3>" +
+                "<br><p>회원정보에서 재설정 해주세요.</p>";
+
+        CompletableFuture.runAsync(() -> mailSend(toMail, title, content));
+        publisher.publishEvent(new EmailApplicationEvent(this, email, pwdReset));
     }
 }

@@ -3,6 +3,8 @@ package com.zipchelin.web.controller;
 import com.zipchelin.global.security.provider.CustomAuthenticationProvider;
 import com.zipchelin.global.security.provider.CustomUserDetails;
 import com.zipchelin.model.dto.member.EmailDto;
+import com.zipchelin.model.dto.member.FindIdDto;
+import com.zipchelin.model.dto.member.FindPwdDto;
 import com.zipchelin.model.dto.member.MemberSaveDto;
 import com.zipchelin.model.service.MemberService;
 import com.zipchelin.web.exception.BusinessLogicException;
@@ -15,6 +17,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -44,7 +47,7 @@ public class MemberController {
             return "redirect:/";
         }
         String prevPage = request.getHeader("Referer");
-        if (prevPage != null && !prevPage.contains("/login") && !prevPage.contains("/sign-up")) {
+        if (prevPage != null && !prevPage.contains("/member")) {
             request.getSession().setAttribute("prevPage", prevPage);
         }
 
@@ -140,22 +143,58 @@ public class MemberController {
         return ResponseEntity.ok(false);
     }
 
-    @GetMapping("/test")
-    public String reAuthTest(@AuthenticationPrincipal CustomUserDetails userDetails) {
-
-        if (provider.reauthenticate(userDetails.getMember().getMemberId(), "test")) {
-            log.info("재인증 확인 = {}", userDetails);
-            return "redirect:/member/test1";
-        }
-        return "redirect:/";
-    }
-
     @GetMapping("/find")
-    public String viewFind() {
+    public String viewFind(@ModelAttribute("findIdDto") FindIdDto findIdDto,
+                           @ModelAttribute("findPwdDto")FindPwdDto findPwdDto) {
         return "member/find";
     }
 
-    @GetMapping("/finding")
+    @PostMapping("/find/id")
+    public String findId(@Validated @ModelAttribute("findIdDto") FindIdDto findIdDto,
+                         BindingResult bindingResult,
+                         @ModelAttribute("findPwdDto") FindPwdDto findPwdDto,
+                         RedirectAttributes redirectAttributes) {
+
+        if (bindingResult.hasErrors()) {
+            return "member/find";
+        }
+
+        try {
+            String memberId = memberService.findId(findIdDto);
+            redirectAttributes.addFlashAttribute("idResult", memberId);
+        } catch (BusinessLogicException e) {
+            bindingResult.reject("exception", e.getMessage());
+            return "member/find";
+        }
+
+        return "redirect:/member/find/result";
+    }
+
+    @PostMapping("/find/pwd")
+    public String findPwd(@Validated @ModelAttribute FindPwdDto findPwdDto,
+                          BindingResult bindingResult,
+                          @ModelAttribute FindIdDto findIdDto,
+                          RedirectAttributes redirectAttributes,
+                          Model model) {
+
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("pwdError", "pwdError");
+            return "member/find";
+        }
+
+        try {
+            memberService.pwdReset(findPwdDto);
+            redirectAttributes.addFlashAttribute("pwdResult", true);
+        } catch (BusinessLogicException e) {
+            model.addAttribute("pwdError", "pwdError");
+            bindingResult.reject("exception", e.getMessage());
+            return "member/find";
+        }
+
+        return "redirect:/member/find/result";
+    }
+
+    @GetMapping("/find/result")
     public String viewFinding() {
         return "member/finding";
     }

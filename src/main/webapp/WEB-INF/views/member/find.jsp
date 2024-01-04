@@ -2,6 +2,8 @@
          pageEncoding="UTF-8"
          isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <%
     request.setCharacterEncoding("utf-8");
@@ -64,42 +66,88 @@
 
     <div class="tabContWrap">
         <div id="tabFindId">
-            <form id="find_sign_up_form">
-                <div id="find_input_area">
-                    <div class="form_email">
-                        <label for="find_email" class="sign_left_label">이메일</label>
+            <form:form modelAttribute="findIdDto" action="/member/find/id" method="post" class="find_sign_up_form">
+                <div class="find_input_area">
+                    <div class="find_input_email">
+                        <label class="sign_left_label">이메일</label>
                         <div class="sign_input_box">
-                            <input type="text" id="find_email_1" class="find_email_input" placeholder="이메일">
-                            <span>@</span>
-                            <input type="text" id="find_email_2" class="find_email_input" value="gmail.com" disabled>
-                            <select id="find_email_input_choose">
-                                <option selected>gmail.com</option>
-                                <option>naver.com</option>
-                                <option>kakao.com</option>
-                                <option>직접입력</option>
-                            </select>
-                            <input type="hidden" id="find_email" name="email">
+                            <form:input path="findIdEmail" type="email" class="findInput" placeholder="이메일" />
                         </div>
+                        <form:errors path="findIdEmail" element="p" class="valid_warning"/>
+                    </div>
+                    <div class="find_input_name">
+                        <label class="sign_left_label">이름</label>
+                        <div class="sign_input_box">
+                            <form:input path="findIdName" type="text" class="findInput" placeholder="이름" />
+                        </div>
+                        <form:errors path="findIdName" element="p" class="valid_warning"/>
+                    </div>
 
-                        <p class="find_warning" id="find_warning_email">이메일은 필수입력사항 입니다.</p>
-                    </div>
-                    <div id="find_name_box">
-                        <label for="find_name" class="sign_left_label">이름</label>
-                        <div>
-                            <input type="text" id="find_name" name="name" placeholder="이름" required>
-                        </div>
-                        <p class="find_warning" id="find_warning_name">이름은 필수입력사항 입니다.</p>
-                    </div>
                     <div>
-                        <input value="찾기" type="button" class="btnBg" id="find_do_find" onclick="find_form_submit()">
-                        <!--구성 요소중 누락된 요소 있을 시 거절-->
+                        <input value="아이디 찾기" type="submit" class="btnBg find_do_find">
                     </div>
                 </div>
-            </form>
+            </form:form>
         </div>
+
+        <div id="tabFindPwd">
+            <form:form modelAttribute="findPwdDto" action="/member/find/pwd" method="post" class="find_sign_up_form">
+                <div class="find_input_area">
+                    <h3 class="findPwdDesc" style="color: red">회원님의 정보는 암호화 되어 운영진도 알 수 없습니다!</h3>
+                        <p class="findPwdDesc">기존 비밀번호는 초기화 된 후 이메일로 새 비밀번호가 발송됩니다.</p>
+                    <div class="find_input_id">
+                        <label class="sign_left_label">아이디</label>
+                        <div class="sign_input_box">
+                            <form:input path="findPwdId" type="text" class="findInput" id="findId" placeholder="아이디" />
+                        </div>
+                        <form:errors path="findPwdId" element="p" class="valid_warning"/>
+                    </div>
+                    <div class="find_input_email">
+                        <label class="sign_left_label">이메일</label>
+                        <div class="sign_input_box">
+                            <form:input path="findPwdEmail" type="email" class="findInput" placeholder="이메일" />
+                        </div>
+                        <form:errors path="findPwdEmail" element="p" class="valid_warning"/>
+                    </div>
+                    <div class="find_input_name">
+                        <label class="sign_left_label">이름</label>
+                        <div class="sign_input_box">
+                            <form:input path="findPwdName" type="text" class="findInput" placeholder="이름" />
+                        </div>
+                        <form:errors path="findPwdName" element="p" class="valid_warning"/>
+                    </div>
+
+                    <div>
+                        <input value="비밀번호 찾기" type="submit" class="btnBg find_do_find">
+                    </div>
+                </div>
+            </form:form>
+        </div>
+
     </div>
 </main>
 
+<spring:hasBindErrors name="findIdDto">
+    <c:if test="${errors.hasGlobalErrors()}">
+        <div class="login_modal">
+            <div class="login_modal_box">
+                <p class="login_modal_msg">${errors.globalError.defaultMessage}</p>
+                <button class="login_modal_out" type="button" onClick="login_modal_get_out()">확인</button>
+            </div>
+        </div>
+    </c:if>
+</spring:hasBindErrors>
+
+<spring:hasBindErrors name="findPwdDto">
+    <c:if test="${errors.hasGlobalErrors()}">
+        <div class="login_modal">
+            <div class="login_modal_box">
+                <p class="login_modal_msg">${errors.globalError.defaultMessage}</p>
+                <button class="login_modal_out" type="button" onClick="login_modal_get_out()">확인</button>
+            </div>
+        </div>
+    </c:if>
+</spring:hasBindErrors>
 <!-- 푸터 -->
 <footer id="footer">
     <jsp:include page="/WEB-INF/views/main/footer.jsp"/>
@@ -107,7 +155,41 @@
 
 <!-- js -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    <c:choose>
+        <c:when test="${pwdError != null}">
+            $(document).ready(function () {
+                $("#tabFindPwd").show();
+                $("#tabFindId").hide();
+                $("#find_id_button").removeClass('active');
+                $("#find_pwd_button").addClass('active');
+            });
+        </c:when>
+        <c:otherwise>
+            $(document).ready(function () {
+                $("#tabFindPwd").hide();
+                $("#tabFindId").show();
+                $("#find_id_button").addClass('active');
+                $("#find_pwd_button").removeClass('active');
+            });
+        </c:otherwise>
+    </c:choose>
+
+    $("#find_id_button").click(function () {
+        $("#tabFindPwd").hide();
+        $("#tabFindId").show();
+        $("#find_id_button").addClass('active');
+        $("#find_pwd_button").removeClass('active');
+    });
+
+    $("#find_pwd_button").click(function () {
+        $("#tabFindPwd").show();
+        $("#tabFindId").hide();
+        $("#find_id_button").removeClass('active');
+        $("#find_pwd_button").addClass('active');
+    });
+</script>
 <script src="${contextPath}/resource/js/common.js"></script>
-<script src="${contextPath}/resource/js/member.js"></script>
+<script src="${contextPath}/resource/js/user.js"></script>
 </body>
 </html>

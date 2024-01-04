@@ -26,13 +26,20 @@ function goodAction(e) {
 /* 에디터 설정 */
 let oEditors = []
 
+
+
 smartEditor = function () {
-    console.log("Naver SmartEditor")
+	var contentText = '&lt;p&gt;ervtwertfver&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;';
+	contentText = contentText.decodeEntity();
     nhn.husky.EZCreator.createInIFrame({
         oAppRef: oEditors,
         elPlaceHolder: "form-content",
         sSkinURI: "/resource/smarteditor/SmartEditor2Skin.html",
-        fCreator: "createSEditor2"
+        fCreator: "createSEditor2",
+        fOnAppLoad : function(){
+          //textarea 내용을 에디터상에 바로 뿌려주고자 할때 사용
+       	oEditors.getById["form-content"].exec("PASTE_HTML", [contentText]);
+      },
     })
 }
 
@@ -44,10 +51,6 @@ submitPost = function () {
     oEditors.getById["form-content"].exec("UPDATE_CONTENTS_FIELD", []);
     let content = document.getElementById("form-content").value;
     console.log(content);
-}
-
-function test() {
-    alert("js연결완료");
 }
 	
 	

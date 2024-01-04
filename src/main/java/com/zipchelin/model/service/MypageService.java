@@ -8,6 +8,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.zipchelin.domain.community.MyPick;
 import com.zipchelin.domain.community.MyRecipeReply;
 import com.zipchelin.domain.community.Myrecipe;
 import com.zipchelin.domain.community.Qna;
@@ -101,36 +102,27 @@ public class MypageService {
         return postList;
     }
     
-    /*
-    public List<Myheart> selectHeartList(String id) {
-        List<Myheart> heartList = new ArrayList<Myheart>();
-
-        List<Guide> guideList = mypageRepository.selectGuiHeart(id);
-        for (Guide gui : guideList) {
-            heartList.add(gui.toMyheart());
+    public List<MyPick> selectPickList(String id) {
+        List<MyPick> pickList = new ArrayList<MyPick>();
+        for(MyPick pick : pickList) {
+        	pickList.add(pick);
         }
 
-        List<Recipe> recipeList = mypageRepository.selectRecHeart(id);
-        for (Recipe rec : recipeList) {
-            heartList.add(rec.toMyheart());
-        }
-
-        for (int i = 0; i < heartList.size() - 1; i++) {
-            for (int j = i + 1; j < heartList.size(); j++) {
+        for (int i = 0; i < pickList.size() - 1; i++) {
+            for (int j = i + 1; j < pickList.size(); j++) {
                 //i번쨰에 있는 애가 j번째 보다 예전 것일때 true
-                if (heartList.get(i).getHeartDate().before(heartList.get(j).getHeartDate())) {
-                    Myheart iheart = heartList.get(i);
-                    Myheart jheart = heartList.get(j);
-                    heartList.remove(i);
-                    heartList.add(i, jheart);
-                    heartList.remove(j);
-                    heartList.add(j, iheart);
+                if (pickList.get(i).getGuiPickDatetime().isBefore(pickList.get(j).getRecPickDatetime())) {
+                    MyPick ipick = pickList.get(i);
+                    MyPick jpick = pickList.get(j);
+                    pickList.remove(i);
+                    pickList.add(i, jpick);
+                    pickList.remove(j);
+                    pickList.add(j, ipick);
                 }
             }
         }
-        return heartList;
+        return pickList;
     }
-    */
     
     public List<Myreply> selectReplyList(String id){
     	List<Myreply> replyList=new ArrayList<Myreply>();
@@ -163,4 +155,27 @@ public class MypageService {
    /* public List<Myheart> getListPaging(Criteria cri) {
         return mypageRepository.getListPaging(cri);
     }*/
+    
+    public void deleteMypost(String[] deleteList) {
+    	List<String> myreDeleteList=new ArrayList<>();
+    	List<String> qnaDeleteList=new ArrayList<>();
+    	
+    	for(String post:deleteList) {
+    		String myreOrQna=post.substring(0,post.indexOf("-"));
+    		if(myreOrQna.equals("myre")) {
+    			myreDeleteList.add(post.substring(post.indexOf("-")+1,post.length()));
+    		}else if(myreOrQna.equals("qna")) {
+    			qnaDeleteList.add(post.substring(post.indexOf("-")+1,post.length()));
+    		}
+    	}
+    	
+    	if(myreDeleteList.size()!=0) {
+    		mypageRepository.deleteMyre(myreDeleteList);
+    	}
+    	
+    	if(qnaDeleteList.size()!=0) {
+    		mypageRepository.deleteQna(qnaDeleteList);
+    	}
+    }
+    
 }

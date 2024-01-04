@@ -53,6 +53,7 @@
     
     <!-- 메인 -->
     <main>
+    <!-- 
         <section class="best-section">
             <h1 class="pageTitle">오늘의 인기글</h1>
             <div class="best-list">
@@ -83,7 +84,7 @@
                 </c:choose>
             </div>
         </section>
-
+ -->
         <section class="myrecipe_section">
             <h1 class="best-title">나만의 레시피</h1>
             <div class="acc-container">
@@ -95,26 +96,29 @@
             </div>
           
             <ul class="allwrite clearfix">
-	            <c:forEach var="myrecipe" items="${myrecipeList}" varStatus="myrecipeTitle">
+	            <c:forEach var="myrecipe" items="${myrecipe}">
 	                <li class="post-container">
-	                    <a href="${contextPath}/community/myrecipe/post" class="imgwrap">
+	                    <a href="${contextPath}/community/myrecipe/post/${myrecipe.myreNum}" class="imgwrap">
 	                        <div class="post-section">
-	                            <span class="postdate"><fmt:parseDate value="${myrecipe.myreDate}" pattern="yyyy-MM-dd'T'HH:mm" var="parseDateTime" />
-                                    <fmt:formatDate pattern="yyyy-MM-dd" value="${parseDateTime}" /></span>
+	                            <span class="postdate">
+	                            	<fmt:parseDate value="${myrecipe.myreDate}" pattern="yyyy-MM-dd'T'HH:mm" var="parseDateTime" />
+                                    <fmt:formatDate pattern="yyyy-MM-dd" value="${parseDateTime}" />
+                                </span>
 	                            <h6 class="title">${myrecipe.myreTitle}</h6>
 	                            <p>
 	                                ${myrecipe.myreContent}
 	                            </p>
 	                            <ul class="accList">
 	                                <li class="accItem">
-	                                    <span class="icon material-symbols-outlined">visibility</span>268
+	                                    <span class="icon material-symbols-outlined">visibility</span>${myrecipe.myreUp}
 	                                </li>
+	                                <!--  
 	                                <li class="accItem">                        
 	                                    <span class="icon material-symbols-outlined">comment</span>12
 	                                </li>
+	                                -->
 	                            </ul>
 	                        </div>
-	                        
 	                        <div class="imgBox align">
 	                            <img src="${contextPath}/resource/images/food/gan.jpg" alt="#">
 	                        </div>
@@ -123,28 +127,38 @@
                 </c:forEach>
             </ul>     
             
-			<div class="pageInfo_wrap paging">
-		        <div class="pageInfo_area">
-		            <ul class="pageInfo" id="pageInfo">
-		                <c:if test="${pageMaker.prev}">
-		                    <li class="pageInfo_btn previous arrow prev disabled"><a href="${pageMaker.startPage-1}"><span
-		                            class="material-symbols-outlined">navigate_before</span></a></li>
-		                </c:if>
-		                <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-		                    <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a>
-		                    </li>
-		                </c:forEach>
-		                <c:if test="${pageMaker.next}">
-		                    <li class="pageInfo_btn next arrow next"><a href="${pageMaker.endPage + 1 }"><span
-		                            class="material-symbols-outlined">navigate_next</span></a></li>
-		                </c:if>
-		            </ul>
-		        </div>
-		    </div>
-		    <form action="get" id="moveForm">
-		        <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
-		        <input type="hidden" name="amount" value="${pageMaker.cri.amount}">
-		    </form>
+			<div class="paging">
+                <ul>
+                    <!--li에 .disabled가 있으면 화살표에 클릭방지 생김-->
+                    <c:choose>
+                    <c:when test="${params.pagination.existPrevPage}">
+                    	<li class="arrow prev"><a href="${contextPath}/community/myrecipe?page=${params.pagination.startPage-1 }"><button><span class="material-symbols-outlined">navigate_before</span></button></a></li>
+                    </c:when>
+                    <c:otherwise>
+                    	<li class="arrow prev disabled"><button disabled><span class="material-symbols-outlined">navigate_before</span></button></li>
+                    </c:otherwise>                        
+                    </c:choose>
+                   <c:forEach var="num" begin="${params.pagination.startPage}"
+                              end="${params.pagination.endPage}">
+                       <c:if test="${params.page != num}">
+                           <li><a href="${contextPath}/community/myrecipe?page=${num}">${num}</a></li>
+                       </c:if>
+                       <c:if test="${params.page == num}">
+                           <li class="active"><a href="javascript:void(0)" onclick="movePage(${num})">${num}</a>
+                           </li>
+                       </c:if>
+                       
+                   </c:forEach>
+                    <c:choose>
+                    <c:when test="${params.pagination.existNextPage}">
+                    	<li class="arrow next"><a href="${contextPath}/community/myrecipe?page=${params.pagination.endPage+1 }"><button><span class="material-symbols-outlined">navigate_next</span></button></a></li>
+                    </c:when>
+                    <c:otherwise>
+                    	<li class="arrow next disabled"><button disabled><span class="material-symbols-outlined">navigate_next</span></button></li>
+                    </c:otherwise>                        
+                    </c:choose>
+                </ul>
+            </div>
             
         </section>
     </main>

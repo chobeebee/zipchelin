@@ -92,4 +92,17 @@ public class CustomUserDetails implements UserDetails, OAuth2User {
     public boolean isEnabled() {
         return true;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof CustomUserDetails) {
+            return this.getUsername().equals(((CustomUserDetails) obj).getUsername());
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.getUsername().hashCode();
+    }
 }

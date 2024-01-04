@@ -60,8 +60,8 @@
                             <img class="comment-img" src="${contextPath}/resource/images/icon/profile.jpg" alt="">
                         </div>
                         <strong class="post-id">${member.userId}</strong>
-                        <span class="post-date"><fmt:formatDate pattern="yyyy.MM.dd"
-                                                                value="${myrecipe.myreDate}"/></span>
+                        <span class="post-date"><fmt:parseDate value="${myrecipe.myreDate}" pattern="yyyy-MM-dd'T'HH:mm" var="parseDateTime" />
+                                    <fmt:formatDate pattern="yyyy-MM-dd" value="${parseDateTime}" /></span>
                         <div class="comment_writeracc">
                             <button class="comment_update">
                                 <a href="${contextPath}/myrecipe/update/${myrecipe.myreNum}">수정</a>
@@ -76,9 +76,9 @@
                     <p class="content">${myrecipe}</p><br>
                     <img src="/front/images/food/sample.jpg" alt="">
                     <img src="/front/images/food/sample.jpg" alt="">
-                    <p class="content">내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다내가 만든 요리 중에 제일 맛있는 요리입니다</p><br>
+                    <p class="content">${myrecipe.myreContent}</p><br>
                 </div>
-                <a href="/front/html/community/myrecipe.html">
+                <a href="${contextPath}/community/myrecipe">
                     <div class="btnGroup lg btn_list">
                         <button class="btnBgGray btn_list">목록</button>
                     </div>
